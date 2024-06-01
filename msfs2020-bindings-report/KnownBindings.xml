@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BindingList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Context ContextName="COCKPIT_CAMERA" BackColor="">
+    <Action ActionName="KEY_COCKPIT_MODE" />
+    <Action ActionName="KEY_COCKPIT_MODE_HOLD" />
+    <Action ActionName="KEY_COCKPIT_HUD_VIEW_TOGGLE" />
+    <Action ActionName="KEY_COCKPIT_QUICKVIEW1" />
+    <Action ActionName="KEY_COCKPIT_QUICKVIEW2" />
+    <Action ActionName="KEY_COCKPIT_LANDING_VIEW_TOGGLE" />
+    <Action ActionName="KEY_COCKPIT_QUICKVIEW3" />
+    <Action ActionName="KEY_COCKPIT_QUICKVIEW4" />
+    <Action ActionName="KEY_COCKPIT_LANDING_VIEW_HOLD" />
+  </Context>
+  <Context ContextName="COCKPIT_GLOBAL_CAMERA" BackColor="">
+    <Action ActionName="KEY_COCKPIT_LOCKABLE_LOOK_DOWN" />
+    <Action ActionName="KEY_COCKPIT_LOOK_DOWN" />
+    <Action ActionName="KEY_COCKPIT_LOOK_DOWNLEFT" />
+    <Action ActionName="KEY_COCKPIT_LOOK_DOWNRIGHT" />
+    <Action ActionName="KEY_COCKPIT_LOOK_UP" />
+    <Action ActionName="KEY_COCKPIT_LOOK_UPLEFT" />
+    <Action ActionName="KEY_COCKPIT_LOOK_UPRIGHT" />
+    <Action ActionName="KEY_COCKPIT_LOCKABLE_LOOK_LEFT" />
+    <Action ActionName="KEY_COCKPIT_LOCKABLE_LOOK_RIGHT" />
+    <Action ActionName="KEY_COCKPIT_LOCKABLE_LOOK_UP" />
+    <Action ActionName="KEY_DEZOOM_COCKPIT" />
+    <Action ActionName="KEY_ZOOM_COCKPIT" />
+  </Context>
+  <Context ContextName="COCKPIT_INTERACTIONS" BackColor="">
+    <Action ActionName="KEY_COCKPIT_INTERACTION_DECREASE" />
+    <Action ActionName="KEY_COCKPIT_INTERACTION_INCREASE" />
+    <Action ActionName="KEY_COCKPIT_INTERACTION_PRIMARY" />
+    <Action ActionName="KEY_COCKPIT_INTERACTION_SECONDARY" />
+    <Action ActionName="KEY_COCKPIT_INTERACTION_TERTIARY" />
+    <Action ActionName="KEY_COCKPIT_INTERACTION_X_AXIS" />
+    <Action ActionName="KEY_COCKPIT_INTERACTION_Y_AXIS" />
+  </Context>
+  <Context ContextName="EXTERNAL_CAMERA" BackColor="">
+    <Action ActionName="KEY_CAMERACHASE_RESET" />
+    <Action ActionName="KEY_CHASE_LOOK_DOWN" />
+    <Action ActionName="KEY_CHASE_LOOK_LEFT" />
+    <Action ActionName="KEY_CHASE_LOOK_RIGHT" />
+    <Action ActionName="KEY_CHASE_LOOK_UP" />
+    <Action ActionName="KEY_DEZOOM_CHASE" />
+    <Action ActionName="KEY_ZOOM_CHASE" />
+    <Action ActionName="KEY_CHASE_FOCUS" />
+    <Action ActionName="KEY_CHASE_LOCKABLE_LOOK_DOWN" />
+    <Action ActionName="KEY_CHASE_LOCKABLE_LOOK_LEFT" />
+    <Action ActionName="KEY_CHASE_LOCKABLE_LOOK_RIGHT" />
+    <Action ActionName="KEY_CHASE_LOCKABLE_LOOK_UP" />
+    <Action ActionName="KEY_TOGGLE_FIXED_CAMERACHASE" />
+    <Action ActionName="KEY_TOGGLE_FIXED_CAMERACHASE_HOLD" />
+  </Context>
+  <Context ContextName="MODES" BackColor="">
+    <Action ActionName="KEY_COCKPIT_INSTRUMENT1" />
+    <Action ActionName="KEY_COCKPIT_RESET" />
+    <Action ActionName="KEY_CYCLE_PILOTVIEW_BACK" />
+    <Action ActionName="KEY_CYCLE_PILOTVIEW_NEXT" />
+    <Action ActionName="KEY_VIEW_MODE" />
+    <Action ActionName="KEY_COCKPIT_FOCUS" />
+  </Context>
+  <Context ContextName="PLANE" BackColor="">
+    <Action ActionName="KEY_AXIS_COLLECTIVE_SET" />
+    <Action ActionName="KEY_AXIS_HELICOPTER_THROTTLE_SET" />
+    <Action ActionName="KEY_AXIS_RUDDER_SET" />
+    <Action ActionName="KEY_AXIS_TAIL_ROTOR_SET" />
+    <Action ActionName="KEY_THROTTLE_AXIS_SET_EX1" />
+    <Action ActionName="KEY_DME" />
+    <Action ActionName="KEY_AXIS_ELEV_TRIM_SET" />
+    <Action ActionName="KEY_AXIS_MIXTURE_SET" />
+    <Action ActionName="KEY_FLAPS_DECR" />
+    <Action ActionName="KEY_FLAPS_INCR" />
+    <Action ActionName="KEY_GEAR_DOWN" />
+    <Action ActionName="KEY_GEAR_UP" />
+    <Action ActionName="KEY_PARKING_BRAKES" />
+    <Action ActionName="KEY_PROP_PITCH_AXIS_SET_EX1" />
+    <Action ActionName="KEY_SPOILERS_TOGGLE" />
+    <Action ActionName="KEY_HELICOPTER_THROTTLE_DEC" />
+    <Action ActionName="KEY_HELICOPTER_THROTTLE_INC" />
+    <Action ActionName="KEY_ROTOR_BRAKE" />
+    <Action ActionName="KEY_ROTOR_BRAKE_OFF" />
+    <Action ActionName="KEY_ROTOR_BRAKE_ON" />
+    <Action ActionName="KEY_ROTOR_CLUTCH_SWITCH_TOGGLE" />
+    <Action ActionName="KEY_ROTOR_GOV_SWITCH_TOGGLE" />
+    <Action ActionName="KEY_AXIS_LEFT_BRAKE_SET" />
+    <Action ActionName="KEY_AXIS_RIGHT_BRAKE_SET" />
+  </Context>
+  <Context ContextName="SMART_CAMERA" BackColor="">
+    <Action ActionName="KEY_TOGGLE_SMART_CAMERA" />
+  </Context>
+  <Context ContextName="SURFACES" BackColor="">
+    <Action ActionName="KEY_AXIS_AILERONS_SET" />
+    <Action ActionName="KEY_AXIS_CYCLIC_LATERAL_SET" />
+    <Action ActionName="KEY_AXIS_CYCLIC_LONGITUDINAL_SET" />
+    <Action ActionName="KEY_AXIS_ELEVATOR_SET" />
+  </Context>
+  <Context ContextName="COCKPIT_INTERACTIONS_LOCK" BackColor="">
+    <Action ActionName="KEY_COCKPIT_INTERACTION_DECREASE_LOCKABLE" />
+  </Context>
+  <Context ContextName="COCKPIT_VR_CAMERA" BackColor="">
+    <Action ActionName="KEY_COCKPIT_VR_FOCUS" />
+  </Context>
+  <Context ContextName="DEBUG" BackColor="">
+    <Action ActionName="KEY_CHASE_MODE" />
+  </Context>
+  <Context ContextName="DEVMODECAMERA" BackColor="">
+    <Action ActionName="KEY_DEVMODECAMERA_TRANSLATION" />
+    <Action ActionName="KEY_DEVMODECAMERA_ZOOM_IN" />
+    <Action ActionName="KEY_DEVMODECAMERA_ZOOM_OUT" />
+  </Context>
+  <Context ContextName="INGAME_UI" BackColor="">
+    <Action ActionName="KEY_INGAMEPANEL_ZOOM_IN" />
+    <Action ActionName="KEY_INGAMEPANEL_ZOOM_OUT" />
+  </Context>
+  <Context ContextName="INSTRUMENTS_CAMERA" BackColor="">
+    <Action ActionName="KEY_INSTRUMENT_MODE" />
+    <Action ActionName="KEY_INSTRUMENT_MODE_HOLD" />
+  </Context>
+  <Context ContextName="MENU_MOUSE" BackColor="">
+    <Action ActionName="MENU_MOUSE_DOWN" />
+    <Action ActionName="MENU_MOUSE_LEFT" />
+    <Action ActionName="MENU_MOUSE_RIGHT" />
+    <Action ActionName="MENU_MOUSE_UP" />
+    <Action ActionName="MENU_MOUSE0" />
+    <Action ActionName="MENU_MOUSE1" />
+  </Context>
+  <Context ContextName="WORLDMAP_COMMON" BackColor="">
+    <Action ActionName="KEY_MENU_WM_GRAB" />
+  </Context>
+  <Context ContextName="WORLDMAP_PAD" BackColor="">
+    <Action ActionName="KEY_MENU_WM_SELECT_RIGHT" />
+  </Context>
+</BindingList>
