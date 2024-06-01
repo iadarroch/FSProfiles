@@ -12,19 +12,19 @@ namespace FSControls
         {
             InitializeComponent();
             Logic = new MainLogic(this);
+            //Developer option: uncomment the following line to rebuild the list of "Known" bindings
+            //It will output the new file in C:\Temp\KnownBindings.xml. You will need to manually move
+            //to correct program location
+            //btnRebuild.Visible = true;
         }
 
         private void MainForm_Shown(object sender, EventArgs e)
         {
             if (Logic.GetDefaultPath())
             {
-                btnProcessFolders.Focus();
+                //if able to determine the path, automatically process it and set focus to list
                 btnProcessFolders.PerformClick();
-                Application.DoEvents();
-                clbMappings.SetItemChecked(1, true);
-                clbMappings.SetItemChecked(3, true);
-                clbMappings.SetItemChecked(6, true);
-                clbMappings.SetItemChecked(9, true);
+                clbMappings.Focus();
             }
             else
             {
@@ -46,7 +46,8 @@ namespace FSControls
 
         private void btnGenerate_Click(object sender, EventArgs e)
         {
-            Logic.GenerateMappingList(clbMappings);
+            var contentMode = (ContentMode)cmbContent.SelectedIndex;
+            Logic.GenerateMappingList(clbMappings, contentMode);
         }
 
         private void btnRebuild_Click(object sender, EventArgs e)

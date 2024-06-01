@@ -10,6 +10,16 @@
     <Action ActionName="KEY_COCKPIT_QUICKVIEW3" />
     <Action ActionName="KEY_COCKPIT_QUICKVIEW4" />
     <Action ActionName="KEY_COCKPIT_LANDING_VIEW_HOLD" />
+    <Action ActionName="CAMERA_COCKPIT_PILOT_IFR_RESET" />
+    <Action ActionName="CAMERA_COCKPIT_PILOT_IFR_SAVE" />
+    <Action ActionName="CAMERA_COCKPIT_PILOT_LANDING_RESET" />
+    <Action ActionName="CAMERA_COCKPIT_PILOT_LANDING_SAVE" />
+    <Action ActionName="CAMERA_COCKPIT_PILOT_VFR_RESET" />
+    <Action ActionName="CAMERA_COCKPIT_PILOT_VFR_SAVE" />
+    <Action ActionName="KEY_COCKPIT_CLOSE_VIEW_TOGGLE" />
+    <Action ActionName="KEY_COCKPIT_DEFAULT_VIEW_TOGGLE" />
+    <Action ActionName="KEY_COCKPIT_QUICKVIEWCYCLE" />
+    <Action ActionName="KEY_COCKPIT_UPPER" />
   </Context>
   <Context ContextName="COCKPIT_GLOBAL_CAMERA" BackColor="">
     <Action ActionName="KEY_COCKPIT_LOCKABLE_LOOK_DOWN" />
@@ -24,6 +34,10 @@
     <Action ActionName="KEY_COCKPIT_LOCKABLE_LOOK_UP" />
     <Action ActionName="KEY_DEZOOM_COCKPIT" />
     <Action ActionName="KEY_ZOOM_COCKPIT" />
+    <Action ActionName="KEY_COCKPIT_LOOK_LEFT" />
+    <Action ActionName="KEY_COCKPIT_LOOK_RIGHT" />
+    <Action ActionName="KEY_COCKPIT_FREELOOK_HRZ_SET" />
+    <Action ActionName="KEY_COCKPIT_FREELOOK_VRTC_SET" />
   </Context>
   <Context ContextName="COCKPIT_INTERACTIONS" BackColor="">
     <Action ActionName="KEY_COCKPIT_INTERACTION_DECREASE" />
@@ -49,6 +63,12 @@
     <Action ActionName="KEY_CHASE_LOCKABLE_LOOK_UP" />
     <Action ActionName="KEY_TOGGLE_FIXED_CAMERACHASE" />
     <Action ActionName="KEY_TOGGLE_FIXED_CAMERACHASE_HOLD" />
+    <Action ActionName="KEY_CHASE_QUICKVIEW1" />
+    <Action ActionName="KEY_CHASE_QUICKVIEW2" />
+    <Action ActionName="KEY_CHASE_QUICKVIEW3" />
+    <Action ActionName="KEY_CHASE_QUICKVIEW4" />
+    <Action ActionName="KEY_CHASE_FREELOOK_HRZ_SET" />
+    <Action ActionName="KEY_CHASE_FREELOOK_VRTC_SET" />
   </Context>
   <Context ContextName="MODES" BackColor="">
     <Action ActionName="KEY_COCKPIT_INSTRUMENT1" />
@@ -57,6 +77,25 @@
     <Action ActionName="KEY_CYCLE_PILOTVIEW_NEXT" />
     <Action ActionName="KEY_VIEW_MODE" />
     <Action ActionName="KEY_COCKPIT_FOCUS" />
+    <Action ActionName="KEY_COCKPIT_INSTRUMENT0" />
+    <Action ActionName="KEY_COCKPIT_INSTRUMENT2" />
+    <Action ActionName="KEY_COCKPIT_INSTRUMENT3" />
+    <Action ActionName="KEY_COCKPIT_INSTRUMENT4" />
+    <Action ActionName="KEY_COCKPIT_INSTRUMENT5" />
+    <Action ActionName="KEY_COCKPIT_INSTRUMENT6" />
+    <Action ActionName="KEY_COCKPIT_INSTRUMENT7" />
+    <Action ActionName="KEY_COCKPIT_INSTRUMENT8" />
+    <Action ActionName="KEY_COCKPIT_INSTRUMENT9" />
+    <Action ActionName="KEY_HEADPHONE_SIMULATION_TOGGLE" />
+    <Action ActionName="KEY_INPUTS_VR_TOOLBAR_TOGGLE" />
+    <Action ActionName="KEY_NEXT_POI" />
+    <Action ActionName="KEY_PLANE_CONTROL" />
+    <Action ActionName="KEY_SET_USER_POI" />
+    <Action ActionName="KEY_SIM_RATE" />
+    <Action ActionName="KEY_SLEW_TOGGLE" />
+    <Action ActionName="KEY_UNSET_USER_POI" />
+    <Action ActionName="TOGGLE_CAMERA_DRONE" />
+    <Action ActionName="KEY_TOGGLE_EXTERNAL_CAMERA" />
   </Context>
   <Context ContextName="PLANE" BackColor="">
     <Action ActionName="KEY_AXIS_COLLECTIVE_SET" />
@@ -83,9 +122,169 @@
     <Action ActionName="KEY_ROTOR_GOV_SWITCH_TOGGLE" />
     <Action ActionName="KEY_AXIS_LEFT_BRAKE_SET" />
     <Action ActionName="KEY_AXIS_RIGHT_BRAKE_SET" />
+    <Action ActionName="KEY_ACTIVE_PAUSE_TOGGLE" />
+    <Action ActionName="KEY_ADF" />
+    <Action ActionName="KEY_ADF2_EXTENDED_SET" />
+    <Action ActionName="KEY_ADF2_HIGHRANGE_SET" />
+    <Action ActionName="KEY_ADF2_LOWRANGE_SET" />
+    <Action ActionName="KEY_ADF2_NEEDLE_SET" />
+    <Action ActionName="KEY_ADF2_OUTSIDE_SOURCE" />
+    <Action ActionName="KEY_ADF2_SET" />
+    <Action ActionName="KEY_ADF2_VOLUME_DEC" />
+    <Action ActionName="KEY_ADF2_VOLUME_INC" />
+    <Action ActionName="KEY_ADF2_VOLUME_SET" />
+    <Action ActionName="KEY_AILERON_LEFT" />
+    <Action ActionName="KEY_AILERON_RIGHT" />
+    <Action ActionName="KEY_AILERON_TRIM_LEFT" />
+    <Action ActionName="KEY_AILERON_TRIM_RIGHT" />
+    <Action ActionName="KEY_AIRSPEED_BUG_SELECT" />
+    <Action ActionName="KEY_ALL_LIGHTS_TOGGLE" />
+    <Action ActionName="KEY_ALTITUDE_BUG_SELECT" />
+    <Action ActionName="KEY_ANTI_ICE_TOGGLE" />
+    <Action ActionName="KEY_AP_AIRSPEED_HOLD" />
+    <Action ActionName="KEY_AP_ALT_VAR_DEC" />
+    <Action ActionName="KEY_AP_ALT_VAR_INC" />
+    <Action ActionName="KEY_AP_APR_HOLD" />
+    <Action ActionName="KEY_AP_ATT_HOLD" />
+    <Action ActionName="KEY_AP_LOC_HOLD" />
+    <Action ActionName="KEY_AP_MACH_HOLD" />
+    <Action ActionName="KEY_AP_MASTER" />
+    <Action ActionName="KEY_AP_MAX_BANK_ANGLE_SET" />
+    <Action ActionName="KEY_AP_MAX_BANK_VELOCITY_SET" />
+    <Action ActionName="KEY_AP_N1_HOLD" />
+    <Action ActionName="KEY_AP_N1_REF_DEC" />
+    <Action ActionName="KEY_AP_N1_REF_INC" />
+    <Action ActionName="KEY_AP_NAV1_HOLD" />
+    <Action ActionName="KEY_AP_SPD_VAR_DEC" />
+    <Action ActionName="KEY_AP_SPD_VAR_INC" />
+    <Action ActionName="KEY_AP_VS_VAR_DEC" />
+    <Action ActionName="KEY_AP_VS_VAR_INC" />
+    <Action ActionName="KEY_AP_WING_LEVELER" />
+    <Action ActionName="KEY_AUTO_THROTTLE_ARM" />
+    <Action ActionName="KEY_AUTO_THROTTLE_TO_GA" />
+    <Action ActionName="KEY_AUTOCOORD_TOGGLE" />
+    <Action ActionName="KEY_AUTOPILOT_OFF" />
+    <Action ActionName="KEY_AUTOPILOT_ON" />
+    <Action ActionName="KEY_BACK_TO_FLY" />
+    <Action ActionName="KEY_BAROMETRIC" />
+    <Action ActionName="KEY_BRAKES" />
+    <Action ActionName="KEY_BRAKES_LEFT" />
+    <Action ActionName="KEY_BRAKES_RIGHT" />
+    <Action ActionName="KEY_CENTER_AILER_RUDDER" />
+    <Action ActionName="KEY_COCKPIT_FLASHLIGHT_ONOFF" />
+    <Action ActionName="KEY_COM_RADIO" />
+    <Action ActionName="KEY_COM_STBY_RADIO_SET" />
+    <Action ActionName="KEY_COM_STBY_RADIO_SWITCH_TO" />
+    <Action ActionName="KEY_DEC_COWL_FLAPS" />
+    <Action ActionName="KEY_ELEV_DOWN" />
+    <Action ActionName="KEY_ELEV_TRIM_DN" />
+    <Action ActionName="KEY_ELEV_TRIM_UP" />
+    <Action ActionName="KEY_ELEV_UP" />
+    <Action ActionName="KEY_ENGINE" />
+    <Action ActionName="KEY_ENGINE_AUTO_SHUTDOWN" />
+    <Action ActionName="KEY_ENGINE_AUTO_START" />
+    <Action ActionName="KEY_FLAPS_DOWN" />
+    <Action ActionName="KEY_FLAPS_UP" />
+    <Action ActionName="KEY_FREQUENCY_SWAP" />
+    <Action ActionName="KEY_FUEL_DUMP_TOGGLE" />
+    <Action ActionName="KEY_FUEL_PUMP" />
+    <Action ActionName="KEY_FUEL_SELECTOR_ALL" />
+    <Action ActionName="KEY_FUEL_SELECTOR_OFF" />
+    <Action ActionName="KEY_GEAR_TOGGLE" />
+    <Action ActionName="KEY_HEADING_BUG_DEC" />
+    <Action ActionName="KEY_HEADING_BUG_INC" />
+    <Action ActionName="KEY_HEADING_BUG_SELECT" />
+    <Action ActionName="KEY_HEADING_GYRO_SET" />
+    <Action ActionName="KEY_INC_COWL_FLAPS" />
+    <Action ActionName="KEY_INCR_WHEEL_SPEED" />
+    <Action ActionName="KEY_LANDING_LIGHT_DOWN" />
+    <Action ActionName="KEY_LANDING_LIGHT_HOME" />
+    <Action ActionName="KEY_LANDING_LIGHT_LEFT" />
+    <Action ActionName="KEY_LANDING_LIGHT_RIGHT" />
+    <Action ActionName="KEY_LANDING_LIGHT_UP" />
+    <Action ActionName="KEY_LANDING_LIGHTS_TOGGLE" />
+    <Action ActionName="KEY_MAGNETO" />
+    <Action ActionName="KEY_MAGNETO_BOTH" />
+    <Action ActionName="KEY_MAGNETO_LEFT" />
+    <Action ActionName="KEY_MAGNETO_OFF" />
+    <Action ActionName="KEY_MAGNETO_RIGHT" />
+    <Action ActionName="KEY_MAGNETO_START" />
+    <Action ActionName="KEY_MARKER_SOUND_TOGGLE" />
+    <Action ActionName="KEY_MINUS" />
+    <Action ActionName="KEY_MIXTURE_DECR" />
+    <Action ActionName="KEY_MIXTURE_INCR_SMALL" />
+    <Action ActionName="KEY_MIXTURE_LEAN" />
+    <Action ActionName="KEY_MIXTURE_RICH" />
+    <Action ActionName="KEY_NAV_RADIO" />
+    <Action ActionName="KEY_NAV1_RADIO_FRACT_DEC_CARRY" />
+    <Action ActionName="KEY_NAV1_RADIO_FRACT_INC_CARRY" />
+    <Action ActionName="KEY_NAV1_RADIO_SWAP" />
+    <Action ActionName="KEY_ORNI_BOOST_SET" />
+    <Action ActionName="KEY_ORNI_DIVE_MODE_OFF" />
+    <Action ActionName="KEY_ORNI_DIVE_MODE_ON" />
+    <Action ActionName="KEY_ORNI_GLIDE_MODE_OFF" />
+    <Action ActionName="KEY_ORNI_GLIDE_MODE_ON" />
+    <Action ActionName="KEY_ORNI_WINGS_BRAKE_SET" />
+    <Action ActionName="KEY_PITOT_HEAT_TOGGLE" />
+    <Action ActionName="KEY_PLUS" />
+    <Action ActionName="KEY_PROP_PITCH_DECREASE_EX1" />
+    <Action ActionName="KEY_PROP_PITCH_HI_EX1" />
+    <Action ActionName="KEY_PROP_PITCH_INCREASE_EX1" />
+    <Action ActionName="KEY_PROP_PITCH_LO_EX1" />
+    <Action ActionName="KEY_PUSHBACK_SET" />
+    <Action ActionName="KEY_REQUEST_CATERING" />
+    <Action ActionName="KEY_REQUEST_FUEL" />
+    <Action ActionName="KEY_REQUEST_LUGGAGE" />
+    <Action ActionName="KEY_REQUEST_POWER_SUPPLY" />
+    <Action ActionName="KEY_RUDDER_LEFT" />
+    <Action ActionName="KEY_RUDDER_RIGHT" />
+    <Action ActionName="KEY_RUDDER_TRIM_LEFT" />
+    <Action ActionName="KEY_RUDDER_TRIM_RIGHT" />
+    <Action ActionName="KEY_SELECT_1" />
+    <Action ActionName="KEY_SELECT_2" />
+    <Action ActionName="KEY_SELECT_3" />
+    <Action ActionName="KEY_SELECT_4" />
+    <Action ActionName="KEY_STROBES_TOGGLE" />
+    <Action ActionName="KEY_THROTTLE_FULL" />
+    <Action ActionName="KEY_TOGGLE_ALTERNATE_STATIC" />
+    <Action ActionName="KEY_TOGGLE_AVIONICS_MASTER" />
+    <Action ActionName="KEY_TOGGLE_BEACON_LIGHTS" />
+    <Action ActionName="KEY_TOGGLE_FLIGHT_DIRECTOR" />
+    <Action ActionName="KEY_TOGGLE_FUEL_VALVE_ALL" />
+    <Action ActionName="KEY_TOGGLE_MASTER_ALTERNATOR" />
+    <Action ActionName="KEY_TOGGLE_MASTER_BATTERY" />
+    <Action ActionName="KEY_TOGGLE_MASTER_BATTERY_ALTERNATOR" />
+    <Action ActionName="KEY_TOGGLE_MASTER_IGNITION_SWITCH" />
+    <Action ActionName="KEY_TOGGLE_NAV_LIGHTS" />
+    <Action ActionName="KEY_TOGGLE_RAMPTRUCK" />
+    <Action ActionName="KEY_TOGGLE_TAIL_HOOK_HANDLE" />
+    <Action ActionName="KEY_TOGGLE_TAILWHEEL_LOCK" />
+    <Action ActionName="KEY_TOGGLE_TAXI_LIGHTS" />
+    <Action ActionName="KEY_TOGGLE_WATER_RUDDER" />
+    <Action ActionName="KEY_TOGGLE_WING_FOLD" />
+    <Action ActionName="KEY_TOW_PLANE_RELEASE" />
+    <Action ActionName="KEY_UI_NEW_WINDOW_MODE" />
+    <Action ActionName="KEY_VOR_OBS" />
+    <Action ActionName="KEY_VOR1_OBI_DEC" />
+    <Action ActionName="KEY_VOR1_OBI_INC" />
+    <Action ActionName="KEY_XPNDR" />
+    <Action ActionName="KEY_XPNDR_SET" />
+    <Action ActionName="KEY_YAW_DAMPER_TOGGLE" />
+    <Action ActionName="KEY_ROTOR_LATERAL_TRIM_DEC" />
+    <Action ActionName="KEY_ROTOR_LATERAL_TRIM_INC" />
+    <Action ActionName="KEY_ROTOR_LONGITUDINAL_TRIM_DEC" />
+    <Action ActionName="KEY_ROTOR_LONGITUDINAL_TRIM_INC" />
+    <Action ActionName="KEY_ROTOR_TRIM_RESET" />
+    <Action ActionName="KEY_TAIL_ROTOR_DECR" />
+    <Action ActionName="KEY_TAIL_ROTOR_INCR" />
   </Context>
   <Context ContextName="SMART_CAMERA" BackColor="">
     <Action ActionName="KEY_TOGGLE_SMART_CAMERA" />
+    <Action ActionName="KEY_RESET_SMART_CAMERA" />
+    <Action ActionName="KEY_SMART_CAMERA_NEXT" />
+    <Action ActionName="KEY_SMART_CAMERA_PLAYER" />
+    <Action ActionName="KEY_SMART_CAMERA_PREVIOUS" />
+    <Action ActionName="KEY_SMART_FOLLOW" />
   </Context>
   <Context ContextName="SURFACES" BackColor="">
     <Action ActionName="KEY_AXIS_AILERONS_SET" />
@@ -101,19 +300,94 @@
   </Context>
   <Context ContextName="DEBUG" BackColor="">
     <Action ActionName="KEY_CHASE_MODE" />
+    <Action ActionName="DEBUG_MENU_VALID" />
+    <Action ActionName="KEY_DEBUG_0" />
+    <Action ActionName="KEY_DEBUG_1" />
+    <Action ActionName="KEY_DEBUG_2" />
+    <Action ActionName="KEY_DEBUG_3" />
+    <Action ActionName="KEY_DEBUG_4" />
+    <Action ActionName="KEY_DEBUG_5" />
+    <Action ActionName="KEY_DEBUG_6" />
+    <Action ActionName="KEY_DEBUG_7" />
+    <Action ActionName="KEY_DEBUG_8" />
+    <Action ActionName="KEY_DEBUG_9" />
+    <Action ActionName="KEY_DEBUG_A" />
+    <Action ActionName="KEY_DEBUG_B" />
+    <Action ActionName="KEY_DEBUG_C" />
+    <Action ActionName="KEY_DEBUG_D" />
+    <Action ActionName="KEY_DEBUG_DOWN" />
+    <Action ActionName="KEY_DEBUG_E" />
+    <Action ActionName="KEY_DEBUG_ENTER" />
+    <Action ActionName="KEY_DEBUG_F" />
+    <Action ActionName="KEY_DEBUG_F10" />
+    <Action ActionName="KEY_DEBUG_F9" />
+    <Action ActionName="KEY_DEBUG_FREEZE_PLANE" />
+    <Action ActionName="KEY_DEBUG_G" />
+    <Action ActionName="KEY_DEBUG_H" />
+    <Action ActionName="KEY_DEBUG_I" />
+    <Action ActionName="KEY_DEBUG_J" />
+    <Action ActionName="KEY_DEBUG_K" />
+    <Action ActionName="KEY_DEBUG_L" />
+    <Action ActionName="KEY_DEBUG_LALT" />
+    <Action ActionName="KEY_DEBUG_LCTRL" />
+    <Action ActionName="KEY_DEBUG_LEFT" />
+    <Action ActionName="KEY_DEBUG_LSHIFT" />
+    <Action ActionName="KEY_DEBUG_M" />
+    <Action ActionName="KEY_DEBUG_N" />
+    <Action ActionName="KEY_DEBUG_NUMPAD_0" />
+    <Action ActionName="KEY_DEBUG_NUMPAD_1" />
+    <Action ActionName="KEY_DEBUG_NUMPAD_2" />
+    <Action ActionName="KEY_DEBUG_NUMPAD_3" />
+    <Action ActionName="KEY_DEBUG_NUMPAD_4" />
+    <Action ActionName="KEY_DEBUG_NUMPAD_5" />
+    <Action ActionName="KEY_DEBUG_NUMPAD_6" />
+    <Action ActionName="KEY_DEBUG_NUMPAD_7" />
+    <Action ActionName="KEY_DEBUG_NUMPAD_8" />
+    <Action ActionName="KEY_DEBUG_NUMPAD_9" />
+    <Action ActionName="KEY_DEBUG_O" />
+    <Action ActionName="KEY_DEBUG_P" />
+    <Action ActionName="KEY_DEBUG_PAUSE" />
+    <Action ActionName="KEY_DEBUG_Q" />
+    <Action ActionName="KEY_DEBUG_R" />
+    <Action ActionName="KEY_DEBUG_RALT" />
+    <Action ActionName="KEY_DEBUG_RCTRL" />
+    <Action ActionName="KEY_DEBUG_RIGHT" />
+    <Action ActionName="KEY_DEBUG_RSHIFT" />
+    <Action ActionName="KEY_DEBUG_S" />
+    <Action ActionName="KEY_DEBUG_T" />
+    <Action ActionName="KEY_DEBUG_TAB" />
+    <Action ActionName="KEY_DEBUG_U" />
+    <Action ActionName="KEY_DEBUG_UP" />
+    <Action ActionName="KEY_DEBUG_V" />
+    <Action ActionName="KEY_DEBUG_W" />
+    <Action ActionName="KEY_DEBUG_X" />
+    <Action ActionName="KEY_DEBUG_Y" />
+    <Action ActionName="KEY_DEBUG_Z" />
+    <Action ActionName="KEY_REQUEST_TOW_PLANE" />
   </Context>
   <Context ContextName="DEVMODECAMERA" BackColor="">
     <Action ActionName="KEY_DEVMODECAMERA_TRANSLATION" />
     <Action ActionName="KEY_DEVMODECAMERA_ZOOM_IN" />
     <Action ActionName="KEY_DEVMODECAMERA_ZOOM_OUT" />
+    <Action ActionName="KEY_DEVMODECAMERA_LALT_MODE" />
   </Context>
   <Context ContextName="INGAME_UI" BackColor="">
     <Action ActionName="KEY_INGAMEPANEL_ZOOM_IN" />
     <Action ActionName="KEY_INGAMEPANEL_ZOOM_OUT" />
+    <Action ActionName="CHECKLIST" />
+    <Action ActionName="KEY_ATC" />
+    <Action ActionName="KEY_INPUTS_LAYOUT" />
+    <Action ActionName="KEY_SHOW_NAVLOG" />
+    <Action ActionName="KEY_SHOW_VFRMAP" />
+    <Action ActionName="KEY_UI_DISPLAY_CFD_TOGGLE" />
+    <Action ActionName="KEY_UI_DISPLAY_THERMALS_TOGGLE" />
+    <Action ActionName="TOGGLE_COPILOT_DELEGATE_CONTROLS" />
   </Context>
   <Context ContextName="INSTRUMENTS_CAMERA" BackColor="">
     <Action ActionName="KEY_INSTRUMENT_MODE" />
     <Action ActionName="KEY_INSTRUMENT_MODE_HOLD" />
+    <Action ActionName="KEY_COCKPIT_BACKCYCLE" />
+    <Action ActionName="KEY_COCKPIT_CYCLE" />
   </Context>
   <Context ContextName="MENU_MOUSE" BackColor="">
     <Action ActionName="MENU_MOUSE_DOWN" />
@@ -125,8 +399,255 @@
   </Context>
   <Context ContextName="WORLDMAP_COMMON" BackColor="">
     <Action ActionName="KEY_MENU_WM_GRAB" />
+    <Action ActionName="KEY_MENU_WM_MOVE_DOWN" />
+    <Action ActionName="KEY_MENU_WM_MOVE_LEFT" />
+    <Action ActionName="KEY_MENU_WM_MOVE_RIGHT" />
+    <Action ActionName="KEY_MENU_WM_MOVE_UP" />
+    <Action ActionName="KEY_MENU_WM_NAV_TOGGLE" />
+    <Action ActionName="KEY_MENU_WM_ZOOM_DECR" />
+    <Action ActionName="KEY_MENU_WM_ZOOM_INCR" />
   </Context>
   <Context ContextName="WORLDMAP_PAD" BackColor="">
     <Action ActionName="KEY_MENU_WM_SELECT_RIGHT" />
+    <Action ActionName="KEY_MENU_WM_BACK" />
+    <Action ActionName="KEY_MENU_WM_SELECT_DOWN" />
+    <Action ActionName="KEY_MENU_WM_SELECT_LEFT" />
+    <Action ActionName="KEY_MENU_WM_SELECT_PRESET" />
+    <Action ActionName="KEY_MENU_WM_SELECT_UP" />
+    <Action ActionName="KEY_MENU_WM_SELECT_VERTICAL" />
+    <Action ActionName="KEY_MENU_WM_VALIDATE" />
+  </Context>
+  <Context ContextName="ALWAYS" BackColor="">
+    <Action ActionName="KEY_EYE_TRACKING_RESET" />
+    <Action ActionName="KEY_RESET_CAMERA_VR" />
+    <Action ActionName="KEY_SCREEN_NARRATOR_TOGGLE" />
+    <Action ActionName="KEY_SWITCH_VR" />
+  </Context>
+  <Context ContextName="ATC" BackColor="">
+    <Action ActionName="KEY_ATC_MENU_0" />
+    <Action ActionName="KEY_ATC_MENU_1" />
+    <Action ActionName="KEY_ATC_MENU_2" />
+    <Action ActionName="KEY_ATC_MENU_3" />
+    <Action ActionName="KEY_ATC_MENU_4" />
+    <Action ActionName="KEY_ATC_MENU_5" />
+    <Action ActionName="KEY_ATC_MENU_6" />
+    <Action ActionName="KEY_ATC_MENU_7" />
+    <Action ActionName="KEY_ATC_MENU_8" />
+    <Action ActionName="KEY_ATC_MENU_9" />
+  </Context>
+  <Context ContextName="COCKPIT_GLOBAL_CAMERA_TRANSLATE" BackColor="">
+    <Action ActionName="KEY_COCKPIT_CAMERA_HEIGHT_DEC" />
+    <Action ActionName="KEY_COCKPIT_CAMERA_HEIGHT_INC" />
+    <Action ActionName="KEY_COCKPIT_CAMERA_SLIDE_BACK" />
+    <Action ActionName="KEY_COCKPIT_CAMERA_SLIDE_FRONT" />
+    <Action ActionName="KEY_COCKPIT_CAMERA_SLIDE_LEFT" />
+    <Action ActionName="KEY_COCKPIT_CAMERA_SLIDE_RIGHT" />
+  </Context>
+  <Context ContextName="DEVMODE" BackColor="">
+    <Action ActionName="ACTION_KEY_DEVMODE_GROUP" />
+    <Action ActionName="ACTION_KEY_DEVMODE_MOVEDOWN" />
+    <Action ActionName="ACTION_KEY_DEVMODE_MOVEUP" />
+    <Action ActionName="ACTION_KEY_DEVMODE_RENAME" />
+    <Action ActionName="KEY_DEVMODE_ADD_APRON" />
+    <Action ActionName="KEY_DEVMODE_ADD_PAINTED_LINE" />
+    <Action ActionName="KEY_DEVMODE_ADD_PARKING" />
+    <Action ActionName="KEY_DEVMODE_ADD_POINT" />
+    <Action ActionName="KEY_DEVMODE_ADD_RUNWAY" />
+    <Action ActionName="KEY_DEVMODE_CLOSE_DOCUMENT" />
+    <Action ActionName="KEY_DEVMODE_CONSOLE_TOGGLE" />
+    <Action ActionName="KEY_DEVMODE_COPY" />
+    <Action ActionName="KEY_DEVMODE_CUT" />
+    <Action ActionName="KEY_DEVMODE_DEL" />
+    <Action ActionName="KEY_DEVMODE_DUPLICATE" />
+    <Action ActionName="KEY_DEVMODE_EDITION_CAMERA" />
+    <Action ActionName="KEY_DEVMODE_FIND" />
+    <Action ActionName="KEY_DEVMODE_FOCUS_OBJECT" />
+    <Action ActionName="KEY_DEVMODE_HIDE_ALL" />
+    <Action ActionName="KEY_DEVMODE_HIDE_ALL_EDITION" />
+    <Action ActionName="KEY_DEVMODE_LOCK_ALL" />
+    <Action ActionName="KEY_DEVMODE_NEW_DOCUMENT" />
+    <Action ActionName="KEY_DEVMODE_OPEN_DOCUMENT" />
+    <Action ActionName="KEY_DEVMODE_PASTE" />
+    <Action ActionName="KEY_DEVMODE_RANGE_SELECTION" />
+    <Action ActionName="KEY_DEVMODE_REDO" />
+    <Action ActionName="KEY_DEVMODE_ROTATE_TOGGLE" />
+    <Action ActionName="KEY_DEVMODE_SAVE_AS_DOCUMENT" />
+    <Action ActionName="KEY_DEVMODE_SAVE_DOCUMENT" />
+    <Action ActionName="KEY_DEVMODE_SCALE_TOGGLE" />
+    <Action ActionName="KEY_DEVMODE_SIM_PAUSE_TOGGLE" />
+    <Action ActionName="KEY_DEVMODE_SPARSE_SELECTION" />
+    <Action ActionName="KEY_DEVMODE_SPLIT_EDGE" />
+    <Action ActionName="KEY_DEVMODE_TOGGLE_HIDE" />
+    <Action ActionName="KEY_DEVMODE_TOGGLE_HIDE_EDITION" />
+    <Action ActionName="KEY_DEVMODE_TOGGLE_LOCK" />
+    <Action ActionName="KEY_DEVMODE_TRANSLATE_TOGGLE" />
+    <Action ActionName="KEY_DEVMODE_UNDO" />
+    <Action ActionName="KEY_DEVMODE_UNGROUP" />
+    <Action ActionName="KEY_DEVMODE_VALIDATE" />
+    <Action ActionName="KEY_DEVMODE_WINDOW_HIDE_LOCK" />
+  </Context>
+  <Context ContextName="DRONE" BackColor="">
+    <Action ActionName="DRONE_ACTIVATE_BLUR" />
+    <Action ActionName="DRONE_ACTIVATE_FRONT_DOF" />
+    <Action ActionName="DRONE_ACTIVE_VIEW_BOTTOM" />
+    <Action ActionName="DRONE_ATTACH_TO_NEXT_TARGET" />
+    <Action ActionName="DRONE_ATTACH_TO_PREVIOUS_TARGET" />
+    <Action ActionName="DRONE_AUTO_EXPOSURE" />
+    <Action ActionName="DRONE_AUTO_FOCUS" />
+    <Action ActionName="DRONE_DECREASE_CAMERA_SPEED" />
+    <Action ActionName="DRONE_DECREASE_DRONE_SPEED" />
+    <Action ActionName="DRONE_DEPTH_FIELD_LESS" />
+    <Action ActionName="DRONE_DEPTH_FIELD_PLUS" />
+    <Action ActionName="DRONE_EXPOSURE_LESS" />
+    <Action ActionName="DRONE_EXPOSURE_PLUS" />
+    <Action ActionName="DRONE_INCREASE_CAMERA_SPEED" />
+    <Action ActionName="DRONE_INCREASE_DRONE_SPEED" />
+    <Action ActionName="DRONE_LOOK_TO_NEXT_TARGET" />
+    <Action ActionName="DRONE_LOOK_TO_PREVIOUS_TARGET" />
+    <Action ActionName="DRONE_MOVE_BACKWARD" />
+    <Action ActionName="DRONE_MOVE_DOWN" />
+    <Action ActionName="DRONE_MOVE_FORWARD" />
+    <Action ActionName="DRONE_MOVE_LEFT" />
+    <Action ActionName="DRONE_MOVE_RIGHT" />
+    <Action ActionName="DRONE_MOVE_UP" />
+    <Action ActionName="DRONE_RESET_HORIZON" />
+    <Action ActionName="DRONE_RESET_TARGET_OFFSET" />
+    <Action ActionName="DRONE_ROTATE_BACKWARD" />
+    <Action ActionName="DRONE_ROTATE_DOWN" />
+    <Action ActionName="DRONE_ROTATE_FORWARD" />
+    <Action ActionName="DRONE_ROTATE_LEFT" />
+    <Action ActionName="DRONE_ROTATE_RIGHT" />
+    <Action ActionName="DRONE_ROTATE_UP" />
+    <Action ActionName="DRONE_TOGGLE_FREE_FOLLOW_MODE" />
+    <Action ActionName="DRONE_TOGGLE_LOCK_MODE" />
+    <Action ActionName="DRONE_ZOOM_IN" />
+    <Action ActionName="DRONE_ZOOM_OUT" />
+  </Context>
+  <Context ContextName="FIXED_CAMERA" BackColor="">
+    <Action ActionName="KEY_CAMERA_FIXED_INSTRUMENT0" />
+    <Action ActionName="KEY_CAMERA_FIXED_INSTRUMENT1" />
+    <Action ActionName="KEY_CAMERA_FIXED_INSTRUMENT2" />
+    <Action ActionName="KEY_CAMERA_FIXED_INSTRUMENT3" />
+    <Action ActionName="KEY_CAMERA_FIXED_INSTRUMENT4" />
+    <Action ActionName="KEY_CAMERA_FIXED_INSTRUMENT5" />
+    <Action ActionName="KEY_CAMERA_FIXED_INSTRUMENT6" />
+    <Action ActionName="KEY_CAMERA_FIXED_INSTRUMENT7" />
+    <Action ActionName="KEY_CAMERA_FIXED_INSTRUMENT8" />
+    <Action ActionName="KEY_CAMERA_FIXED_INSTRUMENT9" />
+    <Action ActionName="KEY_CAMERA_FIXED_RESET" />
+    <Action ActionName="KEY_FIXED_CAM_BACKCYCLE" />
+    <Action ActionName="KEY_FIXED_CAM_CYCLE" />
+  </Context>
+  <Context ContextName="HANGAR_CAMERA" BackColor="">
+    <Action ActionName="KEY_MENU_HANGAR_CAMERA_BACK" />
+  </Context>
+  <Context ContextName="MENU" BackColor="">
+    <Action ActionName="KEY_MENU_ADD_TO_SELECTION" />
+    <Action ActionName="KEY_MENU_CALIBRATION" />
+    <Action ActionName="KEY_MENU_CLEAR" />
+    <Action ActionName="KEY_MENU_CLEAR_SEARCH" />
+    <Action ActionName="KEY_MENU_DECREASE" />
+    <Action ActionName="KEY_MENU_INCREASE" />
+    <Action ActionName="KEY_MENU_RENO_KICK_PLAYER" />
+    <Action ActionName="KEY_MENU_SELECTION_MODE" />
+    <Action ActionName="MENU_APPLY" />
+    <Action ActionName="MENU_BACK" />
+    <Action ActionName="MENU_BACKTO_MAINMENU" />
+    <Action ActionName="MENU_BUTTON_FAVORITE" />
+    <Action ActionName="MENU_CLOSE" />
+    <Action ActionName="MENU_CUSTOMIZE" />
+    <Action ActionName="MENU_DOWN" />
+    <Action ActionName="MENU_FLY" />
+    <Action ActionName="MENU_GOTO_CONTENTMANAGER" />
+    <Action ActionName="MENU_HANGAR_CHANGEAIRCRAFT" />
+    <Action ActionName="MENU_HANGAR_LIVERIES" />
+    <Action ActionName="MENU_HANGAR_SPECS" />
+    <Action ActionName="MENU_HELP" />
+    <Action ActionName="MENU_L1" />
+    <Action ActionName="MENU_LEFT" />
+    <Action ActionName="MENU_MARKET_VERSION_HISTORY" />
+    <Action ActionName="MENU_OPEN" />
+    <Action ActionName="MENU_PACKAGE_ACTIVATE" />
+    <Action ActionName="MENU_PACKAGE_DEACTIVATE" />
+    <Action ActionName="MENU_PACKAGE_DELETE" />
+    <Action ActionName="MENU_PACKAGE_DEPENDENCIES" />
+    <Action ActionName="MENU_PACKAGE_DOWN" />
+    <Action ActionName="MENU_PACKAGE_HISTORY" />
+    <Action ActionName="MENU_PACKAGE_UP" />
+    <Action ActionName="MENU_PRESET_MANAGER" />
+    <Action ActionName="MENU_QUIT" />
+    <Action ActionName="MENU_R1" />
+    <Action ActionName="MENU_RENO_BACK_TO_RENO_MENU" />
+    <Action ActionName="MENU_RENO_OPTIONS" />
+    <Action ActionName="MENU_RESET" />
+    <Action ActionName="MENU_RESET_FREEFLIGHT" />
+    <Action ActionName="MENU_RESTART_MISSION" />
+    <Action ActionName="MENU_RIGHT" />
+    <Action ActionName="MENU_UP" />
+    <Action ActionName="MENU_VALID" />
+    <Action ActionName="MENU_WM_FILTERS" />
+    <Action ActionName="MENU_WM_LEGEND" />
+  </Context>
+  <Context ContextName="MODE_PAUSE" BackColor="">
+    <Action ActionName="KEY_PAUSE_OFF" />
+    <Action ActionName="KEY_PAUSE_TOGGLE" />
+  </Context>
+  <Context ContextName="RTC" BackColor="">
+    <Action ActionName="KEY_SKIP_RTC" />
+  </Context>
+  <Context ContextName="SLEW" BackColor="">
+    <Action ActionName="KEY_SLEW_AHEAD_MINUS" />
+    <Action ActionName="KEY_SLEW_AHEAD_PLUS" />
+    <Action ActionName="KEY_SLEW_ALTIT_DN_FAST" />
+    <Action ActionName="KEY_SLEW_ALTIT_DN_SLOW" />
+    <Action ActionName="KEY_SLEW_ALTIT_FREEZE" />
+    <Action ActionName="KEY_SLEW_ALTIT_UP_FAST" />
+    <Action ActionName="KEY_SLEW_ALTIT_UP_SLOW" />
+    <Action ActionName="KEY_SLEW_BANK_MINUS" />
+    <Action ActionName="KEY_SLEW_BANK_PLUS" />
+    <Action ActionName="KEY_SLEW_FREEZE" />
+    <Action ActionName="KEY_SLEW_HEADING_MINUS" />
+    <Action ActionName="KEY_SLEW_HEADING_PLUS" />
+    <Action ActionName="KEY_SLEW_LEFT" />
+    <Action ActionName="KEY_SLEW_PITCH_DN_FAST" />
+    <Action ActionName="KEY_SLEW_PITCH_FREEZE" />
+    <Action ActionName="KEY_SLEW_PITCH_MINUS" />
+    <Action ActionName="KEY_SLEW_PITCH_PLUS" />
+    <Action ActionName="KEY_SLEW_PITCH_UP_FAST" />
+    <Action ActionName="KEY_SLEW_PITCH_UP_SLOW" />
+    <Action ActionName="KEY_SLEW_RIGHT" />
+  </Context>
+  <Context ContextName="THROTTLE" BackColor="">
+    <Action ActionName="KEY_THROTTLE_CUT" />
+    <Action ActionName="KEY_THROTTLE_DECR" />
+    <Action ActionName="KEY_THROTTLE_INCR" />
+  </Context>
+  <Context ContextName="TOOLBAR" BackColor="">
+    <Action ActionName="KEY_INPUTS_TOOLBAR_NEXT" />
+    <Action ActionName="KEY_INPUTS_TOOLBAR_PREV" />
+  </Context>
+  <Context ContextName="USER_CAMERA" BackColor="">
+    <Action ActionName="CAMERA_USER_LOAD_0" />
+    <Action ActionName="CAMERA_USER_LOAD_1" />
+    <Action ActionName="CAMERA_USER_LOAD_2" />
+    <Action ActionName="CAMERA_USER_LOAD_3" />
+    <Action ActionName="CAMERA_USER_LOAD_4" />
+    <Action ActionName="CAMERA_USER_LOAD_5" />
+    <Action ActionName="CAMERA_USER_LOAD_6" />
+    <Action ActionName="CAMERA_USER_LOAD_7" />
+    <Action ActionName="CAMERA_USER_LOAD_8" />
+    <Action ActionName="CAMERA_USER_LOAD_9" />
+    <Action ActionName="CAMERA_USER_LOAD_NEXT" />
+    <Action ActionName="CAMERA_USER_LOAD_PREV" />
+    <Action ActionName="CAMERA_USER_SAVE_0" />
+    <Action ActionName="CAMERA_USER_SAVE_1" />
+    <Action ActionName="CAMERA_USER_SAVE_2" />
+    <Action ActionName="CAMERA_USER_SAVE_3" />
+    <Action ActionName="CAMERA_USER_SAVE_4" />
+    <Action ActionName="CAMERA_USER_SAVE_5" />
+    <Action ActionName="CAMERA_USER_SAVE_6" />
+    <Action ActionName="CAMERA_USER_SAVE_7" />
+    <Action ActionName="CAMERA_USER_SAVE_8" />
+    <Action ActionName="CAMERA_USER_SAVE_9" />
   </Context>
 </BindingList>

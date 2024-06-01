@@ -6,6 +6,8 @@ using Context = FSControls.Models.Context;
 
 namespace FSControls.Classes
 {
+    public enum ContentMode {All, Assigned, New}
+
     public class MainLogic
     {
         public enum Mode {Generate, Rebuild}
@@ -57,22 +59,23 @@ namespace FSControls.Classes
 
         public void ProcessFolders(TextBox txtBasePath, CheckedListBox clbMappings)
         {
-            var controllers = _folderProcessor.ProcessPath(txtBasePath.Text);
-            var mappingList = controllers.Select(c => new DetectedController(c)).OrderBy(dc => dc.Name).ToList();
+            var detectedProfiles = _folderProcessor.ProcessPath(txtBasePath.Text);
+            var profileList = detectedProfiles.OrderBy(dc => dc.Name).ToList();
 
             clbMappings.Items.Clear();
-            foreach (var mapping in mappingList)
+            foreach (var profile in profileList)
             {
-                clbMappings.Items.Add(mapping);
+                clbMappings.Items.Add(profile);
             }
         }
 
-        public void GenerateMappingList(CheckedListBox clbMappings)
+        public void GenerateMappingList(CheckedListBox clbMappings, ContentMode contentMode)
         {
             _mainForm.StartProgress("Rebuilding Known Bindings", clbMappings.CheckedItems.Count);
             try
             {
                 var bindingList = BuildBindingList(clbMappings, Mode.Generate);
+                if (contentMode != ContentMode.All) FilterBindingList(bindingList, contentMode);
                 bindingList.SerializeToFile("C:\\Temp\\Bindings.xml");
                 _htmlFormatter.ConvertToHtml(bindingList, _mainForm.txtOutputFile.Text);
                 Process.Start(@"cmd.exe ", @"/c " + _mainForm.txtOutputFile.Text);
@@ -97,6 +100,37 @@ namespace FSControls.Classes
             }
         }
 
+        public void FilterBindingList(BindingList bindingList, ContentMode contentMode)
+        {
+            var contextIndex = 0;
+            while (contextIndex < bindingList.Count)
+            {
+                var context = bindingList[contextIndex];
+
+                var actionIndex = 0;
+                while (actionIndex < context.Actions.Count)
+                {
+                    var action = context.Actions[actionIndex];
+                    if ((contentMode == ContentMode.Assigned && action.Bindings.Count == 0) ||
+                        (contentMode == ContentMode.New && action.Bindings.Count != 0))
+                    {
+                        context.Actions.RemoveAt(actionIndex);
+                        continue;
+                    }
+
+                    actionIndex++;
+                }
+
+                if ((contentMode == ContentMode.Assigned && context.Actions.Count == 0) ||
+                    (contentMode == ContentMode.New && context.Actions.Count == 0))
+                {
+                    bindingList.RemoveAt(contextIndex);
+                    continue;
+                }
+                contextIndex++;  //if we have not removed a binding, move to the next one
+            }
+        }
+
         public BindingList BuildBindingList(CheckedListBox clbMappings, Mode mode)
         {
             var bindingList = Serializer.DeserializeFromFile<BindingList>("KnownBindings.xml");
@@ -107,8 +141,8 @@ namespace FSControls.Classes
             {
                 if (mode != Mode.Rebuild && !clbMappings.GetItemChecked(index)) continue;
 
-                var controller = (DetectedController)clbMappings.Items[index];
-                ProcessDetectedController(controller, bindingList, mode);
+                var profile = (DetectedProfile)clbMappings.Items[index];
+                ProcessControllerProfile(profile, bindingList, mode);
                 _mainForm.UpdateProgress(progress: ++progress);
                 Thread.Sleep(10);
             }
@@ -116,15 +150,16 @@ namespace FSControls.Classes
             return bindingList;
         }
 
-        public void ProcessDetectedController(DetectedController controller, BindingList bindingList, Mode mode)
+        public void ProcessControllerProfile(DetectedProfile profile, BindingList bindingList, Mode mode)
         {
             bindingList.SelectedControllers.Add(new SelectedController
             {
-                DeviceName = controller.ControllerDefinition.Device.DeviceName,
-                ProfileName = controller.ControllerDefinition.FriendlyName.Text
+                DeviceName = profile.ControllerDefinition.Device.DeviceName,
+                ProfileName = profile.ControllerDefinition.FriendlyName.Text,
+                ProfilePath = profile.Path
             });
 
-            foreach (var context in controller.ControllerDefinition.Device.Context)
+            foreach (var context in profile.ControllerDefinition.Device.Context)
             {
                 var bindingContext = bindingList.FirstOrDefault(c => c.ContextName == context.ContextName);
                 if (bindingContext == null)
@@ -137,7 +172,7 @@ namespace FSControls.Classes
                     bindingList.Add(bindingContext);
                 }
 
-                ProcessContext(controller.ControllerDefinition.Device.DeviceName, context, bindingContext, mode);
+                ProcessContext(profile.ControllerDefinition.Device.DeviceName, context, bindingContext, mode);
             }
         }
 

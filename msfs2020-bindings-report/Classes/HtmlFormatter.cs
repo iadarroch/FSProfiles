@@ -14,8 +14,8 @@ namespace FSControls.Classes
              Color.LightGreen, Color.Bisque, Color.Thistle, Color.PowderBlue,
              Color.LightGoldenrodYellow, Color.Lavender, Color.NavajoWhite, 
              Color.RosyBrown, Color.LightSalmon, Color.GreenYellow, Color.PaleTurquoise,
-             Color.Tan, Color.DarkMagenta];
-        private int _colorIndex = 0;
+             Color.Tan];
+        private int _colorIndex;
 
         public HtmlFormatter()
         {
@@ -31,15 +31,7 @@ namespace FSControls.Classes
 
             //Add document headers
             sb.AppendLine("<h1>Microsoft Flight Simulator 2020 Bindings Report</h1>");
-            sb.AppendLine("<div>");
-            sb.AppendLine("<p>Selected Controller Profiles:</p>");
-            sb.AppendLine("<ul>");  
-            foreach (var controller in bindingList.SelectedControllers)
-            {
-                sb.AppendLine($"<li>{controller.DeviceName} -> {controller.ProfileName} </li>");
-            }
-            sb.AppendLine("</ul>");
-            sb.AppendLine("</div>");
+            AddControllers(sb, bindingList);
 
             //Now do main bindings table
             sb.AppendLine("<br />");
@@ -59,6 +51,12 @@ namespace FSControls.Classes
                 AddSection(sb, context);
             }
             sb.AppendLine("</table>");
+
+            sb.AppendLine("<div>");
+            sb.AppendLine("<p>Copyright 2024, Ian Darroch<br/>");
+            sb.AppendLine("Source repository: <a href=\"https://github.com/iadarroch/msfs2020-bindings-report\" target=\"_blank\">https://github.com/iadarroch/msfs2020-bindings-report</a>");
+            sb.AppendLine("</p>");
+            sb.AppendLine("</div>");
             sb.AppendLine("</body>");
             sb.AppendLine("</html>");
 
@@ -70,6 +68,31 @@ namespace FSControls.Classes
             var value = _defaultColors[_colorIndex++];
             if (_colorIndex >= _defaultColors.Count) _colorIndex = 0;
             return value;
+        }
+
+        public void AddControllers(StringBuilder sb, BindingList bindingList)
+        {
+            sb.AppendLine("<table>");
+            sb.AppendLine("<tr bgcolor=\"antiquewhite\">");
+            sb.AppendLine("<th colspan=\"3\">Selected Controller Profiles</th>");
+            sb.AppendLine("</tr>");
+            sb.AppendLine("<tr bgcolor=\"antiquewhite\">");
+            sb.AppendLine("<th>Controller</th>");
+            sb.AppendLine("<th>Profile</th>");
+            sb.AppendLine("<th>Folder</th>");
+            sb.AppendLine("</tr>");
+
+            foreach (var controller in bindingList.SelectedControllers)
+            {
+                sb.AppendLine("<tr bgcolor=\"floralwhite\">");
+                sb.AppendLine($"<td>{controller.DeviceName}</td>");
+                sb.AppendLine($"<td>{controller.ProfileName}</td>");
+                sb.AppendLine($"<td>{controller.ProfilePath}</td>");
+                sb.AppendLine("</tr>");
+            }
+
+            sb.AppendLine("</table>");
+
         }
 
         public void AddSection(StringBuilder sb, Context context)
@@ -86,7 +109,7 @@ namespace FSControls.Classes
                 var rowTag = actionNum++ % 2 == 0 ? rowEven : rowOdd;
                 sb.AppendLine(rowTag);
                 var rowSpan = action.Bindings.Count > 1 ? $" rowspan=\"{action.Bindings.Count}\"" : "";
-                sb.AppendLine($"<td align=\"center\"{rowSpan}>{TitleCase(action.ActionName)}</td>");
+                sb.AppendLine($"<td align=\"center\"{rowSpan}>{TitleCase(action.ActionName, true)}</td>");
                 for (var index = 0; index < action.Bindings.Count; index++) 
                 {
                     var binding = action.Bindings[index];
@@ -100,25 +123,23 @@ namespace FSControls.Classes
             }
         }
 
-        private static string TitleCase(string? value)
+        private static string TitleCase(string? value, bool removeKey = false)
         {
-            return value == null ? "" : TextInfo.ToTitleCase(value.Replace("_", " ").ToLower());
+            if (value == null) return "";
+            if (removeKey && value.StartsWith("KEY_", true, CultureInfo.CurrentCulture))
+            {
+                value = value.Substring(4);
+            }
+            return TextInfo.ToTitleCase(value.Replace("_", " ").ToLower());
         }
-/*
-            sb.AppendLine("<head>");
-   sb.AppendLine("<style>");
-   sb.AppendLine("h1 {text-align: center;}");
-   sb.AppendLine("table {text-align: center; border: 1px solid;}");
-   sb.AppendLine("</style>");
-   sb.AppendLine("</head>");
 
- */
         private const string Header =
 @"<head>
     <style>
         h1 {text-align: center;}
+        p {text-align: right;}
         table {text-align: center; border: 1px solid; border-collapse: collapse; width:90%; margin-left:5%; margin-right:5%}
-        div {margin-left:5%; margin-right: 5%; margin-top: 10px; margin-bottom: 10px}
+        div {margin-left:5%; margin-right: 5%; margin-top: 10px; margin-bottom: 0px}
         th {border: 1px solid dimgrey}
         td {border: 1px solid darkgrey}
     </style>

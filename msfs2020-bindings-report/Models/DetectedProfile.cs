@@ -2,13 +2,15 @@
 
 namespace FSControls.Models
 {
-    public class DetectedController
+    public class DetectedProfile
     {
         public string Name { get; }
+        public string Path { get; }
         public ControllerDefinition ControllerDefinition { get; }
 
-        public DetectedController(ControllerDefinition controllerDefinition) 
+        public DetectedProfile(string path, ControllerDefinition controllerDefinition) 
         {
+            Path = path;
             ControllerDefinition = controllerDefinition;
             Name = $"{ControllerDefinition.Device.DeviceName} / {ControllerDefinition.FriendlyName.Text}";
         }

@@ -43,6 +43,7 @@
             statusStrip1 = new StatusStrip();
             tsStatus = new ToolStripStatusLabel();
             tsProgress = new ToolStripProgressBar();
+            cmbContent = new ComboBox();
             statusStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -111,18 +112,18 @@
             btnGenerate.Margin = new Padding(2);
             btnGenerate.Name = "btnGenerate";
             btnGenerate.Size = new Size(157, 27);
-            btnGenerate.TabIndex = 6;
+            btnGenerate.TabIndex = 10;
             btnGenerate.Text = "Generate Binding List";
             btnGenerate.UseVisualStyleBackColor = true;
             btnGenerate.Click += btnGenerate_Click;
             // 
             // txtOutputFile
             // 
-            txtOutputFile.Location = new Point(81, 442);
+            txtOutputFile.Location = new Point(87, 442);
             txtOutputFile.Margin = new Padding(2);
             txtOutputFile.Name = "txtOutputFile";
-            txtOutputFile.Size = new Size(900, 23);
-            txtOutputFile.TabIndex = 8;
+            txtOutputFile.Size = new Size(894, 23);
+            txtOutputFile.TabIndex = 7;
             // 
             // lblOutputFile
             // 
@@ -131,7 +132,7 @@
             lblOutputFile.Margin = new Padding(2, 0, 2, 0);
             lblOutputFile.Name = "lblOutputFile";
             lblOutputFile.Size = new Size(66, 15);
-            lblOutputFile.TabIndex = 7;
+            lblOutputFile.TabIndex = 6;
             lblOutputFile.Text = "Output File";
             // 
             // btnRebuild
@@ -140,9 +141,10 @@
             btnRebuild.Margin = new Padding(2);
             btnRebuild.Name = "btnRebuild";
             btnRebuild.Size = new Size(157, 27);
-            btnRebuild.TabIndex = 9;
+            btnRebuild.TabIndex = 11;
             btnRebuild.Text = "Rebuild Known Mappings";
             btnRebuild.UseVisualStyleBackColor = true;
+            btnRebuild.Visible = false;
             btnRebuild.Click += btnRebuild_Click;
             // 
             // lblContent
@@ -152,7 +154,7 @@
             lblContent.Margin = new Padding(2, 0, 2, 0);
             lblContent.Name = "lblContent";
             lblContent.Size = new Size(71, 15);
-            lblContent.TabIndex = 10;
+            lblContent.TabIndex = 8;
             lblContent.Text = "List Content";
             // 
             // statusStrip1
@@ -161,7 +163,7 @@
             statusStrip1.Location = new Point(0, 613);
             statusStrip1.Name = "statusStrip1";
             statusStrip1.Size = new Size(1123, 22);
-            statusStrip1.TabIndex = 11;
+            statusStrip1.TabIndex = 12;
             statusStrip1.Text = "statusStrip1";
             // 
             // tsStatus
@@ -182,11 +184,22 @@
             tsProgress.Style = ProgressBarStyle.Continuous;
             tsProgress.Visible = false;
             // 
+            // cmbContent
+            // 
+            cmbContent.FormattingEnabled = true;
+            cmbContent.Items.AddRange(new object[] { "All", "Assigned", "New" });
+            cmbContent.Location = new Point(87, 476);
+            cmbContent.Name = "cmbContent";
+            cmbContent.Size = new Size(121, 23);
+            cmbContent.TabIndex = 9;
+            cmbContent.Text = "All";
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1123, 635);
+            Controls.Add(cmbContent);
             Controls.Add(statusStrip1);
             Controls.Add(lblContent);
             Controls.Add(btnRebuild);
@@ -225,5 +238,6 @@
         private StatusStrip statusStrip1;
         private ToolStripStatusLabel tsStatus;
         private ToolStripProgressBar tsProgress;
+        private ComboBox cmbContent;
     }
 }

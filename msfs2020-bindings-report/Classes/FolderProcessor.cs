@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using FSControls.Models;
 using FSControls.Models.Source;
 
 namespace FSControls.Classes
@@ -49,25 +50,25 @@ namespace FSControls.Classes
             return true;
         }
 
-        public List<ControllerDefinition> ProcessPath(string folderPath)
+        public List<DetectedProfile> ProcessPath(string folderPath)
         {
-            var result = new List<ControllerDefinition>();
+            var result = new List<DetectedProfile>();
 
             var directories = Directory.GetDirectories(folderPath);
             foreach (var directory in directories)
             {
                 if (directory.Length < 3) continue;
 
-                var foundDefinition = FindDefinitionInFolder(directory);
-                if (foundDefinition != null)
+                var foundProfile = FindProfileInFolder(directory);
+                if (foundProfile != null)
                 {
-                    result.Add(foundDefinition);
+                    result.Add(foundProfile);
                 }
             }
             return result;
         }
 
-        public ControllerDefinition? FindDefinitionInFolder(string folderPath)
+        public DetectedProfile? FindProfileInFolder(string folderPath)
         {
             var files = Directory.GetFiles(folderPath);
             foreach (var file in files)
@@ -77,12 +78,21 @@ namespace FSControls.Classes
                 var fileContent = File.ReadAllLines(file).ToList();
                 if (!fileContent[0].StartsWith("<?xml")) continue; //not a processable file 
 
+                //Add new root object so contents are processable as a normal XML
                 fileContent.Insert(1, @"<ControllerDefinition>");
                 fileContent.Add(@"</ControllerDefinition>");
+
                 using (StringReader reader = new StringReader(string.Join("", fileContent)))
                 {
-                    var result = Serializer.DeserializeObject<ControllerDefinition>(reader);
-                    return result;
+                    var profile = Serializer.DeserializeObject<ControllerDefinition>(reader);
+                    if (profile == null) continue;
+
+                    var splitPath = file.Split("\\");
+                    var parts = splitPath.Length - 1;
+                    var profilePath = splitPath[parts - 1];
+
+                    var dc = new DetectedProfile(profilePath, profile);
+                    return dc;
                 }
             }
             return null;
