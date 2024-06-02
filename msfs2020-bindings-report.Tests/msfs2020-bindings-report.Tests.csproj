@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\msfs2020-bindings-report\msfs2020-bindings-report.csproj" />
+    <ProjectReference Include="..\msfs2020-bindings-report\msfs2020-bindings-report-windows.csproj" />
   </ItemGroup>
 
 </Project>

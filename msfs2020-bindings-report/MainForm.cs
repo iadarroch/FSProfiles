@@ -1,87 +1,125 @@
-using FSControls.Classes;
+using msfs2020_bindings_common.Classes;
+using msfs2020_bindings_common.Models;
+using System;
+using System.Windows.Forms;
 
-namespace FSControls
+namespace msfs2020_bindings_report_windows;
+
+public partial class MainForm : Form
 {
-    public partial class MainForm : Form
+    public enum FocusControl { btnBasePath, btnProcessFolders }
+
+    public MainLogic Logic { get; }
+    public List<DetectedProfile> _profileList;
+
+    public MainForm()
     {
-        public enum FocusControl { btnBasePath, btnProcessFolders }
+        InitializeComponent();
+        Logic = new MainLogic();
+        Logic.OnStart += OnStart;
+        Logic.OnProgress += OnProgress;
+        Logic.OnStop += OnStop;
+        _profileList = new List<DetectedProfile>();
+        //Developer option: uncomment the following line to rebuild the list of "Known" bindings
+        //It will output the new file in C:\Temp\KnownBindings.xml. You will need to manually move
+        //to correct program location
+        //btnRebuild.Visible = true;
+    }
 
-        public MainLogic Logic { get; }
+    private void OnStart(object? sender, ProgressEvent e)
+    {
+        tsStatus.Text = e.Message;
+        tsProgress.Maximum = e.Progress ?? 0;
+        tsProgress.Visible = true;
+        Application.DoEvents();
+    }
 
-        public MainForm()
+    private void OnProgress(object? sender, ProgressEvent e)
+    {
+        if (!string.IsNullOrEmpty(e.Message))
         {
-            InitializeComponent();
-            Logic = new MainLogic(this);
-            //Developer option: uncomment the following line to rebuild the list of "Known" bindings
-            //It will output the new file in C:\Temp\KnownBindings.xml. You will need to manually move
-            //to correct program location
-            //btnRebuild.Visible = true;
+            tsStatus.Text = e.Message;
         }
 
-        private void MainForm_Shown(object sender, EventArgs e)
+        if (e.Progress.HasValue)
         {
-            if (Logic.GetDefaultPath())
-            {
-                //if able to determine the path, automatically process it and set focus to list
-                btnProcessFolders.PerformClick();
-                clbMappings.Focus();
-            }
-            else
-            {
-                btnBasePath.Focus();
-            }
+            tsProgress.Value = e.Progress.Value;
+        }
+        Application.DoEvents();
+    }
 
-            txtOutputFile.Text = Logic.GetDefaultOutputFile();
+    private void OnStop(object? sender, ProgressEvent e)
+    {
+        tsStatus.Text = e.Message;
+        tsProgress.Visible = false;
+        Application.DoEvents();
+    }
+
+    private void MainForm_Shown(object sender, EventArgs e)
+    {
+        var defaultFound = Logic.GetDefaultPath(out var basePath, out var errorMessage);
+        txtBasePath.Text = basePath;
+        if (defaultFound)
+        {
+            //if able to determine the path, automatically process it and set focus to list
+            btnProcessFolders.PerformClick();
+            clbMappings.Focus();
+        }
+        else
+        {
+            MessageBox.Show(errorMessage, "Data Path Detection Failure", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            btnBasePath.Focus();
         }
 
-        private void btnBasePath_Click(object sender, EventArgs e)
-        {
-            Logic.SelectBasePath(txtBasePath, fbdBasePath);
-        }
+        txtOutputFile.Text = Logic.GetDefaultOutputFile();
+    }
 
-        private void btnProcessFolders_Click(object sender, EventArgs e)
-        {
-            Logic.ProcessFolders(txtBasePath, clbMappings);
-        }
+    private void btnBasePath_Click(object sender, EventArgs e)
+    {
+        SelectBasePath();
+    }
 
-        private void btnGenerate_Click(object sender, EventArgs e)
+    private void btnProcessFolders_Click(object sender, EventArgs e)
+    {
+        _profileList = Logic.ProcessFolders(txtBasePath.Text);
+        clbMappings.Items.Clear();
+        foreach (var profile in _profileList)
         {
-            var contentMode = (ContentMode)cmbContent.SelectedIndex;
-            Logic.GenerateMappingList(clbMappings, contentMode);
-        }
-
-        private void btnRebuild_Click(object sender, EventArgs e)
-        {
-            Logic.RebuildKnownBindings(clbMappings);
-        }
-
-        public void StartProgress(string message, int progressMax)
-        {
-            tsStatus.Text = message;
-            tsProgress.Maximum = progressMax;
-            tsProgress.Visible = true;
-            Application.DoEvents();
-        }
-
-        public void UpdateProgress(string? message = null, int? progress = null)
-        {
-            if (!string.IsNullOrEmpty(message))
-            {
-                tsStatus.Text = message;
-            }
-
-            if (progress.HasValue)
-            {
-                tsProgress.Value = progress.Value;
-            }
-            Application.DoEvents();
-        }
-
-        public void StopProgress(string message)
-        {
-            tsStatus.Text = message;
-            tsProgress.Visible = false;
-            Application.DoEvents();
+            clbMappings.Items.Add(profile);
         }
     }
+
+    private void btnGenerate_Click(object sender, EventArgs e)
+    {
+        var contentMode = (ContentMode)cmbContent.SelectedIndex;
+        var generateList = new List<DetectedProfile>();
+        for (var index = 0; index < clbMappings.Items.Count; index++)
+        {
+            if (clbMappings.GetItemChecked(index))
+            {
+                generateList.Add(_profileList[index]);
+            }
+        }
+
+        Logic.GenerateBindingReport(txtOutputFile.Text, generateList, contentMode);
+    }
+
+    private void btnRebuild_Click(object sender, EventArgs e)
+    {
+        Logic.RebuildKnownBindings(@"C:\Temp\KnownBindings.xml", _profileList);
+    }
+
+    public void SelectBasePath()
+    {
+        fbdBasePath.Description = "Choose path to base of MSFS 2020 files";
+        fbdBasePath.RootFolder = Environment.SpecialFolder.MyComputer;
+        fbdBasePath.InitialDirectory = txtBasePath.Text;
+        var dialogResult = fbdBasePath.ShowDialog();
+        if (dialogResult == DialogResult.OK)
+        {
+            txtBasePath.Text = fbdBasePath.SelectedPath;
+        }
+    }
+
+
 }
