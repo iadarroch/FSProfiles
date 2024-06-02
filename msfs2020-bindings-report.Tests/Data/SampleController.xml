@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Version Num="2728"/>
+<FriendlyName PlatformAvailability="1">X56 H.O.T.A.S. Stick profile</FriendlyName>
+<Device DeviceName="X56 H.O.T.A.S. Stick" GUID="{AAEFB400-C6F0-11ED-8001-444553540000}" ProductID="8737" CompositeID="0">
+  <Axes>
+    <Axis AxisName="X" AxisSensitivy="-40" AxisSensitivyMinus="-40" AxisNeutral="0" AxisDeadZone="2" AxisOutDeadZone="0" AxisResponseRate="-1"/>
+    <Axis AxisName="Y" AxisSensitivy="-40" AxisSensitivyMinus="-40" AxisNeutral="0" AxisDeadZone="2" AxisOutDeadZone="0" AxisResponseRate="-1"/>
+    <Axis AxisName="rX" AxisSensitivy="-19" AxisSensitivyMinus="-19" AxisNeutral="0" AxisDeadZone="4" AxisOutDeadZone="0" AxisResponseRate="-1"/>
+    <Axis AxisName="rY" AxisSensitivy="-19" AxisSensitivyMinus="-19" AxisNeutral="0" AxisDeadZone="4" AxisOutDeadZone="0" AxisResponseRate="-1"/>
+    <Axis AxisName="rZ" AxisSensitivy="-50" AxisSensitivyMinus="-50" AxisNeutral="0" AxisDeadZone="2" AxisOutDeadZone="0" AxisResponseRate="-1"/>
+  </Axes>
+  <Context ContextName="COCKPIT_CAMERA">
+    <Actions ActionName="KEY_COCKPIT_QUICKVIEW3" Flag="2">
+      <Primary>
+        <KEY Information="Joystick Pov Right">257</KEY>
+      </Primary>
+    </Actions>
+    <Actions ActionName="KEY_COCKPIT_QUICKVIEW4" Flag="2">
+      <Primary>
+        <KEY Information="JoystickPov Left">259</KEY>
+      </Primary>
+    </Actions>
+  </Context>
+  <Context ContextName="COCKPIT_GLOBAL_CAMERA">
+    <Actions ActionName="KEY_COCKPIT_FREELOOK_HRZ_SET" Flag="4">
+      <Primary>
+        <KEY Information="Joystick R-Axis X ">770</KEY>
+      </Primary>
+    </Actions>
+    <Actions ActionName="KEY_COCKPIT_FREELOOK_VRTC_SET" Flag="4">
+      <Primary>
+        <KEY Information="Joystick R-Axis Y ">786</KEY>
+      </Primary>
+    </Actions>
+  </Context>
+  <Context ContextName="EXTERNAL_CAMERA">
+    <Actions ActionName="KEY_CAMERACHASE_RESET" Flag="2">
+      <Primary>
+        <KEY Information="Joystick Button 5">4</KEY>
+      </Primary>
+    </Actions>
+    <Actions ActionName="KEY_CHASE_FREELOOK_HRZ_SET" Flag="132">
+      <Primary>
+        <KEY Information="Joystick R-Axis X ">770</KEY>
+      </Primary>
+    </Actions>
+    <Actions ActionName="KEY_CHASE_FREELOOK_VRTC_SET" Flag="132">
+      <Primary>
+        <KEY Information="Joystick R-Axis Y ">786</KEY>
+      </Primary>
+    </Actions>
+    <Actions ActionName="KEY_CHASE_QUICKVIEW1" Flag="2">
+      <Primary>
+        <KEY Information="JoystickPov Left">259</KEY>
+      </Primary>
+    </Actions>
+    <Actions ActionName="KEY_CHASE_QUICKVIEW2" Flag="2">
+      <Primary>
+        <KEY Information="Joystick Pov Down">258</KEY>
+      </Primary>
+    </Actions>
+    <Actions ActionName="KEY_CHASE_QUICKVIEW3" Flag="2">
+      <Primary>
+        <KEY Information="Joystick Pov Right">257</KEY>
+      </Primary>
+    </Actions>
+    <Actions ActionName="KEY_CHASE_QUICKVIEW4" Flag="2">
+      <Primary>
+        <KEY Information="Joystick Pov Up">256</KEY>
+      </Primary>
+    </Actions>
+  </Context>
+  <Context ContextName="INSTRUMENTS_CAMERA">
+    <Actions ActionName="KEY_COCKPIT_BACKCYCLE" Flag="2">
+      <Primary>
+        <KEY Information="JoystickPov Left">259</KEY>
+      </Primary>
+    </Actions>
+    <Actions ActionName="KEY_COCKPIT_CYCLE" Flag="2">
+      <Primary>
+        <KEY Information="Joystick Pov Right">257</KEY>
+      </Primary>
+    </Actions>
+  </Context>
+  <Context ContextName="MODES">
+    <Actions ActionName="KEY_COCKPIT_RESET" Flag="2">
+      <Primary>
+        <KEY Information="Joystick Button 5">4</KEY>
+      </Primary>
+    </Actions>
+    <Actions ActionName="KEY_CYCLE_PILOTVIEW_BACK" Flag="2">
+      <Primary>
+        <KEY Information="Joystick Pov Down">258</KEY>
+      </Primary>
+    </Actions>
+    <Actions ActionName="KEY_CYCLE_PILOTVIEW_NEXT" Flag="2">
+      <Primary>
+        <KEY Information="Joystick Pov Up">256</KEY>
+      </Primary>
+    </Actions>
+    <Actions ActionName="KEY_VIEW_MODE" Flag="2">
+      <Primary>
+        <KEY Information="Joystick Button 3">2</KEY>
+      </Primary>
+    </Actions>
+  </Context>
+  <Context ContextName="PLANE">
+    <Actions ActionName="KEY_AP_MASTER" Flag="2">
+      <Primary>
+        <KEY Information="Joystick Button 2">1</KEY>
+      </Primary>
+    </Actions>
+    <Actions ActionName="KEY_AP_MAX_BANK_ANGLE_SET" Flag="2">
+      <Primary>
+        <KEY Information="Joystick Button 2">1</KEY>
+      </Primary>
+    </Actions>
+    <Actions ActionName="KEY_AP_MAX_BANK_VELOCITY_SET" Flag="2">
+      <Primary>
+        <KEY Information="Joystick Button 2">1</KEY>
+      </Primary>
+    </Actions>
+    <Actions ActionName="KEY_BRAKES" Flag="2">
+      <Primary>
+        <KEY Information="Joystick Button 5">4</KEY>
+      </Primary>
+    </Actions>
+  </Context>
+  <Context ContextName="SMART_CAMERA">
+    <Actions ActionName="KEY_TOGGLE_SMART_CAMERA" Flag="2">
+      <Primary>
+        <KEY Information="Joystick Button 1">0</KEY>
+      </Primary>
+    </Actions>
+  </Context>
+  <Context ContextName="SURFACES">
+    <Actions ActionName="KEY_AXIS_AILERONS_SET" Flag="4">
+      <Primary>
+        <KEY Information="Joystick L-Axis X ">1026</KEY>
+      </Primary>
+    </Actions>
+    <Actions ActionName="KEY_AXIS_ELEVATOR_SET" Flag="4">
+      <Primary>
+        <KEY Information="Joystick L-Axis Y ">1042</KEY>
+      </Primary>
+    </Actions>
+  </Context>
+</Device>
