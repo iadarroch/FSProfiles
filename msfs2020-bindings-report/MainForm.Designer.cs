@@ -1,4 +1,4 @@
-﻿namespace FSControls
+﻿namespace msfs2020_bindings_report_windows
 {
     partial class MainForm
     {
@@ -108,7 +108,7 @@
             // 
             // btnGenerate
             // 
-            btnGenerate.Location = new Point(405, 533);
+            btnGenerate.Location = new Point(148, 510);
             btnGenerate.Margin = new Padding(2);
             btnGenerate.Name = "btnGenerate";
             btnGenerate.Size = new Size(157, 27);
@@ -119,10 +119,10 @@
             // 
             // txtOutputFile
             // 
-            txtOutputFile.Location = new Point(87, 442);
+            txtOutputFile.Location = new Point(148, 442);
             txtOutputFile.Margin = new Padding(2);
             txtOutputFile.Name = "txtOutputFile";
-            txtOutputFile.Size = new Size(894, 23);
+            txtOutputFile.Size = new Size(833, 23);
             txtOutputFile.TabIndex = 7;
             // 
             // lblOutputFile
@@ -137,7 +137,7 @@
             // 
             // btnRebuild
             // 
-            btnRebuild.Location = new Point(953, 533);
+            btnRebuild.Location = new Point(953, 510);
             btnRebuild.Margin = new Padding(2);
             btnRebuild.Name = "btnRebuild";
             btnRebuild.Size = new Size(157, 27);
@@ -160,7 +160,7 @@
             // statusStrip1
             // 
             statusStrip1.Items.AddRange(new ToolStripItem[] { tsStatus, tsProgress });
-            statusStrip1.Location = new Point(0, 613);
+            statusStrip1.Location = new Point(0, 547);
             statusStrip1.Name = "statusStrip1";
             statusStrip1.Size = new Size(1123, 22);
             statusStrip1.TabIndex = 12;
@@ -188,7 +188,7 @@
             // 
             cmbContent.FormattingEnabled = true;
             cmbContent.Items.AddRange(new object[] { "All", "Assigned", "New" });
-            cmbContent.Location = new Point(87, 476);
+            cmbContent.Location = new Point(148, 476);
             cmbContent.Name = "cmbContent";
             cmbContent.Size = new Size(121, 23);
             cmbContent.TabIndex = 9;
@@ -198,7 +198,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1123, 635);
+            ClientSize = new Size(1123, 569);
             Controls.Add(cmbContent);
             Controls.Add(statusStrip1);
             Controls.Add(lblContent);
