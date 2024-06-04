@@ -1,7 +1,8 @@
-# Microsoft Flight Simulator Controller Bindings Utility
+# Microsoft Flight Simulator Controller P
+rofiles Utility
 
-This utility was born out of frustration that Asobo have given users no way to see what
-controller bindings have been set up.
+This utility was born out of frustration that Asobo have given users no easy way to
+export and compare what bindings have been set up in different controller profiles.
 
 You can use it to select multiple controller profiles (e.g. Mouse, Flight Stick, 
 Flight Throttle and Rudder Pedals), and display an HTML formatted document showing

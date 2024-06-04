@@ -1,4 +1,4 @@
-﻿namespace msfs2020_bindings_report_windows
+﻿namespace MSFS2020.Profiles
 {
     partial class MainForm
     {
@@ -108,7 +108,7 @@
             // 
             // btnGenerate
             // 
-            btnGenerate.Location = new Point(148, 510);
+            btnGenerate.Location = new Point(147, 510);
             btnGenerate.Margin = new Padding(2);
             btnGenerate.Name = "btnGenerate";
             btnGenerate.Size = new Size(157, 27);
@@ -119,7 +119,7 @@
             // 
             // txtOutputFile
             // 
-            txtOutputFile.Location = new Point(148, 442);
+            txtOutputFile.Location = new Point(147, 442);
             txtOutputFile.Margin = new Padding(2);
             txtOutputFile.Name = "txtOutputFile";
             txtOutputFile.Size = new Size(833, 23);

@@ -1,18 +1,16 @@
-using msfs2020_bindings_common.Classes;
-using msfs2020_bindings_common.Models;
-using System;
-using System.Windows.Forms;
+using MSFS2020.Profiles.Common.Classes;
+using MSFS2020.Profiles.Common.Models;
 
-namespace msfs2020_bindings_report_windows;
-
-public partial class MainForm : Form
+namespace MSFS2020.Profiles
 {
-    public enum FocusControl { btnBasePath, btnProcessFolders }
+    public partial class MainForm : Form
+    {
+        public enum FocusControl { btnBasePath, btnProcessFolders }
 
-    public MainLogic Logic { get; }
-    public List<DetectedProfile> _profileList;
+        public MainLogic Logic { get; }
+        public List<DetectedProfile> _profileList;
 
-    public MainForm()
+        public MainForm()
     {
         InitializeComponent();
         Logic = new MainLogic();
@@ -26,7 +24,7 @@ public partial class MainForm : Form
         //btnRebuild.Visible = true;
     }
 
-    private void OnStart(object? sender, ProgressEvent e)
+        private void OnStart(object? sender, ProgressEvent e)
     {
         tsStatus.Text = e.Message;
         tsProgress.Maximum = e.Progress ?? 0;
@@ -34,7 +32,7 @@ public partial class MainForm : Form
         Application.DoEvents();
     }
 
-    private void OnProgress(object? sender, ProgressEvent e)
+        private void OnProgress(object? sender, ProgressEvent e)
     {
         if (!string.IsNullOrEmpty(e.Message))
         {
@@ -48,14 +46,14 @@ public partial class MainForm : Form
         Application.DoEvents();
     }
 
-    private void OnStop(object? sender, ProgressEvent e)
+        private void OnStop(object? sender, ProgressEvent e)
     {
         tsStatus.Text = e.Message;
         tsProgress.Visible = false;
         Application.DoEvents();
     }
 
-    private void MainForm_Shown(object sender, EventArgs e)
+        private void MainForm_Shown(object sender, EventArgs e)
     {
         var defaultFound = Logic.GetDefaultPath(out var basePath, out var errorMessage);
         txtBasePath.Text = basePath;
@@ -74,12 +72,12 @@ public partial class MainForm : Form
         txtOutputFile.Text = Logic.GetDefaultOutputFile();
     }
 
-    private void btnBasePath_Click(object sender, EventArgs e)
+        private void btnBasePath_Click(object sender, EventArgs e)
     {
         SelectBasePath();
     }
 
-    private void btnProcessFolders_Click(object sender, EventArgs e)
+        private void btnProcessFolders_Click(object sender, EventArgs e)
     {
         _profileList = Logic.ProcessFolders(txtBasePath.Text);
         clbMappings.Items.Clear();
@@ -89,7 +87,7 @@ public partial class MainForm : Form
         }
     }
 
-    private void btnGenerate_Click(object sender, EventArgs e)
+        private void btnGenerate_Click(object sender, EventArgs e)
     {
         var contentMode = (ContentMode)cmbContent.SelectedIndex;
         var generateList = new List<DetectedProfile>();
@@ -104,12 +102,12 @@ public partial class MainForm : Form
         Logic.GenerateBindingReport(txtOutputFile.Text, generateList, contentMode);
     }
 
-    private void btnRebuild_Click(object sender, EventArgs e)
+        private void btnRebuild_Click(object sender, EventArgs e)
     {
         Logic.RebuildKnownBindings(@"C:\Temp\KnownBindings.xml", _profileList);
     }
 
-    public void SelectBasePath()
+        public void SelectBasePath()
     {
         fbdBasePath.Description = "Choose path to base of MSFS 2020 files";
         fbdBasePath.RootFolder = Environment.SpecialFolder.MyComputer;
@@ -122,4 +120,5 @@ public partial class MainForm : Form
     }
 
 
+    }
 }
