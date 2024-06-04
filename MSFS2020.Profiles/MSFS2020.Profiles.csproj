@@ -11,10 +11,19 @@
     <PublishSingleFile>true</PublishSingleFile>
     <SelfContained>true</SelfContained>
     <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <SignAssembly>False</SignAssembly>
+    <AssemblyOriginatorKeyFile></AssemblyOriginatorKeyFile>
+    <StartupObject>MSFS2020.Profiles.Program</StartupObject>
+    <Copyright>Copyright $([System.DateTime]::Now.Year) Ian Darroch</Copyright>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)'=='Release'">
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\msfs2020-bindings-common\msfs2020-bindings-common.csproj" />
+    <ProjectReference Include="..\MSFS2020.Profiles.Common\MSFS2020.Profiles.Common.csproj" />
   </ItemGroup>
 
 </Project>
