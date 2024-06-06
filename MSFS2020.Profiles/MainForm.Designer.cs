@@ -113,7 +113,7 @@
             btnGenerate.Name = "btnGenerate";
             btnGenerate.Size = new Size(157, 27);
             btnGenerate.TabIndex = 10;
-            btnGenerate.Text = "Generate Binding List";
+            btnGenerate.Text = "Generate Binding Report";
             btnGenerate.UseVisualStyleBackColor = true;
             btnGenerate.Click += btnGenerate_Click;
             // 
