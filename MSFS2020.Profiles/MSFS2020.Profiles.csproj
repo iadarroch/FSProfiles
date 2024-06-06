@@ -15,6 +15,8 @@
     <AssemblyOriginatorKeyFile></AssemblyOriginatorKeyFile>
     <StartupObject>MSFS2020.Profiles.Program</StartupObject>
     <Copyright>Copyright $([System.DateTime]::Now.Year) Ian Darroch</Copyright>
+    <Title>Microsoft Flight Simulator 2020 Controller Profiles Utility</Title>
+    <RepositoryUrl>https://github.com/iadarroch/MSFS2020.Profiles</RepositoryUrl>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)'=='Release'">
