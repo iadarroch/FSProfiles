@@ -10,16 +10,28 @@ each available control binding, and the controller & input bound to it.
 **Ways to use:**
 * Select a single profile to see all its bindings.
 * Select two different profiles for a controller to compare bindings.
-* Select your active controller profiles to get a list of all current bindings.
+* Select a set of controller profiles to get a list of all current bindings.
+
+## To Install
+To install the utility, perform the following steps:
+* Download the installer from the latest release.
+* Run the installer. You may have to click through a security warning.
+* Accept the defaults and install.
+
+The installer will currently set up a desktop shortcut and a menu folder and item.
 
 ## To Run
 To run the program:
-* first download the release and put in a folder on your computer.
-* Navigate to the folder, and double click on the MSFS2020.Profiles.exe
-* If you are running a native install, it should automatically populate the path and the list of detected profiles.
+* Launch the program using either the menu item or desktop shurtcut.
+* On first use, you may get a message to install the .NET 8 runtime. If you get the
+  warning, you must install the runtime for the utility to work.
+* If you are running a native Flight Simulator 2020 install, it should automatically
+  populate the path and the list of detected profiles.
 * If the profiles are not automatically displayed, you will need to:
-  * Either enter or paste the actual path, or use the `Select Profile Path` button to browse to it.
-  * Once the path has been chosen, click the `Process Folders` button to detect any profiles.
+  * Either enter or paste the actual path, or use the `Select Profile Path` button
+    to browse to it.
+  * Once the path has been chosen, click the `Process Folders` button to detect any
+    profiles. This will populate the list of detected profiles.
 * Now tick the profiles you wish to include in the report.
 * Click the `Generate Binding Report` button to generate the report.
 
@@ -40,6 +52,7 @@ Things I hope to add in the future...
 	* Better support for Steam installations.
 	* A "difference" layout better suited to comparing bindings between two or more profiles.
 	* A Prettier UI.
-	* Create an application installer.
+	* Confirm that all binding options are included in the "known bindings" definition.
 * Version 1.1
-    * A way compare one of your profiles against someone else's.
+	* An option to "export" a set of profiles so they can sent to another user for comparison.
+	* An option to "import" a profile from another user for comparison only. Note there will be no way to actually import these to FS2020, as Asobo manage user profiles in the cloud.

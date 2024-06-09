@@ -1,4 +1,4 @@
-﻿namespace MSFS2020.Profiles
+﻿namespace FSProfiles
 {
     partial class MainForm
     {
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             fbdBasePath = new FolderBrowserDialog();
             lblBasePath = new Label();
             txtBasePath = new TextBox();
@@ -212,6 +213,7 @@
             Controls.Add(btnBasePath);
             Controls.Add(txtBasePath);
             Controls.Add(lblBasePath);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(2);
             Name = "MainForm";
             Text = "FlightSim 2020 Controller Display";
