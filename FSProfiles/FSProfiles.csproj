@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
+    <Version>0.0.2</Version>
     <TargetFramework>net8.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
@@ -13,10 +14,14 @@
     <RuntimeIdentifier>win-x64</RuntimeIdentifier>
     <SignAssembly>False</SignAssembly>
     <AssemblyOriginatorKeyFile></AssemblyOriginatorKeyFile>
-    <StartupObject>MSFS2020.Profiles.Program</StartupObject>
+    <StartupObject>FSProfiles.Program</StartupObject>
     <Copyright>Copyright $([System.DateTime]::Now.Year) Ian Darroch</Copyright>
     <Title>Microsoft Flight Simulator 2020 Controller Profiles Utility</Title>
-    <RepositoryUrl>https://github.com/iadarroch/MSFS2020.Profiles</RepositoryUrl>
+    <RepositoryUrl>https://github.com/iadarroch/FSProfiles</RepositoryUrl>
+    <Platforms>AnyCPU;x64</Platforms>
+    <ProduceReferenceAssembly>False</ProduceReferenceAssembly>
+    <PackageIcon>FSProfiles.ico</PackageIcon>
+    <ApplicationIcon>FSProfiles.ico</ApplicationIcon>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)'=='Release'">
@@ -25,7 +30,24 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MSFS2020.Profiles.Common\MSFS2020.Profiles.Common.csproj" />
+    <None Remove="KnownBindings.xml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="KnownBindings.xml">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\FSProfiles.ico">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FSProfiles.Common\FSProfiles.Common.csproj" />
   </ItemGroup>
 
 </Project>

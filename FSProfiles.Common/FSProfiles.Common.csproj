@@ -12,10 +12,4 @@
     <DebugType>None</DebugType>
   </PropertyGroup>
 
-  <ItemGroup>
-    <None Update="KnownBindings.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-
 </Project>

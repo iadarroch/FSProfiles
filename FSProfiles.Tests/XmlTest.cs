@@ -4,7 +4,7 @@ using MSFS2020.Profiles.Common.Models;
 using Xunit;
 using Action = MSFS2020.Profiles.Common.Models.Action;
 
-namespace MSFS2020.Profiles.Tests
+namespace FSProfiles.Tests
 {
     public class XmlTest
     {

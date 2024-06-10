@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MSFS2020.Profiles\MSFS2020.Profiles.csproj" />
+    <ProjectReference Include="..\FSProfiles\FSProfiles.csproj" />
   </ItemGroup>
 
 </Project>

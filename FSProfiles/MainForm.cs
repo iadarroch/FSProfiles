@@ -1,7 +1,7 @@
 using MSFS2020.Profiles.Common.Classes;
 using MSFS2020.Profiles.Common.Models;
 
-namespace MSFS2020.Profiles
+namespace FSProfiles
 {
     public partial class MainForm : Form
     {
