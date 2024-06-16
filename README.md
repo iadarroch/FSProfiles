@@ -35,6 +35,16 @@ To run the program:
 * Now tick the profiles you wish to include in the report.
 * Click the `Generate Binding Report` button to generate the report.
 
+### Command Line Arguments
+The program does support a few command line options, which are all aimed at development use and not needed for normal operation.
+
+| Short | Long Name | Description                                                                                                                                 |
+|:-----:|:---------:|---------------------------------------------------------------------------------------------------------------------------------------------|
+| -r    | -rebuild  | Enables a development button to rebuild the "KnownBindings.xml" file from available controllers.                                            |
+| -d    | -debug    | Outputs the selected bindings data as an XML file                                                                                           |
+| -p    | -profiles | Space delimited list (e.g. `-p 0 2 5`) of profiles to select by number, starting at 0. Only useful if you are running the program multiple times. |
+
+
 
 ## Flight Sim Platform Support
 | Platform Name  | Status           | Comment                                                                                 |
@@ -50,9 +60,9 @@ To run the program:
 Things I hope to add in the future...
 * Version 1
 	* Better support for Steam installations.
-	* A "difference" layout better suited to comparing bindings between two or more profiles.
 	* A Prettier UI.
 	* Confirm that all binding options are included in the "known bindings" definition.
+	* Ordering of output to match the order in FS2020, for easier location.
 * Version 1.1
 	* An option to "export" a set of profiles so they can sent to another user for comparison.
 	* An option to "import" a profile from another user for comparison only. Note there will be no way to actually import these to FS2020, as Asobo manage user profiles in the cloud.

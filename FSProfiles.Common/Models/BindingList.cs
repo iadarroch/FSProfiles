@@ -6,10 +6,10 @@ namespace FSProfiles.Common.Models
     public enum Priority {Primary, Secondary}
 
     [XmlRoot("BindingList")]
-    public class BindingList : List<FSContext>
+    public class BindingList
     {
-        [XmlIgnore]
         public List<SelectedController> SelectedControllers { get; set; }
+        public List<FSContext> Contexts { get; set; }
     }
 
     public class SelectedController
@@ -48,6 +48,7 @@ namespace FSProfiles.Common.Models
                 }
             }
         }
+
         [XmlElement(ElementName = "Action")]
         public List<FSAction> Actions { get; set; }
     }
@@ -57,6 +58,30 @@ namespace FSProfiles.Common.Models
     {
         [XmlAttribute]
         public string? ActionName { get; set; }
+
+        [XmlIgnore]
+        public Color? BackColor { get; set; }
+
+        [XmlAttribute(AttributeName = "BackColor")]
+        public string BackColorAsArgb
+        {
+            get
+            {
+                if (this.BackColor == null) return "";
+                return ColorTranslator.ToHtml(BackColor.Value);
+            }
+            set
+            {
+                if (string.IsNullOrEmpty(value))
+                {
+                    BackColor = null;
+                }
+                else
+                {
+                    BackColor = ColorTranslator.FromHtml(value);
+                }
+            }
+        }
 
         [XmlElement(ElementName = "Binding")]
         public List<FSBinding> Bindings { get; set; }
@@ -69,13 +94,20 @@ namespace FSProfiles.Common.Models
         [XmlAttribute]
         public string? Controller { get; set; }
 
-
         [XmlAttribute]
-        public List<string> Keys { get; set; } = [];
+        public string? Profile { get; set; }
 
         [XmlAttribute]
         public Priority Priority { get; set; }
 
-        public string KeyCombo => string.Join(" + ", Keys);
+        [XmlIgnore] 
+        public List<string> Keys { get; set; } = [];
+
+        [XmlAttribute]
+        public string KeyCombo
+        {
+            get => string.Join(" + ", Keys);
+            set => Keys = value.Split('+').Select(k => k.Trim()).ToList();
+        }
     }
 }

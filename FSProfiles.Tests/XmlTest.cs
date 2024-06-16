@@ -48,50 +48,53 @@ namespace FSProfiles.Tests
         {
             return new BindingList
             {
-                new FSContext
+                Contexts = new List<FSContext>
                 {
-                    ContextName = "Test Context",
-                    BackColor = Color.Black,
-                    Actions =
-                    [
-                        new FSAction
-                        {
-                            ActionName = "Keys",
-                            Bindings = 
-                            [
-                                new FSBinding
-                                {
-                                    Keys = ["CTRL", "Actions 1"]
-                                }
-                            ]
-                        }
-                    ]
-                },
+                    new FSContext
+                    {
+                        ContextName = "Test Context",
+                        BackColor = Color.Black,
+                        Actions =
+                        [
+                            new FSAction
+                            {
+                                ActionName = "Keys",
+                                Bindings = 
+                                [
+                                    new FSBinding
+                                    {
+                                        Keys = ["CTRL", "Actions 1"]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
 
-                new FSContext
-                {
-                    ContextName = "Test Context 2",
-                    BackColor = Color.Red,
-                    Actions =
-                    [
-                        new FSAction
-                        {
-                            ActionName = "Keys 2",
-                            Bindings = 
-                            [
-                                new FSBinding
-                                {
-                                    Keys = ["Actions 2"]
-                                },
+                    new FSContext
+                    {
+                        ContextName = "Test Context 2",
+                        BackColor = Color.Red,
+                        Actions =
+                        [
+                            new FSAction
+                            {
+                                ActionName = "Keys 2",
+                                Bindings = 
+                                [
+                                    new FSBinding
+                                    {
+                                        Keys = ["Actions 2"]
+                                    },
 
-                                new FSBinding
-                                {
-                                    Priority = Priority.Secondary,
-                                    Keys = ["Actions 3"]
-                                }
-                            ]
-                        }
-                    ]
+                                    new FSBinding
+                                    {
+                                        Priority = Priority.Secondary,
+                                        Keys = ["Actions 3"]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
                 }
             };
         }

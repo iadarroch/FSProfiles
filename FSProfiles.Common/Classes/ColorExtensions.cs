@@ -4,11 +4,6 @@ namespace FSProfiles.Common.Classes
 {
     public static class ColorExtensions
     {
-        public static string ToHtml(this Color c)
-        {
-            return ColorTranslator.ToHtml(c);
-        }
-
         public static Color Lighter(this Color color, float correctionFactor)
         {
             float red = (float)color.R;
