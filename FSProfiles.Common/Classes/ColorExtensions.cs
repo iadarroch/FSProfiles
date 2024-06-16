@@ -1,6 +1,6 @@
 ﻿using System.Drawing;
 
-namespace MSFS2020.Profiles.Common.Classes
+namespace FSProfiles.Common.Classes
 {
     public static class ColorExtensions
     {

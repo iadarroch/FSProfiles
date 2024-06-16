@@ -1,5 +1,5 @@
-using MSFS2020.Profiles.Common.Classes;
-using MSFS2020.Profiles.Common.Models;
+using FSProfiles.Common.Classes;
+using FSProfiles.Common.Models;
 
 namespace FSProfiles
 {

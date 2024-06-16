@@ -1,7 +1,7 @@
 ﻿
 using System.Xml.Serialization;
 
-namespace MSFS2020.Profiles.Common.Models.Source
+namespace FSProfiles.Common.Models.Source
 {
     // using System.Xml.Serialization;
 // XmlSerializer serializer = new XmlSerializer(typeof(Root));

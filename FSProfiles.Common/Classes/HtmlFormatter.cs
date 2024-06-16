@@ -1,11 +1,17 @@
 ﻿using System.Drawing;
 using System.Globalization;
 using System.Text;
-using MSFS2020.Profiles.Common.Models;
+using FSProfiles.Common.Models;
 
-namespace MSFS2020.Profiles.Common.Classes
+namespace FSProfiles.Common.Classes
 {
-    public class HtmlFormatter
+    public interface IOutputFormatter
+    {
+        void ConvertToHtml(BindingList bindingList, string fileName);
+
+    }
+
+    public class HtmlFormatter : IOutputFormatter
     {
         private static readonly TextInfo TextInfo = Thread.CurrentThread.CurrentCulture.TextInfo;
         private static List<Color> _defaultColors = 
@@ -103,7 +109,7 @@ namespace MSFS2020.Profiles.Common.Classes
             sb.AppendLine("</table>");
         }
 
-        public void AddSection(StringBuilder sb, Context context)
+        public void AddSection(StringBuilder sb, FSContext context)
         {
             var htmlColor = context.BackColor ?? NextDefaultColor();
             sb.AppendLine($"<tr bgcolor=\"{htmlColor.ToHtml()}\">");

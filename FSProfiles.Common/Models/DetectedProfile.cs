@@ -1,6 +1,6 @@
-﻿using MSFS2020.Profiles.Common.Models.Source;
+﻿using FSProfiles.Common.Models.Source;
 
-namespace MSFS2020.Profiles.Common.Models
+namespace FSProfiles.Common.Models
 {
     public class DetectedProfile
     {

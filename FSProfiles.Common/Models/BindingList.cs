@@ -1,12 +1,12 @@
 ﻿using System.Drawing;
 using System.Xml.Serialization;
 
-namespace MSFS2020.Profiles.Common.Models
+namespace FSProfiles.Common.Models
 {
     public enum Priority {Primary, Secondary}
 
     [XmlRoot("BindingList")]
-    public class BindingList : List<Context>
+    public class BindingList : List<FSContext>
     {
         [XmlIgnore]
         public List<SelectedController> SelectedControllers { get; set; }
@@ -19,7 +19,8 @@ namespace MSFS2020.Profiles.Common.Models
         public string? ProfilePath { get; set; }
     }
 
-    public class Context
+    [XmlRoot(ElementName = "Context")]
+    public class FSContext
     {
         [XmlAttribute]
         public string? ContextName { get; set; }
@@ -48,22 +49,22 @@ namespace MSFS2020.Profiles.Common.Models
             }
         }
         [XmlElement(ElementName = "Action")]
-        public List<Action> Actions { get; set; }
+        public List<FSAction> Actions { get; set; }
     }
 
     [XmlRoot(ElementName = "Action")]
-    public class Action
+    public class FSAction
     {
         [XmlAttribute]
         public string? ActionName { get; set; }
 
         [XmlElement(ElementName = "Binding")]
-        public List<Binding> Bindings { get; set; }
+        public List<FSBinding> Bindings { get; set; }
 
     }
 
     [XmlRoot(ElementName = "Binding")]
-    public class Binding
+    public class FSBinding
     {
         [XmlAttribute]
         public string? Controller { get; set; }

@@ -1,10 +1,7 @@
 ﻿using System.Diagnostics;
-using MSFS2020.Profiles.Common.Models;
-using Action = MSFS2020.Profiles.Common.Models.Action;
-using Binding = MSFS2020.Profiles.Common.Models.Binding;
-using Context = MSFS2020.Profiles.Common.Models.Context;
+using FSProfiles.Common.Models;
 
-namespace MSFS2020.Profiles.Common.Classes
+namespace FSProfiles.Common.Classes
 {
     public enum ContentMode {All, Assigned, New}
 
@@ -130,10 +127,10 @@ namespace MSFS2020.Profiles.Common.Classes
                 var bindingContext = bindingList.FirstOrDefault(c => c.ContextName == context.ContextName);
                 if (bindingContext == null)
                 {
-                    bindingContext = new Context
+                    bindingContext = new FSContext
                     {
                         ContextName = context.ContextName,
-                        Actions = new List<Action>()
+                        Actions = new List<FSAction>()
                     };
                     bindingList.Add(bindingContext);
                 }
@@ -142,17 +139,17 @@ namespace MSFS2020.Profiles.Common.Classes
             }
         }
 
-        public void ProcessContext(string deviceName, Models.Source.Context context, Context bindingContext, Mode mode)
+        public void ProcessContext(string deviceName, Models.Source.Context context, FSContext bindingContext, Mode mode)
         {
             foreach (var action in context.Actions)
             {
                 var bindingAction = bindingContext.Actions.FirstOrDefault(a => a.ActionName == action.ActionName);
                 if (bindingAction == null)
                 {
-                    bindingAction = new Action
+                    bindingAction = new FSAction
                     {
                         ActionName = action.ActionName,
-                        Bindings = new List<Binding>()
+                        Bindings = new List<FSBinding>()
                     };
                     bindingContext.Actions.Add(bindingAction);
                 }
@@ -164,12 +161,12 @@ namespace MSFS2020.Profiles.Common.Classes
             }
         }
 
-        public void ProcessAction(string deviceName, Models.Source.Action action, Action bindingAction)
+        public void ProcessAction(string deviceName, Models.Source.Action action, FSAction bindingAction)
         {
 
             if (action.Primary != null)
             {
-                bindingAction.Bindings.Add(new Binding
+                bindingAction.Bindings.Add(new FSBinding
                 {
                     Controller = deviceName,
                     Keys = action.Primary.Keys.Select(k => k.Information).ToList(),
@@ -178,7 +175,7 @@ namespace MSFS2020.Profiles.Common.Classes
             }
             if (action.Secondary != null)
             {
-                bindingAction.Bindings.Add(new Binding
+                bindingAction.Bindings.Add(new FSBinding
                 {
                     Controller = deviceName,
                     Keys = action.Secondary.Keys.Select(k => k.Information).ToList(),

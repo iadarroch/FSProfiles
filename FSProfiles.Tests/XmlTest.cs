@@ -1,8 +1,7 @@
 ﻿using System.Drawing;
-using MSFS2020.Profiles.Common.Classes;
-using MSFS2020.Profiles.Common.Models;
+using FSProfiles.Common.Classes;
+using FSProfiles.Common.Models;
 using Xunit;
-using Action = MSFS2020.Profiles.Common.Models.Action;
 
 namespace FSProfiles.Tests
 {
@@ -49,18 +48,18 @@ namespace FSProfiles.Tests
         {
             return new BindingList
             {
-                new Context
+                new FSContext
                 {
                     ContextName = "Test Context",
                     BackColor = Color.Black,
                     Actions =
                     [
-                        new Action
+                        new FSAction
                         {
                             ActionName = "Keys",
                             Bindings = 
                             [
-                                new Binding
+                                new FSBinding
                                 {
                                     Keys = ["CTRL", "Actions 1"]
                                 }
@@ -69,23 +68,23 @@ namespace FSProfiles.Tests
                     ]
                 },
 
-                new Context
+                new FSContext
                 {
                     ContextName = "Test Context 2",
                     BackColor = Color.Red,
                     Actions =
                     [
-                        new Action
+                        new FSAction
                         {
                             ActionName = "Keys 2",
                             Bindings = 
                             [
-                                new Binding
+                                new FSBinding
                                 {
                                     Keys = ["Actions 2"]
                                 },
 
-                                new Binding
+                                new FSBinding
                                 {
                                     Priority = Priority.Secondary,
                                     Keys = ["Actions 3"]
