@@ -1,6 +1,7 @@
-﻿using System.Xml.Serialization;
+﻿using System.Xml;
+using System.Xml.Serialization;
 
-namespace MSFS2020.Profiles.Common.Classes
+namespace FSProfiles.Common.Classes
 {
     public static class Serializer
     {
@@ -33,6 +34,18 @@ namespace MSFS2020.Profiles.Common.Classes
             {
                 Serializer.SerializeObject(writer, subject);
             }
+        }
+
+        public static XmlDocument SerializeToXmlDoc<T>(this T subject)
+        {
+            var doc = new XmlDocument();
+            var nav = doc.CreateNavigator();
+            using (XmlWriter writer = nav.AppendChild())
+            {
+                var xmlSerializer = new XmlSerializer(typeof(T));
+                xmlSerializer.Serialize(writer, subject);
+            }
+            return doc;
         }
 
     }

@@ -35,7 +35,7 @@
 
   <ItemGroup>
     <Content Include="KnownBindings.xml">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
 

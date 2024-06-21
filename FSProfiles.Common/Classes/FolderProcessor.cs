@@ -1,8 +1,8 @@
 ﻿using System.Diagnostics;
-using MSFS2020.Profiles.Common.Models;
-using MSFS2020.Profiles.Common.Models.Source;
+using FSProfiles.Common.Models;
+using FSProfiles.Common.Models.Source;
 
-namespace MSFS2020.Profiles.Common.Classes
+namespace FSProfiles.Common.Classes
 {
     public class FolderProcessor
     {

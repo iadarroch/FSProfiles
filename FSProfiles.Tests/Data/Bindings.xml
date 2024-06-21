@@ -1,0 +1,1869 @@
+<?xml version="1.0" encoding="utf-8"?>
+<BindingList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <SelectedControllers>
+    <SelectedController>
+      <DeviceName>Keyboard</DeviceName>
+      <ProfileName>Custom</ProfileName>
+      <ProfilePath>3568C45C530B4BB3856A941DF96D86B4</ProfilePath>
+    </SelectedController>
+    <SelectedController>
+      <DeviceName>Mouse</DeviceName>
+      <ProfileName>Helicopter</ProfileName>
+      <ProfilePath>94DB9F5291FD416988801F433346257C</ProfilePath>
+    </SelectedController>
+    <SelectedController>
+      <DeviceName>Saitek Pro Flight X-56 Rhino Throttle</DeviceName>
+      <ProfileName>X-56 Rhino Throttle Helicopter</ProfileName>
+      <ProfilePath>C555414E63034D66AEDF8E1495304C24</ProfilePath>
+    </SelectedController>
+    <SelectedController>
+      <DeviceName>VelocityOne Rudder</DeviceName>
+      <ProfileName>R22</ProfileName>
+      <ProfilePath>7392ACEE6EC94147B950CD801AC6AFD6</ProfilePath>
+    </SelectedController>
+    <SelectedController>
+      <DeviceName>X56 H.O.T.A.S. Stick</DeviceName>
+      <ProfileName>X56 H.O.T.A.S. Stick Helicopter 2</ProfileName>
+      <ProfilePath>F3848CE0CC4A4113B4565FCCE2A3D716</ProfilePath>
+    </SelectedController>
+  </SelectedControllers>
+  <Contexts>
+    <FSContext ContextName="Always" BackColor="Aquamarine">
+      <Action ActionName="Eye Tracking Reset" BackColor="#D8FFF2">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="F12" />
+      </Action>
+      <Action ActionName="Reset Camera Vr" BackColor="#EBFFF8">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Space" />
+      </Action>
+      <Action ActionName="Screen Narrator Toggle" BackColor="#D8FFF2">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + Backspace" />
+      </Action>
+      <Action ActionName="Switch Vr" BackColor="#EBFFF8">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + Tab" />
+      </Action>
+    </FSContext>
+    <FSContext ContextName="Atc" BackColor="LightCoral">
+      <Action ActionName="Atc Menu 0" BackColor="#FAD8D8">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="0" />
+      </Action>
+      <Action ActionName="Atc Menu 1" BackColor="#FCEBEB">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="1" />
+      </Action>
+      <Action ActionName="Atc Menu 2" BackColor="#FAD8D8">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="2" />
+      </Action>
+      <Action ActionName="Atc Menu 3" BackColor="#FCEBEB">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="3" />
+      </Action>
+      <Action ActionName="Atc Menu 4" BackColor="#FAD8D8">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="4" />
+      </Action>
+      <Action ActionName="Atc Menu 5" BackColor="#FCEBEB">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="5" />
+      </Action>
+      <Action ActionName="Atc Menu 6" BackColor="#FAD8D8">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="6" />
+      </Action>
+      <Action ActionName="Atc Menu 7" BackColor="#FCEBEB">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="7" />
+      </Action>
+      <Action ActionName="Atc Menu 8" BackColor="#FAD8D8">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="8" />
+      </Action>
+      <Action ActionName="Atc Menu 9" BackColor="#FCEBEB">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="9" />
+      </Action>
+    </FSContext>
+    <FSContext ContextName="Cockpit Camera" BackColor="LightSkyBlue">
+      <Action ActionName="Camera Cockpit Pilot Ifr Reset" BackColor="#DBF0FD">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Shift + F9" />
+      </Action>
+      <Action ActionName="Camera Cockpit Pilot Ifr Save" BackColor="#EDF7FE">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + F9" />
+      </Action>
+      <Action ActionName="Camera Cockpit Pilot Landing Reset" BackColor="#DBF0FD">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Shift + F11" />
+      </Action>
+      <Action ActionName="Camera Cockpit Pilot Landing Save" BackColor="#EDF7FE">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + F11" />
+      </Action>
+      <Action ActionName="Camera Cockpit Pilot Vfr Reset" BackColor="#DBF0FD">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Shift + F10" />
+      </Action>
+      <Action ActionName="Camera Cockpit Pilot Vfr Save" BackColor="#EDF7FE">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + F10" />
+      </Action>
+      <Action ActionName="Cockpit Close View Toggle" BackColor="#DBF0FD">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="F9" />
+      </Action>
+      <Action ActionName="Cockpit Default View Toggle" BackColor="#EDF7FE">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="F10" />
+      </Action>
+      <Action ActionName="Cockpit Hud View Toggle" BackColor="#DBF0FD">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="F10" />
+        <Binding Controller="X56 H.O.T.A.S. Stick" Profile="X56 H.O.T.A.S. Stick Helicopter 2" Priority="Primary" KeyCombo="Joystick Pov Down" />
+      </Action>
+      <Action ActionName="Cockpit Landing View Toggle" BackColor="#EDF7FE">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="F11" />
+      </Action>
+      <Action ActionName="Cockpit Quickview1" BackColor="#DBF0FD">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + Up" />
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Secondary" KeyCombo="Right Ctrl + Up" />
+        <Binding Controller="X56 H.O.T.A.S. Stick" Profile="X56 H.O.T.A.S. Stick Helicopter 2" Priority="Primary" KeyCombo="Joystick Button 1 + Joystick Button 11" />
+      </Action>
+      <Action ActionName="Cockpit Quickview2" BackColor="#EDF7FE">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + Down" />
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Secondary" KeyCombo="Right Ctrl + Down" />
+        <Binding Controller="X56 H.O.T.A.S. Stick" Profile="X56 H.O.T.A.S. Stick Helicopter 2" Priority="Primary" KeyCombo="Joystick Button 1 + Joystick Button 13" />
+      </Action>
+      <Action ActionName="Cockpit Quickview3" BackColor="#DBF0FD">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + Right" />
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Secondary" KeyCombo="Right Ctrl + Right" />
+        <Binding Controller="X56 H.O.T.A.S. Stick" Profile="X56 H.O.T.A.S. Stick Helicopter 2" Priority="Primary" KeyCombo="Joystick Button 1 + Joystick Button 12" />
+      </Action>
+      <Action ActionName="Cockpit Quickview4" BackColor="#EDF7FE">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + Left" />
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Secondary" KeyCombo="Right Ctrl + Left" />
+        <Binding Controller="X56 H.O.T.A.S. Stick" Profile="X56 H.O.T.A.S. Stick Helicopter 2" Priority="Primary" KeyCombo="Joystick Button 1 + Joystick Button 14" />
+      </Action>
+      <Action ActionName="Cockpit Quickviewcycle" BackColor="#DBF0FD">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="q" />
+      </Action>
+      <Action ActionName="Cockpit Upper" BackColor="#EDF7FE">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Space" />
+      </Action>
+      <Action ActionName="Cockpit Mode" BackColor="#DBF0FD">
+        <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Mid-Click" />
+      </Action>
+      <Action ActionName="Cockpit Mode Hold" BackColor="#EDF7FE">
+        <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Right-Click" />
+      </Action>
+      <Action ActionName="Cockpit Landing View Hold" BackColor="#DBF0FD">
+        <Binding Controller="Saitek Pro Flight X-56 Rhino Throttle" Profile="X-56 Rhino Throttle Helicopter" Priority="Primary" KeyCombo="Joystick Button 33" />
+      </Action>
+    </FSContext>
+    <FSContext ContextName="Cockpit Global Camera" BackColor="Wheat">
+      <Action ActionName="Cockpit Look Down" BackColor="#FCF5E8">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Shift + Down" />
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Secondary" KeyCombo="Right Shift + Down" />
+        <Binding Controller="X56 H.O.T.A.S. Stick" Profile="X56 H.O.T.A.S. Stick Helicopter 2" Priority="Primary" KeyCombo="Joystick Button 13" />
+      </Action>
+      <Action ActionName="Cockpit Look Left" BackColor="#FDFAF3">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Shift + Left" />
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Secondary" KeyCombo="Right Shift + Left" />
+        <Binding Controller="X56 H.O.T.A.S. Stick" Profile="X56 H.O.T.A.S. Stick Helicopter 2" Priority="Primary" KeyCombo="Joystick Button 14" />
+      </Action>
+      <Action ActionName="Cockpit Look Right" BackColor="#FCF5E8">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Shift + Right" />
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Secondary" KeyCombo="Right Shift + Right" />
+        <Binding Controller="X56 H.O.T.A.S. Stick" Profile="X56 H.O.T.A.S. Stick Helicopter 2" Priority="Primary" KeyCombo="Joystick Button 12" />
+      </Action>
+      <Action ActionName="Cockpit Look Up" BackColor="#FDFAF3">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Shift + Up" />
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Secondary" KeyCombo="Right Shift + Up" />
+        <Binding Controller="X56 H.O.T.A.S. Stick" Profile="X56 H.O.T.A.S. Stick Helicopter 2" Priority="Primary" KeyCombo="Joystick Button 11" />
+      </Action>
+      <Action ActionName="Dezoom Cockpit" BackColor="#FCF5E8">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="-" />
+        <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Mouse Wheel Down" />
+      </Action>
+      <Action ActionName="Zoom Cockpit" BackColor="#FDFAF3">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="=" />
+        <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Mouse Wheel Up" />
+      </Action>
+      <Action ActionName="Cockpit Lockable Look Down" BackColor="#FCF5E8">
+        <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Axis Y+" />
+      </Action>
+      <Action ActionName="Cockpit Lockable Look Left" BackColor="#FDFAF3">
+        <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Axis X-" />
+      </Action>
+      <Action ActionName="Cockpit Lockable Look Right" BackColor="#FCF5E8">
+        <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Axis X+" />
+      </Action>
+      <Action ActionName="Cockpit Lockable Look Up" BackColor="#FDFAF3">
+        <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Axis Y-" />
+      </Action>
+    </FSContext>
+    <FSContext ContextName="Cockpit Global Camera Translate" BackColor="Plum">
+      <Action ActionName="Cockpit Camera Height Dec" BackColor="#F4E2F4">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Down" />
+      </Action>
+      <Action ActionName="Cockpit Camera Height Inc" BackColor="#F9F0F9">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Up" />
+      </Action>
+      <Action ActionName="Cockpit Camera Slide Back" BackColor="#F4E2F4">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Alt + Down" />
+      </Action>
+      <Action ActionName="Cockpit Camera Slide Front" BackColor="#F9F0F9">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Alt + Up" />
+      </Action>
+      <Action ActionName="Cockpit Camera Slide Left" BackColor="#F4E2F4">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Left" />
+      </Action>
+      <Action ActionName="Cockpit Camera Slide Right" BackColor="#F9F0F9">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Right" />
+      </Action>
+    </FSContext>
+    <FSContext ContextName="Debug" BackColor="LemonChiffon">
+      <Action ActionName="Debug Menu Valid" BackColor="#FFFDF0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Enter" />
+      </Action>
+      <Action ActionName="Debug 0" BackColor="#FFFEF7">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="0" />
+      </Action>
+      <Action ActionName="Debug 1" BackColor="#FFFDF0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="1" />
+      </Action>
+      <Action ActionName="Debug 2" BackColor="#FFFEF7">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="2" />
+      </Action>
+      <Action ActionName="Debug 3" BackColor="#FFFDF0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="3" />
+      </Action>
+      <Action ActionName="Debug 4" BackColor="#FFFEF7">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="4" />
+      </Action>
+      <Action ActionName="Debug 5" BackColor="#FFFDF0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="5" />
+      </Action>
+      <Action ActionName="Debug 6" BackColor="#FFFEF7">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="6" />
+      </Action>
+      <Action ActionName="Debug 7" BackColor="#FFFDF0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="7" />
+      </Action>
+      <Action ActionName="Debug 8" BackColor="#FFFEF7">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="8" />
+      </Action>
+      <Action ActionName="Debug 9" BackColor="#FFFDF0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="9" />
+      </Action>
+      <Action ActionName="Debug A" BackColor="#FFFEF7">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="a" />
+      </Action>
+      <Action ActionName="Debug B" BackColor="#FFFDF0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="b" />
+      </Action>
+      <Action ActionName="Debug C" BackColor="#FFFEF7">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="c" />
+      </Action>
+      <Action ActionName="Debug D" BackColor="#FFFDF0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="d" />
+      </Action>
+      <Action ActionName="Debug Down" BackColor="#FFFEF7">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Down" />
+      </Action>
+      <Action ActionName="Debug E" BackColor="#FFFDF0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="e" />
+      </Action>
+      <Action ActionName="Debug Enter" BackColor="#FFFEF7">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Enter" />
+      </Action>
+      <Action ActionName="Debug F" BackColor="#FFFDF0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="f" />
+      </Action>
+      <Action ActionName="Debug F10" BackColor="#FFFEF7">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="F10" />
+      </Action>
+      <Action ActionName="Debug F9" BackColor="#FFFDF0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="F9" />
+      </Action>
+      <Action ActionName="Debug Freeze Plane" BackColor="#FFFEF7">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Alt + f" />
+      </Action>
+      <Action ActionName="Debug G" BackColor="#FFFDF0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="g" />
+      </Action>
+      <Action ActionName="Debug H" BackColor="#FFFEF7">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="h" />
+      </Action>
+      <Action ActionName="Debug I" BackColor="#FFFDF0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="i" />
+      </Action>
+      <Action ActionName="Debug J" BackColor="#FFFEF7">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="j" />
+      </Action>
+      <Action ActionName="Debug K" BackColor="#FFFDF0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="k" />
+      </Action>
+      <Action ActionName="Debug L" BackColor="#FFFEF7">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="l" />
+      </Action>
+      <Action ActionName="Debug Lalt" BackColor="#FFFDF0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Alt" />
+      </Action>
+      <Action ActionName="Debug Lctrl" BackColor="#FFFEF7">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl" />
+      </Action>
+      <Action ActionName="Debug Left" BackColor="#FFFDF0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Left" />
+      </Action>
+      <Action ActionName="Debug Lshift" BackColor="#FFFEF7">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Shift" />
+      </Action>
+      <Action ActionName="Debug M" BackColor="#FFFDF0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="m" />
+      </Action>
+      <Action ActionName="Debug N" BackColor="#FFFEF7">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="n" />
+      </Action>
+      <Action ActionName="Debug Numpad 0" BackColor="#FFFDF0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Num 0" />
+      </Action>
+      <Action ActionName="Debug Numpad 1" BackColor="#FFFEF7">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Num 1" />
+      </Action>
+      <Action ActionName="Debug Numpad 2" BackColor="#FFFDF0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Num 2" />
+      </Action>
+      <Action ActionName="Debug Numpad 3" BackColor="#FFFEF7">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Num 3" />
+      </Action>
+      <Action ActionName="Debug Numpad 4" BackColor="#FFFDF0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Num 4" />
+      </Action>
+      <Action ActionName="Debug Numpad 5" BackColor="#FFFEF7">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Num 5" />
+      </Action>
+      <Action ActionName="Debug Numpad 6" BackColor="#FFFDF0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Num 6" />
+      </Action>
+      <Action ActionName="Debug Numpad 7" BackColor="#FFFEF7">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Num 7" />
+      </Action>
+      <Action ActionName="Debug Numpad 8" BackColor="#FFFDF0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Num 8" />
+      </Action>
+      <Action ActionName="Debug Numpad 9" BackColor="#FFFEF7">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Num 9" />
+      </Action>
+      <Action ActionName="Debug O" BackColor="#FFFDF0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="o" />
+      </Action>
+      <Action ActionName="Debug P" BackColor="#FFFEF7">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="p" />
+      </Action>
+      <Action ActionName="Debug Pause" BackColor="#FFFDF0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Pause" />
+      </Action>
+      <Action ActionName="Debug Q" BackColor="#FFFEF7">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="q" />
+      </Action>
+      <Action ActionName="Debug R" BackColor="#FFFDF0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="r" />
+      </Action>
+      <Action ActionName="Debug Ralt" BackColor="#FFFEF7">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Right Alt" />
+      </Action>
+      <Action ActionName="Debug Rctrl" BackColor="#FFFDF0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Right Ctrl" />
+      </Action>
+      <Action ActionName="Debug Right" BackColor="#FFFEF7">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Right" />
+      </Action>
+      <Action ActionName="Debug Rshift" BackColor="#FFFDF0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Right Shift" />
+      </Action>
+      <Action ActionName="Debug S" BackColor="#FFFEF7">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="s" />
+      </Action>
+      <Action ActionName="Debug T" BackColor="#FFFDF0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="t" />
+      </Action>
+      <Action ActionName="Debug Tab" BackColor="#FFFEF7">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Tab" />
+      </Action>
+      <Action ActionName="Debug U" BackColor="#FFFDF0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="u" />
+      </Action>
+      <Action ActionName="Debug Up" BackColor="#FFFEF7">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Up" />
+      </Action>
+      <Action ActionName="Debug V" BackColor="#FFFDF0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="v" />
+      </Action>
+      <Action ActionName="Debug W" BackColor="#FFFEF7">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="w" />
+      </Action>
+      <Action ActionName="Debug X" BackColor="#FFFDF0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="x" />
+      </Action>
+      <Action ActionName="Debug Y" BackColor="#FFFEF7">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="y" />
+      </Action>
+      <Action ActionName="Debug Z" BackColor="#FFFDF0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="z" />
+      </Action>
+      <Action ActionName="Request Tow Plane" BackColor="#FFFEF7">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + Shift + t" />
+      </Action>
+      <Action ActionName="Chase Mode" BackColor="#FFFDF0">
+        <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Mid-Click" />
+      </Action>
+    </FSContext>
+    <FSContext ContextName="Devmode" BackColor="SandyBrown">
+      <Action ActionName="Action Key Devmode Group" BackColor="#FBE3CF">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + g" />
+      </Action>
+      <Action ActionName="Action Key Devmode Movedown" BackColor="#FDF1E7">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Down" />
+      </Action>
+      <Action ActionName="Action Key Devmode Moveup" BackColor="#FBE3CF">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Up" />
+      </Action>
+      <Action ActionName="Action Key Devmode Rename" BackColor="#FDF1E7">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + r" />
+      </Action>
+      <Action ActionName="Devmode Add Apron" BackColor="#FBE3CF">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Shift + a" />
+      </Action>
+      <Action ActionName="Devmode Add Painted Line" BackColor="#FDF1E7">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Shift + l" />
+      </Action>
+      <Action ActionName="Devmode Add Parking" BackColor="#FBE3CF">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Shift + m" />
+      </Action>
+      <Action ActionName="Devmode Add Point" BackColor="#FDF1E7">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Shift + p" />
+      </Action>
+      <Action ActionName="Devmode Add Runway" BackColor="#FBE3CF">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Shift + r" />
+      </Action>
+      <Action ActionName="Devmode Close Document" BackColor="#FDF1E7">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + w" />
+      </Action>
+      <Action ActionName="Devmode Console Toggle" BackColor="#FBE3CF">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="'" />
+      </Action>
+      <Action ActionName="Devmode Copy" BackColor="#FDF1E7">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + c" />
+      </Action>
+      <Action ActionName="Devmode Cut" BackColor="#FBE3CF">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + x" />
+      </Action>
+      <Action ActionName="Devmode Del" BackColor="#FDF1E7">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Delete" />
+      </Action>
+      <Action ActionName="Devmode Duplicate" BackColor="#FBE3CF">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + d" />
+      </Action>
+      <Action ActionName="Devmode Edition Camera" BackColor="#FDF1E7">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Tab" />
+      </Action>
+      <Action ActionName="Devmode Find" BackColor="#FBE3CF">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + f" />
+      </Action>
+      <Action ActionName="Devmode Focus Object" BackColor="#FDF1E7">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + f" />
+      </Action>
+      <Action ActionName="Devmode Hide All" BackColor="#FBE3CF">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Alt + h" />
+      </Action>
+      <Action ActionName="Devmode Hide All Edition" BackColor="#FDF1E7">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Alt + Shift + h" />
+      </Action>
+      <Action ActionName="Devmode Lock All" BackColor="#FBE3CF">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Alt + l" />
+      </Action>
+      <Action ActionName="Devmode New Document" BackColor="#FDF1E7">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + n" />
+      </Action>
+      <Action ActionName="Devmode Open Document" BackColor="#FBE3CF">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + o" />
+      </Action>
+      <Action ActionName="Devmode Paste" BackColor="#FDF1E7">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + v" />
+      </Action>
+      <Action ActionName="Devmode Range Selection" BackColor="#FBE3CF">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Shift" />
+      </Action>
+      <Action ActionName="Devmode Redo" BackColor="#FDF1E7">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + y" />
+      </Action>
+      <Action ActionName="Devmode Rotate Toggle" BackColor="#FBE3CF">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="e" />
+      </Action>
+      <Action ActionName="Devmode Save As Document" BackColor="#FDF1E7">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + Shift + s" />
+      </Action>
+      <Action ActionName="Devmode Save Document" BackColor="#FBE3CF">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + s" />
+      </Action>
+      <Action ActionName="Devmode Scale Toggle" BackColor="#FDF1E7">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="r" />
+      </Action>
+      <Action ActionName="Devmode Sim Pause Toggle" BackColor="#FBE3CF">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Space" />
+      </Action>
+      <Action ActionName="Devmode Sparse Selection" BackColor="#FDF1E7">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl" />
+      </Action>
+      <Action ActionName="Devmode Split Edge" BackColor="#FBE3CF">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Shift + s" />
+      </Action>
+      <Action ActionName="Devmode Toggle Hide" BackColor="#FDF1E7">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + h" />
+      </Action>
+      <Action ActionName="Devmode Toggle Hide Edition" BackColor="#FBE3CF">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + Shift + h" />
+      </Action>
+      <Action ActionName="Devmode Toggle Lock" BackColor="#FDF1E7">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + l" />
+      </Action>
+      <Action ActionName="Devmode Translate Toggle" BackColor="#FBE3CF">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="w" />
+      </Action>
+      <Action ActionName="Devmode Undo" BackColor="#FDF1E7">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + z" />
+      </Action>
+      <Action ActionName="Devmode Ungroup" BackColor="#FBE3CF">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + Shift + g" />
+      </Action>
+      <Action ActionName="Devmode Validate" BackColor="#FDF1E7">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Enter" />
+      </Action>
+      <Action ActionName="Devmode Window Hide Lock" BackColor="#FBE3CF">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="F2" />
+      </Action>
+    </FSContext>
+    <FSContext ContextName="Devmodecamera" BackColor="LightPink">
+      <Action ActionName="Devmodecamera Lalt Mode" BackColor="#FFE9EC">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Alt" />
+      </Action>
+      <Action ActionName="Devmodecamera Translation" BackColor="#FFE9EC">
+        <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Mid-Click" />
+      </Action>
+      <Action ActionName="Devmodecamera Zoom In" BackColor="#FFF4F5">
+        <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Mouse Wheel Up" />
+      </Action>
+      <Action ActionName="Devmodecamera Zoom Out" BackColor="#FFE9EC">
+        <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Mouse Wheel Down" />
+      </Action>
+    </FSContext>
+    <FSContext ContextName="Drone" BackColor="LightGreen">
+      <Action ActionName="Drone Activate Blur" BackColor="#DDF9DD">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="F1" />
+      </Action>
+      <Action ActionName="Drone Activate Front Dof" BackColor="#EEFCEE">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + F1" />
+      </Action>
+      <Action ActionName="Drone Active View Bottom" BackColor="#DDF9DD">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + Space" />
+      </Action>
+      <Action ActionName="Drone Attach To Next Target" BackColor="#EEFCEE">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + Page Up" />
+      </Action>
+      <Action ActionName="Drone Attach To Previous Target" BackColor="#DDF9DD">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + Page Down" />
+      </Action>
+      <Action ActionName="Drone Auto Exposure" BackColor="#EEFCEE">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + F4" />
+      </Action>
+      <Action ActionName="Drone Auto Focus" BackColor="#DDF9DD">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="F4" />
+      </Action>
+      <Action ActionName="Drone Decrease Camera Speed" BackColor="#EEFCEE">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="F7" />
+      </Action>
+      <Action ActionName="Drone Decrease Drone Speed" BackColor="#DDF9DD">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="F5" />
+      </Action>
+      <Action ActionName="Drone Depth Field Less" BackColor="#EEFCEE">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="F2" />
+      </Action>
+      <Action ActionName="Drone Depth Field Plus" BackColor="#DDF9DD">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="F3" />
+      </Action>
+      <Action ActionName="Drone Exposure Less" BackColor="#EEFCEE">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + F2" />
+      </Action>
+      <Action ActionName="Drone Exposure Plus" BackColor="#DDF9DD">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + F3" />
+      </Action>
+      <Action ActionName="Drone Increase Camera Speed" BackColor="#EEFCEE">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="F8" />
+      </Action>
+      <Action ActionName="Drone Increase Drone Speed" BackColor="#DDF9DD">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="F6" />
+      </Action>
+      <Action ActionName="Drone Look To Next Target" BackColor="#EEFCEE">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="t" />
+      </Action>
+      <Action ActionName="Drone Look To Previous Target" BackColor="#DDF9DD">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Shift + t" />
+      </Action>
+      <Action ActionName="Drone Move Backward" BackColor="#EEFCEE">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="s" />
+      </Action>
+      <Action ActionName="Drone Move Down" BackColor="#DDF9DD">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="f" />
+      </Action>
+      <Action ActionName="Drone Move Forward" BackColor="#EEFCEE">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="w" />
+      </Action>
+      <Action ActionName="Drone Move Left" BackColor="#DDF9DD">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="a" />
+      </Action>
+      <Action ActionName="Drone Move Right" BackColor="#EEFCEE">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="d" />
+      </Action>
+      <Action ActionName="Drone Move Up" BackColor="#DDF9DD">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="r" />
+      </Action>
+      <Action ActionName="Drone Reset Horizon" BackColor="#EEFCEE">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Space" />
+      </Action>
+      <Action ActionName="Drone Reset Target Offset" BackColor="#DDF9DD">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Num 5" />
+      </Action>
+      <Action ActionName="Drone Rotate Backward" BackColor="#EEFCEE">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Num 2" />
+      </Action>
+      <Action ActionName="Drone Rotate Down" BackColor="#DDF9DD">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Num 9" />
+      </Action>
+      <Action ActionName="Drone Rotate Forward" BackColor="#EEFCEE">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Num 8" />
+      </Action>
+      <Action ActionName="Drone Rotate Left" BackColor="#DDF9DD">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Num 4" />
+      </Action>
+      <Action ActionName="Drone Rotate Right" BackColor="#EEFCEE">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Num 6" />
+      </Action>
+      <Action ActionName="Drone Rotate Up" BackColor="#DDF9DD">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Num 7" />
+      </Action>
+      <Action ActionName="Drone Toggle Free Follow Mode" BackColor="#EEFCEE">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Tab" />
+      </Action>
+      <Action ActionName="Drone Toggle Lock Mode" BackColor="#DDF9DD">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + Tab" />
+      </Action>
+      <Action ActionName="Drone Zoom In" BackColor="#EEFCEE">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Num +" />
+      </Action>
+      <Action ActionName="Drone Zoom Out" BackColor="#DDF9DD">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Num -" />
+      </Action>
+    </FSContext>
+    <FSContext ContextName="External Camera" BackColor="Bisque">
+      <Action ActionName="Camerachase Reset" BackColor="#FFF6ED">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + Space" />
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Secondary" KeyCombo="f" />
+        <Binding Controller="X56 H.O.T.A.S. Stick" Profile="X56 H.O.T.A.S. Stick Helicopter 2" Priority="Primary" KeyCombo="Joystick Button 5" />
+      </Action>
+      <Action ActionName="Chase Look Down" BackColor="#FFFAF6">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Shift + Down" />
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Secondary" KeyCombo="Right Shift + Down" />
+      </Action>
+      <Action ActionName="Chase Look Left" BackColor="#FFF6ED">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Shift + Left" />
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Secondary" KeyCombo="Right Shift + Left" />
+      </Action>
+      <Action ActionName="Chase Look Right" BackColor="#FFFAF6">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Shift + Right" />
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Secondary" KeyCombo="Right Shift + Right" />
+      </Action>
+      <Action ActionName="Chase Look Up" BackColor="#FFF6ED">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Shift + Up" />
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Secondary" KeyCombo="Right Shift + Up" />
+      </Action>
+      <Action ActionName="Chase Quickview1" BackColor="#FFFAF6">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + Left" />
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Secondary" KeyCombo="Right Ctrl + Left" />
+        <Binding Controller="X56 H.O.T.A.S. Stick" Profile="X56 H.O.T.A.S. Stick Helicopter 2" Priority="Primary" KeyCombo="Joystick Pov Right" />
+      </Action>
+      <Action ActionName="Chase Quickview2" BackColor="#FFF6ED">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + Down" />
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Secondary" KeyCombo="Right Ctrl + Down" />
+        <Binding Controller="X56 H.O.T.A.S. Stick" Profile="X56 H.O.T.A.S. Stick Helicopter 2" Priority="Primary" KeyCombo="Joystick Pov Down" />
+      </Action>
+      <Action ActionName="Chase Quickview3" BackColor="#FFFAF6">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + Right" />
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Secondary" KeyCombo="Right Ctrl + Right" />
+        <Binding Controller="X56 H.O.T.A.S. Stick" Profile="X56 H.O.T.A.S. Stick Helicopter 2" Priority="Primary" KeyCombo="JoystickPov Left" />
+      </Action>
+      <Action ActionName="Chase Quickview4" BackColor="#FFF6ED">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + Up" />
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Secondary" KeyCombo="Right Ctrl + Up" />
+        <Binding Controller="X56 H.O.T.A.S. Stick" Profile="X56 H.O.T.A.S. Stick Helicopter 2" Priority="Primary" KeyCombo="Joystick Pov Up" />
+      </Action>
+      <Action ActionName="Dezoom Chase" BackColor="#FFFAF6">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="-" />
+        <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Mouse Wheel Down" />
+      </Action>
+      <Action ActionName="Zoom Chase" BackColor="#FFF6ED">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="=" />
+        <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Mouse Wheel Up" />
+      </Action>
+      <Action ActionName="Chase Focus" BackColor="#FFF6ED">
+        <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Right-Click" />
+      </Action>
+      <Action ActionName="Chase Lockable Look Down" BackColor="#FFFAF6">
+        <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Axis Y+" />
+      </Action>
+      <Action ActionName="Chase Lockable Look Left" BackColor="#FFF6ED">
+        <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Axis X-" />
+      </Action>
+      <Action ActionName="Chase Lockable Look Right" BackColor="#FFFAF6">
+        <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Axis X+" />
+      </Action>
+      <Action ActionName="Chase Lockable Look Up" BackColor="#FFF6ED">
+        <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Axis Y-" />
+      </Action>
+      <Action ActionName="Toggle Fixed Camerachase" BackColor="#FFFAF6">
+        <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Mid-Click" />
+      </Action>
+      <Action ActionName="Toggle Fixed Camerachase Hold" BackColor="#FFF6ED">
+        <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Right-Click" />
+      </Action>
+      <Action ActionName="Chase Freelook Hrz Set" BackColor="#FFF6ED">
+        <Binding Controller="X56 H.O.T.A.S. Stick" Profile="X56 H.O.T.A.S. Stick Helicopter 2" Priority="Primary" KeyCombo="Joystick R-Axis X " />
+      </Action>
+      <Action ActionName="Chase Freelook Vrtc Set" BackColor="#FFFAF6">
+        <Binding Controller="X56 H.O.T.A.S. Stick" Profile="X56 H.O.T.A.S. Stick Helicopter 2" Priority="Primary" KeyCombo="Joystick R-Axis Y " />
+      </Action>
+    </FSContext>
+    <FSContext ContextName="Fixed Camera" BackColor="Thistle">
+      <Action ActionName="Camera Fixed Instrument0" BackColor="#F3EBF3">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + Shift + 0" />
+      </Action>
+      <Action ActionName="Camera Fixed Instrument1" BackColor="#F9F5F9">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + Shift + 1" />
+      </Action>
+      <Action ActionName="Camera Fixed Instrument2" BackColor="#F3EBF3">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + Shift + 2" />
+      </Action>
+      <Action ActionName="Camera Fixed Instrument3" BackColor="#F9F5F9">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + Shift + 3" />
+      </Action>
+      <Action ActionName="Camera Fixed Instrument4" BackColor="#F3EBF3">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + Shift + 4" />
+      </Action>
+      <Action ActionName="Camera Fixed Instrument5" BackColor="#F9F5F9">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + Shift + 5" />
+      </Action>
+      <Action ActionName="Camera Fixed Instrument6" BackColor="#F3EBF3">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + Shift + 6" />
+      </Action>
+      <Action ActionName="Camera Fixed Instrument7" BackColor="#F9F5F9">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + Shift + 7" />
+      </Action>
+      <Action ActionName="Camera Fixed Instrument8" BackColor="#F3EBF3">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + Shift + 8" />
+      </Action>
+      <Action ActionName="Camera Fixed Instrument9" BackColor="#F9F5F9">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + Shift + 9" />
+      </Action>
+      <Action ActionName="Camera Fixed Reset" BackColor="#F3EBF3">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="f" />
+      </Action>
+      <Action ActionName="Fixed Cam Backcycle" BackColor="#F9F5F9">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Shift + a" />
+        <Binding Controller="X56 H.O.T.A.S. Stick" Profile="X56 H.O.T.A.S. Stick Helicopter 2" Priority="Primary" KeyCombo="Joystick Button 10" />
+      </Action>
+      <Action ActionName="Fixed Cam Cycle" BackColor="#F3EBF3">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="a" />
+        <Binding Controller="X56 H.O.T.A.S. Stick" Profile="X56 H.O.T.A.S. Stick Helicopter 2" Priority="Primary" KeyCombo="Joystick Button 8" />
+      </Action>
+    </FSContext>
+    <FSContext ContextName="Hangar Camera" BackColor="PowderBlue">
+      <Action ActionName="Menu Hangar Camera Back" BackColor="#E7F5F7">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Esc" />
+      </Action>
+    </FSContext>
+    <FSContext ContextName="Ingame Ui" BackColor="LightGoldenrodYellow">
+      <Action ActionName="Checklist" BackColor="#FDFDF1">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Shift + c" />
+      </Action>
+      <Action ActionName="Atc" BackColor="#FEFEF8">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Scroll Lock" />
+      </Action>
+      <Action ActionName="Inputs Layout" BackColor="#FDFDF1">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + c" />
+      </Action>
+      <Action ActionName="Show Navlog" BackColor="#FEFEF8">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="n" />
+      </Action>
+      <Action ActionName="Show Vfrmap" BackColor="#FDFDF1">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="v" />
+      </Action>
+      <Action ActionName="Ui Display Cfd Toggle" BackColor="#FEFEF8">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="\" />
+      </Action>
+      <Action ActionName="Ui Display Thermals Toggle" BackColor="#FDFDF1">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Shift + \" />
+      </Action>
+      <Action ActionName="Toggle Copilot Delegate Controls" BackColor="#FEFEF8">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + Alt + x" />
+      </Action>
+      <Action ActionName="Ingamepanel Zoom In" BackColor="#FDFDF1">
+        <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Mouse Wheel Up" />
+      </Action>
+      <Action ActionName="Ingamepanel Zoom Out" BackColor="#FEFEF8">
+        <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Mouse Wheel Down" />
+      </Action>
+    </FSContext>
+    <FSContext ContextName="Instruments Camera" BackColor="Lavender">
+      <Action ActionName="Cockpit Backcycle" BackColor="#F7F7FD">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Shift + a" />
+      </Action>
+      <Action ActionName="Cockpit Cycle" BackColor="#FBFBFE">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="a" />
+      </Action>
+      <Action ActionName="Instrument Mode" BackColor="#F7F7FD">
+        <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Mid-Click" />
+      </Action>
+      <Action ActionName="Instrument Mode Hold" BackColor="#FBFBFE">
+        <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Right-Click" />
+      </Action>
+    </FSContext>
+    <FSContext ContextName="Menu" BackColor="NavajoWhite">
+      <Action ActionName="Menu Add To Selection" BackColor="#FFF5E6">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl" />
+      </Action>
+      <Action ActionName="Menu Calibration" BackColor="#FFFAF2">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="F10" />
+      </Action>
+      <Action ActionName="Menu Clear" BackColor="#FFF5E6">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="F8" />
+      </Action>
+      <Action ActionName="Menu Clear Search" BackColor="#FFFAF2">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="F4" />
+      </Action>
+      <Action ActionName="Menu Decrease" BackColor="#FFF5E6">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="-" />
+      </Action>
+      <Action ActionName="Menu Increase" BackColor="#FFFAF2">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="=" />
+      </Action>
+      <Action ActionName="Menu Reno Kick Player" BackColor="#FFF5E6">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="k" />
+      </Action>
+      <Action ActionName="Menu Selection Mode" BackColor="#FFFAF2">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Shift" />
+      </Action>
+      <Action ActionName="Menu Apply" BackColor="#FFF5E6">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="F11" />
+      </Action>
+      <Action ActionName="Menu Back" BackColor="#FFFAF2">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Esc" />
+      </Action>
+      <Action ActionName="Menu Backto Mainmenu" BackColor="#FFF5E6">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="End" />
+      </Action>
+      <Action ActionName="Menu Button Favorite" BackColor="#FFFAF2">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="f" />
+      </Action>
+      <Action ActionName="Menu Close" BackColor="#FFF5E6">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Backspace" />
+      </Action>
+      <Action ActionName="Menu Customize" BackColor="#FFFAF2">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="F12" />
+      </Action>
+      <Action ActionName="Menu Down" BackColor="#FFF5E6">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Down" />
+      </Action>
+      <Action ActionName="Menu Fly" BackColor="#FFFAF2">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + Enter" />
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Secondary" KeyCombo="Right Ctrl + Enter" />
+      </Action>
+      <Action ActionName="Menu Goto Contentmanager" BackColor="#FFF5E6">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="m" />
+      </Action>
+      <Action ActionName="Menu Hangar Changeaircraft" BackColor="#FFFAF2">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="F11" />
+      </Action>
+      <Action ActionName="Menu Hangar Liveries" BackColor="#FFF5E6">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="F12" />
+      </Action>
+      <Action ActionName="Menu Hangar Specs" BackColor="#FFFAF2">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="F10" />
+      </Action>
+      <Action ActionName="Menu Help" BackColor="#FFF5E6">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Tab" />
+      </Action>
+      <Action ActionName="Menu L1" BackColor="#FFFAF2">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + Left" />
+      </Action>
+      <Action ActionName="Menu Left" BackColor="#FFF5E6">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Left" />
+      </Action>
+      <Action ActionName="Menu Market Version History" BackColor="#FFFAF2">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="v" />
+      </Action>
+      <Action ActionName="Menu Open" BackColor="#FFF5E6">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Space" />
+      </Action>
+      <Action ActionName="Menu Package Activate" BackColor="#FFFAF2">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Enter" />
+      </Action>
+      <Action ActionName="Menu Package Deactivate" BackColor="#FFF5E6">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Enter" />
+      </Action>
+      <Action ActionName="Menu Package Delete" BackColor="#FFFAF2">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Delete" />
+      </Action>
+      <Action ActionName="Menu Package Dependencies" BackColor="#FFF5E6">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="d" />
+      </Action>
+      <Action ActionName="Menu Package Down" BackColor="#FFFAF2">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Page Down" />
+      </Action>
+      <Action ActionName="Menu Package History" BackColor="#FFF5E6">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="v" />
+      </Action>
+      <Action ActionName="Menu Package Up" BackColor="#FFFAF2">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Page Up" />
+      </Action>
+      <Action ActionName="Menu Preset Manager" BackColor="#FFF5E6">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="m" />
+      </Action>
+      <Action ActionName="Menu Quit" BackColor="#FFFAF2">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Esc" />
+      </Action>
+      <Action ActionName="Menu R1" BackColor="#FFF5E6">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + Right" />
+      </Action>
+      <Action ActionName="Menu Reno Back To Reno Menu" BackColor="#FFFAF2">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Insert" />
+      </Action>
+      <Action ActionName="Menu Reno Options" BackColor="#FFF5E6">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="o" />
+      </Action>
+      <Action ActionName="Menu Reset" BackColor="#FFFAF2">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="F12" />
+      </Action>
+      <Action ActionName="Menu Reset Freeflight" BackColor="#FFF5E6">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Home" />
+      </Action>
+      <Action ActionName="Menu Restart Mission" BackColor="#FFFAF2">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Home" />
+      </Action>
+      <Action ActionName="Menu Right" BackColor="#FFF5E6">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Right" />
+      </Action>
+      <Action ActionName="Menu Up" BackColor="#FFFAF2">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Up" />
+      </Action>
+      <Action ActionName="Menu Valid" BackColor="#FFF5E6">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Enter" />
+      </Action>
+      <Action ActionName="Menu Wm Filters" BackColor="#FFFAF2">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="f" />
+      </Action>
+      <Action ActionName="Menu Wm Legend" BackColor="#FFF5E6">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="l" />
+      </Action>
+    </FSContext>
+    <FSContext ContextName="Mode Pause" BackColor="RosyBrown">
+      <Action ActionName="Pause Off" BackColor="#EADDDD">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Esc" />
+      </Action>
+      <Action ActionName="Pause Toggle" BackColor="#F4EEEE">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Esc" />
+      </Action>
+    </FSContext>
+    <FSContext ContextName="Modes" BackColor="LightSalmon">
+      <Action ActionName="Cockpit Instrument0" BackColor="#FFE2D7">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + 0" />
+      </Action>
+      <Action ActionName="Cockpit Instrument1" BackColor="#FFF0EB">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + 1" />
+      </Action>
+      <Action ActionName="Cockpit Instrument2" BackColor="#FFE2D7">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + 2" />
+      </Action>
+      <Action ActionName="Cockpit Instrument3" BackColor="#FFF0EB">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + 3" />
+      </Action>
+      <Action ActionName="Cockpit Instrument4" BackColor="#FFE2D7">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + 4" />
+      </Action>
+      <Action ActionName="Cockpit Instrument5" BackColor="#FFF0EB">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + 5" />
+      </Action>
+      <Action ActionName="Cockpit Instrument6" BackColor="#FFE2D7">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + 6" />
+      </Action>
+      <Action ActionName="Cockpit Instrument7" BackColor="#FFF0EB">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + 7" />
+      </Action>
+      <Action ActionName="Cockpit Instrument8" BackColor="#FFE2D7">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + 8" />
+      </Action>
+      <Action ActionName="Cockpit Instrument9" BackColor="#FFF0EB">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + 9" />
+      </Action>
+      <Action ActionName="Cockpit Reset" BackColor="#FFE2D7">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + Space" />
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Secondary" KeyCombo="f" />
+        <Binding Controller="X56 H.O.T.A.S. Stick" Profile="X56 H.O.T.A.S. Stick Helicopter 2" Priority="Primary" KeyCombo="Joystick Button 5" />
+      </Action>
+      <Action ActionName="Headphone Simulation Toggle" BackColor="#FFF0EB">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="\" />
+      </Action>
+      <Action ActionName="Inputs Vr Toolbar Toggle" BackColor="#FFE2D7">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Tab" />
+      </Action>
+      <Action ActionName="Next Poi" BackColor="#FFF0EB">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Page Up" />
+      </Action>
+      <Action ActionName="Plane Control" BackColor="#FFE2D7">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="c" />
+      </Action>
+      <Action ActionName="Set User Poi" BackColor="#FFF0EB">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="t" />
+      </Action>
+      <Action ActionName="Sim Rate" BackColor="#FFE2D7">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="r" />
+      </Action>
+      <Action ActionName="Slew Toggle" BackColor="#FFF0EB">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="y" />
+      </Action>
+      <Action ActionName="Unset User Poi" BackColor="#FFE2D7">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Shift + t" />
+      </Action>
+      <Action ActionName="View Mode" BackColor="#FFF0EB">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="End" />
+        <Binding Controller="Saitek Pro Flight X-56 Rhino Throttle" Profile="X-56 Rhino Throttle Helicopter" Priority="Primary" KeyCombo="Joystick Button 4" />
+        <Binding Controller="X56 H.O.T.A.S. Stick" Profile="X56 H.O.T.A.S. Stick Helicopter 2" Priority="Primary" KeyCombo="Joystick Button 6" />
+      </Action>
+      <Action ActionName="Toggle Camera Drone" BackColor="#FFE2D7">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Insert" />
+      </Action>
+      <Action ActionName="Cockpit Focus" BackColor="#FFE2D7">
+        <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Right-Click" />
+      </Action>
+      <Action ActionName="Cycle Pilotview Back" BackColor="#FFE2D7">
+        <Binding Controller="X56 H.O.T.A.S. Stick" Profile="X56 H.O.T.A.S. Stick Helicopter 2" Priority="Primary" KeyCombo="Joystick Button 9" />
+      </Action>
+      <Action ActionName="Cycle Pilotview Next" BackColor="#FFF0EB">
+        <Binding Controller="X56 H.O.T.A.S. Stick" Profile="X56 H.O.T.A.S. Stick Helicopter 2" Priority="Primary" KeyCombo="Joystick Button 7" />
+      </Action>
+    </FSContext>
+    <FSContext ContextName="Plane" BackColor="GreenYellow">
+      <Action ActionName="Active Pause Toggle" BackColor="#E6FFC0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Pause" />
+      </Action>
+      <Action ActionName="Adf" BackColor="#F2FFDF">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Shift + Ctrl + a" />
+      </Action>
+      <Action ActionName="Adf2 Extended Set" BackColor="#E6FFC0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Shift + Ctrl + a" />
+      </Action>
+      <Action ActionName="Adf2 Highrange Set" BackColor="#F2FFDF">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Shift + Ctrl + a" />
+      </Action>
+      <Action ActionName="Adf2 Lowrange Set" BackColor="#E6FFC0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Shift + Ctrl + a" />
+      </Action>
+      <Action ActionName="Adf2 Needle Set" BackColor="#F2FFDF">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Shift + Ctrl + a" />
+      </Action>
+      <Action ActionName="Adf2 Outside Source" BackColor="#E6FFC0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Shift + Ctrl + a" />
+      </Action>
+      <Action ActionName="Adf2 Set" BackColor="#F2FFDF">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Shift + Ctrl + a" />
+      </Action>
+      <Action ActionName="Adf2 Volume Dec" BackColor="#E6FFC0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Shift + Ctrl + a" />
+      </Action>
+      <Action ActionName="Adf2 Volume Inc" BackColor="#F2FFDF">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Shift + Ctrl + a" />
+      </Action>
+      <Action ActionName="Adf2 Volume Set" BackColor="#E6FFC0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Shift + Ctrl + a" />
+      </Action>
+      <Action ActionName="Aileron Left" BackColor="#F2FFDF">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Num 4" />
+      </Action>
+      <Action ActionName="Aileron Right" BackColor="#E6FFC0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Num 6" />
+      </Action>
+      <Action ActionName="Aileron Trim Left" BackColor="#F2FFDF">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + Num 4" />
+      </Action>
+      <Action ActionName="Aileron Trim Right" BackColor="#E6FFC0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + Num 6" />
+      </Action>
+      <Action ActionName="Airspeed Bug Select" BackColor="#F2FFDF">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Shift + Ctrl + r" />
+      </Action>
+      <Action ActionName="All Lights Toggle" BackColor="#E6FFC0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="l" />
+      </Action>
+      <Action ActionName="Altitude Bug Select" BackColor="#F2FFDF">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Shift + Ctrl + z" />
+      </Action>
+      <Action ActionName="Anti Ice Toggle" BackColor="#E6FFC0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="h" />
+      </Action>
+      <Action ActionName="Ap Airspeed Hold" BackColor="#F2FFDF">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Alt + r" />
+      </Action>
+      <Action ActionName="Ap Alt Var Dec" BackColor="#E6FFC0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + Page Down" />
+      </Action>
+      <Action ActionName="Ap Alt Var Inc" BackColor="#F2FFDF">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + Page Up" />
+      </Action>
+      <Action ActionName="Ap Apr Hold" BackColor="#E6FFC0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + a" />
+      </Action>
+      <Action ActionName="Ap Att Hold" BackColor="#F2FFDF">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + t" />
+      </Action>
+      <Action ActionName="Ap Loc Hold" BackColor="#E6FFC0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + o" />
+      </Action>
+      <Action ActionName="Ap Mach Hold" BackColor="#F2FFDF">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + m" />
+      </Action>
+      <Action ActionName="Ap Master" BackColor="#E6FFC0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="z" />
+        <Binding Controller="X56 H.O.T.A.S. Stick" Profile="X56 H.O.T.A.S. Stick Helicopter 2" Priority="Primary" KeyCombo="Joystick Button 2" />
+      </Action>
+      <Action ActionName="Ap Max Bank Angle Set" BackColor="#F2FFDF">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="z" />
+        <Binding Controller="X56 H.O.T.A.S. Stick" Profile="X56 H.O.T.A.S. Stick Helicopter 2" Priority="Primary" KeyCombo="Joystick Button 2" />
+      </Action>
+      <Action ActionName="Ap Max Bank Velocity Set" BackColor="#E6FFC0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="z" />
+        <Binding Controller="X56 H.O.T.A.S. Stick" Profile="X56 H.O.T.A.S. Stick Helicopter 2" Priority="Primary" KeyCombo="Joystick Button 2" />
+      </Action>
+      <Action ActionName="Ap N1 Hold" BackColor="#F2FFDF">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + s" />
+      </Action>
+      <Action ActionName="Ap N1 Ref Dec" BackColor="#E6FFC0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + End" />
+      </Action>
+      <Action ActionName="Ap N1 Ref Inc" BackColor="#F2FFDF">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + Home" />
+      </Action>
+      <Action ActionName="Ap Nav1 Hold" BackColor="#E6FFC0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + n" />
+      </Action>
+      <Action ActionName="Ap Spd Var Dec" BackColor="#F2FFDF">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Shift + Ctrl + Delete" />
+      </Action>
+      <Action ActionName="Ap Spd Var Inc" BackColor="#E6FFC0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Shift + Ctrl + Insert" />
+      </Action>
+      <Action ActionName="Ap Vs Var Dec" BackColor="#F2FFDF">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + End" />
+      </Action>
+      <Action ActionName="Ap Vs Var Inc" BackColor="#E6FFC0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + Home" />
+      </Action>
+      <Action ActionName="Ap Wing Leveler" BackColor="#F2FFDF">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + v" />
+      </Action>
+      <Action ActionName="Auto Throttle Arm" BackColor="#E6FFC0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Shift + r" />
+      </Action>
+      <Action ActionName="Auto Throttle To Ga" BackColor="#F2FFDF">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Shift + Ctrl + g" />
+      </Action>
+      <Action ActionName="Autocoord Toggle" BackColor="#E6FFC0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Shift + Ctrl + u" />
+      </Action>
+      <Action ActionName="Autopilot Off" BackColor="#F2FFDF">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Shift + Alt + z" />
+      </Action>
+      <Action ActionName="Autopilot On" BackColor="#E6FFC0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Alt + z" />
+      </Action>
+      <Action ActionName="Back To Fly" BackColor="#F2FFDF">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="" />
+      </Action>
+      <Action ActionName="Barometric" BackColor="#E6FFC0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="b" />
+      </Action>
+      <Action ActionName="Brakes" BackColor="#F2FFDF">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Num Del" />
+      </Action>
+      <Action ActionName="Brakes Left" BackColor="#E6FFC0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Num *" />
+      </Action>
+      <Action ActionName="Brakes Right" BackColor="#F2FFDF">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Num -" />
+      </Action>
+      <Action ActionName="Center Ailer Rudder" BackColor="#E6FFC0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Num 5" />
+      </Action>
+      <Action ActionName="Cockpit Flashlight Onoff" BackColor="#F2FFDF">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Alt + l" />
+      </Action>
+      <Action ActionName="Com Radio" BackColor="#E6FFC0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="c" />
+      </Action>
+      <Action ActionName="Com Stby Radio Set" BackColor="#F2FFDF">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Shift + Alt + x" />
+      </Action>
+      <Action ActionName="Com Stby Radio Switch To" BackColor="#E6FFC0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Alt + u" />
+      </Action>
+      <Action ActionName="Dec Cowl Flaps" BackColor="#F2FFDF">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Shift + Ctrl + c" />
+      </Action>
+      <Action ActionName="Dme" BackColor="#E6FFC0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="f" />
+        <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Mid-Click" />
+      </Action>
+      <Action ActionName="Elev Down" BackColor="#F2FFDF">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Num 8" />
+      </Action>
+      <Action ActionName="Elev Trim Dn" BackColor="#E6FFC0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Num 7" />
+      </Action>
+      <Action ActionName="Elev Trim Up" BackColor="#F2FFDF">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Num 1" />
+      </Action>
+      <Action ActionName="Elev Up" BackColor="#E6FFC0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Num 2" />
+      </Action>
+      <Action ActionName="Engine" BackColor="#F2FFDF">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="e" />
+      </Action>
+      <Action ActionName="Engine Auto Shutdown" BackColor="#E6FFC0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Shift + Ctrl + e" />
+      </Action>
+      <Action ActionName="Engine Auto Start" BackColor="#F2FFDF">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + e" />
+      </Action>
+      <Action ActionName="Flaps Decr" BackColor="#E6FFC0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="F6" />
+      </Action>
+      <Action ActionName="Flaps Down" BackColor="#F2FFDF">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="F8" />
+      </Action>
+      <Action ActionName="Flaps Incr" BackColor="#E6FFC0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="F7" />
+      </Action>
+      <Action ActionName="Flaps Up" BackColor="#F2FFDF">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="F5" />
+      </Action>
+      <Action ActionName="Frequency Swap" BackColor="#E6FFC0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="x" />
+      </Action>
+      <Action ActionName="Fuel Dump Toggle" BackColor="#F2FFDF">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Shift + Ctrl + d" />
+      </Action>
+      <Action ActionName="Fuel Pump" BackColor="#E6FFC0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Alt + p" />
+      </Action>
+      <Action ActionName="Fuel Selector All" BackColor="#F2FFDF">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Alt + w" />
+      </Action>
+      <Action ActionName="Fuel Selector Off" BackColor="#E6FFC0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + Alt + w" />
+      </Action>
+      <Action ActionName="Gear Down" BackColor="#F2FFDF">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + g" />
+        <Binding Controller="Saitek Pro Flight X-56 Rhino Throttle" Profile="X-56 Rhino Throttle Helicopter" Priority="Primary" KeyCombo="Joystick Button 7" />
+      </Action>
+      <Action ActionName="Gear Toggle" BackColor="#E6FFC0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="g" />
+      </Action>
+      <Action ActionName="Heading Bug Dec" BackColor="#F2FFDF">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + Delete" />
+      </Action>
+      <Action ActionName="Heading Bug Inc" BackColor="#E6FFC0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + Insert" />
+      </Action>
+      <Action ActionName="Heading Bug Select" BackColor="#F2FFDF">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Shift + Ctrl + h" />
+      </Action>
+      <Action ActionName="Heading Gyro Set" BackColor="#E6FFC0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="d" />
+      </Action>
+      <Action ActionName="Inc Cowl Flaps" BackColor="#F2FFDF">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Shift + Ctrl + v" />
+      </Action>
+      <Action ActionName="Incr Wheel Speed" BackColor="#E6FFC0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Shift" />
+      </Action>
+      <Action ActionName="Landing Light Down" BackColor="#F2FFDF">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Shift + Ctrl + Num 2" />
+      </Action>
+      <Action ActionName="Landing Light Home" BackColor="#E6FFC0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Shift + Ctrl + Num 5" />
+      </Action>
+      <Action ActionName="Landing Light Left" BackColor="#F2FFDF">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Shift + Ctrl + Num 4" />
+      </Action>
+      <Action ActionName="Landing Light Right" BackColor="#E6FFC0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Shift + Ctrl + Num 6" />
+      </Action>
+      <Action ActionName="Landing Light Up" BackColor="#F2FFDF">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Shift + Ctrl + Num 8" />
+      </Action>
+      <Action ActionName="Landing Lights Toggle" BackColor="#E6FFC0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + l" />
+      </Action>
+      <Action ActionName="Magneto" BackColor="#F2FFDF">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="m" />
+      </Action>
+      <Action ActionName="Magneto Both" BackColor="#E6FFC0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Shift + Alt + f" />
+      </Action>
+      <Action ActionName="Magneto Left" BackColor="#F2FFDF">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Shift + Alt + s" />
+      </Action>
+      <Action ActionName="Magneto Off" BackColor="#E6FFC0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Shift + Alt + q" />
+      </Action>
+      <Action ActionName="Magneto Right" BackColor="#F2FFDF">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Shift + Alt + d" />
+      </Action>
+      <Action ActionName="Magneto Start" BackColor="#E6FFC0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Shift + Alt + g" />
+      </Action>
+      <Action ActionName="Marker Sound Toggle" BackColor="#F2FFDF">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + 3" />
+      </Action>
+      <Action ActionName="Minus" BackColor="#E6FFC0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + Num -" />
+      </Action>
+      <Action ActionName="Mixture Decr" BackColor="#F2FFDF">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Shift + Ctrl + F2" />
+      </Action>
+      <Action ActionName="Mixture Incr Small" BackColor="#E6FFC0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Shift + Ctrl + F3" />
+      </Action>
+      <Action ActionName="Mixture Lean" BackColor="#F2FFDF">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Shift + Ctrl + F1" />
+      </Action>
+      <Action ActionName="Mixture Rich" BackColor="#E6FFC0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Shift + Ctrl + F4" />
+      </Action>
+      <Action ActionName="Nav Radio" BackColor="#F2FFDF">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="n" />
+      </Action>
+      <Action ActionName="Nav1 Radio Fract Dec Carry" BackColor="#E6FFC0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Shift + Ctrl + Page Down" />
+      </Action>
+      <Action ActionName="Nav1 Radio Fract Inc Carry" BackColor="#F2FFDF">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Shift + Ctrl + Page Up" />
+      </Action>
+      <Action ActionName="Nav1 Radio Swap" BackColor="#E6FFC0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Shift + Ctrl + n" />
+      </Action>
+      <Action ActionName="Orni Boost Set" BackColor="#F2FFDF">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="w" />
+      </Action>
+      <Action ActionName="Orni Dive Mode Off" BackColor="#E6FFC0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Shift + s" />
+      </Action>
+      <Action ActionName="Orni Dive Mode On" BackColor="#F2FFDF">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Shift + d" />
+      </Action>
+      <Action ActionName="Orni Glide Mode Off" BackColor="#E6FFC0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Shift + s" />
+      </Action>
+      <Action ActionName="Orni Glide Mode On" BackColor="#F2FFDF">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Shift + q" />
+      </Action>
+      <Action ActionName="Orni Wings Brake Set" BackColor="#E6FFC0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="e" />
+      </Action>
+      <Action ActionName="Parking Brakes" BackColor="#F2FFDF">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + Num Del" />
+        <Binding Controller="Saitek Pro Flight X-56 Rhino Throttle" Profile="X-56 Rhino Throttle Helicopter" Priority="Primary" KeyCombo="Joystick Button 11" />
+      </Action>
+      <Action ActionName="Pitot Heat Toggle" BackColor="#E6FFC0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Shift + h" />
+      </Action>
+      <Action ActionName="Plus" BackColor="#F2FFDF">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + Num +" />
+      </Action>
+      <Action ActionName="Prop Pitch Decrease Ex1" BackColor="#E6FFC0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + F2" />
+      </Action>
+      <Action ActionName="Prop Pitch Hi Ex1" BackColor="#F2FFDF">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + F4" />
+      </Action>
+      <Action ActionName="Prop Pitch Increase Ex1" BackColor="#E6FFC0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + F3" />
+      </Action>
+      <Action ActionName="Prop Pitch Lo Ex1" BackColor="#F2FFDF">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + F1" />
+      </Action>
+      <Action ActionName="Pushback Set" BackColor="#E6FFC0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Shift + p" />
+      </Action>
+      <Action ActionName="Request Catering" BackColor="#F2FFDF">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Alt + c" />
+      </Action>
+      <Action ActionName="Request Fuel" BackColor="#E6FFC0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Shift + f" />
+      </Action>
+      <Action ActionName="Request Luggage" BackColor="#F2FFDF">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Shift + u" />
+      </Action>
+      <Action ActionName="Request Power Supply" BackColor="#E6FFC0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + p" />
+      </Action>
+      <Action ActionName="Rudder Left" BackColor="#F2FFDF">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Num 0" />
+      </Action>
+      <Action ActionName="Rudder Right" BackColor="#E6FFC0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Enter" />
+      </Action>
+      <Action ActionName="Rudder Trim Left" BackColor="#F2FFDF">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + Num 0" />
+      </Action>
+      <Action ActionName="Rudder Trim Right" BackColor="#E6FFC0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + Enter" />
+      </Action>
+      <Action ActionName="Select 1" BackColor="#F2FFDF">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Alt + F1" />
+      </Action>
+      <Action ActionName="Select 2" BackColor="#E6FFC0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Alt + F2" />
+      </Action>
+      <Action ActionName="Select 3" BackColor="#F2FFDF">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Alt + F3" />
+      </Action>
+      <Action ActionName="Select 4" BackColor="#E6FFC0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Alt + F4" />
+      </Action>
+      <Action ActionName="Spoilers Toggle" BackColor="#F2FFDF">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Num /" />
+      </Action>
+      <Action ActionName="Strobes Toggle" BackColor="#E6FFC0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="o" />
+      </Action>
+      <Action ActionName="Throttle Full" BackColor="#F2FFDF">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="F4" />
+      </Action>
+      <Action ActionName="Toggle Alternate Static" BackColor="#E6FFC0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Alt + s" />
+      </Action>
+      <Action ActionName="Toggle Avionics Master" BackColor="#F2FFDF">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Page Up" />
+      </Action>
+      <Action ActionName="Toggle Beacon Lights" BackColor="#E6FFC0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Alt + h" />
+      </Action>
+      <Action ActionName="Toggle Flight Director" BackColor="#F2FFDF">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + f" />
+      </Action>
+      <Action ActionName="Toggle Fuel Valve All" BackColor="#E6FFC0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Alt + v" />
+      </Action>
+      <Action ActionName="Toggle Master Alternator" BackColor="#F2FFDF">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Alt + a" />
+      </Action>
+      <Action ActionName="Toggle Master Battery" BackColor="#E6FFC0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Alt + b" />
+      </Action>
+      <Action ActionName="Toggle Master Battery Alternator" BackColor="#F2FFDF">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Shift + m" />
+      </Action>
+      <Action ActionName="Toggle Master Ignition Switch" BackColor="#E6FFC0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Alt + i" />
+      </Action>
+      <Action ActionName="Toggle Nav Lights" BackColor="#F2FFDF">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Alt + n" />
+      </Action>
+      <Action ActionName="Toggle Ramptruck" BackColor="#E6FFC0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + r" />
+      </Action>
+      <Action ActionName="Toggle Tail Hook Handle" BackColor="#F2FFDF">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + h" />
+      </Action>
+      <Action ActionName="Toggle Tailwheel Lock" BackColor="#E6FFC0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Shift + g" />
+      </Action>
+      <Action ActionName="Toggle Taxi Lights" BackColor="#F2FFDF">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Alt + j" />
+      </Action>
+      <Action ActionName="Toggle Water Rudder" BackColor="#E6FFC0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + w" />
+      </Action>
+      <Action ActionName="Toggle Wing Fold" BackColor="#F2FFDF">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Shift + t" />
+      </Action>
+      <Action ActionName="Tow Plane Release" BackColor="#E6FFC0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + t" />
+      </Action>
+      <Action ActionName="Ui New Window Mode" BackColor="#F2FFDF">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Right Alt" />
+      </Action>
+      <Action ActionName="Vor Obs" BackColor="#E6FFC0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Shift + v" />
+      </Action>
+      <Action ActionName="Vor1 Obi Dec" BackColor="#F2FFDF">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Shift + Ctrl + End" />
+      </Action>
+      <Action ActionName="Vor1 Obi Inc" BackColor="#E6FFC0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Shift + Ctrl + Home" />
+      </Action>
+      <Action ActionName="Xpndr" BackColor="#F2FFDF">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="t" />
+      </Action>
+      <Action ActionName="Xpndr Set" BackColor="#E6FFC0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Shift + Alt + w" />
+      </Action>
+      <Action ActionName="Yaw Damper Toggle" BackColor="#F2FFDF">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + d" />
+      </Action>
+      <Action ActionName="Axis Collective Set" BackColor="#E6FFC0">
+        <Binding Controller="Saitek Pro Flight X-56 Rhino Throttle" Profile="X-56 Rhino Throttle Helicopter" Priority="Primary" KeyCombo="Joystick L-Axis Y " />
+      </Action>
+      <Action ActionName="Axis Helicopter Throttle Set" BackColor="#F2FFDF">
+        <Binding Controller="Saitek Pro Flight X-56 Rhino Throttle" Profile="X-56 Rhino Throttle Helicopter" Priority="Primary" KeyCombo="Joystick Slider Y " />
+      </Action>
+      <Action ActionName="Gear Up" BackColor="#E6FFC0">
+        <Binding Controller="Saitek Pro Flight X-56 Rhino Throttle" Profile="X-56 Rhino Throttle Helicopter" Priority="Primary" KeyCombo="Joystick Button 6" />
+      </Action>
+      <Action ActionName="Helicopter Throttle Dec" BackColor="#F2FFDF">
+        <Binding Controller="Saitek Pro Flight X-56 Rhino Throttle" Profile="X-56 Rhino Throttle Helicopter" Priority="Primary" KeyCombo="Joystick Button 29" />
+      </Action>
+      <Action ActionName="Helicopter Throttle Inc" BackColor="#E6FFC0">
+        <Binding Controller="Saitek Pro Flight X-56 Rhino Throttle" Profile="X-56 Rhino Throttle Helicopter" Priority="Primary" KeyCombo="Joystick Button 28" />
+      </Action>
+      <Action ActionName="Rotor Brake" BackColor="#F2FFDF">
+        <Binding Controller="Saitek Pro Flight X-56 Rhino Throttle" Profile="X-56 Rhino Throttle Helicopter" Priority="Primary" KeyCombo="Joystick Button 1" />
+      </Action>
+      <Action ActionName="Rotor Brake Off" BackColor="#E6FFC0">
+        <Binding Controller="Saitek Pro Flight X-56 Rhino Throttle" Profile="X-56 Rhino Throttle Helicopter" Priority="Primary" KeyCombo="Joystick Button 8" />
+      </Action>
+      <Action ActionName="Rotor Brake On" BackColor="#F2FFDF">
+        <Binding Controller="Saitek Pro Flight X-56 Rhino Throttle" Profile="X-56 Rhino Throttle Helicopter" Priority="Primary" KeyCombo="Joystick Button 9" />
+      </Action>
+      <Action ActionName="Rotor Clutch Switch Toggle" BackColor="#E6FFC0">
+        <Binding Controller="Saitek Pro Flight X-56 Rhino Throttle" Profile="X-56 Rhino Throttle Helicopter" Priority="Primary" KeyCombo="Joystick Button 5" />
+      </Action>
+      <Action ActionName="Rotor Gov Switch Toggle" BackColor="#F2FFDF">
+        <Binding Controller="Saitek Pro Flight X-56 Rhino Throttle" Profile="X-56 Rhino Throttle Helicopter" Priority="Primary" KeyCombo="Joystick Button 10" />
+      </Action>
+      <Action ActionName="Axis Left Brake Set" BackColor="#E6FFC0">
+        <Binding Controller="VelocityOne Rudder" Profile="R22" Priority="Primary" KeyCombo="Joystick L-Axis X " />
+      </Action>
+      <Action ActionName="Axis Right Brake Set" BackColor="#F2FFDF">
+        <Binding Controller="VelocityOne Rudder" Profile="R22" Priority="Primary" KeyCombo="Joystick L-Axis Y " />
+      </Action>
+      <Action ActionName="Axis Rudder Set" BackColor="#E6FFC0">
+        <Binding Controller="VelocityOne Rudder" Profile="R22" Priority="Primary" KeyCombo="Joystick L-Axis Z " />
+      </Action>
+      <Action ActionName="Rotor Lateral Trim Dec" BackColor="#E6FFC0">
+        <Binding Controller="X56 H.O.T.A.S. Stick" Profile="X56 H.O.T.A.S. Stick Helicopter 2" Priority="Primary" KeyCombo="Joystick Button 1 + JoystickPov Left" />
+      </Action>
+      <Action ActionName="Rotor Lateral Trim Inc" BackColor="#F2FFDF">
+        <Binding Controller="X56 H.O.T.A.S. Stick" Profile="X56 H.O.T.A.S. Stick Helicopter 2" Priority="Primary" KeyCombo="Joystick Button 1 + Joystick Pov Right" />
+      </Action>
+      <Action ActionName="Rotor Longitudinal Trim Dec" BackColor="#E6FFC0">
+        <Binding Controller="X56 H.O.T.A.S. Stick" Profile="X56 H.O.T.A.S. Stick Helicopter 2" Priority="Primary" KeyCombo="Joystick Button 1 + Joystick Pov Up" />
+      </Action>
+      <Action ActionName="Rotor Longitudinal Trim Inc" BackColor="#F2FFDF">
+        <Binding Controller="X56 H.O.T.A.S. Stick" Profile="X56 H.O.T.A.S. Stick Helicopter 2" Priority="Primary" KeyCombo="Joystick Button 1 + Joystick Pov Down" />
+      </Action>
+      <Action ActionName="Rotor Trim Reset" BackColor="#E6FFC0">
+        <Binding Controller="X56 H.O.T.A.S. Stick" Profile="X56 H.O.T.A.S. Stick Helicopter 2" Priority="Primary" KeyCombo="Joystick Button 1 + Joystick Button 2" />
+      </Action>
+      <Action ActionName="Tail Rotor Decr" BackColor="#F2FFDF">
+        <Binding Controller="X56 H.O.T.A.S. Stick" Profile="X56 H.O.T.A.S. Stick Helicopter 2" Priority="Primary" KeyCombo="Joystick R-Axis Z-" />
+      </Action>
+      <Action ActionName="Tail Rotor Incr" BackColor="#E6FFC0">
+        <Binding Controller="X56 H.O.T.A.S. Stick" Profile="X56 H.O.T.A.S. Stick Helicopter 2" Priority="Primary" KeyCombo="Joystick R-Axis Z+" />
+      </Action>
+    </FSContext>
+    <FSContext ContextName="Rtc" BackColor="PaleTurquoise">
+      <Action ActionName="Skip Rtc" BackColor="#E7F9F9">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Backspace" />
+      </Action>
+    </FSContext>
+    <FSContext ContextName="Slew" BackColor="Tan">
+      <Action ActionName="Slew Ahead Minus" BackColor="#F1E8DC">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Num 2" />
+      </Action>
+      <Action ActionName="Slew Ahead Plus" BackColor="#F8F3ED">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Num 8" />
+      </Action>
+      <Action ActionName="Slew Altit Dn Fast" BackColor="#F1E8DC">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="F1" />
+      </Action>
+      <Action ActionName="Slew Altit Dn Slow" BackColor="#F8F3ED">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="a" />
+      </Action>
+      <Action ActionName="Slew Altit Freeze" BackColor="#F1E8DC">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="F2" />
+      </Action>
+      <Action ActionName="Slew Altit Up Fast" BackColor="#F8F3ED">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="F4" />
+      </Action>
+      <Action ActionName="Slew Altit Up Slow" BackColor="#F1E8DC">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="F3" />
+      </Action>
+      <Action ActionName="Slew Bank Minus" BackColor="#F8F3ED">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Num 7" />
+      </Action>
+      <Action ActionName="Slew Bank Plus" BackColor="#F1E8DC">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Num 9" />
+      </Action>
+      <Action ActionName="Slew Freeze" BackColor="#F8F3ED">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Num 5" />
+      </Action>
+      <Action ActionName="Slew Heading Minus" BackColor="#F1E8DC">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Num 1" />
+      </Action>
+      <Action ActionName="Slew Heading Plus" BackColor="#F8F3ED">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Num 3" />
+      </Action>
+      <Action ActionName="Slew Left" BackColor="#F1E8DC">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Num 4" />
+      </Action>
+      <Action ActionName="Slew Pitch Dn Fast" BackColor="#F8F3ED">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="F8" />
+      </Action>
+      <Action ActionName="Slew Pitch Freeze" BackColor="#F1E8DC">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="F6" />
+      </Action>
+      <Action ActionName="Slew Pitch Minus" BackColor="#F8F3ED">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Num 0" />
+      </Action>
+      <Action ActionName="Slew Pitch Plus" BackColor="#F1E8DC">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="9" />
+      </Action>
+      <Action ActionName="Slew Pitch Up Fast" BackColor="#F8F3ED">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="F5" />
+      </Action>
+      <Action ActionName="Slew Pitch Up Slow" BackColor="#F1E8DC">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="F7" />
+      </Action>
+      <Action ActionName="Slew Right" BackColor="#F8F3ED">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Num 6" />
+      </Action>
+    </FSContext>
+    <FSContext ContextName="Smart Camera" BackColor="Aquamarine">
+      <Action ActionName="Reset Smart Camera" BackColor="#D8FFF2">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + f" />
+      </Action>
+      <Action ActionName="Smart Camera Next" BackColor="#EBFFF8">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Page Up + Ctrl" />
+      </Action>
+      <Action ActionName="Smart Camera Player" BackColor="#D8FFF2">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Home + Ctrl" />
+      </Action>
+      <Action ActionName="Smart Camera Previous" BackColor="#EBFFF8">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Page Down + Ctrl" />
+      </Action>
+      <Action ActionName="Smart Follow" BackColor="#D8FFF2">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Page Down" />
+      </Action>
+      <Action ActionName="Toggle Smart Camera" BackColor="#EBFFF8">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="s" />
+        <Binding Controller="X56 H.O.T.A.S. Stick" Profile="X56 H.O.T.A.S. Stick Helicopter 2" Priority="Primary" KeyCombo="Joystick Button 3" />
+      </Action>
+    </FSContext>
+    <FSContext ContextName="Throttle" BackColor="LightCoral">
+      <Action ActionName="Throttle Cut" BackColor="#FAD8D8">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="F1" />
+      </Action>
+      <Action ActionName="Throttle Decr" BackColor="#FCEBEB">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="F2" />
+      </Action>
+      <Action ActionName="Throttle Incr" BackColor="#FAD8D8">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="F3" />
+      </Action>
+    </FSContext>
+    <FSContext ContextName="Toolbar" BackColor="LightSkyBlue">
+      <Action ActionName="Inputs Toolbar Next" BackColor="#DBF0FD">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="." />
+      </Action>
+      <Action ActionName="Inputs Toolbar Prev" BackColor="#EDF7FE">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="/" />
+      </Action>
+    </FSContext>
+    <FSContext ContextName="User Camera" BackColor="Wheat">
+      <Action ActionName="Camera User Load 0" BackColor="#FCF5E8">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Alt + 0" />
+      </Action>
+      <Action ActionName="Camera User Load 1" BackColor="#FDFAF3">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Alt + 1" />
+      </Action>
+      <Action ActionName="Camera User Load 2" BackColor="#FCF5E8">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Alt + 2" />
+      </Action>
+      <Action ActionName="Camera User Load 3" BackColor="#FDFAF3">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Alt + 3" />
+      </Action>
+      <Action ActionName="Camera User Load 4" BackColor="#FCF5E8">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Alt + 4" />
+      </Action>
+      <Action ActionName="Camera User Load 5" BackColor="#FDFAF3">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Alt + 5" />
+      </Action>
+      <Action ActionName="Camera User Load 6" BackColor="#FCF5E8">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Alt + 6" />
+      </Action>
+      <Action ActionName="Camera User Load 7" BackColor="#FDFAF3">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Alt + 7" />
+      </Action>
+      <Action ActionName="Camera User Load 8" BackColor="#FCF5E8">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Alt + 8" />
+      </Action>
+      <Action ActionName="Camera User Load 9" BackColor="#FDFAF3">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Alt + 9" />
+      </Action>
+      <Action ActionName="Camera User Load Next" BackColor="#FCF5E8">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="k" />
+      </Action>
+      <Action ActionName="Camera User Load Prev" BackColor="#FDFAF3">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Shift + k" />
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Secondary" KeyCombo="Right Shift + k" />
+      </Action>
+      <Action ActionName="Camera User Save 0" BackColor="#FCF5E8">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + Alt + 0" />
+      </Action>
+      <Action ActionName="Camera User Save 1" BackColor="#FDFAF3">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + Alt + 1" />
+      </Action>
+      <Action ActionName="Camera User Save 2" BackColor="#FCF5E8">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + Alt + 2" />
+      </Action>
+      <Action ActionName="Camera User Save 3" BackColor="#FDFAF3">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + Alt + 3" />
+      </Action>
+      <Action ActionName="Camera User Save 4" BackColor="#FCF5E8">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + Alt + 4" />
+      </Action>
+      <Action ActionName="Camera User Save 5" BackColor="#FDFAF3">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + Alt + 5" />
+      </Action>
+      <Action ActionName="Camera User Save 6" BackColor="#FCF5E8">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + Alt + 6" />
+      </Action>
+      <Action ActionName="Camera User Save 7" BackColor="#FDFAF3">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + Alt + 7" />
+      </Action>
+      <Action ActionName="Camera User Save 8" BackColor="#FCF5E8">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + Alt + 8" />
+      </Action>
+      <Action ActionName="Camera User Save 9" BackColor="#FDFAF3">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl + Alt + 9" />
+      </Action>
+    </FSContext>
+    <FSContext ContextName="Worldmap Common" BackColor="Plum">
+      <Action ActionName="Menu Wm Move Down" BackColor="#F4E2F4">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Num 2" />
+      </Action>
+      <Action ActionName="Menu Wm Move Left" BackColor="#F9F0F9">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Num 4" />
+      </Action>
+      <Action ActionName="Menu Wm Move Right" BackColor="#F4E2F4">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Num 6" />
+      </Action>
+      <Action ActionName="Menu Wm Move Up" BackColor="#F9F0F9">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Num 8" />
+      </Action>
+      <Action ActionName="Menu Wm Nav Toggle" BackColor="#F4E2F4">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Num 0" />
+      </Action>
+      <Action ActionName="Menu Wm Zoom Decr" BackColor="#F9F0F9">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Num -" />
+      </Action>
+      <Action ActionName="Menu Wm Zoom Incr" BackColor="#F4E2F4">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Num +" />
+      </Action>
+      <Action ActionName="Menu Wm Grab" BackColor="#F4E2F4">
+        <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Left-Click" />
+      </Action>
+    </FSContext>
+    <FSContext ContextName="Worldmap Pad" BackColor="LemonChiffon">
+      <Action ActionName="Menu Wm Back" BackColor="#FFFDF0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Esc" />
+      </Action>
+      <Action ActionName="Menu Wm Select Down" BackColor="#FFFEF7">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Down" />
+      </Action>
+      <Action ActionName="Menu Wm Select Left" BackColor="#FFFDF0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Left" />
+      </Action>
+      <Action ActionName="Menu Wm Select Preset" BackColor="#FFFEF7">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Ctrl" />
+      </Action>
+      <Action ActionName="Menu Wm Select Right" BackColor="#FFFDF0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Right" />
+        <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Right-Click" />
+      </Action>
+      <Action ActionName="Menu Wm Select Up" BackColor="#FFFEF7">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Up" />
+      </Action>
+      <Action ActionName="Menu Wm Select Vertical" BackColor="#FFFDF0">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Up" />
+      </Action>
+      <Action ActionName="Menu Wm Validate" BackColor="#FFFEF7">
+        <Binding Controller="Keyboard" Profile="Custom" Priority="Primary" KeyCombo="Enter" />
+      </Action>
+    </FSContext>
+    <FSContext ContextName="Cockpit Interactions" BackColor="SandyBrown">
+      <Action ActionName="Cockpit Interaction Decrease" BackColor="#FBE3CF">
+        <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Mouse Wheel Down" />
+      </Action>
+      <Action ActionName="Cockpit Interaction Increase" BackColor="#FDF1E7">
+        <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Mouse Wheel Up" />
+      </Action>
+      <Action ActionName="Cockpit Interaction Primary" BackColor="#FBE3CF">
+        <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Left-Click" />
+      </Action>
+      <Action ActionName="Cockpit Interaction Secondary" BackColor="#FDF1E7">
+        <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Right-Click" />
+        <Binding Controller="Mouse" Profile="Helicopter" Priority="Secondary" KeyCombo="Mouse 4" />
+      </Action>
+      <Action ActionName="Cockpit Interaction Tertiary" BackColor="#FBE3CF">
+        <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Mid-Click" />
+        <Binding Controller="Mouse" Profile="Helicopter" Priority="Secondary" KeyCombo="Mouse 5" />
+      </Action>
+      <Action ActionName="Cockpit Interaction X Axis" BackColor="#FDF1E7">
+        <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Axis X" />
+      </Action>
+      <Action ActionName="Cockpit Interaction Y Axis" BackColor="#FBE3CF">
+        <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Axis Y" />
+      </Action>
+    </FSContext>
+    <FSContext ContextName="Cockpit Interactions Lock" BackColor="LightPink">
+      <Action ActionName="Cockpit Interaction Decrease Lockable" BackColor="#FFE9EC">
+        <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Mouse Wheel Down" />
+      </Action>
+    </FSContext>
+    <FSContext ContextName="Cockpit Vr Camera" BackColor="LightGreen">
+      <Action ActionName="Cockpit Vr Focus" BackColor="#DDF9DD">
+        <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Right-Click" />
+      </Action>
+    </FSContext>
+    <FSContext ContextName="Menu Mouse" BackColor="Bisque">
+      <Action ActionName="Menu Mouse Down" BackColor="#FFF6ED">
+        <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Axis Y-" />
+      </Action>
+      <Action ActionName="Menu Mouse Left" BackColor="#FFFAF6">
+        <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Axis X-" />
+      </Action>
+      <Action ActionName="Menu Mouse Right" BackColor="#FFF6ED">
+        <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Axis X+" />
+      </Action>
+      <Action ActionName="Menu Mouse Up" BackColor="#FFFAF6">
+        <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Axis Y+" />
+      </Action>
+      <Action ActionName="Menu Mouse0" BackColor="#FFF6ED">
+        <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Left-Click" />
+      </Action>
+      <Action ActionName="Menu Mouse1" BackColor="#FFFAF6">
+        <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Right-Click" />
+      </Action>
+    </FSContext>
+    <FSContext ContextName="Surfaces" BackColor="Thistle">
+      <Action ActionName="Axis Cyclic Lateral Set" BackColor="#F3EBF3">
+        <Binding Controller="X56 H.O.T.A.S. Stick" Profile="X56 H.O.T.A.S. Stick Helicopter 2" Priority="Primary" KeyCombo="Joystick L-Axis X " />
+      </Action>
+      <Action ActionName="Axis Cyclic Longitudinal Set" BackColor="#F9F5F9">
+        <Binding Controller="X56 H.O.T.A.S. Stick" Profile="X56 H.O.T.A.S. Stick Helicopter 2" Priority="Primary" KeyCombo="Joystick L-Axis Y " />
+      </Action>
+    </FSContext>
+  </Contexts>
+</BindingList>

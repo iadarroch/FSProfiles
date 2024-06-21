@@ -1,4 +1,4 @@
-﻿namespace MSFS2020.Profiles.Common.Models
+﻿namespace FSProfiles.Common.Models
 {
     internal class OutputList
     {

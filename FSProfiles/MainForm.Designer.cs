@@ -73,7 +73,7 @@
             btnBasePath.Name = "btnBasePath";
             btnBasePath.Size = new Size(118, 27);
             btnBasePath.TabIndex = 2;
-            btnBasePath.Text = "Select Profiles Path";
+            btnBasePath.Text = "&Select Profiles Path";
             btnBasePath.UseVisualStyleBackColor = true;
             btnBasePath.Click += btnBasePath_Click;
             // 
@@ -114,7 +114,7 @@
             btnGenerate.Name = "btnGenerate";
             btnGenerate.Size = new Size(157, 27);
             btnGenerate.TabIndex = 10;
-            btnGenerate.Text = "Generate Binding Report";
+            btnGenerate.Text = "&Generate Binding Report";
             btnGenerate.UseVisualStyleBackColor = true;
             btnGenerate.Click += btnGenerate_Click;
             // 
@@ -143,7 +143,8 @@
             btnRebuild.Name = "btnRebuild";
             btnRebuild.Size = new Size(157, 27);
             btnRebuild.TabIndex = 11;
-            btnRebuild.Text = "Rebuild Known Mappings";
+            btnRebuild.Text = "&Rebuild Known Bindings";
+            btnRebuild.UseMnemonic = false;
             btnRebuild.UseVisualStyleBackColor = true;
             btnRebuild.Visible = false;
             btnRebuild.Click += btnRebuild_Click;

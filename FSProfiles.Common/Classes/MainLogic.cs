@@ -1,25 +1,23 @@
 ﻿using System.Diagnostics;
-using MSFS2020.Profiles.Common.Models;
-using Action = MSFS2020.Profiles.Common.Models.Action;
-using Binding = MSFS2020.Profiles.Common.Models.Binding;
-using Context = MSFS2020.Profiles.Common.Models.Context;
+using FSProfiles.Common.Models;
 
-namespace MSFS2020.Profiles.Common.Classes
+namespace FSProfiles.Common.Classes
 {
     public enum ContentMode {All, Assigned, New}
 
-    public class MainLogic
+    public class MainLogic(ProgramArguments programArguments)
     {
         public enum Mode {Generate, Rebuild}
 
         private FolderProcessor _folderProcessor = new();
-        private HtmlFormatter _htmlFormatter = new();
+        private IOutputFormatter _htmlFormatter = new XsltFormatter();
+        private ColorSequencer _colorSequencer = new ColorSequencer();
 
         public EventHandler<ProgressEvent>? OnStart;
         public EventHandler<ProgressEvent>? OnProgress;
         public EventHandler<ProgressEvent>? OnStop;
 
-        public bool GetDefaultPath(out string basePath, out string? errorMessage)
+        public bool GetProfilePath(out string basePath, out string? errorMessage)
         {
             var result = _folderProcessor.GetProfilePath(out basePath, out errorMessage);
             return result;
@@ -27,7 +25,7 @@ namespace MSFS2020.Profiles.Common.Classes
 
         public string GetDefaultOutputFile()
         {
-            var tempPath = System.IO.Path.GetTempPath();
+            var tempPath = Path.GetTempPath();
             return $"{tempPath}controllers.html";
         }
 
@@ -46,7 +44,16 @@ namespace MSFS2020.Profiles.Common.Classes
             {
                 var bindingList = BuildBindingList(profileList, Mode.Generate);
                 if (contentMode != ContentMode.All) FilterBindingList(bindingList, contentMode);
-                //bindingList.SerializeToFile("C:\\Temp\\Bindings.xml");
+                //Populate test data with selected bindings
+                if (programArguments.Debug)
+                {
+                    var defaultPath = "C:\\Development\\FSProfiles\\FSProfiles.Tests\\Data\\Bindings.xml";
+                    if (!File.Exists(defaultPath))
+                    {
+                        defaultPath = $"{Path.GetTempPath()}Bindings.xml";
+                    }
+                    bindingList.SerializeToFile(defaultPath);
+                }
                 _htmlFormatter.ConvertToHtml(bindingList, outputFile);
                 Process.Start(@"cmd.exe ", @"/c " + outputFile);
             }
@@ -73,9 +80,9 @@ namespace MSFS2020.Profiles.Common.Classes
         public void FilterBindingList(BindingList bindingList, ContentMode contentMode)
         {
             var contextIndex = 0;
-            while (contextIndex < bindingList.Count)
+            while (contextIndex < bindingList.Contexts.Count)
             {
-                var context = bindingList[contextIndex];
+                var context = bindingList.Contexts[contextIndex];
 
                 var actionIndex = 0;
                 while (actionIndex < context.Actions.Count)
@@ -93,7 +100,7 @@ namespace MSFS2020.Profiles.Common.Classes
                 if ((contentMode == ContentMode.Assigned && context.Actions.Count == 0) ||
                     (contentMode == ContentMode.New && context.Actions.Count == 0))
                 {
-                    bindingList.RemoveAt(contextIndex);
+                    bindingList.Contexts.RemoveAt(contextIndex);
                     continue;
                 }
                 contextIndex++;  //if we have not removed a binding, move to the next one
@@ -104,7 +111,8 @@ namespace MSFS2020.Profiles.Common.Classes
         {
             var bindingList = Serializer.DeserializeFromFile<BindingList>("KnownBindings.xml");
             bindingList.SelectedControllers = new List<SelectedController>();
-            
+
+            _colorSequencer.ResetDefaultColor(); //ensure color sequence always the same
             var progress = 0;
             foreach (var profile in profileList)
             {
@@ -127,60 +135,67 @@ namespace MSFS2020.Profiles.Common.Classes
 
             foreach (var context in profile.ControllerDefinition.Device.Context)
             {
-                var bindingContext = bindingList.FirstOrDefault(c => c.ContextName == context.ContextName);
+                var bindingContext = bindingList.Contexts.FirstOrDefault(c => c.ContextName.TitleCase() == context.ContextName.TitleCase());
                 if (bindingContext == null)
                 {
-                    bindingContext = new Context
+                    bindingContext = new FSContext
                     {
-                        ContextName = context.ContextName,
-                        Actions = new List<Action>()
+                        ContextName = context.ContextName.TitleCase(),
+                        BackColor = _colorSequencer.NextDefaultColor(),
+                        Actions = new List<FSAction>()
                     };
-                    bindingList.Add(bindingContext);
+                    bindingList.Contexts.Add(bindingContext);
                 }
 
-                ProcessContext(profile.ControllerDefinition.Device.DeviceName, context, bindingContext, mode);
+                ProcessContext(profile, context, bindingContext, mode);
             }
         }
 
-        public void ProcessContext(string deviceName, Models.Source.Context context, Context bindingContext, Mode mode)
+        public void ProcessContext(DetectedProfile profile, Models.Source.Context context, FSContext bindingContext, Mode mode)
         {
+            var colorOdd = bindingContext.BackColor.Value.Lighter(0.85f);
+            var colorEven = bindingContext.BackColor.Value.Lighter(0.70f);
+            var rowNum = 0;
             foreach (var action in context.Actions)
             {
-                var bindingAction = bindingContext.Actions.FirstOrDefault(a => a.ActionName == action.ActionName);
+                var bindingAction = bindingContext.Actions.FirstOrDefault(a => a.ActionName.TitleCase() == action.ActionName.TitleCase(true));
                 if (bindingAction == null)
                 {
-                    bindingAction = new Action
+                    bindingAction = new FSAction
                     {
-                        ActionName = action.ActionName,
-                        Bindings = new List<Binding>()
+                        ActionName = action.ActionName.TitleCase(true),
+                        BackColor = (rowNum++ % 2 ==0) ? colorEven : colorOdd,
+                        Bindings = new List<FSBinding>()
                     };
                     bindingContext.Actions.Add(bindingAction);
                 }
 
                 if (mode == Mode.Generate)
                 {
-                    ProcessAction(deviceName, action, bindingAction);
+                    ProcessAction(profile, action, bindingAction);
                 }
             }
         }
 
-        public void ProcessAction(string deviceName, Models.Source.Action action, Action bindingAction)
+        public void ProcessAction(DetectedProfile profile, Models.Source.Action action, FSAction bindingAction)
         {
 
             if (action.Primary != null)
             {
-                bindingAction.Bindings.Add(new Binding
+                bindingAction.Bindings.Add(new FSBinding
                 {
-                    Controller = deviceName,
+                    Controller = profile.ControllerDefinition.Device.DeviceName,
+                    Profile = profile.ControllerDefinition.FriendlyName.Text,
                     Keys = action.Primary.Keys.Select(k => k.Information).ToList(),
                     Priority = Priority.Primary,
                 });
             }
             if (action.Secondary != null)
             {
-                bindingAction.Bindings.Add(new Binding
+                bindingAction.Bindings.Add(new FSBinding
                 {
-                    Controller = deviceName,
+                    Controller = profile.ControllerDefinition.Device.DeviceName,
+                    Profile = profile.ControllerDefinition.FriendlyName.Text,
                     Keys = action.Secondary.Keys.Select(k => k.Information).ToList(),
                     Priority = Priority.Secondary,
                 });
