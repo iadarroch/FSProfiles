@@ -1,4 +1,3 @@
-using System.Windows.Forms.Design;
 using CommandLine;
 
 namespace FSProfiles
