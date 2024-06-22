@@ -9,6 +9,7 @@ namespace FSProfiles.Common.Models
     public class BindingList
     {
         public List<SelectedController> SelectedControllers { get; set; }
+        [XmlElement(ElementName = "Context")]
         public List<FSContext> Contexts { get; set; }
     }
 
