@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using System.Drawing;
 using FSProfiles.Common.Models;
 
 namespace FSProfiles.Common.Classes
@@ -10,8 +11,8 @@ namespace FSProfiles.Common.Classes
         public enum Mode {Generate, Rebuild}
 
         private FolderProcessor _folderProcessor = new();
+        private ColorSequencer _colorSequencer = new();
         private IOutputFormatter _htmlFormatter = new XsltFormatter();
-        private ColorSequencer _colorSequencer = new ColorSequencer();
 
         public EventHandler<ProgressEvent>? OnStart;
         public EventHandler<ProgressEvent>? OnProgress;
@@ -121,17 +122,40 @@ namespace FSProfiles.Common.Classes
                 Thread.Sleep(10);
             }
 
+            if (mode == Mode.Generate)
+            {
+                ApplyColors(bindingList);
+            }
+
             return bindingList;
+        }
+
+        public void ApplyColors(BindingList bindingList)
+        {
+            foreach (var context in bindingList.Contexts)
+            {
+                context.BackColor = context.BackColor ?? _colorSequencer.NextDefaultColor();
+                var colorOdd = context.BackColor?.Lighter(0.85f) ?? Color.Azure;
+                var colorEven = context.BackColor?.Lighter(0.70f) ?? Color.LightCyan;
+                var rowNum = 0;
+                foreach (var action in context.Actions)
+                {
+                    action.BackColor = (rowNum++ % 2 == 0) ? colorEven : colorOdd;
+                }
+            }
         }
 
         public void ProcessControllerProfile(DetectedProfile profile, BindingList bindingList, Mode mode)
         {
-            bindingList.SelectedControllers.Add(new SelectedController
+            if (mode == Mode.Generate)
             {
-                DeviceName = profile.ControllerDefinition.Device.DeviceName,
-                ProfileName = profile.ControllerDefinition.FriendlyName.Text,
-                ProfilePath = profile.Path
-            });
+                bindingList.SelectedControllers.Add(new SelectedController
+                {
+                    DeviceName = profile.ControllerDefinition.Device.DeviceName,
+                    ProfileName = profile.ControllerDefinition.FriendlyName.Text,
+                    ProfilePath = profile.Path
+                });
+            }
 
             foreach (var context in profile.ControllerDefinition.Device.Context)
             {
@@ -141,20 +165,16 @@ namespace FSProfiles.Common.Classes
                     bindingContext = new FSContext
                     {
                         ContextName = context.ContextName.TitleCase(),
-                        BackColor = _colorSequencer.NextDefaultColor(),
                         Actions = new List<FSAction>()
                     };
                     bindingList.Contexts.Add(bindingContext);
                 }
-
                 ProcessContext(profile, context, bindingContext, mode);
             }
         }
 
         public void ProcessContext(DetectedProfile profile, Models.Source.Context context, FSContext bindingContext, Mode mode)
         {
-            var colorOdd = bindingContext.BackColor.Value.Lighter(0.85f);
-            var colorEven = bindingContext.BackColor.Value.Lighter(0.70f);
             var rowNum = 0;
             foreach (var action in context.Actions)
             {
@@ -164,7 +184,6 @@ namespace FSProfiles.Common.Classes
                     bindingAction = new FSAction
                     {
                         ActionName = action.ActionName.TitleCase(true),
-                        BackColor = (rowNum++ % 2 ==0) ? colorEven : colorOdd,
                         Bindings = new List<FSBinding>()
                     };
                     bindingContext.Actions.Add(bindingAction);

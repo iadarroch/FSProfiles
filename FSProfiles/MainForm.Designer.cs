@@ -144,7 +144,6 @@
             btnRebuild.Size = new Size(157, 27);
             btnRebuild.TabIndex = 11;
             btnRebuild.Text = "&Rebuild Known Bindings";
-            btnRebuild.UseMnemonic = false;
             btnRebuild.UseVisualStyleBackColor = true;
             btnRebuild.Visible = false;
             btnRebuild.Click += btnRebuild_Click;
