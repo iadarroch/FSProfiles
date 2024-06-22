@@ -58,7 +58,7 @@
             </xsl:copy>
           </tr>
 
-          <xsl:for-each select="BindingList/Contexts/FSContext">
+          <xsl:for-each select="BindingList/Context">
             <tr>
               <xsl:attribute name="bgcolor">
                 <xsl:value-of select="@BackColor" />
