@@ -6,6 +6,10 @@
     <Action ActionName="Reset Camera Vr" BackColor="" />
     <Action ActionName="Screen Narrator Toggle" BackColor="" />
     <Action ActionName="Switch Vr" BackColor="" />
+    <Action ActionName="Head Tracking Toggle" BackColor="" />
+    <Action ActionName="Toolbar Panel Close All" BackColor="" />
+    <Action ActionName="Vr Select" BackColor="" />
+    <Action ActionName="Vr Switch Proximity Raycast" BackColor="" />
   </Context>
   <Context ContextName="Atc" BackColor="">
     <Action ActionName="Atc Menu 0" BackColor="" />
@@ -39,6 +43,15 @@
     <Action ActionName="Cockpit Mode" BackColor="" />
     <Action ActionName="Cockpit Mode Hold" BackColor="" />
     <Action ActionName="Cockpit Landing View Hold" BackColor="" />
+    <Action ActionName="Cockpit Close View Hold" BackColor="" />
+    <Action ActionName="Cockpit Copilot View Hold" BackColor="" />
+    <Action ActionName="Cockpit Copilot View Toggle" BackColor="" />
+    <Action ActionName="Cockpit Default View Hold" BackColor="" />
+    <Action ActionName="Cockpit Hud View Hold" BackColor="" />
+    <Action ActionName="Cockpit Quickview5" BackColor="" />
+    <Action ActionName="Cockpit Quickview6" BackColor="" />
+    <Action ActionName="Cockpit Quickview7" BackColor="" />
+    <Action ActionName="Cockpit Quickview8" BackColor="" />
   </Context>
   <Context ContextName="Cockpit Global Camera" BackColor="">
     <Action ActionName="Cockpit Look Down" BackColor="" />
@@ -57,6 +70,16 @@
     <Action ActionName="Cockpit Lockable Look Up" BackColor="" />
     <Action ActionName="Cockpit Freelook Hrz Set" BackColor="" />
     <Action ActionName="Cockpit Freelook Vrtc Set" BackColor="" />
+    <Action ActionName="Cockpit Camera Zoom Axis" BackColor="" />
+    <Action ActionName="Cockpit Camera Zoom Axis Lockable" BackColor="" />
+    <Action ActionName="Cockpit Lockable Freelook Hrz Set" BackColor="" />
+    <Action ActionName="Cockpit Lockable Freelook Vrtc Set" BackColor="" />
+    <Action ActionName="Cockpit Lockable Look Downleft" BackColor="" />
+    <Action ActionName="Cockpit Lockable Look Downright" BackColor="" />
+    <Action ActionName="Cockpit Lockable Look Upleft" BackColor="" />
+    <Action ActionName="Cockpit Lockable Look Upright" BackColor="" />
+    <Action ActionName="Dezoom Cockpit Lockable" BackColor="" />
+    <Action ActionName="Zoom Cockpit Lockable" BackColor="" />
   </Context>
   <Context ContextName="Cockpit Global Camera Translate" BackColor="">
     <Action ActionName="Cockpit Camera Height Dec" BackColor="" />
@@ -65,6 +88,18 @@
     <Action ActionName="Cockpit Camera Slide Front" BackColor="" />
     <Action ActionName="Cockpit Camera Slide Left" BackColor="" />
     <Action ActionName="Cockpit Camera Slide Right" BackColor="" />
+    <Action ActionName="Cockpit Camera Height Dec Lockable" BackColor="" />
+    <Action ActionName="Cockpit Camera Height Inc Lockable" BackColor="" />
+    <Action ActionName="Cockpit Camera Slide Back Lockable" BackColor="" />
+    <Action ActionName="Cockpit Camera Slide Front Lockable" BackColor="" />
+    <Action ActionName="Cockpit Camera Slide Left Lockable" BackColor="" />
+    <Action ActionName="Cockpit Camera Slide Right Lockable" BackColor="" />
+    <Action ActionName="Cockpit Camera Translation X" BackColor="" />
+    <Action ActionName="Cockpit Camera Translation X Lockable" BackColor="" />
+    <Action ActionName="Cockpit Camera Translation Y" BackColor="" />
+    <Action ActionName="Cockpit Camera Translation Y Lockable" BackColor="" />
+    <Action ActionName="Cockpit Camera Translation Z" BackColor="" />
+    <Action ActionName="Cockpit Camera Translation Z Lockable" BackColor="" />
   </Context>
   <Context ContextName="Debug" BackColor="">
     <Action ActionName="Debug Menu Valid" BackColor="" />
@@ -218,6 +253,35 @@
     <Action ActionName="Drone Toggle Lock Mode" BackColor="" />
     <Action ActionName="Drone Zoom In" BackColor="" />
     <Action ActionName="Drone Zoom Out" BackColor="" />
+    <Action ActionName="Drone Axis Rotation X" BackColor="" />
+    <Action ActionName="Drone Axis Rotation X Lockable" BackColor="" />
+    <Action ActionName="Drone Axis Rotation Y" BackColor="" />
+    <Action ActionName="Drone Axis Rotation Y Lockable" BackColor="" />
+    <Action ActionName="Drone Axis Rotation Z" BackColor="" />
+    <Action ActionName="Drone Axis Rotation Z Lockable" BackColor="" />
+    <Action ActionName="Drone Axis Translation X" BackColor="" />
+    <Action ActionName="Drone Axis Translation X Lockable" BackColor="" />
+    <Action ActionName="Drone Axis Translation Y" BackColor="" />
+    <Action ActionName="Drone Axis Translation Y Lockable" BackColor="" />
+    <Action ActionName="Drone Axis Translation Z" BackColor="" />
+    <Action ActionName="Drone Axis Translation Z Lockable" BackColor="" />
+    <Action ActionName="Drone Move X Decr Lockable" BackColor="" />
+    <Action ActionName="Drone Move X Incr Lockable" BackColor="" />
+    <Action ActionName="Drone Move Y Decr Lockable" BackColor="" />
+    <Action ActionName="Drone Move Y Incr Lockable" BackColor="" />
+    <Action ActionName="Drone Move Z Decr Lockable" BackColor="" />
+    <Action ActionName="Drone Move Z Incr Lockable" BackColor="" />
+    <Action ActionName="Drone Play Backward" BackColor="" />
+    <Action ActionName="Drone Play Forward" BackColor="" />
+    <Action ActionName="Drone Rotate X Decr Lockable" BackColor="" />
+    <Action ActionName="Drone Rotate X Incr Lockable" BackColor="" />
+    <Action ActionName="Drone Rotate Y Decr Lockable" BackColor="" />
+    <Action ActionName="Drone Rotate Y Incr Lockable" BackColor="" />
+    <Action ActionName="Drone Rotate Z Decr Lockable" BackColor="" />
+    <Action ActionName="Drone Rotate Z Incr Lockable" BackColor="" />
+    <Action ActionName="Drone Set Bookmark In" BackColor="" />
+    <Action ActionName="Drone Set Bookmark Out" BackColor="" />
+    <Action ActionName="Drone Target Object" BackColor="" />
   </Context>
   <Context ContextName="External Camera" BackColor="">
     <Action ActionName="Camerachase Reset" BackColor="" />
@@ -240,6 +304,22 @@
     <Action ActionName="Toggle Fixed Camerachase Hold" BackColor="" />
     <Action ActionName="Chase Freelook Hrz Set" BackColor="" />
     <Action ActionName="Chase Freelook Vrtc Set" BackColor="" />
+    <Action ActionName="Chase Lockable Freelook Hrz Set" BackColor="" />
+    <Action ActionName="Chase Lockable Freelook Vrtc Set" BackColor="" />
+    <Action ActionName="Chase Lockable Look Downleft" BackColor="" />
+    <Action ActionName="Chase Lockable Look Downright" BackColor="" />
+    <Action ActionName="Chase Lockable Look Upleft" BackColor="" />
+    <Action ActionName="Chase Lockable Look Upright" BackColor="" />
+    <Action ActionName="Chase Look Downleft" BackColor="" />
+    <Action ActionName="Chase Look Downright" BackColor="" />
+    <Action ActionName="Chase Look Upleft" BackColor="" />
+    <Action ActionName="Chase Look Upright" BackColor="" />
+    <Action ActionName="Chase Quickview5" BackColor="" />
+    <Action ActionName="Chase Quickview6" BackColor="" />
+    <Action ActionName="Chase Quickview7" BackColor="" />
+    <Action ActionName="Chase Quickview8" BackColor="" />
+    <Action ActionName="Chase Zoom Axis" BackColor="" />
+    <Action ActionName="Chase Zoom Axis Lockable" BackColor="" />
   </Context>
   <Context ContextName="Fixed Camera" BackColor="">
     <Action ActionName="Camera Fixed Instrument0" BackColor="" />
@@ -270,12 +350,35 @@
     <Action ActionName="Toggle Copilot Delegate Controls" BackColor="" />
     <Action ActionName="Ingamepanel Zoom In" BackColor="" />
     <Action ActionName="Ingamepanel Zoom Out" BackColor="" />
+    <Action ActionName="Ingamepanel Zoom Axis" BackColor="" />
+    <Action ActionName="Ui Display Cfd Off" BackColor="" />
+    <Action ActionName="Ui Display Cfd On" BackColor="" />
+    <Action ActionName="Ui Display Landing Ribbon Off" BackColor="" />
+    <Action ActionName="Ui Display Landing Ribbon On" BackColor="" />
+    <Action ActionName="Ui Display Landing Ribbon Toggle" BackColor="" />
+    <Action ActionName="Ui Display Nameplates Off" BackColor="" />
+    <Action ActionName="Ui Display Nameplates On" BackColor="" />
+    <Action ActionName="Ui Display Nameplates Toggle" BackColor="" />
+    <Action ActionName="Ui Display Ribbon Off" BackColor="" />
+    <Action ActionName="Ui Display Ribbon On" BackColor="" />
+    <Action ActionName="Ui Display Ribbon Toggle" BackColor="" />
+    <Action ActionName="Ui Display Taxi Ribbon Off" BackColor="" />
+    <Action ActionName="Ui Display Taxi Ribbon On" BackColor="" />
+    <Action ActionName="Ui Display Taxi Ribbon Toggle" BackColor="" />
+    <Action ActionName="Ui Display Thermals Off" BackColor="" />
+    <Action ActionName="Ui Display Thermals On" BackColor="" />
+    <Action ActionName="Ui Flight Assistant Toggle" BackColor="" />
   </Context>
   <Context ContextName="Instruments Camera" BackColor="">
     <Action ActionName="Cockpit Backcycle" BackColor="" />
     <Action ActionName="Cockpit Cycle" BackColor="" />
     <Action ActionName="Instrument Mode" BackColor="" />
     <Action ActionName="Instrument Mode Hold" BackColor="" />
+    <Action ActionName="Cockpit Instr Autoselect" BackColor="" />
+    <Action ActionName="Cockpit Instr Down" BackColor="" />
+    <Action ActionName="Cockpit Instr Left" BackColor="" />
+    <Action ActionName="Cockpit Instr Right" BackColor="" />
+    <Action ActionName="Cockpit Instr Up" BackColor="" />
   </Context>
   <Context ContextName="Menu" BackColor="">
     <Action ActionName="Menu Add To Selection" BackColor="" />
@@ -323,10 +426,12 @@
     <Action ActionName="Menu Valid" BackColor="" />
     <Action ActionName="Menu Wm Filters" BackColor="" />
     <Action ActionName="Menu Wm Legend" BackColor="" />
+    <Action ActionName="Menu Restart Last Waypoint" BackColor="" />
   </Context>
   <Context ContextName="Mode Pause" BackColor="">
     <Action ActionName="Pause Off" BackColor="" />
     <Action ActionName="Pause Toggle" BackColor="" />
+    <Action ActionName="Pause On" BackColor="" />
   </Context>
   <Context ContextName="Modes" BackColor="">
     <Action ActionName="Cockpit Instrument0" BackColor="" />
@@ -354,6 +459,19 @@
     <Action ActionName="Cycle Pilotview Next" BackColor="" />
     <Action ActionName="Cockpit Focus" BackColor="" />
     <Action ActionName="Toggle External Camera" BackColor="" />
+    <Action ActionName="Action Key Camera Toggle Lockable" BackColor="" />
+    <Action ActionName="Cursor Toggle" BackColor="" />
+    <Action ActionName="Headphone Simulation Off" BackColor="" />
+    <Action ActionName="Headphone Simulation On" BackColor="" />
+    <Action ActionName="Inputs Toolbar Hide" BackColor="" />
+    <Action ActionName="Inputs Toolbar Show" BackColor="" />
+    <Action ActionName="Inputs Toolbar Toggle" BackColor="" />
+    <Action ActionName="Sim Rate Decr" BackColor="" />
+    <Action ActionName="Sim Rate Incr" BackColor="" />
+    <Action ActionName="Slew Off" BackColor="" />
+    <Action ActionName="Slew On" BackColor="" />
+    <Action ActionName="Toggle Cockpit Camera" BackColor="" />
+    <Action ActionName="Toggle Drone Camera" BackColor="" />
   </Context>
   <Context ContextName="Plane" BackColor="">
     <Action ActionName="Active Pause Toggle" BackColor="" />
@@ -535,6 +653,986 @@
     <Action ActionName="Rotor Trim Reset" BackColor="" />
     <Action ActionName="Tail Rotor Decr" BackColor="" />
     <Action ActionName="Tail Rotor Incr" BackColor="" />
+    <Action ActionName="Adf 1 Dec" BackColor="" />
+    <Action ActionName="Adf 1 Inc" BackColor="" />
+    <Action ActionName="Adf 10 Dec" BackColor="" />
+    <Action ActionName="Adf 10 Inc" BackColor="" />
+    <Action ActionName="Adf 100 Dec" BackColor="" />
+    <Action ActionName="Adf 100 Inc" BackColor="" />
+    <Action ActionName="Adf Card Dec" BackColor="" />
+    <Action ActionName="Adf Card Inc" BackColor="" />
+    <Action ActionName="Adf Card Set" BackColor="" />
+    <Action ActionName="Adf Complete Set" BackColor="" />
+    <Action ActionName="Adf Fract Dec Carry" BackColor="" />
+    <Action ActionName="Adf Fract Inc Carry" BackColor="" />
+    <Action ActionName="Adf Highrange Set" BackColor="" />
+    <Action ActionName="Adf Lowrange Set" BackColor="" />
+    <Action ActionName="Adf Needle Set" BackColor="" />
+    <Action ActionName="Adf Outside Source" BackColor="" />
+    <Action ActionName="Adf Set" BackColor="" />
+    <Action ActionName="Adf Volume Dec" BackColor="" />
+    <Action ActionName="Adf Volume Inc" BackColor="" />
+    <Action ActionName="Adf Volume Set" BackColor="" />
+    <Action ActionName="Adf Whole Dec" BackColor="" />
+    <Action ActionName="Adf Whole Inc" BackColor="" />
+    <Action ActionName="Adf1 Radio Swap" BackColor="" />
+    <Action ActionName="Adf1 Radio Tenths Dec" BackColor="" />
+    <Action ActionName="Adf1 Radio Tenths Inc" BackColor="" />
+    <Action ActionName="Adf2 1 Dec" BackColor="" />
+    <Action ActionName="Adf2 1 Inc" BackColor="" />
+    <Action ActionName="Adf2 10 Dec" BackColor="" />
+    <Action ActionName="Adf2 10 Inc" BackColor="" />
+    <Action ActionName="Adf2 100 Dec" BackColor="" />
+    <Action ActionName="Adf2 100 Inc" BackColor="" />
+    <Action ActionName="Adf2 Complete Set" BackColor="" />
+    <Action ActionName="Adf2 Fract Dec Carry" BackColor="" />
+    <Action ActionName="Adf2 Fract Inc Carry" BackColor="" />
+    <Action ActionName="Adf2 Radio Swap" BackColor="" />
+    <Action ActionName="Adf2 Radio Tenths Dec" BackColor="" />
+    <Action ActionName="Adf2 Radio Tenths Inc" BackColor="" />
+    <Action ActionName="Adf2 Whole Dec" BackColor="" />
+    <Action ActionName="Adf2 Whole Inc" BackColor="" />
+    <Action ActionName="Annunciator Switch Off" BackColor="" />
+    <Action ActionName="Annunciator Switch On" BackColor="" />
+    <Action ActionName="Annunciator Switch Toggle" BackColor="" />
+    <Action ActionName="Axis Steering Set" BackColor="" />
+    <Action ActionName="Com Radio Fract Dec" BackColor="" />
+    <Action ActionName="Com Radio Fract Dec Carry" BackColor="" />
+    <Action ActionName="Com Radio Fract Inc" BackColor="" />
+    <Action ActionName="Com Radio Fract Inc Carry" BackColor="" />
+    <Action ActionName="Com Radio Set" BackColor="" />
+    <Action ActionName="Com Radio Swap" BackColor="" />
+    <Action ActionName="Com Radio Whole Dec" BackColor="" />
+    <Action ActionName="Com Radio Whole Inc" BackColor="" />
+    <Action ActionName="Com Receive All Set" BackColor="" />
+    <Action ActionName="Com Receive All Toggle" BackColor="" />
+    <Action ActionName="Com1 Radio Swap" BackColor="" />
+    <Action ActionName="Com1 Receive Select" BackColor="" />
+    <Action ActionName="Com1 Stored Frequency Index Set" BackColor="" />
+    <Action ActionName="Com1 Stored Frequency Set" BackColor="" />
+    <Action ActionName="Com1 Transmit Select" BackColor="" />
+    <Action ActionName="Com1 Volume Dec" BackColor="" />
+    <Action ActionName="Com1 Volume Inc" BackColor="" />
+    <Action ActionName="Com1 Volume Set" BackColor="" />
+    <Action ActionName="Com2 Radio Fract Dec" BackColor="" />
+    <Action ActionName="Com2 Radio Fract Dec Carry" BackColor="" />
+    <Action ActionName="Com2 Radio Fract Inc" BackColor="" />
+    <Action ActionName="Com2 Radio Fract Inc Carry" BackColor="" />
+    <Action ActionName="Com2 Radio Set" BackColor="" />
+    <Action ActionName="Com2 Radio Swap" BackColor="" />
+    <Action ActionName="Com2 Radio Whole Dec" BackColor="" />
+    <Action ActionName="Com2 Radio Whole Inc" BackColor="" />
+    <Action ActionName="Com2 Receive Select" BackColor="" />
+    <Action ActionName="Com2 Stby Radio Set" BackColor="" />
+    <Action ActionName="Com2 Stored Frequency Index Set" BackColor="" />
+    <Action ActionName="Com2 Stored Frequency Set" BackColor="" />
+    <Action ActionName="Com2 Transmit Select" BackColor="" />
+    <Action ActionName="Com2 Volume Dec" BackColor="" />
+    <Action ActionName="Com2 Volume Inc" BackColor="" />
+    <Action ActionName="Com2 Volume Set" BackColor="" />
+    <Action ActionName="Com3 Radio Fract Dec" BackColor="" />
+    <Action ActionName="Com3 Radio Fract Dec Carry" BackColor="" />
+    <Action ActionName="Com3 Radio Fract Inc" BackColor="" />
+    <Action ActionName="Com3 Radio Fract Inc Carry" BackColor="" />
+    <Action ActionName="Com3 Radio Set" BackColor="" />
+    <Action ActionName="Com3 Radio Swap" BackColor="" />
+    <Action ActionName="Com3 Radio Whole Dec" BackColor="" />
+    <Action ActionName="Com3 Radio Whole Inc" BackColor="" />
+    <Action ActionName="Com3 Receive Select" BackColor="" />
+    <Action ActionName="Com3 Stby Radio Set" BackColor="" />
+    <Action ActionName="Com3 Stored Frequency Index Set" BackColor="" />
+    <Action ActionName="Com3 Stored Frequency Set" BackColor="" />
+    <Action ActionName="Com3 Volume Dec" BackColor="" />
+    <Action ActionName="Com3 Volume Inc" BackColor="" />
+    <Action ActionName="Com3 Volume Set" BackColor="" />
+    <Action ActionName="Copilot Transmitter Set" BackColor="" />
+    <Action ActionName="Dme Select" BackColor="" />
+    <Action ActionName="Dme Toggle" BackColor="" />
+    <Action ActionName="Dme1 Toggle" BackColor="" />
+    <Action ActionName="Dme2 Toggle" BackColor="" />
+    <Action ActionName="Gauge Keystroke" BackColor="" />
+    <Action ActionName="Horn Trigger" BackColor="" />
+    <Action ActionName="Kohlsman Dec" BackColor="" />
+    <Action ActionName="Kohlsman Inc" BackColor="" />
+    <Action ActionName="Kohlsman Set" BackColor="" />
+    <Action ActionName="Marker Beacon Test Mute" BackColor="" />
+    <Action ActionName="Marker Sound Set" BackColor="" />
+    <Action ActionName="Nav1 Radio Fract Dec" BackColor="" />
+    <Action ActionName="Nav1 Radio Fract Inc" BackColor="" />
+    <Action ActionName="Nav1 Radio Set" BackColor="" />
+    <Action ActionName="Nav1 Radio Whole Dec" BackColor="" />
+    <Action ActionName="Nav1 Radio Whole Inc" BackColor="" />
+    <Action ActionName="Nav1 Stby Set" BackColor="" />
+    <Action ActionName="Nav1 Volume Dec" BackColor="" />
+    <Action ActionName="Nav1 Volume Inc" BackColor="" />
+    <Action ActionName="Nav1 Volume Set" BackColor="" />
+    <Action ActionName="Nav2 Radio Fract Dec" BackColor="" />
+    <Action ActionName="Nav2 Radio Fract Dec Carry" BackColor="" />
+    <Action ActionName="Nav2 Radio Fract Inc" BackColor="" />
+    <Action ActionName="Nav2 Radio Fract Inc Carry" BackColor="" />
+    <Action ActionName="Nav2 Radio Set" BackColor="" />
+    <Action ActionName="Nav2 Radio Swap" BackColor="" />
+    <Action ActionName="Nav2 Radio Whole Dec" BackColor="" />
+    <Action ActionName="Nav2 Radio Whole Inc" BackColor="" />
+    <Action ActionName="Nav2 Stby Set" BackColor="" />
+    <Action ActionName="Nav2 Volume Dec" BackColor="" />
+    <Action ActionName="Nav2 Volume Inc" BackColor="" />
+    <Action ActionName="Nav2 Volume Set" BackColor="" />
+    <Action ActionName="Nav3 Radio Fract Dec" BackColor="" />
+    <Action ActionName="Nav3 Radio Fract Dec Carry" BackColor="" />
+    <Action ActionName="Nav3 Radio Fract Inc" BackColor="" />
+    <Action ActionName="Nav3 Radio Fract Inc Carry" BackColor="" />
+    <Action ActionName="Nav3 Radio Whole Dec" BackColor="" />
+    <Action ActionName="Nav3 Radio Whole Inc" BackColor="" />
+    <Action ActionName="Nav3 Volume Dec" BackColor="" />
+    <Action ActionName="Nav3 Volume Inc" BackColor="" />
+    <Action ActionName="Nav3 Volume Set" BackColor="" />
+    <Action ActionName="Nav3 Volume Set Ex1" BackColor="" />
+    <Action ActionName="Nav4 Radio Fract Dec" BackColor="" />
+    <Action ActionName="Nav4 Radio Fract Dec Carry" BackColor="" />
+    <Action ActionName="Nav4 Radio Fract Inc" BackColor="" />
+    <Action ActionName="Nav4 Radio Fract Inc Carry" BackColor="" />
+    <Action ActionName="Nav4 Radio Whole Dec" BackColor="" />
+    <Action ActionName="Nav4 Radio Whole Inc" BackColor="" />
+    <Action ActionName="Nav4 Volume Dec" BackColor="" />
+    <Action ActionName="Nav4 Volume Inc" BackColor="" />
+    <Action ActionName="Nav4 Volume Set" BackColor="" />
+    <Action ActionName="Nav4 Volume Set Ex1" BackColor="" />
+    <Action ActionName="Nose Wheel Steering Limit Set" BackColor="" />
+    <Action ActionName="Orni Dive Mode Toggle" BackColor="" />
+    <Action ActionName="Orni Glide Mode Toggle" BackColor="" />
+    <Action ActionName="Pilot Transmitter Set" BackColor="" />
+    <Action ActionName="Radio Adf Ident Disable" BackColor="" />
+    <Action ActionName="Radio Adf Ident Enable" BackColor="" />
+    <Action ActionName="Radio Adf Ident Set" BackColor="" />
+    <Action ActionName="Radio Adf Ident Toggle" BackColor="" />
+    <Action ActionName="Radio Adf2 Ident Disable" BackColor="" />
+    <Action ActionName="Radio Adf2 Ident Enable" BackColor="" />
+    <Action ActionName="Radio Adf2 Ident Set" BackColor="" />
+    <Action ActionName="Radio Adf2 Ident Toggle" BackColor="" />
+    <Action ActionName="Radio Comm1 Autoswitch Toggle" BackColor="" />
+    <Action ActionName="Radio Comm2 Autoswitch Toggle" BackColor="" />
+    <Action ActionName="Radio Commnav1 Test Toggle" BackColor="" />
+    <Action ActionName="Radio Commnav2 Test Toggle" BackColor="" />
+    <Action ActionName="Radio Commnav3 Test Toggle" BackColor="" />
+    <Action ActionName="Radio Dme1 Ident Disable" BackColor="" />
+    <Action ActionName="Radio Dme1 Ident Enable" BackColor="" />
+    <Action ActionName="Radio Dme1 Ident Set" BackColor="" />
+    <Action ActionName="Radio Dme1 Ident Toggle" BackColor="" />
+    <Action ActionName="Radio Dme2 Ident Disable" BackColor="" />
+    <Action ActionName="Radio Dme2 Ident Enable" BackColor="" />
+    <Action ActionName="Radio Dme2 Ident Set" BackColor="" />
+    <Action ActionName="Radio Dme2 Ident Toggle" BackColor="" />
+    <Action ActionName="Radio Nav1 Autoswitch Toggle" BackColor="" />
+    <Action ActionName="Radio Nav2 Autoswitch Toggle" BackColor="" />
+    <Action ActionName="Radio Selected Dme Ident Disable" BackColor="" />
+    <Action ActionName="Radio Selected Dme Ident Enable" BackColor="" />
+    <Action ActionName="Radio Selected Dme Ident Set" BackColor="" />
+    <Action ActionName="Radio Selected Dme Ident Toggle" BackColor="" />
+    <Action ActionName="Radio Vor1 Ident Disable" BackColor="" />
+    <Action ActionName="Radio Vor1 Ident Enable" BackColor="" />
+    <Action ActionName="Radio Vor1 Ident Set" BackColor="" />
+    <Action ActionName="Radio Vor1 Ident Toggle" BackColor="" />
+    <Action ActionName="Radio Vor2 Ident Disable" BackColor="" />
+    <Action ActionName="Radio Vor2 Ident Enable" BackColor="" />
+    <Action ActionName="Radio Vor2 Ident Set" BackColor="" />
+    <Action ActionName="Radio Vor2 Ident Toggle" BackColor="" />
+    <Action ActionName="Radio Vor3 Ident Disable" BackColor="" />
+    <Action ActionName="Radio Vor3 Ident Enable" BackColor="" />
+    <Action ActionName="Radio Vor3 Ident Set" BackColor="" />
+    <Action ActionName="Radio Vor3 Ident Toggle" BackColor="" />
+    <Action ActionName="Radio Vor4 Ident Disable" BackColor="" />
+    <Action ActionName="Radio Vor4 Ident Enable" BackColor="" />
+    <Action ActionName="Radio Vor4 Ident Set" BackColor="" />
+    <Action ActionName="Radio Vor4 Ident Toggle" BackColor="" />
+    <Action ActionName="Repair And Refuel" BackColor="" />
+    <Action ActionName="Rotor Clutch Switch Set" BackColor="" />
+    <Action ActionName="Set Launch Bar Switch" BackColor="" />
+    <Action ActionName="Set Tail Hook Handle" BackColor="" />
+    <Action ActionName="Smoke Off" BackColor="" />
+    <Action ActionName="Smoke On" BackColor="" />
+    <Action ActionName="Smoke Set" BackColor="" />
+    <Action ActionName="Smoke Toggle" BackColor="" />
+    <Action ActionName="Steering Dec" BackColor="" />
+    <Action ActionName="Steering Inc" BackColor="" />
+    <Action ActionName="Steering Set" BackColor="" />
+    <Action ActionName="Tacan1 Active Channel Set" BackColor="" />
+    <Action ActionName="Tacan1 Active Mode Set" BackColor="" />
+    <Action ActionName="Tacan1 Obi Dec" BackColor="" />
+    <Action ActionName="Tacan1 Obi Fast Dec" BackColor="" />
+    <Action ActionName="Tacan1 Obi Fast Inc" BackColor="" />
+    <Action ActionName="Tacan1 Obi Inc" BackColor="" />
+    <Action ActionName="Tacan1 Set" BackColor="" />
+    <Action ActionName="Tacan1 Standby Channel Set" BackColor="" />
+    <Action ActionName="Tacan1 Standby Mode Set" BackColor="" />
+    <Action ActionName="Tacan1 Swap" BackColor="" />
+    <Action ActionName="Tacan1 Volume Dec" BackColor="" />
+    <Action ActionName="Tacan1 Volume Inc" BackColor="" />
+    <Action ActionName="Tacan1 Volume Set" BackColor="" />
+    <Action ActionName="Tacan2 Active Channel Set" BackColor="" />
+    <Action ActionName="Tacan2 Active Mode Set" BackColor="" />
+    <Action ActionName="Tacan2 Obi Dec" BackColor="" />
+    <Action ActionName="Tacan2 Obi Fast Dec" BackColor="" />
+    <Action ActionName="Tacan2 Obi Fast Inc" BackColor="" />
+    <Action ActionName="Tacan2 Obi Inc" BackColor="" />
+    <Action ActionName="Tacan2 Set" BackColor="" />
+    <Action ActionName="Tacan2 Standby Channel Set" BackColor="" />
+    <Action ActionName="Tacan2 Standby Mode Set" BackColor="" />
+    <Action ActionName="Tacan2 Swap" BackColor="" />
+    <Action ActionName="Tacan2 Volume Dec" BackColor="" />
+    <Action ActionName="Tacan2 Volume Inc" BackColor="" />
+    <Action ActionName="Tacan2 Volume Set" BackColor="" />
+    <Action ActionName="Toggle Launch Bar Switch" BackColor="" />
+    <Action ActionName="Toggle Speaker" BackColor="" />
+    <Action ActionName="Toggle Tacan Drives Nav1" BackColor="" />
+    <Action ActionName="Toggle Water Ballast Valve" BackColor="" />
+    <Action ActionName="Tug Disable" BackColor="" />
+    <Action ActionName="Tug Heading" BackColor="" />
+    <Action ActionName="Tug Speed" BackColor="" />
+    <Action ActionName="Variometer Sound Toggle" BackColor="" />
+    <Action ActionName="Vor1 Obi Fast Dec" BackColor="" />
+    <Action ActionName="Vor1 Obi Fast Inc" BackColor="" />
+    <Action ActionName="Vor1 Set" BackColor="" />
+    <Action ActionName="Vor2 Obi Dec" BackColor="" />
+    <Action ActionName="Vor2 Obi Fast Dec" BackColor="" />
+    <Action ActionName="Vor2 Obi Fast Inc" BackColor="" />
+    <Action ActionName="Vor2 Obi Inc" BackColor="" />
+    <Action ActionName="Vor2 Set" BackColor="" />
+    <Action ActionName="Vor3 Obi Dec" BackColor="" />
+    <Action ActionName="Vor3 Obi Fast Dec" BackColor="" />
+    <Action ActionName="Vor3 Obi Fast Inc" BackColor="" />
+    <Action ActionName="Vor3 Obi Inc" BackColor="" />
+    <Action ActionName="Vor3 Set" BackColor="" />
+    <Action ActionName="Vor4 Obi Dec" BackColor="" />
+    <Action ActionName="Vor4 Obi Fast Dec" BackColor="" />
+    <Action ActionName="Vor4 Obi Fast Inc" BackColor="" />
+    <Action ActionName="Vor4 Obi Inc" BackColor="" />
+    <Action ActionName="Vor4 Set" BackColor="" />
+    <Action ActionName="Water Ballast Off" BackColor="" />
+    <Action ActionName="Water Ballast On" BackColor="" />
+    <Action ActionName="Wing Fold Off" BackColor="" />
+    <Action ActionName="Wing Fold On" BackColor="" />
+    <Action ActionName="Wing Fold Set" BackColor="" />
+    <Action ActionName="Add Fuel Quantity" BackColor="" />
+    <Action ActionName="Add Fuel Quantity Ex1" BackColor="" />
+    <Action ActionName="Cross Feed Left To Right" BackColor="" />
+    <Action ActionName="Cross Feed Off" BackColor="" />
+    <Action ActionName="Cross Feed Open" BackColor="" />
+    <Action ActionName="Cross Feed Right To Left" BackColor="" />
+    <Action ActionName="Cross Feed Toggle" BackColor="" />
+    <Action ActionName="Engine Fuelflow Bug Position1" BackColor="" />
+    <Action ActionName="Engine Fuelflow Bug Position2" BackColor="" />
+    <Action ActionName="Engine Fuelflow Bug Position3" BackColor="" />
+    <Action ActionName="Engine Fuelflow Bug Position4" BackColor="" />
+    <Action ActionName="Fuel Dump Switch Set" BackColor="" />
+    <Action ActionName="Fuel Selector 1 Crossfeed" BackColor="" />
+    <Action ActionName="Fuel Selector 1 Isolate" BackColor="" />
+    <Action ActionName="Fuel Selector 2 All" BackColor="" />
+    <Action ActionName="Fuel Selector 2 Center" BackColor="" />
+    <Action ActionName="Fuel Selector 2 Crossfeed" BackColor="" />
+    <Action ActionName="Fuel Selector 2 Isolate" BackColor="" />
+    <Action ActionName="Fuel Selector 2 Left" BackColor="" />
+    <Action ActionName="Fuel Selector 2 Left Aux" BackColor="" />
+    <Action ActionName="Fuel Selector 2 Left Main" BackColor="" />
+    <Action ActionName="Fuel Selector 2 Off" BackColor="" />
+    <Action ActionName="Fuel Selector 2 Right" BackColor="" />
+    <Action ActionName="Fuel Selector 2 Right Aux" BackColor="" />
+    <Action ActionName="Fuel Selector 2 Right Main" BackColor="" />
+    <Action ActionName="Fuel Selector 2 Set" BackColor="" />
+    <Action ActionName="Fuel Selector 3 All" BackColor="" />
+    <Action ActionName="Fuel Selector 3 Center" BackColor="" />
+    <Action ActionName="Fuel Selector 3 Crossfeed" BackColor="" />
+    <Action ActionName="Fuel Selector 3 Isolate" BackColor="" />
+    <Action ActionName="Fuel Selector 3 Left" BackColor="" />
+    <Action ActionName="Fuel Selector 3 Left Aux" BackColor="" />
+    <Action ActionName="Fuel Selector 3 Left Main" BackColor="" />
+    <Action ActionName="Fuel Selector 3 Off" BackColor="" />
+    <Action ActionName="Fuel Selector 3 Right" BackColor="" />
+    <Action ActionName="Fuel Selector 3 Right Aux" BackColor="" />
+    <Action ActionName="Fuel Selector 3 Right Main" BackColor="" />
+    <Action ActionName="Fuel Selector 3 Set" BackColor="" />
+    <Action ActionName="Fuel Selector 4 All" BackColor="" />
+    <Action ActionName="Fuel Selector 4 Center" BackColor="" />
+    <Action ActionName="Fuel Selector 4 Crossfeed" BackColor="" />
+    <Action ActionName="Fuel Selector 4 Isolate" BackColor="" />
+    <Action ActionName="Fuel Selector 4 Left" BackColor="" />
+    <Action ActionName="Fuel Selector 4 Left Aux" BackColor="" />
+    <Action ActionName="Fuel Selector 4 Left Main" BackColor="" />
+    <Action ActionName="Fuel Selector 4 Off" BackColor="" />
+    <Action ActionName="Fuel Selector 4 Right" BackColor="" />
+    <Action ActionName="Fuel Selector 4 Right Aux" BackColor="" />
+    <Action ActionName="Fuel Selector 4 Right Main" BackColor="" />
+    <Action ActionName="Fuel Selector 4 Set" BackColor="" />
+    <Action ActionName="Fuel Selector Center" BackColor="" />
+    <Action ActionName="Fuel Selector Left" BackColor="" />
+    <Action ActionName="Fuel Selector Left Aux" BackColor="" />
+    <Action ActionName="Fuel Selector Left Main" BackColor="" />
+    <Action ActionName="Fuel Selector Right" BackColor="" />
+    <Action ActionName="Fuel Selector Right Aux" BackColor="" />
+    <Action ActionName="Fuel Selector Right Main" BackColor="" />
+    <Action ActionName="Fuel Selector Set" BackColor="" />
+    <Action ActionName="Fuelsystem Junction Set" BackColor="" />
+    <Action ActionName="Fuelsystem Pump Off" BackColor="" />
+    <Action ActionName="Fuelsystem Pump On" BackColor="" />
+    <Action ActionName="Fuelsystem Pump Set" BackColor="" />
+    <Action ActionName="Fuelsystem Pump Toggle" BackColor="" />
+    <Action ActionName="Fuelsystem Trigger Off" BackColor="" />
+    <Action ActionName="Fuelsystem Trigger On" BackColor="" />
+    <Action ActionName="Fuelsystem Trigger Set" BackColor="" />
+    <Action ActionName="Fuelsystem Trigger Toggle" BackColor="" />
+    <Action ActionName="Fuelsystem Valve Close" BackColor="" />
+    <Action ActionName="Fuelsystem Valve Open" BackColor="" />
+    <Action ActionName="Fuelsystem Valve Set" BackColor="" />
+    <Action ActionName="Fuelsystem Valve Toggle" BackColor="" />
+    <Action ActionName="Manual Fuel Pressure Pump" BackColor="" />
+    <Action ActionName="Manual Fuel Transfer" BackColor="" />
+    <Action ActionName="Set Fuel Transfer Aft" BackColor="" />
+    <Action ActionName="Set Fuel Transfer Auto" BackColor="" />
+    <Action ActionName="Set Fuel Transfer Forward" BackColor="" />
+    <Action ActionName="Set Fuel Transfer Off" BackColor="" />
+    <Action ActionName="Set Fuel Valve Eng1" BackColor="" />
+    <Action ActionName="Set Fuel Valve Eng2" BackColor="" />
+    <Action ActionName="Set Fuel Valve Eng3" BackColor="" />
+    <Action ActionName="Set Fuel Valve Eng4" BackColor="" />
+    <Action ActionName="Shutoff Valve Off" BackColor="" />
+    <Action ActionName="Shutoff Valve On" BackColor="" />
+    <Action ActionName="Shutoff Valve Toggle" BackColor="" />
+    <Action ActionName="Toggle Fuel Valve Eng1" BackColor="" />
+    <Action ActionName="Toggle Fuel Valve Eng2" BackColor="" />
+    <Action ActionName="Toggle Fuel Valve Eng3" BackColor="" />
+    <Action ActionName="Toggle Fuel Valve Eng4" BackColor="" />
+    <Action ActionName="Toggle Primer" BackColor="" />
+    <Action ActionName="Toggle Primer1" BackColor="" />
+    <Action ActionName="Toggle Primer2" BackColor="" />
+    <Action ActionName="Toggle Primer3" BackColor="" />
+    <Action ActionName="Toggle Primer4" BackColor="" />
+    <Action ActionName="Xpndr 1000 Inc" BackColor="" />
+    <Action ActionName="Aileron Center" BackColor="" />
+    <Action ActionName="Aileron Trim Disabled Set" BackColor="" />
+    <Action ActionName="Aileron Trim Disabled Toggle" BackColor="" />
+    <Action ActionName="Alternator Off" BackColor="" />
+    <Action ActionName="Alternator On" BackColor="" />
+    <Action ActionName="Alternator Set" BackColor="" />
+    <Action ActionName="Anti Ice Gradual Set" BackColor="" />
+    <Action ActionName="Anti Ice Gradual Set Eng1" BackColor="" />
+    <Action ActionName="Anti Ice Gradual Set Eng2" BackColor="" />
+    <Action ActionName="Anti Ice Gradual Set Eng3" BackColor="" />
+    <Action ActionName="Anti Ice Gradual Set Eng4" BackColor="" />
+    <Action ActionName="Anti Ice Off" BackColor="" />
+    <Action ActionName="Anti Ice On" BackColor="" />
+    <Action ActionName="Anti Ice Set" BackColor="" />
+    <Action ActionName="Anti Ice Set Eng1" BackColor="" />
+    <Action ActionName="Anti Ice Set Eng2" BackColor="" />
+    <Action ActionName="Anti Ice Set Eng3" BackColor="" />
+    <Action ActionName="Anti Ice Set Eng4" BackColor="" />
+    <Action ActionName="Anti Ice Toggle Eng1" BackColor="" />
+    <Action ActionName="Anti Ice Toggle Eng2" BackColor="" />
+    <Action ActionName="Anti Ice Toggle Eng3" BackColor="" />
+    <Action ActionName="Anti Ice Toggle Eng4" BackColor="" />
+    <Action ActionName="Apu Bleed Air Source Set" BackColor="" />
+    <Action ActionName="Apu Bleed Air Source Toggle" BackColor="" />
+    <Action ActionName="Apu Bleed To Engine Set" BackColor="" />
+    <Action ActionName="Apu Bleed To Engine Toggle" BackColor="" />
+    <Action ActionName="Apu Generator Switch Set" BackColor="" />
+    <Action ActionName="Apu Generator Switch Toggle" BackColor="" />
+    <Action ActionName="Apu Off Switch" BackColor="" />
+    <Action ActionName="Apu Starter" BackColor="" />
+    <Action ActionName="Attitude Bars Position Dec" BackColor="" />
+    <Action ActionName="Attitude Bars Position Inc" BackColor="" />
+    <Action ActionName="Attitude Bars Position Set" BackColor="" />
+    <Action ActionName="Auto Hover Off" BackColor="" />
+    <Action ActionName="Auto Hover On" BackColor="" />
+    <Action ActionName="Auto Hover Set" BackColor="" />
+    <Action ActionName="Auto Hover Toggle" BackColor="" />
+    <Action ActionName="Autocoord Off" BackColor="" />
+    <Action ActionName="Autocoord On" BackColor="" />
+    <Action ActionName="Autocoord Set" BackColor="" />
+    <Action ActionName="Avionics Master 1 Off" BackColor="" />
+    <Action ActionName="Avionics Master 1 On" BackColor="" />
+    <Action ActionName="Avionics Master 1 Set" BackColor="" />
+    <Action ActionName="Avionics Master 2 Off" BackColor="" />
+    <Action ActionName="Avionics Master 2 On" BackColor="" />
+    <Action ActionName="Avionics Master 2 Set" BackColor="" />
+    <Action ActionName="Avionics Master Set" BackColor="" />
+    <Action ActionName="Axis Flaps Set" BackColor="" />
+    <Action ActionName="Axis Spoiler Set" BackColor="" />
+    <Action ActionName="Axis Vertical Speed Set" BackColor="" />
+    <Action ActionName="Barometric Std Pressure" BackColor="" />
+    <Action ActionName="Battery1 Set" BackColor="" />
+    <Action ActionName="Battery2 Set" BackColor="" />
+    <Action ActionName="Battery3 Set" BackColor="" />
+    <Action ActionName="Battery4 Set" BackColor="" />
+    <Action ActionName="Beacon Lights Off" BackColor="" />
+    <Action ActionName="Beacon Lights On" BackColor="" />
+    <Action ActionName="Beacon Lights Set" BackColor="" />
+    <Action ActionName="Bleed Air Source Control Dec" BackColor="" />
+    <Action ActionName="Bleed Air Source Control Inc" BackColor="" />
+    <Action ActionName="Bleed Air Source Control Set" BackColor="" />
+    <Action ActionName="Cabin Lights Off" BackColor="" />
+    <Action ActionName="Cabin Lights On" BackColor="" />
+    <Action ActionName="Cabin Lights Power Setting Set" BackColor="" />
+    <Action ActionName="Cabin Lights Set" BackColor="" />
+    <Action ActionName="Clock Hours Set" BackColor="" />
+    <Action ActionName="Clock Minutes Set" BackColor="" />
+    <Action ActionName="Cowlflap1 Set" BackColor="" />
+    <Action ActionName="Cowlflap2 Set" BackColor="" />
+    <Action ActionName="Cowlflap3 Set" BackColor="" />
+    <Action ActionName="Cowlflap4 Set" BackColor="" />
+    <Action ActionName="Cyclic Lateral Left" BackColor="" />
+    <Action ActionName="Cyclic Lateral Right" BackColor="" />
+    <Action ActionName="Cyclic Longitudinal Down" BackColor="" />
+    <Action ActionName="Cyclic Longitudinal Up" BackColor="" />
+    <Action ActionName="Dec Cowl Flaps1" BackColor="" />
+    <Action ActionName="Dec Cowl Flaps2" BackColor="" />
+    <Action ActionName="Dec Cowl Flaps3" BackColor="" />
+    <Action ActionName="Dec Cowl Flaps4" BackColor="" />
+    <Action ActionName="Decision Altitude Msl Dec" BackColor="" />
+    <Action ActionName="Decision Altitude Msl Inc" BackColor="" />
+    <Action ActionName="Decision Height Dec" BackColor="" />
+    <Action ActionName="Decision Height Inc" BackColor="" />
+    <Action ActionName="Egt" BackColor="" />
+    <Action ActionName="Egt Dec" BackColor="" />
+    <Action ActionName="Egt Inc" BackColor="" />
+    <Action ActionName="Egt Set" BackColor="" />
+    <Action ActionName="Egt1 Dec" BackColor="" />
+    <Action ActionName="Egt1 Inc" BackColor="" />
+    <Action ActionName="Egt1 Set" BackColor="" />
+    <Action ActionName="Egt2 Dec" BackColor="" />
+    <Action ActionName="Egt2 Inc" BackColor="" />
+    <Action ActionName="Egt2 Set" BackColor="" />
+    <Action ActionName="Egt3 Dec" BackColor="" />
+    <Action ActionName="Egt3 Inc" BackColor="" />
+    <Action ActionName="Egt3 Set" BackColor="" />
+    <Action ActionName="Egt4 Dec" BackColor="" />
+    <Action ActionName="Egt4 Inc" BackColor="" />
+    <Action ActionName="Egt4 Set" BackColor="" />
+    <Action ActionName="Elect Fuel Pump Set" BackColor="" />
+    <Action ActionName="Elect Fuel Pump1 Set" BackColor="" />
+    <Action ActionName="Elect Fuel Pump2 Set" BackColor="" />
+    <Action ActionName="Elect Fuel Pump3 Set" BackColor="" />
+    <Action ActionName="Elect Fuel Pump4 Set" BackColor="" />
+    <Action ActionName="Electrical Circuit Power Setting Set" BackColor="" />
+    <Action ActionName="Electrical Execute Procedure" BackColor="" />
+    <Action ActionName="Elevator Trim Disabled Set" BackColor="" />
+    <Action ActionName="Elevator Trim Disabled Toggle" BackColor="" />
+    <Action ActionName="Elt Off" BackColor="" />
+    <Action ActionName="Elt On" BackColor="" />
+    <Action ActionName="Elt Set" BackColor="" />
+    <Action ActionName="Elt Toggle" BackColor="" />
+    <Action ActionName="Engine Bleed Air Source Set" BackColor="" />
+    <Action ActionName="Engine Bleed Air Source Toggle" BackColor="" />
+    <Action ActionName="Engine Bypass Toggle" BackColor="" />
+    <Action ActionName="Engine Master 1 Set" BackColor="" />
+    <Action ActionName="Engine Master 1 Toggle" BackColor="" />
+    <Action ActionName="Engine Master 2 Set" BackColor="" />
+    <Action ActionName="Engine Master 2 Toggle" BackColor="" />
+    <Action ActionName="Engine Master 3 Set" BackColor="" />
+    <Action ActionName="Engine Master 3 Toggle" BackColor="" />
+    <Action ActionName="Engine Master 4 Set" BackColor="" />
+    <Action ActionName="Engine Master 4 Toggle" BackColor="" />
+    <Action ActionName="Engine Master Set" BackColor="" />
+    <Action ActionName="Engine Master Toggle" BackColor="" />
+    <Action ActionName="Engine Mode Crank Set" BackColor="" />
+    <Action ActionName="Engine Mode Ign Start" BackColor="" />
+    <Action ActionName="Engine Mode Norm Set" BackColor="" />
+    <Action ActionName="Engine Primer" BackColor="" />
+    <Action ActionName="External System Set" BackColor="" />
+    <Action ActionName="External System Toggle" BackColor="" />
+    <Action ActionName="Flaps 1" BackColor="" />
+    <Action ActionName="Flaps 2" BackColor="" />
+    <Action ActionName="Flaps 3" BackColor="" />
+    <Action ActionName="Flaps 4" BackColor="" />
+    <Action ActionName="Flaps Continuous Decr" BackColor="" />
+    <Action ActionName="Flaps Continuous Incr" BackColor="" />
+    <Action ActionName="Flaps Continuous Set" BackColor="" />
+    <Action ActionName="Flaps Set" BackColor="" />
+    <Action ActionName="Freeze Altitude Set" BackColor="" />
+    <Action ActionName="Freeze Altitude Toggle" BackColor="" />
+    <Action ActionName="Freeze Attitude Set" BackColor="" />
+    <Action ActionName="Freeze Attitude Toggle" BackColor="" />
+    <Action ActionName="Freeze Latitude Longitude Set" BackColor="" />
+    <Action ActionName="Freeze Latitude Longitude Toggle" BackColor="" />
+    <Action ActionName="Glareshield Lights Off" BackColor="" />
+    <Action ActionName="Glareshield Lights On" BackColor="" />
+    <Action ActionName="Glareshield Lights Power Setting Set" BackColor="" />
+    <Action ActionName="Glareshield Lights Set" BackColor="" />
+    <Action ActionName="Glareshield Lights Toggle" BackColor="" />
+    <Action ActionName="Gpws Switch Toggle" BackColor="" />
+    <Action ActionName="Gyro Drift Dec" BackColor="" />
+    <Action ActionName="Gyro Drift Inc" BackColor="" />
+    <Action ActionName="Gyro Drift Set" BackColor="" />
+    <Action ActionName="Heading Bug Set" BackColor="" />
+    <Action ActionName="Heli Beep Decrease" BackColor="" />
+    <Action ActionName="Heli Beep Increase" BackColor="" />
+    <Action ActionName="Helicopter Engine 1 Beep Trim Decrease" BackColor="" />
+    <Action ActionName="Helicopter Engine 1 Beep Trim Increase" BackColor="" />
+    <Action ActionName="Helicopter Engine 1 Governor Switch Off" BackColor="" />
+    <Action ActionName="Helicopter Engine 1 Governor Switch On" BackColor="" />
+    <Action ActionName="Helicopter Engine 1 Governor Switch Toggle" BackColor="" />
+    <Action ActionName="Helicopter Engine 2 Beep Trim Decrease" BackColor="" />
+    <Action ActionName="Helicopter Engine 2 Beep Trim Increase" BackColor="" />
+    <Action ActionName="Helicopter Engine 2 Governor Switch Off" BackColor="" />
+    <Action ActionName="Helicopter Engine 2 Governor Switch On" BackColor="" />
+    <Action ActionName="Helicopter Engine 2 Governor Switch Toggle" BackColor="" />
+    <Action ActionName="Hydraulic Switch Toggle" BackColor="" />
+    <Action ActionName="Inc Cowl Flaps1" BackColor="" />
+    <Action ActionName="Inc Cowl Flaps2" BackColor="" />
+    <Action ActionName="Inc Cowl Flaps3" BackColor="" />
+    <Action ActionName="Inc Cowl Flaps4" BackColor="" />
+    <Action ActionName="Inductor Compass Ref Dec" BackColor="" />
+    <Action ActionName="Inductor Compass Ref Inc" BackColor="" />
+    <Action ActionName="Landing Lights Off" BackColor="" />
+    <Action ActionName="Landing Lights On" BackColor="" />
+    <Action ActionName="Landing Lights Set" BackColor="" />
+    <Action ActionName="Light Potentiometer Dec" BackColor="" />
+    <Action ActionName="Light Potentiometer Inc" BackColor="" />
+    <Action ActionName="Low Height Warning Gauge Will Set" BackColor="" />
+    <Action ActionName="Low Height Warning Set" BackColor="" />
+    <Action ActionName="Mac Cready Setting Dec" BackColor="" />
+    <Action ActionName="Mac Cready Setting Inc" BackColor="" />
+    <Action ActionName="Mac Cready Setting Set" BackColor="" />
+    <Action ActionName="Magneto Decr" BackColor="" />
+    <Action ActionName="Magneto Incr" BackColor="" />
+    <Action ActionName="Magneto Set" BackColor="" />
+    <Action ActionName="Magneto1 Both" BackColor="" />
+    <Action ActionName="Magneto1 Decr" BackColor="" />
+    <Action ActionName="Magneto1 Incr" BackColor="" />
+    <Action ActionName="Magneto1 Left" BackColor="" />
+    <Action ActionName="Magneto1 Off" BackColor="" />
+    <Action ActionName="Magneto1 Right" BackColor="" />
+    <Action ActionName="Magneto1 Set" BackColor="" />
+    <Action ActionName="Magneto1 Start" BackColor="" />
+    <Action ActionName="Magneto2 Both" BackColor="" />
+    <Action ActionName="Magneto2 Decr" BackColor="" />
+    <Action ActionName="Magneto2 Incr" BackColor="" />
+    <Action ActionName="Magneto2 Left" BackColor="" />
+    <Action ActionName="Magneto2 Off" BackColor="" />
+    <Action ActionName="Magneto2 Right" BackColor="" />
+    <Action ActionName="Magneto2 Set" BackColor="" />
+    <Action ActionName="Magneto2 Start" BackColor="" />
+    <Action ActionName="Magneto3 Both" BackColor="" />
+    <Action ActionName="Magneto3 Decr" BackColor="" />
+    <Action ActionName="Magneto3 Incr" BackColor="" />
+    <Action ActionName="Magneto3 Left" BackColor="" />
+    <Action ActionName="Magneto3 Off" BackColor="" />
+    <Action ActionName="Magneto3 Right" BackColor="" />
+    <Action ActionName="Magneto3 Set" BackColor="" />
+    <Action ActionName="Magneto3 Start" BackColor="" />
+    <Action ActionName="Magneto4 Both" BackColor="" />
+    <Action ActionName="Magneto4 Decr" BackColor="" />
+    <Action ActionName="Magneto4 Incr" BackColor="" />
+    <Action ActionName="Magneto4 Left" BackColor="" />
+    <Action ActionName="Magneto4 Off" BackColor="" />
+    <Action ActionName="Magneto4 Right" BackColor="" />
+    <Action ActionName="Magneto4 Set" BackColor="" />
+    <Action ActionName="Magneto4 Start" BackColor="" />
+    <Action ActionName="Master Battery Off" BackColor="" />
+    <Action ActionName="Master Battery On" BackColor="" />
+    <Action ActionName="Master Battery Set" BackColor="" />
+    <Action ActionName="Master Caution Acknowledge" BackColor="" />
+    <Action ActionName="Master Caution Off" BackColor="" />
+    <Action ActionName="Master Caution On" BackColor="" />
+    <Action ActionName="Master Caution Set" BackColor="" />
+    <Action ActionName="Master Caution Toggle" BackColor="" />
+    <Action ActionName="Master Warning Acknowledge" BackColor="" />
+    <Action ActionName="Master Warning Off" BackColor="" />
+    <Action ActionName="Master Warning On" BackColor="" />
+    <Action ActionName="Master Warning Set" BackColor="" />
+    <Action ActionName="Master Warning Toggle" BackColor="" />
+    <Action ActionName="Nav Lights Off" BackColor="" />
+    <Action ActionName="Nav Lights On" BackColor="" />
+    <Action ActionName="Nav Lights Set" BackColor="" />
+    <Action ActionName="Panel Lights Off" BackColor="" />
+    <Action ActionName="Panel Lights On" BackColor="" />
+    <Action ActionName="Panel Lights Power Setting Set" BackColor="" />
+    <Action ActionName="Panel Lights Set" BackColor="" />
+    <Action ActionName="Pedestral Lights Off" BackColor="" />
+    <Action ActionName="Pedestral Lights On" BackColor="" />
+    <Action ActionName="Pedestral Lights Power Setting Set" BackColor="" />
+    <Action ActionName="Pedestral Lights Set" BackColor="" />
+    <Action ActionName="Pedestral Lights Toggle" BackColor="" />
+    <Action ActionName="Pitot Heat Off" BackColor="" />
+    <Action ActionName="Pitot Heat On" BackColor="" />
+    <Action ActionName="Pitot Heat Set" BackColor="" />
+    <Action ActionName="Plasma Off" BackColor="" />
+    <Action ActionName="Plasma On" BackColor="" />
+    <Action ActionName="Plasma Set" BackColor="" />
+    <Action ActionName="Plasma Toggle" BackColor="" />
+    <Action ActionName="Pressurization Climb Rate Dec" BackColor="" />
+    <Action ActionName="Pressurization Climb Rate Inc" BackColor="" />
+    <Action ActionName="Pressurization Climb Rate Set" BackColor="" />
+    <Action ActionName="Pressurization Pressure Alt Dec" BackColor="" />
+    <Action ActionName="Pressurization Pressure Alt Inc" BackColor="" />
+    <Action ActionName="Pressurization Pressure Dump Switch" BackColor="" />
+    <Action ActionName="Recognition Lights Set" BackColor="" />
+    <Action ActionName="Reset G Force Indicator" BackColor="" />
+    <Action ActionName="Reset Max Rpm Indicator" BackColor="" />
+    <Action ActionName="Rotor Gov Switch Off" BackColor="" />
+    <Action ActionName="Rotor Gov Switch On" BackColor="" />
+    <Action ActionName="Rotor Lateral Trim Set" BackColor="" />
+    <Action ActionName="Rotor Longitudinal Trim Set" BackColor="" />
+    <Action ActionName="Rudder Center" BackColor="" />
+    <Action ActionName="Rudder Trim Disabled Set" BackColor="" />
+    <Action ActionName="Rudder Trim Disabled Toggle" BackColor="" />
+    <Action ActionName="Rudder Trim Reset" BackColor="" />
+    <Action ActionName="Set External Power" BackColor="" />
+    <Action ActionName="Set Starter All Held" BackColor="" />
+    <Action ActionName="Set Starter1 Held" BackColor="" />
+    <Action ActionName="Set Starter2 Held" BackColor="" />
+    <Action ActionName="Set Starter3 Held" BackColor="" />
+    <Action ActionName="Set Starter4 Held" BackColor="" />
+    <Action ActionName="Spoilers Arm Off" BackColor="" />
+    <Action ActionName="Spoilers Arm On" BackColor="" />
+    <Action ActionName="Spoilers Arm Set" BackColor="" />
+    <Action ActionName="Spoilers Arm Toggle" BackColor="" />
+    <Action ActionName="Spoilers Dec" BackColor="" />
+    <Action ActionName="Spoilers Inc" BackColor="" />
+    <Action ActionName="Spoilers Off" BackColor="" />
+    <Action ActionName="Spoilers On" BackColor="" />
+    <Action ActionName="Spoilers Set" BackColor="" />
+    <Action ActionName="Starter Off" BackColor="" />
+    <Action ActionName="Starter Set" BackColor="" />
+    <Action ActionName="Starter Start" BackColor="" />
+    <Action ActionName="Starter1 Set" BackColor="" />
+    <Action ActionName="Starter2 Set" BackColor="" />
+    <Action ActionName="Starter3 Set" BackColor="" />
+    <Action ActionName="Starter4 Set" BackColor="" />
+    <Action ActionName="Strobes Off" BackColor="" />
+    <Action ActionName="Strobes On" BackColor="" />
+    <Action ActionName="Strobes Set" BackColor="" />
+    <Action ActionName="Taxi Lights Off" BackColor="" />
+    <Action ActionName="Taxi Lights On" BackColor="" />
+    <Action ActionName="Taxi Lights Set" BackColor="" />
+    <Action ActionName="Toggle Afterburner" BackColor="" />
+    <Action ActionName="Toggle Afterburner1" BackColor="" />
+    <Action ActionName="Toggle Afterburner2" BackColor="" />
+    <Action ActionName="Toggle Afterburner3" BackColor="" />
+    <Action ActionName="Toggle Afterburner4" BackColor="" />
+    <Action ActionName="Toggle All Starters" BackColor="" />
+    <Action ActionName="Toggle Alternator1" BackColor="" />
+    <Action ActionName="Toggle Alternator2" BackColor="" />
+    <Action ActionName="Toggle Alternator3" BackColor="" />
+    <Action ActionName="Toggle Alternator4" BackColor="" />
+    <Action ActionName="Toggle Attitude Cage" BackColor="" />
+    <Action ActionName="Toggle Cabin Lights" BackColor="" />
+    <Action ActionName="Toggle Elect Fuel Pump" BackColor="" />
+    <Action ActionName="Toggle Elect Fuel Pump1" BackColor="" />
+    <Action ActionName="Toggle Elect Fuel Pump2" BackColor="" />
+    <Action ActionName="Toggle Elect Fuel Pump3" BackColor="" />
+    <Action ActionName="Toggle Elect Fuel Pump4" BackColor="" />
+    <Action ActionName="Toggle Electric Vacuum Pump" BackColor="" />
+    <Action ActionName="Toggle External Power" BackColor="" />
+    <Action ActionName="Toggle Gps Drives Nav1" BackColor="" />
+    <Action ActionName="Toggle Logo Lights" BackColor="" />
+    <Action ActionName="Toggle Master Starter Switch" BackColor="" />
+    <Action ActionName="Toggle Propeller Deice" BackColor="" />
+    <Action ActionName="Toggle Recognition Lights" BackColor="" />
+    <Action ActionName="Toggle Starter1" BackColor="" />
+    <Action ActionName="Toggle Starter2" BackColor="" />
+    <Action ActionName="Toggle Starter3" BackColor="" />
+    <Action ActionName="Toggle Starter4" BackColor="" />
+    <Action ActionName="Toggle Structural Deice" BackColor="" />
+    <Action ActionName="Toggle Turn Indicator Switch" BackColor="" />
+    <Action ActionName="Toggle Variometer Switch" BackColor="" />
+    <Action ActionName="Toggle Wing Lights" BackColor="" />
+    <Action ActionName="True Airspeed Cal Set" BackColor="" />
+    <Action ActionName="True Airspeed Calibrate Dec" BackColor="" />
+    <Action ActionName="True Airspeed Calibrate Inc" BackColor="" />
+    <Action ActionName="Turbine Ignition Switch Set" BackColor="" />
+    <Action ActionName="Turbine Ignition Switch Set1" BackColor="" />
+    <Action ActionName="Turbine Ignition Switch Set2" BackColor="" />
+    <Action ActionName="Turbine Ignition Switch Set3" BackColor="" />
+    <Action ActionName="Turbine Ignition Switch Set4" BackColor="" />
+    <Action ActionName="Turbine Ignition Switch Toggle" BackColor="" />
+    <Action ActionName="Vertical Speed Dec" BackColor="" />
+    <Action ActionName="Vertical Speed Inc" BackColor="" />
+    <Action ActionName="Vertical Speed Zero" BackColor="" />
+    <Action ActionName="Vsi Bug Select" BackColor="" />
+    <Action ActionName="War Emergency Power" BackColor="" />
+    <Action ActionName="Windshield Deice Off" BackColor="" />
+    <Action ActionName="Windshield Deice On" BackColor="" />
+    <Action ActionName="Windshield Deice Set" BackColor="" />
+    <Action ActionName="Windshield Deice Toggle" BackColor="" />
+    <Action ActionName="Xpndr 1 Dec" BackColor="" />
+    <Action ActionName="Xpndr 1 Inc" BackColor="" />
+    <Action ActionName="Xpndr 10 Dec" BackColor="" />
+    <Action ActionName="Xpndr 10 Inc" BackColor="" />
+    <Action ActionName="Xpndr 100 Dec" BackColor="" />
+    <Action ActionName="Xpndr 100 Inc" BackColor="" />
+    <Action ActionName="Xpndr 1000 Dec" BackColor="" />
+    <Action ActionName="Xpndr Dec Carry" BackColor="" />
+    <Action ActionName="Xpndr Inc Carry" BackColor="" />
+    <Action ActionName="Zulu Day Set" BackColor="" />
+    <Action ActionName="Zulu Hours Set" BackColor="" />
+    <Action ActionName="Zulu Minutes Set" BackColor="" />
+    <Action ActionName="Zulu Year Set" BackColor="" />
+    <Action ActionName="Antiskid Brakes Toggle" BackColor="" />
+    <Action ActionName="Ap Airspeed Off" BackColor="" />
+    <Action ActionName="Ap Airspeed On" BackColor="" />
+    <Action ActionName="Ap Airspeed Set" BackColor="" />
+    <Action ActionName="Ap Alt Hold" BackColor="" />
+    <Action ActionName="Ap Alt Hold Off" BackColor="" />
+    <Action ActionName="Ap Alt Hold On" BackColor="" />
+    <Action ActionName="Ap Alt Radio Mode Off" BackColor="" />
+    <Action ActionName="Ap Alt Radio Mode On" BackColor="" />
+    <Action ActionName="Ap Alt Radio Mode Set" BackColor="" />
+    <Action ActionName="Ap Alt Radio Mode Toggle" BackColor="" />
+    <Action ActionName="Ap Alt Var Set English" BackColor="" />
+    <Action ActionName="Ap Alt Var Set Metric" BackColor="" />
+    <Action ActionName="Ap Altitude Slot Index Set" BackColor="" />
+    <Action ActionName="Ap Apr Hold Off" BackColor="" />
+    <Action ActionName="Ap Apr Hold On" BackColor="" />
+    <Action ActionName="Ap Att Hold Off" BackColor="" />
+    <Action ActionName="Ap Att Hold On" BackColor="" />
+    <Action ActionName="Ap Bc Hold" BackColor="" />
+    <Action ActionName="Ap Bc Hold Off" BackColor="" />
+    <Action ActionName="Ap Bc Hold On" BackColor="" />
+    <Action ActionName="Ap Flight Level Change" BackColor="" />
+    <Action ActionName="Ap Flight Level Change Off" BackColor="" />
+    <Action ActionName="Ap Flight Level Change On" BackColor="" />
+    <Action ActionName="Ap Hdg Hold" BackColor="" />
+    <Action ActionName="Ap Hdg Hold Off" BackColor="" />
+    <Action ActionName="Ap Hdg Hold On" BackColor="" />
+    <Action ActionName="Ap Heading Slot Index Set" BackColor="" />
+    <Action ActionName="Ap Loc Hold Off" BackColor="" />
+    <Action ActionName="Ap Loc Hold On" BackColor="" />
+    <Action ActionName="Ap Mach Off" BackColor="" />
+    <Action ActionName="Ap Mach On" BackColor="" />
+    <Action ActionName="Ap Mach Set" BackColor="" />
+    <Action ActionName="Ap Mach Var Dec" BackColor="" />
+    <Action ActionName="Ap Mach Var Inc" BackColor="" />
+    <Action ActionName="Ap Mach Var Set" BackColor="" />
+    <Action ActionName="Ap Managed Speed In Mach Off" BackColor="" />
+    <Action ActionName="Ap Managed Speed In Mach On" BackColor="" />
+    <Action ActionName="Ap Managed Speed In Mach Set" BackColor="" />
+    <Action ActionName="Ap Managed Speed In Mach Toggle" BackColor="" />
+    <Action ActionName="Ap Max Bank Dec" BackColor="" />
+    <Action ActionName="Ap Max Bank Inc" BackColor="" />
+    <Action ActionName="Ap N1 Ref Set" BackColor="" />
+    <Action ActionName="Ap Nav Select Set" BackColor="" />
+    <Action ActionName="Ap Nav1 Hold Off" BackColor="" />
+    <Action ActionName="Ap Nav1 Hold On" BackColor="" />
+    <Action ActionName="Ap Pitch Leveler" BackColor="" />
+    <Action ActionName="Ap Pitch Leveler Off" BackColor="" />
+    <Action ActionName="Ap Pitch Leveler On" BackColor="" />
+    <Action ActionName="Ap Pitch Ref Inc Dn" BackColor="" />
+    <Action ActionName="Ap Pitch Ref Inc Up" BackColor="" />
+    <Action ActionName="Ap Pitch Ref Select" BackColor="" />
+    <Action ActionName="Ap Rpm Slot Index Set" BackColor="" />
+    <Action ActionName="Ap Spd Var Set" BackColor="" />
+    <Action ActionName="Ap Speed Slot Index Set" BackColor="" />
+    <Action ActionName="Ap Vs Hold" BackColor="" />
+    <Action ActionName="Ap Vs Off" BackColor="" />
+    <Action ActionName="Ap Vs On" BackColor="" />
+    <Action ActionName="Ap Vs Set" BackColor="" />
+    <Action ActionName="Ap Vs Slot Index Set" BackColor="" />
+    <Action ActionName="Ap Vs Var Set Current" BackColor="" />
+    <Action ActionName="Ap Vs Var Set English" BackColor="" />
+    <Action ActionName="Ap Vs Var Set Metric" BackColor="" />
+    <Action ActionName="Ap Wing Leveler Off" BackColor="" />
+    <Action ActionName="Ap Wing Leveler On" BackColor="" />
+    <Action ActionName="Auto Throttle Disconnect" BackColor="" />
+    <Action ActionName="Autobrake Disarm" BackColor="" />
+    <Action ActionName="Autobrake Hi Set" BackColor="" />
+    <Action ActionName="Autobrake Lo Set" BackColor="" />
+    <Action ActionName="Autobrake Med Set" BackColor="" />
+    <Action ActionName="Autopilot Airspeed Acquire" BackColor="" />
+    <Action ActionName="Autopilot Airspeed Hold Current" BackColor="" />
+    <Action ActionName="Autopilot Disengage Set" BackColor="" />
+    <Action ActionName="Autopilot Disengage Toggle" BackColor="" />
+    <Action ActionName="Autopilot Mach Hold Current" BackColor="" />
+    <Action ActionName="Axis Condition Lever 1 Set" BackColor="" />
+    <Action ActionName="Axis Condition Lever 2 Set" BackColor="" />
+    <Action ActionName="Axis Condition Lever 3 Set" BackColor="" />
+    <Action ActionName="Axis Condition Lever 4 Set" BackColor="" />
+    <Action ActionName="Axis Condition Lever Set" BackColor="" />
+    <Action ActionName="Axis Rotor Brake Set" BackColor="" />
+    <Action ActionName="Condition Lever 1 Cut Off" BackColor="" />
+    <Action ActionName="Condition Lever 1 Dec" BackColor="" />
+    <Action ActionName="Condition Lever 1 High Idle" BackColor="" />
+    <Action ActionName="Condition Lever 1 Inc" BackColor="" />
+    <Action ActionName="Condition Lever 1 Low Idle" BackColor="" />
+    <Action ActionName="Condition Lever 1 Set" BackColor="" />
+    <Action ActionName="Condition Lever 2 Cut Off" BackColor="" />
+    <Action ActionName="Condition Lever 2 Dec" BackColor="" />
+    <Action ActionName="Condition Lever 2 High Idle" BackColor="" />
+    <Action ActionName="Condition Lever 2 Inc" BackColor="" />
+    <Action ActionName="Condition Lever 2 Low Idle" BackColor="" />
+    <Action ActionName="Condition Lever 2 Set" BackColor="" />
+    <Action ActionName="Condition Lever 3 Cut Off" BackColor="" />
+    <Action ActionName="Condition Lever 3 Dec" BackColor="" />
+    <Action ActionName="Condition Lever 3 High Idle" BackColor="" />
+    <Action ActionName="Condition Lever 3 Inc" BackColor="" />
+    <Action ActionName="Condition Lever 3 Low Idle" BackColor="" />
+    <Action ActionName="Condition Lever 3 Set" BackColor="" />
+    <Action ActionName="Condition Lever 4 Cut Off" BackColor="" />
+    <Action ActionName="Condition Lever 4 Dec" BackColor="" />
+    <Action ActionName="Condition Lever 4 High Idle" BackColor="" />
+    <Action ActionName="Condition Lever 4 Inc" BackColor="" />
+    <Action ActionName="Condition Lever 4 Low Idle" BackColor="" />
+    <Action ActionName="Condition Lever 4 Set" BackColor="" />
+    <Action ActionName="Condition Lever Cut Off" BackColor="" />
+    <Action ActionName="Condition Lever Dec" BackColor="" />
+    <Action ActionName="Condition Lever High Idle" BackColor="" />
+    <Action ActionName="Condition Lever Inc" BackColor="" />
+    <Action ActionName="Condition Lever Low Idle" BackColor="" />
+    <Action ActionName="Condition Lever Set" BackColor="" />
+    <Action ActionName="Dec Autobrake Control" BackColor="" />
+    <Action ActionName="G Limiter Off" BackColor="" />
+    <Action ActionName="G Limiter On" BackColor="" />
+    <Action ActionName="G Limiter Set" BackColor="" />
+    <Action ActionName="G Limiter Toggle" BackColor="" />
+    <Action ActionName="Inc Autobrake Control" BackColor="" />
+    <Action ActionName="Parking Brake Set" BackColor="" />
+    <Action ActionName="Parking Brakes Off" BackColor="" />
+    <Action ActionName="Parking Brakes On" BackColor="" />
+    <Action ActionName="Rotor Brake Toggle" BackColor="" />
+    <Action ActionName="Set Autobrake Control" BackColor="" />
+    <Action ActionName="Sync Flight Director Pitch" BackColor="" />
+    <Action ActionName="Yaw Damper Off" BackColor="" />
+    <Action ActionName="Yaw Damper On" BackColor="" />
+    <Action ActionName="Yaw Damper Set" BackColor="" />
+    <Action ActionName="Axis Helicopter Throttle1 Set" BackColor="" />
+    <Action ActionName="Axis Helicopter Throttle2 Set" BackColor="" />
+    <Action ActionName="Axis Mixture1 Set" BackColor="" />
+    <Action ActionName="Axis Mixture2 Set" BackColor="" />
+    <Action ActionName="Axis Mixture3 Set" BackColor="" />
+    <Action ActionName="Axis Mixture4 Set" BackColor="" />
+    <Action ActionName="Collective Decr" BackColor="" />
+    <Action ActionName="Collective Incr" BackColor="" />
+    <Action ActionName="Gear Emergency Handle Toggle" BackColor="" />
+    <Action ActionName="Gear Set" BackColor="" />
+    <Action ActionName="Helicopter Throttle Cut" BackColor="" />
+    <Action ActionName="Helicopter Throttle Full" BackColor="" />
+    <Action ActionName="Helicopter Throttle Set" BackColor="" />
+    <Action ActionName="Helicopter Throttle1 Cut" BackColor="" />
+    <Action ActionName="Helicopter Throttle1 Dec" BackColor="" />
+    <Action ActionName="Helicopter Throttle1 Full" BackColor="" />
+    <Action ActionName="Helicopter Throttle1 Inc" BackColor="" />
+    <Action ActionName="Helicopter Throttle1 Set" BackColor="" />
+    <Action ActionName="Helicopter Throttle2 Cut" BackColor="" />
+    <Action ActionName="Helicopter Throttle2 Dec" BackColor="" />
+    <Action ActionName="Helicopter Throttle2 Full" BackColor="" />
+    <Action ActionName="Helicopter Throttle2 Inc" BackColor="" />
+    <Action ActionName="Helicopter Throttle2 Set" BackColor="" />
+    <Action ActionName="Isolate Turbine Off" BackColor="" />
+    <Action ActionName="Isolate Turbine On" BackColor="" />
+    <Action ActionName="Isolate Turbine Set" BackColor="" />
+    <Action ActionName="Isolate Turbine Toggle" BackColor="" />
+    <Action ActionName="Mixture Decr Small" BackColor="" />
+    <Action ActionName="Mixture Incr" BackColor="" />
+    <Action ActionName="Mixture Set" BackColor="" />
+    <Action ActionName="Mixture Set Best" BackColor="" />
+    <Action ActionName="Mixture1 Decr" BackColor="" />
+    <Action ActionName="Mixture1 Decr Small" BackColor="" />
+    <Action ActionName="Mixture1 Incr" BackColor="" />
+    <Action ActionName="Mixture1 Incr Small" BackColor="" />
+    <Action ActionName="Mixture1 Lean" BackColor="" />
+    <Action ActionName="Mixture1 Rich" BackColor="" />
+    <Action ActionName="Mixture1 Set" BackColor="" />
+    <Action ActionName="Mixture2 Decr" BackColor="" />
+    <Action ActionName="Mixture2 Decr Small" BackColor="" />
+    <Action ActionName="Mixture2 Incr" BackColor="" />
+    <Action ActionName="Mixture2 Incr Small" BackColor="" />
+    <Action ActionName="Mixture2 Lean" BackColor="" />
+    <Action ActionName="Mixture2 Rich" BackColor="" />
+    <Action ActionName="Mixture2 Set" BackColor="" />
+    <Action ActionName="Mixture3 Decr" BackColor="" />
+    <Action ActionName="Mixture3 Decr Small" BackColor="" />
+    <Action ActionName="Mixture3 Incr" BackColor="" />
+    <Action ActionName="Mixture3 Incr Small" BackColor="" />
+    <Action ActionName="Mixture3 Lean" BackColor="" />
+    <Action ActionName="Mixture3 Rich" BackColor="" />
+    <Action ActionName="Mixture3 Set" BackColor="" />
+    <Action ActionName="Mixture4 Decr" BackColor="" />
+    <Action ActionName="Mixture4 Decr Small" BackColor="" />
+    <Action ActionName="Mixture4 Incr" BackColor="" />
+    <Action ActionName="Mixture4 Incr Small" BackColor="" />
+    <Action ActionName="Mixture4 Lean" BackColor="" />
+    <Action ActionName="Mixture4 Rich" BackColor="" />
+    <Action ActionName="Mixture4 Set" BackColor="" />
+    <Action ActionName="Multiplayer Display Players Off" BackColor="" />
+    <Action ActionName="Multiplayer Display Players On" BackColor="" />
+    <Action ActionName="Multiplayer Display Players Toggle" BackColor="" />
+    <Action ActionName="Prop Pitch Decrease Small Ex1" BackColor="" />
+    <Action ActionName="Prop Pitch Increase Small Ex1" BackColor="" />
+    <Action ActionName="Prop Pitch1 Axis Set Ex1" BackColor="" />
+    <Action ActionName="Prop Pitch1 Decrease Ex1" BackColor="" />
+    <Action ActionName="Prop Pitch1 Decrease Small Ex1" BackColor="" />
+    <Action ActionName="Prop Pitch1 Hi Ex1" BackColor="" />
+    <Action ActionName="Prop Pitch1 Increase Ex1" BackColor="" />
+    <Action ActionName="Prop Pitch1 Increase Small Ex1" BackColor="" />
+    <Action ActionName="Prop Pitch1 Lo Ex1" BackColor="" />
+    <Action ActionName="Prop Pitch2 Axis Set Ex1" BackColor="" />
+    <Action ActionName="Prop Pitch2 Decrease Ex1" BackColor="" />
+    <Action ActionName="Prop Pitch2 Decrease Small Ex1" BackColor="" />
+    <Action ActionName="Prop Pitch2 Hi Ex1" BackColor="" />
+    <Action ActionName="Prop Pitch2 Increase Ex1" BackColor="" />
+    <Action ActionName="Prop Pitch2 Increase Small Ex1" BackColor="" />
+    <Action ActionName="Prop Pitch2 Lo Ex1" BackColor="" />
+    <Action ActionName="Prop Pitch3 Axis Set Ex1" BackColor="" />
+    <Action ActionName="Prop Pitch3 Decrease Ex1" BackColor="" />
+    <Action ActionName="Prop Pitch3 Decrease Small Ex1" BackColor="" />
+    <Action ActionName="Prop Pitch3 Hi Ex1" BackColor="" />
+    <Action ActionName="Prop Pitch3 Increase Ex1" BackColor="" />
+    <Action ActionName="Prop Pitch3 Increase Small Ex1" BackColor="" />
+    <Action ActionName="Prop Pitch3 Lo Ex1" BackColor="" />
+    <Action ActionName="Prop Pitch4 Axis Set Ex1" BackColor="" />
+    <Action ActionName="Prop Pitch4 Decrease Ex1" BackColor="" />
+    <Action ActionName="Prop Pitch4 Decrease Small Ex1" BackColor="" />
+    <Action ActionName="Prop Pitch4 Hi Ex1" BackColor="" />
+    <Action ActionName="Prop Pitch4 Increase Ex1" BackColor="" />
+    <Action ActionName="Prop Pitch4 Increase Small Ex1" BackColor="" />
+    <Action ActionName="Prop Pitch4 Lo Ex1" BackColor="" />
+    <Action ActionName="Propeller Reverse Thrust Hold" BackColor="" />
+    <Action ActionName="Propeller Reverse Thrust Toggle" BackColor="" />
+    <Action ActionName="Throttle 10" BackColor="" />
+    <Action ActionName="Throttle 20" BackColor="" />
+    <Action ActionName="Throttle 30" BackColor="" />
+    <Action ActionName="Throttle 40" BackColor="" />
+    <Action ActionName="Throttle 50" BackColor="" />
+    <Action ActionName="Throttle 60" BackColor="" />
+    <Action ActionName="Throttle 70" BackColor="" />
+    <Action ActionName="Throttle 80" BackColor="" />
+    <Action ActionName="Throttle 90" BackColor="" />
+    <Action ActionName="Throttle Incr Small" BackColor="" />
+    <Action ActionName="Throttle Reverse Thrust Hold" BackColor="" />
+    <Action ActionName="Throttle Reverse Thrust Toggle" BackColor="" />
+    <Action ActionName="Throttle1 Axis Set Ex1" BackColor="" />
+    <Action ActionName="Throttle1 Cut" BackColor="" />
+    <Action ActionName="Throttle1 Decr" BackColor="" />
+    <Action ActionName="Throttle1 Full" BackColor="" />
+    <Action ActionName="Throttle1 Incr" BackColor="" />
+    <Action ActionName="Throttle1 Incr Small" BackColor="" />
+    <Action ActionName="Throttle1 Set" BackColor="" />
+    <Action ActionName="Throttle2 Axis Set Ex1" BackColor="" />
+    <Action ActionName="Throttle2 Cut" BackColor="" />
+    <Action ActionName="Throttle2 Decr" BackColor="" />
+    <Action ActionName="Throttle2 Full" BackColor="" />
+    <Action ActionName="Throttle2 Incr" BackColor="" />
+    <Action ActionName="Throttle2 Incr Small" BackColor="" />
+    <Action ActionName="Throttle2 Set" BackColor="" />
+    <Action ActionName="Throttle3 Axis Set Ex1" BackColor="" />
+    <Action ActionName="Throttle3 Cut" BackColor="" />
+    <Action ActionName="Throttle3 Decr" BackColor="" />
+    <Action ActionName="Throttle3 Full" BackColor="" />
+    <Action ActionName="Throttle3 Incr" BackColor="" />
+    <Action ActionName="Throttle3 Incr Small" BackColor="" />
+    <Action ActionName="Throttle3 Set" BackColor="" />
+    <Action ActionName="Throttle4 Axis Set Ex1" BackColor="" />
+    <Action ActionName="Throttle4 Cut" BackColor="" />
+    <Action ActionName="Throttle4 Decr" BackColor="" />
+    <Action ActionName="Throttle4 Full" BackColor="" />
+    <Action ActionName="Throttle4 Incr" BackColor="" />
+    <Action ActionName="Throttle4 Incr Small" BackColor="" />
+    <Action ActionName="Throttle4 Set" BackColor="" />
+    <Action ActionName="Toggle Arm Autofeather" BackColor="" />
+    <Action ActionName="Toggle Feather Switch 1" BackColor="" />
+    <Action ActionName="Toggle Feather Switch 2" BackColor="" />
+    <Action ActionName="Toggle Feather Switch 3" BackColor="" />
+    <Action ActionName="Toggle Feather Switch 4" BackColor="" />
+    <Action ActionName="Toggle Feather Switches" BackColor="" />
+    <Action ActionName="Toggle Prop Sync" BackColor="" />
   </Context>
   <Context ContextName="Rtc" BackColor="">
     <Action ActionName="Skip Rtc" BackColor="" />
@@ -560,6 +1658,16 @@
     <Action ActionName="Slew Pitch Up Fast" BackColor="" />
     <Action ActionName="Slew Pitch Up Slow" BackColor="" />
     <Action ActionName="Slew Right" BackColor="" />
+    <Action ActionName="Axis Slew Ahead Set" BackColor="" />
+    <Action ActionName="Axis Slew Alt Set" BackColor="" />
+    <Action ActionName="Axis Slew Bank Set" BackColor="" />
+    <Action ActionName="Axis Slew Heading Set" BackColor="" />
+    <Action ActionName="Axis Slew Pitch Set" BackColor="" />
+    <Action ActionName="Axis Slew Sideways Set" BackColor="" />
+    <Action ActionName="Slew Altit Minus" BackColor="" />
+    <Action ActionName="Slew Altit Plus" BackColor="" />
+    <Action ActionName="Slew Pitch Dn Slow" BackColor="" />
+    <Action ActionName="Slew Reset" BackColor="" />
   </Context>
   <Context ContextName="Smart Camera" BackColor="">
     <Action ActionName="Reset Smart Camera" BackColor="" />
@@ -577,6 +1685,14 @@
   <Context ContextName="Toolbar" BackColor="">
     <Action ActionName="Inputs Toolbar Next" BackColor="" />
     <Action ActionName="Inputs Toolbar Prev" BackColor="" />
+    <Action ActionName="Inputs Toolbar Panel Move Left" BackColor="" />
+    <Action ActionName="Inputs Toolbar Panel Move Right" BackColor="" />
+    <Action ActionName="Inputs Toolbar Panel Move Up" BackColor="" />
+    <Action ActionName="Toolbar Panel Move Down" BackColor="" />
+    <Action ActionName="Toolbar Panel Size Hrz Decr" BackColor="" />
+    <Action ActionName="Toolbar Panel Size Hrz Incr" BackColor="" />
+    <Action ActionName="Toolbar Panel Size Vrt Decr" BackColor="" />
+    <Action ActionName="Toolbar Panel Size Vrt Incr" BackColor="" />
   </Context>
   <Context ContextName="User Camera" BackColor="">
     <Action ActionName="Camera User Load 0" BackColor="" />
@@ -636,9 +1752,19 @@
     <Action ActionName="Cockpit Interaction Tertiary" BackColor="" />
     <Action ActionName="Cockpit Interaction X Axis" BackColor="" />
     <Action ActionName="Cockpit Interaction Y Axis" BackColor="" />
+    <Action ActionName="Cockpit Interaction Primary Vr Left" BackColor="" />
+    <Action ActionName="Cockpit Interaction Primary Vr Right" BackColor="" />
   </Context>
   <Context ContextName="Cockpit Interactions Lock" BackColor="">
     <Action ActionName="Cockpit Interaction Decrease Lockable" BackColor="" />
+    <Action ActionName="Cockpit Interaction Increase Lockable" BackColor="" />
+    <Action ActionName="Cockpit Interaction Primary Lockable" BackColor="" />
+    <Action ActionName="Cockpit Interaction Primary Vr Left Lockable" BackColor="" />
+    <Action ActionName="Cockpit Interaction Primary Vr Right Lockable" BackColor="" />
+    <Action ActionName="Cockpit Interaction Secondary Lockable" BackColor="" />
+    <Action ActionName="Cockpit Interaction Tertiary Lockable" BackColor="" />
+    <Action ActionName="Cockpit Interaction X Axis Lockable" BackColor="" />
+    <Action ActionName="Cockpit Interaction Y Axis Lockable" BackColor="" />
   </Context>
   <Context ContextName="Cockpit Vr Camera" BackColor="">
     <Action ActionName="Cockpit Vr Focus" BackColor="" />
@@ -650,5 +1776,24 @@
     <Action ActionName="Menu Mouse Up" BackColor="" />
     <Action ActionName="Menu Mouse0" BackColor="" />
     <Action ActionName="Menu Mouse1" BackColor="" />
+  </Context>
+  <Context ContextName="Cursor" BackColor="">
+    <Action ActionName="Cursor Down" BackColor="" />
+    <Action ActionName="Cursor Left" BackColor="" />
+    <Action ActionName="Cursor Right" BackColor="" />
+    <Action ActionName="Cursor Up" BackColor="" />
+  </Context>
+  <Context ContextName="Mode Interaction" BackColor="">
+    <Action ActionName="Interaction Lock" BackColor="" />
+    <Action ActionName="Interaction Toggle" BackColor="" />
+    <Action ActionName="Interaction Unlock" BackColor="" />
+  </Context>
+  <Context ContextName="True Cockpit" BackColor="">
+    <Action ActionName="True Cockpit Camera Reset" BackColor="" />
+    <Action ActionName="True Cockpit Camera Save" BackColor="" />
+  </Context>
+  <Context ContextName="Rudder Axis" BackColor="">
+    <Action ActionName="Rudder Axis Minus" BackColor="" />
+    <Action ActionName="Rudder Axis Plus" BackColor="" />
   </Context>
 </BindingList>
