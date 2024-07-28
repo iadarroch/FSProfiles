@@ -69,7 +69,7 @@ Things I hope to add in the future...
 * Version 1
 	* Map and sort bindings to match the actual displayed FS2020 options, for easier location.
 	* Better support for Steam installations.
-	* A Prettier UI.
+	* A prettier UI.
 * Version 1.1
 	* An option to "export" a set of profiles so they can sent to another user for comparison.
 	* An option to "import" a profile from another user for comparison only. Note there will be no way to actually import these to FS2020, as Asobo manage user profiles in the cloud.
