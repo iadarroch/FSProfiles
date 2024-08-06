@@ -41,17 +41,19 @@ controller profiles, with a set selected to generate a report. Note the `All` li
 content is selected. This will output a report showing all known bindings, rather than
 just those for which the selected controller profiles have a binding.
 
+If the `Include Uncategorised` checkbox is ticked, then an additional section will be included
+on the report showing controller bindings which could not be matched to an entry in control options
+list.
+
 ![Sample report](images/main-form.png)
 
 ### Command Line Arguments
-The program does support a few command line options, which are all aimed at development use and not needed for normal operation.
+The program does support two command line options, both of which are aimed at development use and not needed for normal operation.
 
-| Short | Long Name | Description                                                                                                                                 |
-|:-----:|:---------:|---------------------------------------------------------------------------------------------------------------------------------------------|
-| -r    | -rebuild  | Enables a development button to rebuild the "KnownBindings.xml" file from available controllers.                                            |
-| -d    | -debug    | Outputs the selected bindings data as an XML file                                                                                           |
+| Short | Long Name | Description                                                                                                                                       |
+|:-----:|:---------:|---------------------------------------------------------------------------------------------------------------------------------------------------|
+| -d    | -debug    | Outputs the selected bindings data as an XML file                                                                                                 |
 | -p    | -profiles | Space delimited list (e.g. `-p 0 2 5`) of profiles to select by number, starting at 0. Only useful if you are running the program multiple times. |
-
 
 
 ## Flight Sim Platform Support
@@ -64,12 +66,20 @@ The program does support a few command line options, which are all aimed at deve
 ## Sample Output
 ![Sample report](images/sample-report.png)
 
+## Developer Utility
+Included in the source code (but not the releases) is the developer utility `FSProfiles.Builder`, which allows adding new menu items
+to the `KnownBindings.xml` file. This file is used to generate the bindings report, by supplying the mapping between the `Controls Options`
+list and the action bindings recorded against controller inputs.
+
+From time to time, Asobo adds additional control options, so this program is used to build a new `KnownBindings.xml` file.
+To use the utility (once built). Add new menu options to the `FS2020 Options.csv` file, then run the utility.
+
 ## Roadmap
 Things I hope to add in the future...
-* Version 1
-	* Map and sort bindings to match the actual displayed FS2020 options, for easier location.
+* **Version 1**
 	* Better support for Steam installations.
 	* A prettier UI.
-* Version 1.1
+* **Version 1.1**<br />
+  (not sure how to do these securely/safely in our modern virus and hacker saturated world)
 	* An option to "export" a set of profiles so they can sent to another user for comparison.
 	* An option to "import" a profile from another user for comparison only. Note there will be no way to actually import these to FS2020, as Asobo manage user profiles in the cloud.

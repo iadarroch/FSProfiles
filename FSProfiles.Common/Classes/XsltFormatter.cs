@@ -20,9 +20,9 @@ namespace FSProfiles.Common.Classes
             });
         }
 
-        public void ConvertToHtml(BindingList bindingList, string fileName)
+        public void ConvertToHtml(BindingReport bindingReport, string fileName)
         {
-            var document = bindingList.SerializeToXmlDoc();
+            var document = bindingReport.SerializeToXmlDoc();
 
             using (var writer = new StreamWriter(fileName))
             {

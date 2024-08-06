@@ -4,5 +4,5 @@ namespace FSProfiles.Common.Classes;
 
 public interface IOutputFormatter
 {
-    void ConvertToHtml(BindingList bindingList, string fileName);
+    void ConvertToHtml(BindingReport bindingReport, string fileName);
 }

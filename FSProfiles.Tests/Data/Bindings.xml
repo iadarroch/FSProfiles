@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<BindingList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<BindingReport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ContentMode>Assigned</ContentMode>
   <SelectedControllers>
     <SelectedController>
       <DeviceName>Mouse</DeviceName>
@@ -22,328 +23,450 @@
       <ProfilePath>F3848CE0CC4A4113B4565FCCE2A3D716</ProfilePath>
     </SelectedController>
   </SelectedControllers>
-  <Context ContextName="Cockpit Camera" BackColor="LightSkyBlue">
-    <Action ActionName="Cockpit Hud View Toggle" BackColor="#DBF0FD">
-      <Binding Controller="X56 H.O.T.A.S. Stick" Profile="X56 H.O.T.A.S. Stick Helicopter 2" Priority="Primary" KeyCombo="Joystick Pov Down" />
-    </Action>
-    <Action ActionName="Cockpit Quickview1" BackColor="#DBF0FD">
-      <Binding Controller="X56 H.O.T.A.S. Stick" Profile="X56 H.O.T.A.S. Stick Helicopter 2" Priority="Primary" KeyCombo="Joystick Button 1 + Joystick Button 11" />
-    </Action>
-    <Action ActionName="Cockpit Quickview2" BackColor="#EDF7FE">
-      <Binding Controller="X56 H.O.T.A.S. Stick" Profile="X56 H.O.T.A.S. Stick Helicopter 2" Priority="Primary" KeyCombo="Joystick Button 1 + Joystick Button 13" />
-    </Action>
-    <Action ActionName="Cockpit Quickview3" BackColor="#DBF0FD">
-      <Binding Controller="X56 H.O.T.A.S. Stick" Profile="X56 H.O.T.A.S. Stick Helicopter 2" Priority="Primary" KeyCombo="Joystick Button 1 + Joystick Button 12" />
-    </Action>
-    <Action ActionName="Cockpit Quickview4" BackColor="#EDF7FE">
-      <Binding Controller="X56 H.O.T.A.S. Stick" Profile="X56 H.O.T.A.S. Stick Helicopter 2" Priority="Primary" KeyCombo="Joystick Button 1 + Joystick Button 14" />
-    </Action>
-    <Action ActionName="Cockpit Mode" BackColor="#DBF0FD">
-      <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Mid-Click" />
-    </Action>
-    <Action ActionName="Cockpit Mode Hold" BackColor="#EDF7FE">
-      <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Right-Click" />
-    </Action>
-    <Action ActionName="Cockpit Landing View Hold" BackColor="#DBF0FD">
-      <Binding Controller="Saitek Pro Flight X-56 Rhino Throttle" Profile="X-56 Rhino Throttle Helicopter" Priority="Primary" KeyCombo="Joystick Button 33" />
-    </Action>
-  </Context>
-  <Context ContextName="Cockpit Global Camera" BackColor="Wheat">
-    <Action ActionName="Cockpit Look Down" BackColor="#FCF5E8">
-      <Binding Controller="X56 H.O.T.A.S. Stick" Profile="X56 H.O.T.A.S. Stick Helicopter 2" Priority="Primary" KeyCombo="Joystick Button 13" />
-    </Action>
-    <Action ActionName="Cockpit Look Left" BackColor="#FDFAF3">
-      <Binding Controller="X56 H.O.T.A.S. Stick" Profile="X56 H.O.T.A.S. Stick Helicopter 2" Priority="Primary" KeyCombo="Joystick Button 14" />
-    </Action>
-    <Action ActionName="Cockpit Look Right" BackColor="#FCF5E8">
-      <Binding Controller="X56 H.O.T.A.S. Stick" Profile="X56 H.O.T.A.S. Stick Helicopter 2" Priority="Primary" KeyCombo="Joystick Button 12" />
-    </Action>
-    <Action ActionName="Cockpit Look Up" BackColor="#FDFAF3">
-      <Binding Controller="X56 H.O.T.A.S. Stick" Profile="X56 H.O.T.A.S. Stick Helicopter 2" Priority="Primary" KeyCombo="Joystick Button 11" />
-    </Action>
-    <Action ActionName="Dezoom Cockpit" BackColor="#FCF5E8">
-      <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Mouse Wheel Down" />
-    </Action>
-    <Action ActionName="Zoom Cockpit" BackColor="#FDFAF3">
-      <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Mouse Wheel Up" />
-    </Action>
-    <Action ActionName="Cockpit Lockable Look Down" BackColor="#FCF5E8">
-      <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Axis Y+" />
-    </Action>
-    <Action ActionName="Cockpit Lockable Look Left" BackColor="#FDFAF3">
-      <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Axis X-" />
-    </Action>
-    <Action ActionName="Cockpit Lockable Look Right" BackColor="#FCF5E8">
-      <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Axis X+" />
-    </Action>
-    <Action ActionName="Cockpit Lockable Look Up" BackColor="#FDFAF3">
-      <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Axis Y-" />
-    </Action>
-  </Context>
-  <Context ContextName="Debug" BackColor="LemonChiffon">
-    <Action ActionName="Chase Mode" BackColor="#FFFDF0">
-      <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Mid-Click" />
-    </Action>
-  </Context>
-  <Context ContextName="Devmodecamera" BackColor="LightPink">
-    <Action ActionName="Devmodecamera Translation" BackColor="#FFF4F5">
-      <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Mid-Click" />
-    </Action>
-    <Action ActionName="Devmodecamera Zoom In" BackColor="#FFE9EC">
-      <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Mouse Wheel Up" />
-    </Action>
-    <Action ActionName="Devmodecamera Zoom Out" BackColor="#FFF4F5">
-      <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Mouse Wheel Down" />
-    </Action>
-  </Context>
-  <Context ContextName="External Camera" BackColor="Bisque">
-    <Action ActionName="Camerachase Reset" BackColor="#FFF6ED">
-      <Binding Controller="X56 H.O.T.A.S. Stick" Profile="X56 H.O.T.A.S. Stick Helicopter 2" Priority="Primary" KeyCombo="Joystick Button 5" />
-    </Action>
-    <Action ActionName="Chase Quickview1" BackColor="#FFFAF6">
-      <Binding Controller="X56 H.O.T.A.S. Stick" Profile="X56 H.O.T.A.S. Stick Helicopter 2" Priority="Primary" KeyCombo="Joystick Pov Right" />
-    </Action>
-    <Action ActionName="Chase Quickview2" BackColor="#FFF6ED">
-      <Binding Controller="X56 H.O.T.A.S. Stick" Profile="X56 H.O.T.A.S. Stick Helicopter 2" Priority="Primary" KeyCombo="Joystick Pov Down" />
-    </Action>
-    <Action ActionName="Chase Quickview3" BackColor="#FFFAF6">
-      <Binding Controller="X56 H.O.T.A.S. Stick" Profile="X56 H.O.T.A.S. Stick Helicopter 2" Priority="Primary" KeyCombo="JoystickPov Left" />
-    </Action>
-    <Action ActionName="Chase Quickview4" BackColor="#FFF6ED">
-      <Binding Controller="X56 H.O.T.A.S. Stick" Profile="X56 H.O.T.A.S. Stick Helicopter 2" Priority="Primary" KeyCombo="Joystick Pov Up" />
-    </Action>
-    <Action ActionName="Dezoom Chase" BackColor="#FFFAF6">
-      <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Mouse Wheel Down" />
-    </Action>
-    <Action ActionName="Zoom Chase" BackColor="#FFF6ED">
-      <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Mouse Wheel Up" />
-    </Action>
-    <Action ActionName="Chase Focus" BackColor="#FFFAF6">
-      <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Right-Click" />
-    </Action>
-    <Action ActionName="Chase Lockable Look Down" BackColor="#FFF6ED">
-      <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Axis Y+" />
-    </Action>
-    <Action ActionName="Chase Lockable Look Left" BackColor="#FFFAF6">
-      <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Axis X-" />
-    </Action>
-    <Action ActionName="Chase Lockable Look Right" BackColor="#FFF6ED">
-      <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Axis X+" />
-    </Action>
-    <Action ActionName="Chase Lockable Look Up" BackColor="#FFFAF6">
-      <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Axis Y-" />
-    </Action>
-    <Action ActionName="Toggle Fixed Camerachase" BackColor="#FFF6ED">
-      <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Mid-Click" />
-    </Action>
-    <Action ActionName="Toggle Fixed Camerachase Hold" BackColor="#FFFAF6">
-      <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Right-Click" />
-    </Action>
-    <Action ActionName="Chase Freelook Hrz Set" BackColor="#FFF6ED">
-      <Binding Controller="X56 H.O.T.A.S. Stick" Profile="X56 H.O.T.A.S. Stick Helicopter 2" Priority="Primary" KeyCombo="Joystick R-Axis X " />
-    </Action>
-    <Action ActionName="Chase Freelook Vrtc Set" BackColor="#FFFAF6">
-      <Binding Controller="X56 H.O.T.A.S. Stick" Profile="X56 H.O.T.A.S. Stick Helicopter 2" Priority="Primary" KeyCombo="Joystick R-Axis Y " />
-    </Action>
-  </Context>
-  <Context ContextName="Fixed Camera" BackColor="Thistle">
-    <Action ActionName="Fixed Cam Backcycle" BackColor="#F9F5F9">
-      <Binding Controller="X56 H.O.T.A.S. Stick" Profile="X56 H.O.T.A.S. Stick Helicopter 2" Priority="Primary" KeyCombo="Joystick Button 10" />
-    </Action>
-    <Action ActionName="Fixed Cam Cycle" BackColor="#F3EBF3">
-      <Binding Controller="X56 H.O.T.A.S. Stick" Profile="X56 H.O.T.A.S. Stick Helicopter 2" Priority="Primary" KeyCombo="Joystick Button 8" />
-    </Action>
-  </Context>
-  <Context ContextName="Ingame Ui" BackColor="LightGoldenrodYellow">
-    <Action ActionName="Ingamepanel Zoom In" BackColor="#FDFDF1">
-      <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Mouse Wheel Up" />
-    </Action>
-    <Action ActionName="Ingamepanel Zoom Out" BackColor="#FEFEF8">
-      <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Mouse Wheel Down" />
-    </Action>
-  </Context>
-  <Context ContextName="Instruments Camera" BackColor="Lavender">
-    <Action ActionName="Instrument Mode" BackColor="#F7F7FD">
-      <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Mid-Click" />
-    </Action>
-    <Action ActionName="Instrument Mode Hold" BackColor="#FBFBFE">
-      <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Right-Click" />
-    </Action>
-  </Context>
-  <Context ContextName="Modes" BackColor="LightSalmon">
-    <Action ActionName="Cockpit Reset" BackColor="#FFE2D7">
-      <Binding Controller="X56 H.O.T.A.S. Stick" Profile="X56 H.O.T.A.S. Stick Helicopter 2" Priority="Primary" KeyCombo="Joystick Button 5" />
-    </Action>
-    <Action ActionName="View Mode" BackColor="#FFF0EB">
-      <Binding Controller="Saitek Pro Flight X-56 Rhino Throttle" Profile="X-56 Rhino Throttle Helicopter" Priority="Primary" KeyCombo="Joystick Button 4" />
-      <Binding Controller="X56 H.O.T.A.S. Stick" Profile="X56 H.O.T.A.S. Stick Helicopter 2" Priority="Primary" KeyCombo="Joystick Button 6" />
-    </Action>
-    <Action ActionName="Cycle Pilotview Back" BackColor="#FFF0EB">
-      <Binding Controller="X56 H.O.T.A.S. Stick" Profile="X56 H.O.T.A.S. Stick Helicopter 2" Priority="Primary" KeyCombo="Joystick Button 9" />
-    </Action>
-    <Action ActionName="Cycle Pilotview Next" BackColor="#FFE2D7">
-      <Binding Controller="X56 H.O.T.A.S. Stick" Profile="X56 H.O.T.A.S. Stick Helicopter 2" Priority="Primary" KeyCombo="Joystick Button 7" />
-    </Action>
-    <Action ActionName="Cockpit Focus" BackColor="#FFF0EB">
-      <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Right-Click" />
-    </Action>
-  </Context>
-  <Context ContextName="Plane" BackColor="GreenYellow">
-    <Action ActionName="Ap Master" BackColor="#E6FFC0">
-      <Binding Controller="X56 H.O.T.A.S. Stick" Profile="X56 H.O.T.A.S. Stick Helicopter 2" Priority="Primary" KeyCombo="Joystick Button 2" />
-    </Action>
-    <Action ActionName="Ap Max Bank Angle Set" BackColor="#F2FFDF">
-      <Binding Controller="X56 H.O.T.A.S. Stick" Profile="X56 H.O.T.A.S. Stick Helicopter 2" Priority="Primary" KeyCombo="Joystick Button 2" />
-    </Action>
-    <Action ActionName="Ap Max Bank Velocity Set" BackColor="#E6FFC0">
-      <Binding Controller="X56 H.O.T.A.S. Stick" Profile="X56 H.O.T.A.S. Stick Helicopter 2" Priority="Primary" KeyCombo="Joystick Button 2" />
-    </Action>
-    <Action ActionName="Dme" BackColor="#E6FFC0">
-      <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Mid-Click" />
-    </Action>
-    <Action ActionName="Gear Down" BackColor="#F2FFDF">
-      <Binding Controller="Saitek Pro Flight X-56 Rhino Throttle" Profile="X-56 Rhino Throttle Helicopter" Priority="Primary" KeyCombo="Joystick Button 7" />
-    </Action>
-    <Action ActionName="Parking Brakes" BackColor="#F2FFDF">
-      <Binding Controller="Saitek Pro Flight X-56 Rhino Throttle" Profile="X-56 Rhino Throttle Helicopter" Priority="Primary" KeyCombo="Joystick Button 11" />
-    </Action>
-    <Action ActionName="Axis Collective Set" BackColor="#E6FFC0">
-      <Binding Controller="Saitek Pro Flight X-56 Rhino Throttle" Profile="X-56 Rhino Throttle Helicopter" Priority="Primary" KeyCombo="Joystick L-Axis Y " />
-    </Action>
-    <Action ActionName="Axis Helicopter Throttle Set" BackColor="#F2FFDF">
-      <Binding Controller="Saitek Pro Flight X-56 Rhino Throttle" Profile="X-56 Rhino Throttle Helicopter" Priority="Primary" KeyCombo="Joystick Slider Y " />
-    </Action>
-    <Action ActionName="Axis Rudder Set" BackColor="#E6FFC0">
-      <Binding Controller="VelocityOne Rudder" Profile="R22" Priority="Primary" KeyCombo="Joystick L-Axis Z " />
-    </Action>
-    <Action ActionName="Gear Up" BackColor="#F2FFDF">
-      <Binding Controller="Saitek Pro Flight X-56 Rhino Throttle" Profile="X-56 Rhino Throttle Helicopter" Priority="Primary" KeyCombo="Joystick Button 6" />
-    </Action>
-    <Action ActionName="Helicopter Throttle Dec" BackColor="#F2FFDF">
-      <Binding Controller="Saitek Pro Flight X-56 Rhino Throttle" Profile="X-56 Rhino Throttle Helicopter" Priority="Primary" KeyCombo="Joystick Button 29" />
-    </Action>
-    <Action ActionName="Helicopter Throttle Inc" BackColor="#E6FFC0">
-      <Binding Controller="Saitek Pro Flight X-56 Rhino Throttle" Profile="X-56 Rhino Throttle Helicopter" Priority="Primary" KeyCombo="Joystick Button 28" />
-    </Action>
-    <Action ActionName="Rotor Brake" BackColor="#F2FFDF">
-      <Binding Controller="Saitek Pro Flight X-56 Rhino Throttle" Profile="X-56 Rhino Throttle Helicopter" Priority="Primary" KeyCombo="Joystick Button 1" />
-    </Action>
-    <Action ActionName="Rotor Brake Off" BackColor="#E6FFC0">
-      <Binding Controller="Saitek Pro Flight X-56 Rhino Throttle" Profile="X-56 Rhino Throttle Helicopter" Priority="Primary" KeyCombo="Joystick Button 8" />
-    </Action>
-    <Action ActionName="Rotor Brake On" BackColor="#F2FFDF">
-      <Binding Controller="Saitek Pro Flight X-56 Rhino Throttle" Profile="X-56 Rhino Throttle Helicopter" Priority="Primary" KeyCombo="Joystick Button 9" />
-    </Action>
-    <Action ActionName="Rotor Clutch Switch Toggle" BackColor="#E6FFC0">
-      <Binding Controller="Saitek Pro Flight X-56 Rhino Throttle" Profile="X-56 Rhino Throttle Helicopter" Priority="Primary" KeyCombo="Joystick Button 5" />
-    </Action>
-    <Action ActionName="Rotor Gov Switch Toggle" BackColor="#F2FFDF">
-      <Binding Controller="Saitek Pro Flight X-56 Rhino Throttle" Profile="X-56 Rhino Throttle Helicopter" Priority="Primary" KeyCombo="Joystick Button 10" />
-    </Action>
-    <Action ActionName="Axis Left Brake Set" BackColor="#E6FFC0">
-      <Binding Controller="VelocityOne Rudder" Profile="R22" Priority="Primary" KeyCombo="Joystick L-Axis X " />
-    </Action>
-    <Action ActionName="Axis Right Brake Set" BackColor="#F2FFDF">
-      <Binding Controller="VelocityOne Rudder" Profile="R22" Priority="Primary" KeyCombo="Joystick L-Axis Y " />
-    </Action>
-    <Action ActionName="Rotor Lateral Trim Dec" BackColor="#E6FFC0">
-      <Binding Controller="X56 H.O.T.A.S. Stick" Profile="X56 H.O.T.A.S. Stick Helicopter 2" Priority="Primary" KeyCombo="Joystick Button 1 + JoystickPov Left" />
-    </Action>
-    <Action ActionName="Rotor Lateral Trim Inc" BackColor="#F2FFDF">
-      <Binding Controller="X56 H.O.T.A.S. Stick" Profile="X56 H.O.T.A.S. Stick Helicopter 2" Priority="Primary" KeyCombo="Joystick Button 1 + Joystick Pov Right" />
-    </Action>
-    <Action ActionName="Rotor Longitudinal Trim Dec" BackColor="#E6FFC0">
-      <Binding Controller="X56 H.O.T.A.S. Stick" Profile="X56 H.O.T.A.S. Stick Helicopter 2" Priority="Primary" KeyCombo="Joystick Button 1 + Joystick Pov Up" />
-    </Action>
-    <Action ActionName="Rotor Longitudinal Trim Inc" BackColor="#F2FFDF">
-      <Binding Controller="X56 H.O.T.A.S. Stick" Profile="X56 H.O.T.A.S. Stick Helicopter 2" Priority="Primary" KeyCombo="Joystick Button 1 + Joystick Pov Down" />
-    </Action>
-    <Action ActionName="Rotor Trim Reset" BackColor="#E6FFC0">
-      <Binding Controller="X56 H.O.T.A.S. Stick" Profile="X56 H.O.T.A.S. Stick Helicopter 2" Priority="Primary" KeyCombo="Joystick Button 1 + Joystick Button 2" />
-    </Action>
-    <Action ActionName="Tail Rotor Decr" BackColor="#F2FFDF">
-      <Binding Controller="X56 H.O.T.A.S. Stick" Profile="X56 H.O.T.A.S. Stick Helicopter 2" Priority="Primary" KeyCombo="Joystick R-Axis Z-" />
-    </Action>
-    <Action ActionName="Tail Rotor Incr" BackColor="#E6FFC0">
-      <Binding Controller="X56 H.O.T.A.S. Stick" Profile="X56 H.O.T.A.S. Stick Helicopter 2" Priority="Primary" KeyCombo="Joystick R-Axis Z+" />
-    </Action>
-  </Context>
-  <Context ContextName="Smart Camera" BackColor="Aquamarine">
-    <Action ActionName="Toggle Smart Camera" BackColor="#EBFFF8">
-      <Binding Controller="X56 H.O.T.A.S. Stick" Profile="X56 H.O.T.A.S. Stick Helicopter 2" Priority="Primary" KeyCombo="Joystick Button 3" />
-    </Action>
-  </Context>
-  <Context ContextName="Worldmap Common" BackColor="Plum">
-    <Action ActionName="Menu Wm Grab" BackColor="#F9F0F9">
-      <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Left-Click" />
-    </Action>
-  </Context>
-  <Context ContextName="Worldmap Pad" BackColor="LemonChiffon">
-    <Action ActionName="Menu Wm Select Right" BackColor="#FFFDF0">
-      <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Right-Click" />
-    </Action>
-  </Context>
-  <Context ContextName="Surfaces" BackColor="SandyBrown">
-    <Action ActionName="Axis Cyclic Lateral Set" BackColor="#FDF1E7">
-      <Binding Controller="X56 H.O.T.A.S. Stick" Profile="X56 H.O.T.A.S. Stick Helicopter 2" Priority="Primary" KeyCombo="Joystick L-Axis X " />
-    </Action>
-    <Action ActionName="Axis Cyclic Longitudinal Set" BackColor="#FBE3CF">
-      <Binding Controller="X56 H.O.T.A.S. Stick" Profile="X56 H.O.T.A.S. Stick Helicopter 2" Priority="Primary" KeyCombo="Joystick L-Axis Y " />
-    </Action>
-  </Context>
-  <Context ContextName="Cockpit Interactions" BackColor="LightPink">
-    <Action ActionName="Cockpit Interaction Decrease" BackColor="#FFE9EC">
-      <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Mouse Wheel Down" />
-    </Action>
-    <Action ActionName="Cockpit Interaction Increase" BackColor="#FFF4F5">
-      <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Mouse Wheel Up" />
-    </Action>
-    <Action ActionName="Cockpit Interaction Primary" BackColor="#FFE9EC">
-      <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Left-Click" />
-    </Action>
-    <Action ActionName="Cockpit Interaction Secondary" BackColor="#FFF4F5">
-      <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Right-Click" />
-      <Binding Controller="Mouse" Profile="Helicopter" Priority="Secondary" KeyCombo="Mouse 4" />
-    </Action>
-    <Action ActionName="Cockpit Interaction Tertiary" BackColor="#FFE9EC">
-      <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Mid-Click" />
-      <Binding Controller="Mouse" Profile="Helicopter" Priority="Secondary" KeyCombo="Mouse 5" />
-    </Action>
-    <Action ActionName="Cockpit Interaction X Axis" BackColor="#FFF4F5">
-      <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Axis X" />
-    </Action>
-    <Action ActionName="Cockpit Interaction Y Axis" BackColor="#FFE9EC">
-      <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Axis Y" />
-    </Action>
-  </Context>
-  <Context ContextName="Cockpit Interactions Lock" BackColor="LightGreen">
-    <Action ActionName="Cockpit Interaction Decrease Lockable" BackColor="#DDF9DD">
-      <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Mouse Wheel Down" />
-    </Action>
-  </Context>
-  <Context ContextName="Cockpit Vr Camera" BackColor="Bisque">
-    <Action ActionName="Cockpit Vr Focus" BackColor="#FFF6ED">
-      <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Right-Click" />
-    </Action>
-  </Context>
-  <Context ContextName="Menu Mouse" BackColor="Thistle">
-    <Action ActionName="Menu Mouse Down" BackColor="#F3EBF3">
-      <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Axis Y-" />
-    </Action>
-    <Action ActionName="Menu Mouse Left" BackColor="#F9F5F9">
-      <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Axis X-" />
-    </Action>
-    <Action ActionName="Menu Mouse Right" BackColor="#F3EBF3">
-      <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Axis X+" />
-    </Action>
-    <Action ActionName="Menu Mouse Up" BackColor="#F9F5F9">
-      <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Axis Y+" />
-    </Action>
-    <Action ActionName="Menu Mouse0" BackColor="#F3EBF3">
-      <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Left-Click" />
-    </Action>
-    <Action ActionName="Menu Mouse1" BackColor="#F9F5F9">
-      <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Right-Click" />
-    </Action>
-  </Context>
-</BindingList>
+  <BindingList>
+    <Section BackColor="Aquamarine" SectionName="CAMERA">
+      <SubSection BackColor="#B2FFE5" SubSectionName="COCKPIT CAMERA">
+        <SectionAction BackColor="#D8FFF2" ActionName="Zoom Cockpit View">
+          <ActionInput InputKey="KEY_ZOOM_COCKPIT">
+            <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Mouse Wheel Up" />
+          </ActionInput>
+        </SectionAction>
+        <SectionAction BackColor="#D8FFF2" ActionName="Unzoom Cockpit View">
+          <ActionInput InputKey="KEY_DEZOOM_COCKPIT">
+            <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Mouse Wheel Down" />
+          </ActionInput>
+        </SectionAction>
+        <SectionAction BackColor="#D8FFF2" ActionName="Toggle Smart Camera">
+          <ActionInput InputKey="KEY_TOGGLE_SMART_CAMERA">
+            <Binding Controller="X56 H.O.T.A.S. Stick" Profile="X56 H.O.T.A.S. Stick Helicopter 2" Priority="Primary" KeyCombo="Joystick Button 3" />
+          </ActionInput>
+        </SectionAction>
+        <SectionAction BackColor="#EBFFF8" ActionName="Toggle Cockpit View Freelook (Hold)">
+          <ActionInput InputKey="KEY_COCKPIT_MODE_HOLD">
+            <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Right-Click" />
+          </ActionInput>
+        </SectionAction>
+        <SectionAction BackColor="#EBFFF8" ActionName="Toggle Cockpit Freelook">
+          <ActionInput InputKey="KEY_COCKPIT_MODE">
+            <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Mid-Click" />
+          </ActionInput>
+        </SectionAction>
+        <SectionAction BackColor="#D8FFF2" ActionName="Toggle Cockpit Focus Mode">
+          <ActionInput InputKey="KEY_COCKPIT_FOCUS">
+            <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Right-Click" />
+          </ActionInput>
+        </SectionAction>
+        <SectionAction BackColor="#EBFFF8" ActionName="Reset Cockpit View">
+          <ActionInput InputKey="KEY_COCKPIT_RESET">
+            <Binding Controller="X56 H.O.T.A.S. Stick" Profile="X56 H.O.T.A.S. Stick Helicopter 2" Priority="Primary" KeyCombo="Joystick Button 5" />
+          </ActionInput>
+        </SectionAction>
+        <SectionAction BackColor="#D8FFF2" ActionName="Previous Pilot Position">
+          <ActionInput InputKey="KEY_CYCLE_PILOTVIEW_BACK">
+            <Binding Controller="X56 H.O.T.A.S. Stick" Profile="X56 H.O.T.A.S. Stick Helicopter 2" Priority="Primary" KeyCombo="Joystick Button 9" />
+          </ActionInput>
+        </SectionAction>
+        <SectionAction BackColor="#EBFFF8" ActionName="Next Pilot Position">
+          <ActionInput InputKey="KEY_CYCLE_PILOTVIEW_NEXT">
+            <Binding Controller="X56 H.O.T.A.S. Stick" Profile="X56 H.O.T.A.S. Stick Helicopter 2" Priority="Primary" KeyCombo="Joystick Button 7" />
+          </ActionInput>
+        </SectionAction>
+        <SectionAction BackColor="#D8FFF2" ActionName="Cockpit Quickview Up">
+          <ActionInput InputKey="KEY_COCKPIT_QUICKVIEW1">
+            <Binding Controller="X56 H.O.T.A.S. Stick" Profile="X56 H.O.T.A.S. Stick Helicopter 2" Priority="Primary" KeyCombo="Joystick Button 1 + Joystick Button 11" />
+          </ActionInput>
+        </SectionAction>
+        <SectionAction BackColor="#EBFFF8" ActionName="Cockpit Quickview Right">
+          <ActionInput InputKey="KEY_COCKPIT_QUICKVIEW3">
+            <Binding Controller="X56 H.O.T.A.S. Stick" Profile="X56 H.O.T.A.S. Stick Helicopter 2" Priority="Primary" KeyCombo="Joystick Button 1 + Joystick Button 12" />
+          </ActionInput>
+        </SectionAction>
+        <SectionAction BackColor="#D8FFF2" ActionName="Cockpit Quickview Rear">
+          <ActionInput InputKey="KEY_COCKPIT_QUICKVIEW2">
+            <Binding Controller="X56 H.O.T.A.S. Stick" Profile="X56 H.O.T.A.S. Stick Helicopter 2" Priority="Primary" KeyCombo="Joystick Button 1 + Joystick Button 13" />
+          </ActionInput>
+        </SectionAction>
+        <SectionAction BackColor="#EBFFF8" ActionName="Cockpit Quickview Left">
+          <ActionInput InputKey="KEY_COCKPIT_QUICKVIEW4">
+            <Binding Controller="X56 H.O.T.A.S. Stick" Profile="X56 H.O.T.A.S. Stick Helicopter 2" Priority="Primary" KeyCombo="Joystick Button 1 + Joystick Button 14" />
+          </ActionInput>
+        </SectionAction>
+        <SectionAction BackColor="#D8FFF2" ActionName="Cockpit Look Up (Lockable)">
+          <ActionInput InputKey="KEY_COCKPIT_LOCKABLE_LOOK_UP">
+            <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Axis Y-" />
+          </ActionInput>
+        </SectionAction>
+        <SectionAction BackColor="#EBFFF8" ActionName="Cockpit Look Up">
+          <ActionInput InputKey="KEY_COCKPIT_LOOK_UP">
+            <Binding Controller="X56 H.O.T.A.S. Stick" Profile="X56 H.O.T.A.S. Stick Helicopter 2" Priority="Primary" KeyCombo="Joystick Button 11" />
+          </ActionInput>
+        </SectionAction>
+        <SectionAction BackColor="#D8FFF2" ActionName="Cockpit Look Right (Lockable)">
+          <ActionInput InputKey="KEY_COCKPIT_LOCKABLE_LOOK_RIGHT">
+            <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Axis X+" />
+          </ActionInput>
+        </SectionAction>
+        <SectionAction BackColor="#EBFFF8" ActionName="Cockpit Look Right">
+          <ActionInput InputKey="KEY_COCKPIT_LOOK_RIGHT">
+            <Binding Controller="X56 H.O.T.A.S. Stick" Profile="X56 H.O.T.A.S. Stick Helicopter 2" Priority="Primary" KeyCombo="Joystick Button 12" />
+          </ActionInput>
+        </SectionAction>
+        <SectionAction BackColor="#D8FFF2" ActionName="Cockpit Look Left (Lockable)">
+          <ActionInput InputKey="KEY_COCKPIT_LOCKABLE_LOOK_LEFT">
+            <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Axis X-" />
+          </ActionInput>
+        </SectionAction>
+        <SectionAction BackColor="#EBFFF8" ActionName="Cockpit Look Left">
+          <ActionInput InputKey="KEY_COCKPIT_LOOK_LEFT">
+            <Binding Controller="X56 H.O.T.A.S. Stick" Profile="X56 H.O.T.A.S. Stick Helicopter 2" Priority="Primary" KeyCombo="Joystick Button 14" />
+          </ActionInput>
+        </SectionAction>
+        <SectionAction BackColor="#D8FFF2" ActionName="Cockpit Look Down (Lockable)">
+          <ActionInput InputKey="KEY_COCKPIT_LOCKABLE_LOOK_DOWN">
+            <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Axis Y+" />
+          </ActionInput>
+        </SectionAction>
+        <SectionAction BackColor="#EBFFF8" ActionName="Cockpit Look Down">
+          <ActionInput InputKey="KEY_COCKPIT_LOOK_DOWN">
+            <Binding Controller="X56 H.O.T.A.S. Stick" Profile="X56 H.O.T.A.S. Stick Helicopter 2" Priority="Primary" KeyCombo="Joystick Button 13" />
+          </ActionInput>
+        </SectionAction>
+      </SubSection>
+      <SubSection BackColor="#B2FFE5" SubSectionName="EXTERNAL CAMERA">
+        <SectionAction BackColor="#D8FFF2" ActionName="Zoom External View">
+          <ActionInput InputKey="KEY_ZOOM_CHASE">
+            <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Mouse Wheel Up" />
+          </ActionInput>
+        </SectionAction>
+        <SectionAction BackColor="#EBFFF8" ActionName="Unzoom External View">
+          <ActionInput InputKey="KEY_DEZOOM_CHASE">
+            <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Mouse Wheel Down" />
+          </ActionInput>
+        </SectionAction>
+        <SectionAction BackColor="#D8FFF2" ActionName="Toggle External View Freelook (Hold)">
+          <ActionInput InputKey="KEY_TOGGLE_FIXED_CAMERACHASE_HOLD">
+            <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Right-Click" />
+          </ActionInput>
+        </SectionAction>
+        <SectionAction BackColor="#EBFFF8" ActionName="Toggle External View Focus">
+          <ActionInput InputKey="KEY_CHASE_FOCUS">
+            <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Right-Click" />
+          </ActionInput>
+        </SectionAction>
+        <SectionAction BackColor="#EBFFF8" ActionName="Reset External View">
+          <ActionInput InputKey="KEY_CAMERACHASE_RESET">
+            <Binding Controller="X56 H.O.T.A.S. Stick" Profile="X56 H.O.T.A.S. Stick Helicopter 2" Priority="Primary" KeyCombo="Joystick Button 5" />
+          </ActionInput>
+        </SectionAction>
+        <SectionAction BackColor="#EBFFF8" ActionName="External View Yaw Axis">
+          <ActionInput InputKey="KEY_CHASE_FREELOOK_HRZ_SET">
+            <Binding Controller="X56 H.O.T.A.S. Stick" Profile="X56 H.O.T.A.S. Stick Helicopter 2" Priority="Primary" KeyCombo="Joystick R-Axis X " />
+          </ActionInput>
+        </SectionAction>
+        <SectionAction BackColor="#EBFFF8" ActionName="External View Pitch Axis">
+          <ActionInput InputKey="KEY_CHASE_FREELOOK_VRTC_SET">
+            <Binding Controller="X56 H.O.T.A.S. Stick" Profile="X56 H.O.T.A.S. Stick Helicopter 2" Priority="Primary" KeyCombo="Joystick R-Axis Y " />
+          </ActionInput>
+        </SectionAction>
+        <SectionAction BackColor="#D8FFF2" ActionName="External View Look Up (Lockable)">
+          <ActionInput InputKey="KEY_CHASE_LOCKABLE_LOOK_UP">
+            <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Axis Y-" />
+          </ActionInput>
+        </SectionAction>
+        <SectionAction BackColor="#D8FFF2" ActionName="External View Look Right (Lockable)">
+          <ActionInput InputKey="KEY_CHASE_LOCKABLE_LOOK_RIGHT">
+            <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Axis X+" />
+          </ActionInput>
+        </SectionAction>
+        <SectionAction BackColor="#D8FFF2" ActionName="External View Look Left (Lockable)">
+          <ActionInput InputKey="KEY_CHASE_LOCKABLE_LOOK_LEFT">
+            <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Axis X-" />
+          </ActionInput>
+        </SectionAction>
+        <SectionAction BackColor="#D8FFF2" ActionName="External View Look Down (Lockable)">
+          <ActionInput InputKey="KEY_CHASE_LOCKABLE_LOOK_DOWN">
+            <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Axis Y+" />
+          </ActionInput>
+        </SectionAction>
+        <SectionAction BackColor="#D8FFF2" ActionName="External View Freelook">
+          <ActionInput InputKey="KEY_TOGGLE_FIXED_CAMERACHASE">
+            <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Mid-Click" />
+          </ActionInput>
+        </SectionAction>
+        <SectionAction BackColor="#EBFFF8" ActionName="External Quickview Top">
+          <ActionInput InputKey="KEY_CHASE_QUICKVIEW4">
+            <Binding Controller="X56 H.O.T.A.S. Stick" Profile="X56 H.O.T.A.S. Stick Helicopter 2" Priority="Primary" KeyCombo="Joystick Pov Up" />
+          </ActionInput>
+        </SectionAction>
+        <SectionAction BackColor="#D8FFF2" ActionName="External Quickview Right">
+          <ActionInput InputKey="KEY_CHASE_QUICKVIEW3">
+            <Binding Controller="X56 H.O.T.A.S. Stick" Profile="X56 H.O.T.A.S. Stick Helicopter 2" Priority="Primary" KeyCombo="JoystickPov Left" />
+          </ActionInput>
+        </SectionAction>
+        <SectionAction BackColor="#EBFFF8" ActionName="External Quickview Rear">
+          <ActionInput InputKey="KEY_CHASE_QUICKVIEW2">
+            <Binding Controller="X56 H.O.T.A.S. Stick" Profile="X56 H.O.T.A.S. Stick Helicopter 2" Priority="Primary" KeyCombo="Joystick Pov Down" />
+          </ActionInput>
+        </SectionAction>
+        <SectionAction BackColor="#D8FFF2" ActionName="External Quickview Left">
+          <ActionInput InputKey="KEY_CHASE_QUICKVIEW1">
+            <Binding Controller="X56 H.O.T.A.S. Stick" Profile="X56 H.O.T.A.S. Stick Helicopter 2" Priority="Primary" KeyCombo="Joystick Pov Right" />
+          </ActionInput>
+        </SectionAction>
+      </SubSection>
+      <SubSection BackColor="#B2FFE5" SubSectionName="FIXED CAMERA">
+        <SectionAction BackColor="#D8FFF2" ActionName="Previous Fixed Camera">
+          <ActionInput InputKey="KEY_FIXED_CAM_BACKCYCLE">
+            <Binding Controller="X56 H.O.T.A.S. Stick" Profile="X56 H.O.T.A.S. Stick Helicopter 2" Priority="Primary" KeyCombo="Joystick Button 10" />
+          </ActionInput>
+        </SectionAction>
+        <SectionAction BackColor="#EBFFF8" ActionName="Next Fixed Camera">
+          <ActionInput InputKey="KEY_FIXED_CAM_CYCLE">
+            <Binding Controller="X56 H.O.T.A.S. Stick" Profile="X56 H.O.T.A.S. Stick Helicopter 2" Priority="Primary" KeyCombo="Joystick Button 8" />
+          </ActionInput>
+        </SectionAction>
+      </SubSection>
+      <SubSection BackColor="#B2FFE5" SubSectionName="INSTRUMENT VIEWS">
+        <SectionAction BackColor="#D8FFF2" ActionName="Toggle Instruments View Freelook (Hold)">
+          <ActionInput InputKey="KEY_INSTRUMENT_MODE_HOLD">
+            <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Right-Click" />
+          </ActionInput>
+        </SectionAction>
+        <SectionAction BackColor="#EBFFF8" ActionName="Toggle Instrument View Freelook">
+          <ActionInput InputKey="KEY_INSTRUMENT_MODE">
+            <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Mid-Click" />
+          </ActionInput>
+        </SectionAction>
+      </SubSection>
+      <SectionAction BackColor="#EBFFF8" ActionName="Vr - Cockpit Focus">
+        <ActionInput InputKey="KEY_COCKPIT_VR_FOCUS">
+          <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Right-Click" />
+        </ActionInput>
+      </SectionAction>
+    </Section>
+    <Section BackColor="LightCoral" SectionName="MENU">
+      <SectionAction BackColor="#FCEBEB" ActionName="In-Flight Ui Panel - Zoom Out">
+        <ActionInput InputKey="KEY_INGAMEPANEL_ZOOM_OUT">
+          <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Mouse Wheel Down" />
+        </ActionInput>
+      </SectionAction>
+      <SectionAction BackColor="#FAD8D8" ActionName="In-Flight Ui Panel - Zoom In">
+        <ActionInput InputKey="KEY_INGAMEPANEL_ZOOM_IN">
+          <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Mouse Wheel Up" />
+        </ActionInput>
+      </SectionAction>
+      <SectionAction BackColor="#FAD8D8" ActionName="Grab Worldmap">
+        <ActionInput InputKey="KEY_MENU_WM_GRAB">
+          <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Left-Click" />
+        </ActionInput>
+      </SectionAction>
+    </Section>
+    <Section BackColor="Wheat" SectionName="RADIO">
+      <SubSection BackColor="#F9EBD1" SubSectionName="DME">
+        <SectionAction BackColor="#FCF5E8" ActionName="Dme">
+          <ActionInput InputKey="KEY_DME">
+            <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Mid-Click" />
+          </ActionInput>
+        </SectionAction>
+      </SubSection>
+    </Section>
+    <Section BackColor="Plum" SectionName="MISCELLANEOUS">
+      <SectionAction BackColor="#F4E2F4" ActionName="Toggle Rotor Clutch Switch">
+        <ActionInput InputKey="KEY_ROTOR_CLUTCH_SWITCH_TOGGLE">
+          <Binding Controller="Saitek Pro Flight X-56 Rhino Throttle" Profile="X-56 Rhino Throttle Helicopter" Priority="Primary" KeyCombo="Joystick Button 5" />
+        </ActionInput>
+      </SectionAction>
+      <SectionAction BackColor="#F4E2F4" ActionName="Toggle Helicopter Engines Governors">
+        <ActionInput InputKey="KEY_ROTOR_GOV_SWITCH_TOGGLE">
+          <Binding Controller="Saitek Pro Flight X-56 Rhino Throttle" Profile="X-56 Rhino Throttle Helicopter" Priority="Primary" KeyCombo="Joystick Button 10" />
+        </ActionInput>
+      </SectionAction>
+      <SectionAction BackColor="#F9F0F9" ActionName="Cockpit Interaction - Y Axis">
+        <ActionInput InputKey="KEY_COCKPIT_INTERACTION_Y_AXIS">
+          <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Axis Y" />
+        </ActionInput>
+      </SectionAction>
+      <SectionAction BackColor="#F4E2F4" ActionName="Cockpit Interaction - X Axis">
+        <ActionInput InputKey="KEY_COCKPIT_INTERACTION_X_AXIS">
+          <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Axis X" />
+        </ActionInput>
+      </SectionAction>
+      <SectionAction BackColor="#F4E2F4" ActionName="Cockpit Interaction - Tertiary Action">
+        <ActionInput InputKey="KEY_COCKPIT_INTERACTION_TERTIARY">
+          <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Mid-Click" />
+          <Binding Controller="Mouse" Profile="Helicopter" Priority="Secondary" KeyCombo="Mouse 5" />
+        </ActionInput>
+      </SectionAction>
+      <SectionAction BackColor="#F4E2F4" ActionName="Cockpit Interaction - Secondary Action">
+        <ActionInput InputKey="KEY_COCKPIT_INTERACTION_SECONDARY">
+          <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Right-Click" />
+          <Binding Controller="Mouse" Profile="Helicopter" Priority="Secondary" KeyCombo="Mouse 4" />
+        </ActionInput>
+      </SectionAction>
+      <SectionAction BackColor="#F4E2F4" ActionName="Cockpit Interaction - Primary Action">
+        <ActionInput InputKey="KEY_COCKPIT_INTERACTION_PRIMARY">
+          <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Left-Click" />
+        </ActionInput>
+      </SectionAction>
+      <SectionAction BackColor="#F4E2F4" ActionName="Cockpit Interaction - Increase">
+        <ActionInput InputKey="KEY_COCKPIT_INTERACTION_INCREASE">
+          <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Mouse Wheel Up" />
+        </ActionInput>
+      </SectionAction>
+      <SectionAction BackColor="#F9F0F9" ActionName="Cockpit Interaction - Decrease (Lockable)">
+        <ActionInput InputKey="KEY_COCKPIT_INTERACTION_DECREASE_LOCKABLE">
+          <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Mouse Wheel Down" />
+        </ActionInput>
+      </SectionAction>
+      <SectionAction BackColor="#F4E2F4" ActionName="Cockpit Interaction - Decrease">
+        <ActionInput InputKey="KEY_COCKPIT_INTERACTION_DECREASE">
+          <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Mouse Wheel Down" />
+        </ActionInput>
+      </SectionAction>
+    </Section>
+    <Section BackColor="LemonChiffon" SectionName="DEVELOPER MODE">
+      <SectionAction BackColor="#FFFEF7" ActionName="Developer Camera Zoom Out">
+        <ActionInput InputKey="KEY_DEVMODECAMERA_ZOOM_OUT">
+          <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Mouse Wheel Down" />
+        </ActionInput>
+      </SectionAction>
+      <SectionAction BackColor="#FFFDF0" ActionName="Developer Camera Zoom In">
+        <ActionInput InputKey="KEY_DEVMODECAMERA_ZOOM_IN">
+          <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Mouse Wheel Up" />
+        </ActionInput>
+      </SectionAction>
+      <SectionAction BackColor="#FFFEF7" ActionName="Developer Camera Translation">
+        <ActionInput InputKey="KEY_DEVMODECAMERA_TRANSLATION">
+          <Binding Controller="Mouse" Profile="Helicopter" Priority="Primary" KeyCombo="Mid-Click" />
+        </ActionInput>
+      </SectionAction>
+    </Section>
+    <Section BackColor="LightPink" SectionName="FLIGHT CONTROL SURFACES">
+      <SubSection BackColor="#FFD3D9" SubSectionName="PRIMARY CONTROL SURFACES">
+        <SectionAction BackColor="#FFE9EC" ActionName="Set Cyclic Longitudinal Axis">
+          <ActionInput InputKey="KEY_AXIS_CYCLIC_LONGITUDINAL_SET">
+            <Binding Controller="X56 H.O.T.A.S. Stick" Profile="X56 H.O.T.A.S. Stick Helicopter 2" Priority="Primary" KeyCombo="Joystick L-Axis Y " />
+          </ActionInput>
+        </SectionAction>
+        <SectionAction BackColor="#FFF4F5" ActionName="Set Cyclic Lateral Axis">
+          <ActionInput InputKey="KEY_AXIS_CYCLIC_LATERAL_SET">
+            <Binding Controller="X56 H.O.T.A.S. Stick" Profile="X56 H.O.T.A.S. Stick Helicopter 2" Priority="Primary" KeyCombo="Joystick L-Axis X " />
+          </ActionInput>
+        </SectionAction>
+        <SectionAction BackColor="#FFE9EC" ActionName="Rudder Axis">
+          <ActionInput InputKey="KEY_AXIS_RUDDER_SET">
+            <Binding Controller="VelocityOne Rudder" Profile="R22" Priority="Primary" KeyCombo="Joystick L-Axis Z " />
+          </ActionInput>
+        </SectionAction>
+        <SectionAction BackColor="#FFF4F5" ActionName="Increment Tail Rotor">
+          <ActionInput InputKey="KEY_TAIL_ROTOR_INCR">
+            <Binding Controller="X56 H.O.T.A.S. Stick" Profile="X56 H.O.T.A.S. Stick Helicopter 2" Priority="Primary" KeyCombo="Joystick R-Axis Z+" />
+          </ActionInput>
+        </SectionAction>
+        <SectionAction BackColor="#FFE9EC" ActionName="Decrement Tail Rotor">
+          <ActionInput InputKey="KEY_TAIL_ROTOR_DECR">
+            <Binding Controller="X56 H.O.T.A.S. Stick" Profile="X56 H.O.T.A.S. Stick Helicopter 2" Priority="Primary" KeyCombo="Joystick R-Axis Z-" />
+          </ActionInput>
+        </SectionAction>
+      </SubSection>
+      <SubSection BackColor="#FFD3D9" SubSectionName="CONTROL TRIMMING SURFACES">
+        <SectionAction BackColor="#FFE9EC" ActionName="Rotor Trim Reset">
+          <ActionInput InputKey="KEY_ROTOR_TRIM_RESET">
+            <Binding Controller="X56 H.O.T.A.S. Stick" Profile="X56 H.O.T.A.S. Stick Helicopter 2" Priority="Primary" KeyCombo="Joystick Button 1 + Joystick Button 2" />
+          </ActionInput>
+        </SectionAction>
+        <SectionAction BackColor="#FFE9EC" ActionName="Increase Rotor Longitudinal Trim">
+          <ActionInput InputKey="KEY_ROTOR_LONGITUDINAL_TRIM_INC">
+            <Binding Controller="X56 H.O.T.A.S. Stick" Profile="X56 H.O.T.A.S. Stick Helicopter 2" Priority="Primary" KeyCombo="Joystick Button 1 + Joystick Pov Down" />
+          </ActionInput>
+        </SectionAction>
+        <SectionAction BackColor="#FFF4F5" ActionName="Increase Rotor Lateral Trim">
+          <ActionInput InputKey="KEY_ROTOR_LATERAL_TRIM_INC">
+            <Binding Controller="X56 H.O.T.A.S. Stick" Profile="X56 H.O.T.A.S. Stick Helicopter 2" Priority="Primary" KeyCombo="Joystick Button 1 + Joystick Pov Right" />
+          </ActionInput>
+        </SectionAction>
+        <SectionAction BackColor="#FFF4F5" ActionName="Decrease Rotor Longitudinal Trim">
+          <ActionInput InputKey="KEY_ROTOR_LONGITUDINAL_TRIM_DEC">
+            <Binding Controller="X56 H.O.T.A.S. Stick" Profile="X56 H.O.T.A.S. Stick Helicopter 2" Priority="Primary" KeyCombo="Joystick Button 1 + Joystick Pov Up" />
+          </ActionInput>
+        </SectionAction>
+        <SectionAction BackColor="#FFE9EC" ActionName="Decrease Rotor Lateral Trim">
+          <ActionInput InputKey="KEY_ROTOR_LATERAL_TRIM_DEC">
+            <Binding Controller="X56 H.O.T.A.S. Stick" Profile="X56 H.O.T.A.S. Stick Helicopter 2" Priority="Primary" KeyCombo="Joystick Button 1 + JoystickPov Left" />
+          </ActionInput>
+        </SectionAction>
+      </SubSection>
+    </Section>
+    <Section BackColor="Bisque" SectionName="BRAKES">
+      <SectionAction BackColor="#FFFAF6" ActionName="Rotor Brake On">
+        <ActionInput InputKey="KEY_ROTOR_BRAKE_ON">
+          <Binding Controller="Saitek Pro Flight X-56 Rhino Throttle" Profile="X-56 Rhino Throttle Helicopter" Priority="Primary" KeyCombo="Joystick Button 9" />
+        </ActionInput>
+      </SectionAction>
+      <SectionAction BackColor="#FFF6ED" ActionName="Rotor Brake Off">
+        <ActionInput InputKey="KEY_ROTOR_BRAKE_OFF">
+          <Binding Controller="Saitek Pro Flight X-56 Rhino Throttle" Profile="X-56 Rhino Throttle Helicopter" Priority="Primary" KeyCombo="Joystick Button 8" />
+        </ActionInput>
+      </SectionAction>
+      <SectionAction BackColor="#FFFAF6" ActionName="Rotor Brake">
+        <ActionInput InputKey="KEY_ROTOR_BRAKE">
+          <Binding Controller="Saitek Pro Flight X-56 Rhino Throttle" Profile="X-56 Rhino Throttle Helicopter" Priority="Primary" KeyCombo="Joystick Button 1" />
+        </ActionInput>
+      </SectionAction>
+      <SectionAction BackColor="#FFF6ED" ActionName="Right Brake Axis">
+        <ActionInput InputKey="KEY_AXIS_RIGHT_BRAKE_SET">
+          <Binding Controller="VelocityOne Rudder" Profile="R22" Priority="Primary" KeyCombo="Joystick L-Axis Y " />
+        </ActionInput>
+      </SectionAction>
+      <SectionAction BackColor="#FFF6ED" ActionName="Left Brake Axis">
+        <ActionInput InputKey="KEY_AXIS_LEFT_BRAKE_SET">
+          <Binding Controller="VelocityOne Rudder" Profile="R22" Priority="Primary" KeyCombo="Joystick L-Axis X " />
+        </ActionInput>
+      </SectionAction>
+    </Section>
+    <Section BackColor="Thistle" SectionName="AUTOPILOT">
+      <SectionAction BackColor="#F3EBF3" ActionName="Toggle Autopilot Master">
+        <ActionInput InputKey="KEY_AP_MASTER">
+          <Binding Controller="X56 H.O.T.A.S. Stick" Profile="X56 H.O.T.A.S. Stick Helicopter 2" Priority="Primary" KeyCombo="Joystick Button 2" />
+        </ActionInput>
+      </SectionAction>
+    </Section>
+    <Section BackColor="PowderBlue" SectionName="POWER MANAGEMENT">
+      <SubSection BackColor="#CFECF0" SubSectionName="THROTTLE">
+        <SectionAction BackColor="#F3FAFB" ActionName="Set Helicopter Throttle Axis">
+          <ActionInput InputKey="KEY_AXIS_HELICOPTER_THROTTLE_SET">
+            <Binding Controller="Saitek Pro Flight X-56 Rhino Throttle" Profile="X-56 Rhino Throttle Helicopter" Priority="Primary" KeyCombo="Joystick Slider Y " />
+          </ActionInput>
+        </SectionAction>
+        <SectionAction BackColor="#F3FAFB" ActionName="Increase Helicopter Throttle">
+          <ActionInput InputKey="KEY_HELICOPTER_THROTTLE_INC">
+            <Binding Controller="Saitek Pro Flight X-56 Rhino Throttle" Profile="X-56 Rhino Throttle Helicopter" Priority="Primary" KeyCombo="Joystick Button 28" />
+          </ActionInput>
+        </SectionAction>
+        <SectionAction BackColor="#E7F5F7" ActionName="Decrease Helicopter Throttle">
+          <ActionInput InputKey="KEY_HELICOPTER_THROTTLE_DEC">
+            <Binding Controller="Saitek Pro Flight X-56 Rhino Throttle" Profile="X-56 Rhino Throttle Helicopter" Priority="Primary" KeyCombo="Joystick Button 29" />
+          </ActionInput>
+        </SectionAction>
+      </SubSection>
+      <SectionAction BackColor="#F3FAFB" ActionName="Collective Axis">
+        <ActionInput InputKey="KEY_AXIS_COLLECTIVE_SET">
+          <Binding Controller="Saitek Pro Flight X-56 Rhino Throttle" Profile="X-56 Rhino Throttle Helicopter" Priority="Primary" KeyCombo="Joystick L-Axis Y " />
+        </ActionInput>
+      </SectionAction>
+    </Section>
+    <Section BackColor="LightGoldenrodYellow" SectionName="LANDING GEAR">
+      <SectionAction BackColor="#FDFDF1" ActionName="Gear Up">
+        <ActionInput InputKey="KEY_GEAR_UP">
+          <Binding Controller="Saitek Pro Flight X-56 Rhino Throttle" Profile="X-56 Rhino Throttle Helicopter" Priority="Primary" KeyCombo="Joystick Button 6" />
+        </ActionInput>
+      </SectionAction>
+      <SectionAction BackColor="#FEFEF8" ActionName="Gear Down">
+        <ActionInput InputKey="KEY_GEAR_DOWN">
+          <Binding Controller="Saitek Pro Flight X-56 Rhino Throttle" Profile="X-56 Rhino Throttle Helicopter" Priority="Primary" KeyCombo="Joystick Button 7" />
+        </ActionInput>
+      </SectionAction>
+    </Section>
+  </BindingList>
+  <UnrecognisedContexts />
+</BindingReport>

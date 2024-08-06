@@ -17,11 +17,7 @@ namespace FSProfiles
             Logic.OnStart += OnStart;
             Logic.OnProgress += OnProgress;
             Logic.OnStop += OnStop;
-            _profileList = new List<DetectedProfile>();
-            //Developer option: uncomment the following line to rebuild the list of "Known" bindings
-            //It will output the new file in C:\Temp\KnownBindings.xml. You will need to manually move
-            //to correct program location
-            btnRebuild.Visible = _programArguments.Rebuild;
+            _profileList = [];
         }
 
         private void OnStart(object? sender, ProgressEvent e)
@@ -76,12 +72,12 @@ namespace FSProfiles
             txtOutputFile.Text = Logic.GetDefaultOutputFile();
         }
 
-        private void btnBasePath_Click(object sender, EventArgs e)
+        private void BtnBasePath_Click(object sender, EventArgs e)
         {
             SelectBasePath();
         }
 
-        private void btnProcessFolders_Click(object sender, EventArgs e)
+        private void BtnProcessFolders_Click(object sender, EventArgs e)
         {
             _profileList = Logic.ProcessFolders(txtBasePath.Text);
             clbMappings.Items.Clear();
@@ -91,7 +87,7 @@ namespace FSProfiles
             }
         }
 
-        private void btnGenerate_Click(object sender, EventArgs e)
+        private void BtnGenerate_Click(object sender, EventArgs e)
         {
             var contentMode = (ContentMode)cmbContent.SelectedIndex;
             var generateList = new List<DetectedProfile>();
@@ -103,12 +99,7 @@ namespace FSProfiles
                 }
             }
 
-            Logic.GenerateBindingReport(txtOutputFile.Text, generateList, contentMode);
-        }
-
-        private void btnRebuild_Click(object sender, EventArgs e)
-        {
-            Logic.RebuildKnownBindings(@"C:\Temp\KnownBindings.xml", _profileList);
+            Logic.GenerateBindingReport(txtOutputFile.Text, generateList, contentMode, chkIncludeUncategorised.Checked);
         }
 
         public void SelectBasePath()

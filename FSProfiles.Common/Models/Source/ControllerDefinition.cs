@@ -26,7 +26,7 @@ namespace FSProfiles.Common.Models.Source
         public int PlatformAvailability { get; set; }
 
         [XmlText]
-        public string Text { get; set; }
+        public string Text { get; set; } = string.Empty;
     }
 
     [XmlRoot(ElementName = "Axis")]
@@ -34,7 +34,7 @@ namespace FSProfiles.Common.Models.Source
     {
 
         [XmlAttribute(AttributeName = "AxisName")]
-        public string AxisName { get; set; }
+        public string AxisName { get; set; } = string.Empty;
 
         [XmlAttribute(AttributeName = "AxisSensitivy")]
         public int AxisSensitivy { get; set; }
@@ -60,7 +60,7 @@ namespace FSProfiles.Common.Models.Source
     {
 
         [XmlElement(ElementName = "Axis")]
-        public List<Axis> Axis { get; set; }
+        public List<Axis> Axis { get; set; } = [];
     }
 
     [XmlRoot(ElementName = "KEY")]
