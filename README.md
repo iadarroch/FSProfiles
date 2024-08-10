@@ -7,6 +7,10 @@ You can use it to select multiple controller profiles (e.g. Mouse, Flight Stick,
 Flight Throttle and Rudder Pedals), and display an HTML formatted document showing
 each available control binding, and the controller & input bound to it.
 
+So far, the utility has only been tested with a native Windows desktop install of FS2020.
+It is possible that it will also work with Steam-based installs on Windows, but I have
+not been able test that.
+
 **Ways to use:**
 * Select a single profile to see all its bindings.
 * Select two different profiles for a controller to compare bindings.
@@ -57,11 +61,11 @@ The program does support two command line options, both of which are aimed at de
 
 
 ## Flight Sim Platform Support
-| Platform Name  | Status           | Comment                                                                                 |
-|----------------|------------------|-----------------------------------------------------------------------------------------|
-| Windows Native | Full Support     | Utility should automatically detect the controller profile path                         |
-| Windows Steam  | Possible Support | Untested, but may work if you manually choose the path to the parent folder of profiles |
-| XBox           | Not Supported    |                                                                                         |
+| Platform Name  | Status           | Comment                                                                                                             |
+|----------------|------------------|---------------------------------------------------------------------------------------------------------------------|
+| Windows Native | Full Support     | Utility should automatically detect the controller profile path.                                                    |
+| Windows Steam  | Possible Support | Untested, but may work automatically, or you may need to manually choose the path to the parent folder of profiles. |
+| XBox           | Not Supported    |                                                                                                                     |
 
 ## Sample Output
 ![Sample report](images/sample-report.png)
