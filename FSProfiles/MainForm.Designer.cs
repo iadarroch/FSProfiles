@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             fbdBasePath = new FolderBrowserDialog();
             lblBasePath = new Label();
@@ -39,12 +40,13 @@
             btnGenerate = new Button();
             txtOutputFile = new TextBox();
             lblOutputFile = new Label();
-            btnRebuild = new Button();
             lblContent = new Label();
             statusStrip1 = new StatusStrip();
             tsStatus = new ToolStripStatusLabel();
             tsProgress = new ToolStripProgressBar();
             cmbContent = new ComboBox();
+            chkIncludeUncategorised = new CheckBox();
+            toolTip1 = new ToolTip(components);
             statusStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -71,11 +73,11 @@
             btnBasePath.Location = new Point(992, 38);
             btnBasePath.Margin = new Padding(2);
             btnBasePath.Name = "btnBasePath";
-            btnBasePath.Size = new Size(118, 27);
+            btnBasePath.Size = new Size(130, 27);
             btnBasePath.TabIndex = 2;
             btnBasePath.Text = "&Select Profiles Path";
             btnBasePath.UseVisualStyleBackColor = true;
-            btnBasePath.Click += btnBasePath_Click;
+            btnBasePath.Click += BtnBasePath_Click;
             // 
             // btnProcessFolders
             // 
@@ -84,9 +86,9 @@
             btnProcessFolders.Name = "btnProcessFolders";
             btnProcessFolders.Size = new Size(111, 27);
             btnProcessFolders.TabIndex = 3;
-            btnProcessFolders.Text = "Process Folders";
+            btnProcessFolders.Text = "&Process Folders";
             btnProcessFolders.UseVisualStyleBackColor = true;
-            btnProcessFolders.Click += btnProcessFolders_Click;
+            btnProcessFolders.Click += BtnProcessFolders_Click;
             // 
             // lblMappings
             // 
@@ -109,14 +111,14 @@
             // 
             // btnGenerate
             // 
-            btnGenerate.Location = new Point(147, 510);
+            btnGenerate.Location = new Point(147, 535);
             btnGenerate.Margin = new Padding(2);
             btnGenerate.Name = "btnGenerate";
-            btnGenerate.Size = new Size(157, 27);
-            btnGenerate.TabIndex = 10;
+            btnGenerate.Size = new Size(163, 27);
+            btnGenerate.TabIndex = 11;
             btnGenerate.Text = "&Generate Binding Report";
             btnGenerate.UseVisualStyleBackColor = true;
-            btnGenerate.Click += btnGenerate_Click;
+            btnGenerate.Click += BtnGenerate_Click;
             // 
             // txtOutputFile
             // 
@@ -136,18 +138,6 @@
             lblOutputFile.TabIndex = 6;
             lblOutputFile.Text = "Output File";
             // 
-            // btnRebuild
-            // 
-            btnRebuild.Location = new Point(953, 510);
-            btnRebuild.Margin = new Padding(2);
-            btnRebuild.Name = "btnRebuild";
-            btnRebuild.Size = new Size(157, 27);
-            btnRebuild.TabIndex = 11;
-            btnRebuild.Text = "&Rebuild Known Bindings";
-            btnRebuild.UseVisualStyleBackColor = true;
-            btnRebuild.Visible = false;
-            btnRebuild.Click += btnRebuild_Click;
-            // 
             // lblContent
             // 
             lblContent.AutoSize = true;
@@ -161,9 +151,9 @@
             // statusStrip1
             // 
             statusStrip1.Items.AddRange(new ToolStripItem[] { tsStatus, tsProgress });
-            statusStrip1.Location = new Point(0, 547);
+            statusStrip1.Location = new Point(0, 585);
             statusStrip1.Name = "statusStrip1";
-            statusStrip1.Size = new Size(1123, 22);
+            statusStrip1.Size = new Size(1137, 22);
             statusStrip1.TabIndex = 12;
             statusStrip1.Text = "statusStrip1";
             // 
@@ -195,15 +185,26 @@
             cmbContent.TabIndex = 9;
             cmbContent.Text = "All";
             // 
+            // chkIncludeUncategorised
+            // 
+            chkIncludeUncategorised.CheckAlign = ContentAlignment.MiddleRight;
+            chkIncludeUncategorised.Location = new Point(11, 507);
+            chkIncludeUncategorised.Name = "chkIncludeUncategorised";
+            chkIncludeUncategorised.Size = new Size(151, 19);
+            chkIncludeUncategorised.TabIndex = 10;
+            chkIncludeUncategorised.Text = "Include Unrecognised";
+            toolTip1.SetToolTip(chkIncludeUncategorised, "Checking this box includes an additional section on the report that lists control bindings that could not be matched to a Controls Options item");
+            chkIncludeUncategorised.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1123, 569);
+            ClientSize = new Size(1137, 607);
+            Controls.Add(chkIncludeUncategorised);
             Controls.Add(cmbContent);
             Controls.Add(statusStrip1);
             Controls.Add(lblContent);
-            Controls.Add(btnRebuild);
             Controls.Add(txtOutputFile);
             Controls.Add(lblOutputFile);
             Controls.Add(btnGenerate);
@@ -235,11 +236,12 @@
         public Button btnProcessFolders;
         public TextBox txtOutputFile;
         private Label lblOutputFile;
-        private Button btnRebuild;
         private Label lblContent;
         private StatusStrip statusStrip1;
         private ToolStripStatusLabel tsStatus;
         private ToolStripProgressBar tsProgress;
         private ComboBox cmbContent;
+        private CheckBox chkIncludeUncategorised;
+        private ToolTip toolTip1;
     }
 }

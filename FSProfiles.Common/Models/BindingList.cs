@@ -1,5 +1,4 @@
-﻿using System.Drawing;
-using System.Xml.Serialization;
+﻿using System.Xml.Serialization;
 
 namespace FSProfiles.Common.Models
 {
@@ -8,9 +7,8 @@ namespace FSProfiles.Common.Models
     [XmlRoot("BindingList")]
     public class BindingList
     {
-        public List<SelectedController> SelectedControllers { get; set; }
-        [XmlElement(ElementName = "Context")]
-        public List<FSContext> Contexts { get; set; }
+        [XmlElement(nameof(Section), typeof(Section))]
+        public List<Section> Sections { get; set; } = [];
     }
 
     public class SelectedController
@@ -20,77 +18,52 @@ namespace FSProfiles.Common.Models
         public string? ProfilePath { get; set; }
     }
 
-    [XmlRoot(ElementName = "Context")]
-    public class FSContext
+    [XmlRoot(ElementName = "Section")]
+    public class Section : ColoredItem
     {
         [XmlAttribute]
-        public string? ContextName { get; set; }
+        public string? SectionName { get; set; }
 
-        [XmlIgnore]
-        public Color? BackColor { get; set; }
-
-        [XmlAttribute(AttributeName = "BackColor")]
-        public string BackColorAsArgb
-        {
-            get
-            {
-                if (this.BackColor == null) return "";
-                return ColorTranslator.ToHtml(BackColor.Value);
-            }
-            set
-            {
-                if (string.IsNullOrEmpty(value))
-                {
-                    BackColor = null;
-                }
-                else
-                {
-                    BackColor = ColorTranslator.FromHtml(value);
-                }
-            }
-        }
-
-        [XmlElement(ElementName = "Action")]
-        public List<FSAction> Actions { get; set; }
+        [XmlElement(nameof(SubSection), typeof(SubSection))]
+        [XmlElement(nameof(SectionAction), typeof(SectionAction))]
+        public List<SectionItem> Items { get; set; } = [];
     }
 
-    [XmlRoot(ElementName = "Action")]
-    public class FSAction
+    [XmlRoot(ElementName = "SectionItem")]
+    public class SectionItem : ColoredItem
+    { }
+
+    [XmlRoot(ElementName = "SubSection")]
+    public class SubSection : SectionItem
     {
         [XmlAttribute]
-        public string? ActionName { get; set; }
+        public string? SubSectionName { get; set; }
 
-        [XmlIgnore]
-        public Color? BackColor { get; set; }
+        [XmlElement(ElementName = "SectionAction")]
+        public List<SectionAction> Actions { get; set; } = [];
+    }
 
-        [XmlAttribute(AttributeName = "BackColor")]
-        public string BackColorAsArgb
-        {
-            get
-            {
-                if (this.BackColor == null) return "";
-                return ColorTranslator.ToHtml(BackColor.Value);
-            }
-            set
-            {
-                if (string.IsNullOrEmpty(value))
-                {
-                    BackColor = null;
-                }
-                else
-                {
-                    BackColor = ColorTranslator.FromHtml(value);
-                }
-            }
-        }
+
+    [XmlRoot(ElementName = "SectionAction")]
+    public class SectionAction : SectionItem
+    {
+        [XmlAttribute] public string ActionName { get; set; } = string.Empty;
+
+        [XmlElement(ElementName = "ActionInput")]
+        public List<ActionInput> Inputs { get; set; } = [];
+    }
+
+    public class ActionInput
+    {
+        [XmlAttribute] 
+        public string InputKey { get; set; } = string.Empty;
 
         [XmlElement(ElementName = "Binding")]
-        public List<FSBinding> Bindings { get; set; }
-
+        public List<InputBinding> Bindings { get; set; } = [];
     }
 
     [XmlRoot(ElementName = "Binding")]
-    public class FSBinding
+    public class InputBinding
     {
         [XmlAttribute]
         public string? Controller { get; set; }
@@ -101,7 +74,7 @@ namespace FSProfiles.Common.Models
         [XmlAttribute]
         public Priority Priority { get; set; }
 
-        [XmlIgnore] 
+        [XmlIgnore]
         public List<string> Keys { get; set; } = [];
 
         [XmlAttribute]

@@ -8,17 +8,15 @@ namespace FSProfiles.Common.Classes
         public static T DeserializeObject<T>(TextReader reader)
         {
             var serializer = new XmlSerializer(typeof(T));
-            return (T)serializer.Deserialize(reader);
+            return (T)serializer.Deserialize(reader)!;
         }
 
         public static T DeserializeFromFile<T>(string filePath)
         {
-            using (var reader = new StreamReader(filePath))
-            {
-                var serializer = new XmlSerializer(typeof(T));
-                var result = (T)serializer.Deserialize(reader);
-                return result;
-            }
+            using var reader = new StreamReader(filePath);
+            var serializer = new XmlSerializer(typeof(T));
+            var result = (T)serializer.Deserialize(reader)!;
+            return result!;
         }
 
         public static void SerializeObject<T>(TextWriter textWriter, T obj)
@@ -30,17 +28,15 @@ namespace FSProfiles.Common.Classes
 
         public static void SerializeToFile<T>(this T subject, string filePath)
         {
-            using (var writer = new StreamWriter(filePath))
-            {
-                Serializer.SerializeObject(writer, subject);
-            }
+            using var writer = new StreamWriter(filePath);
+            Serializer.SerializeObject(writer, subject);
         }
 
         public static XmlDocument SerializeToXmlDoc<T>(this T subject)
         {
             var doc = new XmlDocument();
             var nav = doc.CreateNavigator();
-            using (XmlWriter writer = nav.AppendChild())
+            using (XmlWriter writer = nav!.AppendChild())
             {
                 var xmlSerializer = new XmlSerializer(typeof(T));
                 xmlSerializer.Serialize(writer, subject);
