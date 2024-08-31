@@ -8,7 +8,7 @@ namespace FSProfiles.Common.Models
         public string Path { get; }
         public ControllerDefinition ControllerDefinition { get; }
 
-        public DetectedProfile(string path, ControllerDefinition controllerDefinition) 
+        public DetectedProfile(string path, ControllerDefinition controllerDefinition)
         {
             Path = path;
             ControllerDefinition = controllerDefinition;

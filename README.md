@@ -7,20 +7,22 @@ You can use it to select multiple controller profiles (e.g. Mouse, Flight Stick,
 Flight Throttle and Rudder Pedals), and display an HTML formatted document showing
 each available control binding, and the controller & input bound to it.
 
-So far, the utility has only been tested with a native Windows desktop install of FS2020.
-It is possible that it will also work with Steam-based installs on Windows, but I have
-not been able test that.
+So far, the utility has only been tested with a native Windows desktop install of
+FS2020. Some work has also been done to support Steam-based installs, but it is
+untested by actual Steam users.
 
-**Ways to use:**
+**Example ways to use:**
 * Select a single profile to see all its bindings.
 * Select two different profiles for a controller to compare bindings.
 * Select a set of controller profiles to get a list of all current bindings.
 
 ## To Install
 To install the utility, perform the following steps:
-* Download the installer from the latest release.
+* Download the installer from the latest project release (or from [Flightsim.to](https://flightsim.to/file/79474/fsprofiles)).
 * Run the installer. You may have to click through a security warning.
 * Accept the defaults and install.
+* When you first run the program, you may get a message to install the .NET 8 runtime. If you get the
+  warning, you *must* install the runtime for the utility to work.
 
 The installer will currently set up a desktop shortcut and a menu folder and item.
 
@@ -29,25 +31,29 @@ To run the program:
 * Launch the program using either the menu item or desktop shurtcut.
 * On first use, you may get a message to install the .NET 8 runtime. If you get the
   warning, you must install the runtime for the utility to work.
-* If you are running a native Flight Simulator 2020 install, it should automatically
-  populate the path and the list of detected profiles.
+* Click either the `Native Windows` or `Steam` buttons at the top to choose which
+type of install you have.
+*  If you did a standard install, the program should detect the correct path to the
+profile files. If it does so, it will automatically process the available profiles and
+display them in the list.
 * If the profiles are not automatically displayed, you will need to:
   * Either enter or paste the actual path, or use the `Select Profile Path` button
-    to browse to it.
+    to browse to it. This is different for `Native Windows` and `Steam` installs.
   * Once the path has been chosen, click the `Process Folders` button to detect any
     profiles. This will populate the list of detected profiles.
 * Now tick the profiles you wish to include in the report.
 * Click the `Generate Binding Report` button to generate the report.
 
 ### Program UI
-See the screenshot below for an example of the program UI, showing all the detected
-controller profiles, with a set selected to generate a report. Note the `All` list
-content is selected. This will output a report showing all known bindings, rather than
-just those for which the selected controller profiles have a binding.
+See the screenshot below for an example of the program UI, showing a `Native Windows`
+install was selected, all the detected controller profiles, with a set selected to
+generate a report. Note the `All` list content is selected. This will output a report
+showing all known bindings, rather than just those for which the selected controller
+profiles have a binding.
 
-If the `Include Uncategorised` checkbox is ticked, then an additional section will be included
-on the report showing controller bindings which could not be matched to an entry in control options
-list.
+If the `Include Uncategorised` checkbox is ticked, then an additional section will be
+included on the report showing controller bindings which could not be matched to an 
+entry in the control options list.
 
 ![Sample report](images/main-form.png)
 
@@ -61,29 +67,14 @@ The program does support two command line options, both of which are aimed at de
 
 
 ## Flight Sim Platform Support
-| Platform Name  | Status           | Comment                                                                                                             |
-|----------------|------------------|---------------------------------------------------------------------------------------------------------------------|
-| Windows Native | Full Support     | Utility should automatically detect the controller profile path.                                                    |
-| Windows Steam  | Possible Support | Untested, but may work automatically, or you may need to manually choose the path to the parent folder of profiles. |
-| XBox           | Not Supported    |                                                                                                                     |
+| Platform Name  | Status        | Comment                                                                                                                |
+|----------------|---------------|------------------------------------------------------------------------------------------------------------------------|
+| Windows Native | Full Support  | Utility should automatically detect the controller profile path for a default install                                  |
+| Windows Steam  | Supported     | Untested, but should work automatically, or you may need to manually choose the path to the parent folder of profiles. |
+| XBox           | Not Supported |                                                                                                                        |
 
 ## Sample Output
 ![Sample report](images/sample-report.png)
 
-## Developer Utility
-Included in the source code (but not the releases) is the developer utility `FSProfiles.Builder`, which allows adding new menu items
-to the `KnownBindings.xml` file. This file is used to generate the bindings report, by supplying the mapping between the `Controls Options`
-list and the action bindings recorded against controller inputs.
-
-From time to time, Asobo adds additional control options, so this program is used to build a new `KnownBindings.xml` file.
-To use the utility (once built). Add new menu options to the `FS2020 Options.csv` file, then run the utility.
-
-## Roadmap
-Things I hope to add in the future...
-* **Version 1**
-	* Better support for Steam installations.
-	* A prettier UI.
-* **Version 1.1**<br />
-  (not sure how to do these securely/safely in our modern virus and hacker saturated world)
-	* An option to "export" a set of profiles so they can sent to another user for comparison.
-	* An option to "import" a profile from another user for comparison only. Note there will be no way to actually import these to FS2020, as Asobo manage user profiles in the cloud.
+## More Information
+Please see the project [wiki](https://github.com/iadarroch/FSProfiles/wiki) for additional information.

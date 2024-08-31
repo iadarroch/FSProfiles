@@ -294,7 +294,7 @@
       <tr bgcolor="antiquewhite">
         <th>Controller</th>
         <th>Profile</th>
-        <th>Folder</th>
+        <th>Folder/File</th>
       </tr>
       <xsl:for-each select="$controllers/SelectedController">
         <tr bgcolor="floralwhite">
