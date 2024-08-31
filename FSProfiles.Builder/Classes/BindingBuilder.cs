@@ -31,13 +31,20 @@ namespace FSProfiles.Builder.Classes
                 return true;
             }
 
-            var found = _mainLogic.GetProfilePath(out _basePath, out var errorMessage);
-            if (!found)
+            _mainLogic.InstallType = InstallType.Native;
+            var defaultFound = _mainLogic.GetBasePath(out var basePath, out var errorMessage);
+            var profileFound = false;
+            if (defaultFound)
+            {
+                profileFound = _mainLogic.GetProfilePath(basePath, out var profilePath, out errorMessage);
+            }
+            
+            if (!profileFound)
             {
                 Console.WriteLine($"Unable to determine Profiles path: {errorMessage}");
             }
 
-            return found;
+            return profileFound;
         }
 
         public void Build()
