@@ -5,25 +5,49 @@ using FSProfiles.Common.Models.Source;
 
 namespace FSProfiles.Common.Classes
 {
+    public enum InstallType { Unknown, Native, Steam }
+
     public enum ContentMode {All, Assigned, New}
 
     public class MainLogic(ProgramArguments programArguments)
     {
-        private readonly FolderProcessor _folderProcessor = new();
         private readonly ColorSequencer _colorSequencer = new();
         #pragma warning disable CA1859
         private readonly IOutputFormatter _htmlFormatter = new XsltFormatter();
         #pragma warning restore CA1859
+        
+        private IFolderProcessor? _folderProcessor;
+
+        private InstallType _installType;
+        public InstallType InstallType
+        {
+            get => _installType;
+            set
+            {
+                _installType = value;
+                _folderProcessor = _installType switch
+                {
+                    InstallType.Native => new FolderProcessorNative(),
+                    InstallType.Steam => new FolderProcessorSteam(),
+                    _ => null
+                };
+            }
+        }
 
         public EventHandler<ProgressEvent>? OnStart;
         public EventHandler<ProgressEvent>? OnProgress;
         public EventHandler<ProgressEvent>? OnStop;
 
-        public bool _includeUnrecognised;
+        public bool IncludeUnrecognised;
 
-        public bool GetProfilePath(out string basePath, out string? errorMessage)
+        public bool GetBasePath(out string basePath, out string? errorMessage)
         {
-            var result = _folderProcessor.GetProfilePath(out basePath, out errorMessage);
+            return _folderProcessor!.GetBasePath(out basePath, out errorMessage);
+        }
+
+        public bool GetProfilePath(string basePath, out string profilePath, out string? errorMessage)
+        {
+            var result = _folderProcessor!.GetProfilePath(basePath, out profilePath, out errorMessage);
             return result;
         }
 
@@ -37,7 +61,7 @@ namespace FSProfiles.Common.Classes
 
         public List<DetectedProfile> ProcessFolders(string basePath)
         {
-            var detectedProfiles = _folderProcessor.ProcessPath(basePath);
+            var detectedProfiles = _folderProcessor!.ProcessPath(basePath);
             var profileList = detectedProfiles.OrderBy(dc => dc.Name).ToList();
 
             return profileList;
@@ -46,7 +70,7 @@ namespace FSProfiles.Common.Classes
         public void GenerateBindingReport(string outputFile, List<DetectedProfile> profileList, ContentMode contentMode, bool includeUnrecognised)
         {
             OnStart?.Invoke(this, new ProgressEvent("Generating Binding Report", profileList.Count));
-            _includeUnrecognised = includeUnrecognised;
+            IncludeUnrecognised = includeUnrecognised;
             try
             {
                 var bindingReport = BuildBindingReport(profileList);
@@ -63,7 +87,12 @@ namespace FSProfiles.Common.Classes
                     bindingReport.SerializeToFile(defaultPath);
                 }
                 _htmlFormatter.ConvertToHtml(bindingReport, outputFile);
-                Process.Start(@"cmd.exe ", @"/c " + outputFile);
+
+                Process.Start(new ProcessStartInfo
+                {
+                    FileName = outputFile,
+                    UseShellExecute = true
+                });
             }
             finally
             {
@@ -234,7 +263,7 @@ namespace FSProfiles.Common.Classes
             {
                 foreach (var action in context.Actions)
                 {
-                    if (!ProcessAction(inputDictionary, profile, action) && _includeUnrecognised)
+                    if (!ProcessAction(inputDictionary, profile, action) && IncludeUnrecognised)
                     {
                         ProcessUnrecognised(bindingReport, profile, context, action);
                     }

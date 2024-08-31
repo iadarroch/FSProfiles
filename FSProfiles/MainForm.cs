@@ -1,5 +1,9 @@
+using System.ComponentModel;
+using System.Diagnostics;
+using System.Drawing.Text;
 using FSProfiles.Common.Classes;
 using FSProfiles.Common.Models;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace FSProfiles
 {
@@ -51,25 +55,6 @@ namespace FSProfiles
 
         private void MainForm_Shown(object sender, EventArgs e)
         {
-            var defaultFound = Logic.GetProfilePath(out var basePath, out var errorMessage);
-            txtBasePath.Text = basePath;
-            if (defaultFound)
-            {
-                //if able to determine the path, automatically process it and set focus to list
-                btnProcessFolders.PerformClick();
-                foreach (var profileNumber in _programArguments.ProfileSelection)
-                {
-                    clbMappings.SetItemChecked(profileNumber, true);
-                }
-                clbMappings.Focus();
-            }
-            else
-            {
-                MessageBox.Show(errorMessage, "Data Path Detection Failure", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                btnBasePath.Focus();
-            }
-
-            txtOutputFile.Text = Logic.GetDefaultOutputFile();
         }
 
         private void BtnBasePath_Click(object sender, EventArgs e)
@@ -112,6 +97,66 @@ namespace FSProfiles
             {
                 txtBasePath.Text = fbdBasePath.SelectedPath;
             }
+        }
+
+        private void SetButtonHighlight(InstallType installType)
+        {
+            var activeColor = Color.LimeGreen;
+            BtnNative.BackColor = installType == InstallType.Native ? activeColor : SystemColors.Control;
+            BtnSteam.BackColor = installType == InstallType.Steam ? activeColor : SystemColors.Control;
+        }
+
+        public void InstallTypeSelected(InstallType installType)
+        {
+            Logic.InstallType = installType;
+            SetButtonHighlight(installType);
+            var defaultFound = Logic.GetBasePath(out var basePath, out var errorMessage);
+            txtBasePath.Text = basePath;
+            var profileFound = false;
+            if (defaultFound)
+            {
+                profileFound = Logic.GetProfilePath(basePath, out var profilePath, out errorMessage);
+                txtBasePath.Text = profilePath;
+            }
+            if (profileFound)
+            {
+                //if able to determine the path, automatically process it and set focus to list
+                btnProcessFolders.PerformClick();
+                foreach (var profileNumber in _programArguments.ProfileSelection)
+                {
+                    clbMappings.SetItemChecked(profileNumber, true);
+                }
+                clbMappings.Focus();
+            }
+            else
+            {
+                MessageBox.Show(errorMessage, "Data Path Detection Failure", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                btnBasePath.Focus();
+            }
+
+            txtOutputFile.Text = Logic.GetDefaultOutputFile();
+
+        }
+
+        private void LinkHelp_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            const string Link = "https://github.com/iadarroch/FSProfiles/wiki";
+
+            Process.Start(new ProcessStartInfo
+            {
+                FileName = Link,
+                UseShellExecute = true
+            });
+        }
+
+        private void BtnNative_Click(object sender, EventArgs e)
+        {
+            InstallTypeSelected(InstallType.Native);
+        }
+
+        private void BtnSteam_Click(object sender, EventArgs e)
+        {
+            InstallTypeSelected(InstallType.Steam);
         }
     }
 }
