@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <Version>1.1.0</Version>
+    <Version>1.2.0</Version>
     <TargetFramework>net8.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
     <UseWindowsForms>True</UseWindowsForms>
@@ -14,7 +14,7 @@
     <AssemblyOriginatorKeyFile></AssemblyOriginatorKeyFile>
     <StartupObject>FSProfiles.Program</StartupObject>
     <Copyright>Copyright $([System.DateTime]::Now.Year) Ian Darroch</Copyright>
-    <Title>Microsoft Flight Simulator 2020 Controller Profiles Utility</Title>
+    <Title>Microsoft Flight Simulator 2020 &amp; 2024 Controller Profiles Utility</Title>
     <RepositoryUrl>https://github.com/iadarroch/FSProfiles</RepositoryUrl>
     <Platforms>AnyCPU;x64</Platforms>
     <ProduceReferenceAssembly>False</ProduceReferenceAssembly>

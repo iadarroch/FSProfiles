@@ -5,7 +5,9 @@ using FSProfiles.Common.Models.Source;
 
 namespace FSProfiles.Common.Classes
 {
-    public enum InstallType { Unknown, Native, Steam }
+    public enum InstallHost { Unknown, Native, Steam }
+
+    public enum InstallVersion { Unknown, FS2020, FS2024 }
 
     public enum ContentMode {All, Assigned, New}
 
@@ -18,19 +20,31 @@ namespace FSProfiles.Common.Classes
         
         private IFolderProcessor? _folderProcessor;
 
-        private InstallType _installType;
-        public InstallType InstallType
+        private HostVersion _hostVersion = new HostVersion{Host = InstallHost.Unknown, Version = InstallVersion.Unknown};
+        public HostVersion HostVersion
         {
-            get => _installType;
+            get => _hostVersion;
             set
             {
-                _installType = value;
-                _folderProcessor = _installType switch
+                _hostVersion = value;
+                if (_hostVersion.Host == InstallHost.Native)
                 {
-                    InstallType.Native => new FolderProcessorNative(),
-                    InstallType.Steam => new FolderProcessorSteam(),
-                    _ => null
-                };
+                    _folderProcessor = _hostVersion.Version switch
+                    {
+                        InstallVersion.FS2020 => new FolderProcessorNative2020(),
+                        InstallVersion.FS2024 => new FolderProcessorNative2024(),
+                        _ => null
+                    };
+                }
+                else
+                {
+                    _folderProcessor = _hostVersion.Version switch
+                    {
+                        InstallVersion.FS2020 => new FolderProcessorSteam2020(),
+                        InstallVersion.FS2024 => new FolderProcessorSteam2024(),
+                        _ => null
+                    };
+                }
             }
         }
 

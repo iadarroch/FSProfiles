@@ -1,9 +1,6 @@
-using System.ComponentModel;
 using System.Diagnostics;
-using System.Drawing.Text;
 using FSProfiles.Common.Classes;
 using FSProfiles.Common.Models;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace FSProfiles
 {
@@ -99,17 +96,19 @@ namespace FSProfiles
             }
         }
 
-        private void SetButtonHighlight(InstallType installType)
+        private void SetButtonHighlight(object sender)
         {
             var activeColor = Color.LimeGreen;
-            BtnNative.BackColor = installType == InstallType.Native ? activeColor : SystemColors.Control;
-            BtnSteam.BackColor = installType == InstallType.Steam ? activeColor : SystemColors.Control;
+            BtnNative20.BackColor = sender == BtnNative20 ? activeColor : SystemColors.Control;
+            BtnNative24.BackColor = sender == BtnNative24 ? activeColor : SystemColors.Control;
+            BtnSteam20.BackColor = sender == BtnSteam20 ? activeColor : SystemColors.Control;
+            BtnSteam24.BackColor = sender == BtnSteam24 ? activeColor : SystemColors.Control;
         }
 
-        public void InstallTypeSelected(InstallType installType)
+        public void InstallTypeSelected(object sender, HostVersion hostVersion)
         {
-            Logic.InstallType = installType;
-            SetButtonHighlight(installType);
+            Logic.HostVersion = hostVersion;
+            SetButtonHighlight(sender);
             var defaultFound = Logic.GetBasePath(out var basePath, out var errorMessage);
             txtBasePath.Text = basePath;
             var profileFound = false;
@@ -149,14 +148,24 @@ namespace FSProfiles
             });
         }
 
-        private void BtnNative_Click(object sender, EventArgs e)
+        private void BtnNative20_Click(object sender, EventArgs e)
         {
-            InstallTypeSelected(InstallType.Native);
+            InstallTypeSelected(sender, new HostVersion{Host = InstallHost.Native, Version = InstallVersion.FS2020});
         }
 
-        private void BtnSteam_Click(object sender, EventArgs e)
+        private void BtnSteam20_Click(object sender, EventArgs e)
         {
-            InstallTypeSelected(InstallType.Steam);
+            InstallTypeSelected(sender, new HostVersion { Host = InstallHost.Steam, Version = InstallVersion.FS2020 });
+        }
+
+        private void BtnNative24_Click(object sender, EventArgs e)
+        {
+            InstallTypeSelected(sender, new HostVersion { Host = InstallHost.Native, Version = InstallVersion.FS2024 });
+        }
+
+        private void BtnSteam24_Click(object sender, EventArgs e)
+        {
+            InstallTypeSelected(sender, new HostVersion { Host = InstallHost.Steam, Version = InstallVersion.FS2024 });
         }
     }
 }

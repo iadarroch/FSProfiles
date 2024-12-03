@@ -1,4 +1,4 @@
-# Microsoft Flight Simulator 2020 Controller Profiles Utility
+# Microsoft Flight Simulator 2020 & 2024 Controller Profiles Utility
 
 This utility was born out of frustration that Asobo have given users no easy way to
 export and compare what bindings have been set up in different controller profiles.
@@ -8,8 +8,8 @@ Flight Throttle and Rudder Pedals), and display an HTML formatted document showi
 each available control binding, and the controller & input bound to it.
 
 So far, the utility has only been tested with a native Windows desktop install of
-FS2020. Some work has also been done to support Steam-based installs, but it is
-untested by actual Steam users.
+FS2020 and FS2024. Some work has also been done to support Steam-based installs, 
+but the FS2024 version is untested by actual Steam users.
 
 **Example ways to use:**
 * Select a single profile to see all its bindings.
