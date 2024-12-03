@@ -13,11 +13,22 @@ public interface IFolderProcessor
 
 public abstract class FolderProcessorBase
 {
+    bool IsXmlFile(string fileName)
+    {
+      if (string.IsNullOrWhiteSpace(fileName))
+        return false;
+      var line = new byte[6];
+      using (var fs = new FileStream(fileName, FileMode.Open, FileAccess.Read))
+        fs.Read(line, 0, 6);
+      return System.Text.Encoding.Default.GetString(line).StartsWith("<?xml");
+    }
+
     public DetectedProfile? ProcessFile(string fileName)
     {
-        var fileContent = File.ReadAllLines(fileName).ToList();
-        if (!fileContent[0].StartsWith("<?xml")) return null; //not a processable file 
+        if (!IsXmlFile(fileName))
+          return null; //not a processable file
 
+        var fileContent = File.ReadAllLines(fileName).ToList();
         //Add new root object so contents are processable as a normal XML
         fileContent.Insert(1, @"<ControllerDefinition>");
         fileContent.Add(@"</ControllerDefinition>");
