@@ -3,10 +3,15 @@ using FSProfiles.Common.Models;
 
 namespace FSProfiles.Common.Classes
 {
-    public class FolderProcessorNative : FolderProcessorBase, IFolderProcessor
+    public abstract class FolderProcessorNativeBase : FolderProcessorBase, IFolderProcessor
     {
         private const string FlightSimPathNotFound = "Unable to automatically identify the main Flight Simulator folder. Please use the \"Select Profiles Path\" button to manually locate.";
         private const string ProfilesPathNotFound = "Unable to automatically identify parent folder of controller profiles. Please use the \"Select Profiles Path\" button to manually locate.";
+
+        protected abstract string NativeAppPath { get; }
+
+        public InstallHost InstallHost => InstallHost.Native;
+        public abstract InstallVersion InstallVersion { get; }
 
         /// <summary>
         /// Attempts to determine the path to the Base install folder
@@ -25,7 +30,7 @@ namespace FSProfiles.Common.Classes
             path = $"{basePath}\\Packages";
 
             //Now find Flight Sim in packages
-            var flightSimFolder = Directory.GetDirectories(path, "Microsoft.FlightSimulator_*")
+            var flightSimFolder = Directory.GetDirectories(path, NativeAppPath)
                 .FirstOrDefault();
             if (string.IsNullOrEmpty(flightSimFolder))
             {
@@ -112,5 +117,17 @@ namespace FSProfiles.Common.Classes
             var profilePath = splitPath[parts - 1];
             return profilePath;
         }
+    }
+
+    public class FolderProcessorNative2020 : FolderProcessorNativeBase
+    {
+        protected override string NativeAppPath => "Microsoft.FlightSimulator_8wekyb3d8bbwe";
+        public override InstallVersion InstallVersion => InstallVersion.FS2020;
+    }
+
+    public class FolderProcessorNative2024 : FolderProcessorNativeBase
+    {
+        protected override string NativeAppPath => "Microsoft.Limitless_8wekyb3d8bbwe";
+        public override InstallVersion InstallVersion => InstallVersion.FS2024;
     }
 }

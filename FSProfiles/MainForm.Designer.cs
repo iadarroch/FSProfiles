@@ -49,9 +49,12 @@
             toolTip1 = new ToolTip(components);
             LblInstallType = new Label();
             LinkHelp = new LinkLabel();
-            BtnNative = new Button();
-            BtnSteam = new Button();
-            LblOr = new Label();
+            BtnNative20 = new Button();
+            BtnSteam20 = new Button();
+            LblOr1 = new Label();
+            LblOr2 = new Label();
+            BtnSteam24 = new Button();
+            BtnNative24 = new Button();
             statusStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -222,45 +225,83 @@
             LinkHelp.Text = "Web Help Page";
             LinkHelp.LinkClicked += LinkHelp_LinkClicked;
             // 
-            // BtnNative
+            // BtnNative20
             // 
-            BtnNative.Location = new Point(147, 23);
-            BtnNative.Margin = new Padding(2);
-            BtnNative.Name = "BtnNative";
-            BtnNative.Size = new Size(169, 27);
-            BtnNative.TabIndex = 1;
-            BtnNative.Text = "&Native Windows";
-            BtnNative.UseVisualStyleBackColor = true;
-            BtnNative.Click += BtnNative_Click;
+            BtnNative20.BackColor = SystemColors.Control;
+            BtnNative20.Location = new Point(147, 23);
+            BtnNative20.Margin = new Padding(2);
+            BtnNative20.Name = "BtnNative20";
+            BtnNative20.Size = new Size(169, 27);
+            BtnNative20.TabIndex = 1;
+            BtnNative20.Text = "Native Windows FS2020";
+            BtnNative20.UseVisualStyleBackColor = false;
+            BtnNative20.Click += BtnNative20_Click;
             // 
-            // BtnSteam
+            // BtnSteam20
             // 
-            BtnSteam.Location = new Point(342, 23);
-            BtnSteam.Margin = new Padding(2);
-            BtnSteam.Name = "BtnSteam";
-            BtnSteam.Size = new Size(169, 27);
-            BtnSteam.TabIndex = 3;
-            BtnSteam.Text = "&Steam";
-            BtnSteam.UseVisualStyleBackColor = true;
-            BtnSteam.Click += BtnSteam_Click;
+            BtnSteam20.BackColor = SystemColors.Control;
+            BtnSteam20.Location = new Point(342, 23);
+            BtnSteam20.Margin = new Padding(2);
+            BtnSteam20.Name = "BtnSteam20";
+            BtnSteam20.Size = new Size(169, 27);
+            BtnSteam20.TabIndex = 3;
+            BtnSteam20.Text = "Steam FS2020";
+            BtnSteam20.UseVisualStyleBackColor = false;
+            BtnSteam20.Click += BtnSteam20_Click;
             // 
-            // LblOr
+            // LblOr1
             // 
-            LblOr.AutoSize = true;
-            LblOr.Location = new Point(321, 29);
-            LblOr.Name = "LblOr";
-            LblOr.Size = new Size(18, 15);
-            LblOr.TabIndex = 2;
-            LblOr.Text = "or";
+            LblOr1.AutoSize = true;
+            LblOr1.Location = new Point(321, 29);
+            LblOr1.Name = "LblOr1";
+            LblOr1.Size = new Size(18, 15);
+            LblOr1.TabIndex = 2;
+            LblOr1.Text = "or";
+            // 
+            // LblOr2
+            // 
+            LblOr2.AutoSize = true;
+            LblOr2.Location = new Point(321, 60);
+            LblOr2.Name = "LblOr2";
+            LblOr2.Size = new Size(18, 15);
+            LblOr2.TabIndex = 19;
+            LblOr2.Text = "or";
+            // 
+            // BtnSteam24
+            // 
+            BtnSteam24.BackColor = SystemColors.Control;
+            BtnSteam24.Location = new Point(342, 54);
+            BtnSteam24.Margin = new Padding(2);
+            BtnSteam24.Name = "BtnSteam24";
+            BtnSteam24.Size = new Size(169, 27);
+            BtnSteam24.TabIndex = 20;
+            BtnSteam24.Text = "Steam FS2024";
+            BtnSteam24.UseVisualStyleBackColor = false;
+            BtnSteam24.Click += BtnSteam24_Click;
+            // 
+            // BtnNative24
+            // 
+            BtnNative24.BackColor = SystemColors.Control;
+            BtnNative24.Location = new Point(147, 54);
+            BtnNative24.Margin = new Padding(2);
+            BtnNative24.Name = "BtnNative24";
+            BtnNative24.Size = new Size(169, 27);
+            BtnNative24.TabIndex = 18;
+            BtnNative24.Text = "Native Windows FS2024";
+            BtnNative24.UseVisualStyleBackColor = false;
+            BtnNative24.Click += BtnNative24_Click;
             // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1137, 661);
-            Controls.Add(LblOr);
-            Controls.Add(BtnSteam);
-            Controls.Add(BtnNative);
+            Controls.Add(LblOr2);
+            Controls.Add(BtnSteam24);
+            Controls.Add(BtnNative24);
+            Controls.Add(LblOr1);
+            Controls.Add(BtnSteam20);
+            Controls.Add(BtnNative20);
             Controls.Add(LinkHelp);
             Controls.Add(LblInstallType);
             Controls.Add(chkIncludeUncategorised);
@@ -307,8 +348,11 @@
         private ToolTip toolTip1;
         private Label LblInstallType;
         public LinkLabel LinkHelp;
-        public Button BtnNative;
-        public Button BtnSteam;
-        private Label LblOr;
+        public Button BtnNative20;
+        public Button BtnSteam20;
+        private Label LblOr1;
+        private Label LblOr2;
+        public Button BtnSteam24;
+        public Button BtnNative24;
     }
 }

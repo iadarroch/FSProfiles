@@ -31,7 +31,7 @@ namespace FSProfiles.Builder.Classes
                 return true;
             }
 
-            _mainLogic.InstallType = InstallType.Native;
+            _mainLogic.InstallHost = InstallHost.Native;
             var defaultFound = _mainLogic.GetBasePath(out var basePath, out var errorMessage);
             var profileFound = false;
             if (defaultFound)

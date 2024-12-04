@@ -1,17 +1,19 @@
 ﻿using System.Diagnostics;
-using System.IO;
 using FSProfiles.Common.Models;
-using FSProfiles.Common.Models.Source;
 
 namespace FSProfiles.Common.Classes;
 
-public class FolderProcessorSteam : FolderProcessorBase, IFolderProcessor
+public abstract class FolderProcessorSteamBase : FolderProcessorBase, IFolderProcessor
 {
     private const string SteamBasePathError = "Unable to automatically identify the Steam base path. Please use the \"Select Profiles Path\" button to manually locate.";
     private const string SteamUserPathError = "Unable to automatically identify the Steam user id with FS2020 installed. Please use the \"Select Profiles Path\" button to manually locate.";
 
-    private const string SteamAppPath = "1250410\\remote";
+    protected abstract string SteamAppPath { get; }
     private const string InputPrefix = "inputprofile_";
+
+    public InstallHost InstallHost => InstallHost.Native;
+    public abstract InstallVersion InstallVersion { get; }
+
 
     /// <summary>
     /// Attempts to determine the path to the Base install folder
@@ -62,6 +64,7 @@ public class FolderProcessorSteam : FolderProcessorBase, IFolderProcessor
     /// This should be something like the following:
     /// C:\Program Files (x86)\Steam\userdata\1234567890\1250410\remote
     /// </summary>
+    /// <param name="basePath"></param>
     /// <param name="path"></param>
     /// <param name="errorMessage"></param>
     /// <returns></returns>
@@ -107,3 +110,16 @@ public class FolderProcessorSteam : FolderProcessorBase, IFolderProcessor
         return profilePath;
     }
 }
+
+public class FolderProcessorSteam2020 : FolderProcessorSteamBase
+{
+    protected override string SteamAppPath => "1250410\\remote";
+    public override InstallVersion InstallVersion => InstallVersion.FS2020;
+}
+
+public class FolderProcessorSteam2024 : FolderProcessorSteamBase
+{
+    protected override string SteamAppPath => "2537590\\remote";
+    public override InstallVersion InstallVersion => InstallVersion.FS2024;
+}
+
