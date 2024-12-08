@@ -52,18 +52,8 @@ namespace FSProfiles
 
         private void MainForm_Shown(object sender, EventArgs e)
         {
-            btnProcessFolders.PerformClick();  //automatically try to process default folder locations
+            btnDefaultLocations.PerformClick();  //automatically try to process default folder locations
             txtOutputFile.Text = Logic.GetDefaultOutputFile();
-        }
-
-        private void BtnProcessFolders_Click(object sender, EventArgs e)
-        {
-            _profileList = Logic.ProcessHostVersions();
-            clbMappings.Items.Clear();
-            foreach (var profile in _profileList)
-            {
-                clbMappings.Items.Add(profile);
-            }
         }
 
         private void BtnGenerate_Click(object sender, EventArgs e)
@@ -81,13 +71,6 @@ namespace FSProfiles
             Logic.GenerateBindingReport(txtOutputFile.Text, generateList, contentMode, chkIncludeUncategorised.Checked);
         }
 
-        private void SetButtonHighlight(object sender)
-        {
-            var activeColor = Color.LimeGreen;
-            btnDefaultLocations.BackColor = sender == btnDefaultLocations ? activeColor : SystemColors.Control;
-            btnCustomLocations.BackColor = sender == btnCustomLocations ? activeColor : SystemColors.Control;
-        }
-
         private void LinkHelp_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             const string Link = "https://github.com/iadarroch/FSProfiles/wiki";
@@ -102,11 +85,37 @@ namespace FSProfiles
         private void BtnDefaultLocations_Click(object sender, EventArgs e)
         {
             SetButtonHighlight(sender);
+            Logic.SetDefaultLocations();
+            ScanFolders();
         }
 
         private void BtnCustomLocations_Click(object sender, EventArgs e)
         {
             SetButtonHighlight(sender);
+            var customSelect = new InstallDirs(Logic.HostVersions);
+            if (customSelect.ShowDialog(this) == DialogResult.OK)
+            {
+                ScanFolders();
+            }
+        }
+
+        private void SetButtonHighlight(object sender)
+        {
+            var activeColor = Color.LimeGreen;
+            var inactiveColor = Color.LightSkyBlue;
+            btnDefaultLocations.BackColor = sender == btnDefaultLocations ? activeColor : inactiveColor;
+            btnCustomLocations.BackColor = sender == btnCustomLocations ? activeColor : inactiveColor;
+        }
+
+        private void ScanFolders()
+        {
+            //Now scan folders
+            _profileList = Logic.ProcessHostVersions();
+            clbMappings.Items.Clear();
+            foreach (var profile in _profileList)
+            {
+                clbMappings.Items.Add(profile);
+            }
         }
     }
 }

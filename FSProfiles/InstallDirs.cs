@@ -10,6 +10,11 @@ namespace FSProfiles
         {
             InitializeComponent();
             _hostVersions = hostVersions;
+            InitialiseLocations();
+        }
+
+        public void InitialiseLocations()
+        {
             txtNative2020.Text = _hostVersions[HostVersionType.Native2020].Path;
             txtNative2024.Text = _hostVersions[HostVersionType.Native2024].Path;
             txtSteam2020.Text = _hostVersions[HostVersionType.Steam2020].Path;
@@ -46,6 +51,25 @@ namespace FSProfiles
         private void BtnSteam2024_Click(object sender, EventArgs e)
         {
             SelectBasePath(_hostVersions[HostVersionType.Steam2024], txtSteam2024);
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            _hostVersions[HostVersionType.Native2020].Path = txtNative2020.Text;
+            _hostVersions[HostVersionType.Native2024].Path = txtNative2024.Text;
+            _hostVersions[HostVersionType.Steam2020].Path = txtSteam2020.Text;
+            _hostVersions[HostVersionType.Steam2024].Path = txtSteam2024.Text;
+            DialogResult = DialogResult.OK;
+        }
+
+        private void btnDefault_Click(object sender, EventArgs e)
+        {
+            foreach (var hostVersion in _hostVersions)
+            {
+                hostVersion.Value.SetDefaultPath();
+            }
+
+            InitialiseLocations();
         }
     }
 }

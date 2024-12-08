@@ -31,7 +31,6 @@
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             fbdBasePath = new FolderBrowserDialog();
-            btnProcessFolders = new Button();
             lblMappings = new Label();
             clbMappings = new CheckedListBox();
             btnGenerate = new Button();
@@ -52,21 +51,10 @@
             statusStrip1.SuspendLayout();
             SuspendLayout();
             // 
-            // btnProcessFolders
-            // 
-            btnProcessFolders.Location = new Point(485, 129);
-            btnProcessFolders.Margin = new Padding(2);
-            btnProcessFolders.Name = "btnProcessFolders";
-            btnProcessFolders.Size = new Size(111, 27);
-            btnProcessFolders.TabIndex = 7;
-            btnProcessFolders.Text = "Process &Folders";
-            btnProcessFolders.UseVisualStyleBackColor = true;
-            btnProcessFolders.Click += BtnProcessFolders_Click;
-            // 
             // lblMappings
             // 
             lblMappings.AutoSize = true;
-            lblMappings.Location = new Point(11, 191);
+            lblMappings.Location = new Point(10, 80);
             lblMappings.Margin = new Padding(2, 0, 2, 0);
             lblMappings.Name = "lblMappings";
             lblMappings.Size = new Size(110, 15);
@@ -77,34 +65,35 @@
             // 
             clbMappings.CheckOnClick = true;
             clbMappings.FormattingEnabled = true;
-            clbMappings.Location = new Point(148, 191);
+            clbMappings.Location = new Point(147, 80);
             clbMappings.Name = "clbMappings";
-            clbMappings.Size = new Size(833, 292);
+            clbMappings.Size = new Size(1126, 400);
             clbMappings.TabIndex = 9;
             // 
             // btnGenerate
             // 
-            btnGenerate.Location = new Point(147, 595);
+            btnGenerate.BackColor = Color.LightSkyBlue;
+            btnGenerate.Location = new Point(146, 607);
             btnGenerate.Margin = new Padding(2);
             btnGenerate.Name = "btnGenerate";
-            btnGenerate.Size = new Size(163, 27);
+            btnGenerate.Size = new Size(163, 29);
             btnGenerate.TabIndex = 15;
             btnGenerate.Text = "&Generate Binding Report";
-            btnGenerate.UseVisualStyleBackColor = true;
+            btnGenerate.UseVisualStyleBackColor = false;
             btnGenerate.Click += BtnGenerate_Click;
             // 
             // txtOutputFile
             // 
-            txtOutputFile.Location = new Point(147, 502);
+            txtOutputFile.Location = new Point(146, 514);
             txtOutputFile.Margin = new Padding(2);
             txtOutputFile.Name = "txtOutputFile";
-            txtOutputFile.Size = new Size(833, 23);
+            txtOutputFile.Size = new Size(1127, 23);
             txtOutputFile.TabIndex = 11;
             // 
             // lblOutputFile
             // 
             lblOutputFile.AutoSize = true;
-            lblOutputFile.Location = new Point(11, 505);
+            lblOutputFile.Location = new Point(10, 517);
             lblOutputFile.Margin = new Padding(2, 0, 2, 0);
             lblOutputFile.Name = "lblOutputFile";
             lblOutputFile.Size = new Size(66, 15);
@@ -114,7 +103,7 @@
             // lblContent
             // 
             lblContent.AutoSize = true;
-            lblContent.Location = new Point(11, 539);
+            lblContent.Location = new Point(10, 551);
             lblContent.Margin = new Padding(2, 0, 2, 0);
             lblContent.Name = "lblContent";
             lblContent.Size = new Size(71, 15);
@@ -123,10 +112,12 @@
             // 
             // statusStrip1
             // 
+            statusStrip1.BackColor = SystemColors.Window;
+            statusStrip1.ImageScalingSize = new Size(24, 24);
             statusStrip1.Items.AddRange(new ToolStripItem[] { tsStatus, tsProgress });
-            statusStrip1.Location = new Point(0, 639);
+            statusStrip1.Location = new Point(0, 660);
             statusStrip1.Name = "statusStrip1";
-            statusStrip1.Size = new Size(1137, 22);
+            statusStrip1.Size = new Size(1296, 31);
             statusStrip1.TabIndex = 17;
             statusStrip1.Text = "statusStrip1";
             // 
@@ -135,7 +126,7 @@
             tsStatus.AutoSize = false;
             tsStatus.DisplayStyle = ToolStripItemDisplayStyle.Text;
             tsStatus.Name = "tsStatus";
-            tsStatus.Size = new Size(250, 17);
+            tsStatus.Size = new Size(250, 26);
             tsStatus.Text = " ";
             tsStatus.TextAlign = ContentAlignment.MiddleLeft;
             // 
@@ -144,7 +135,7 @@
             tsProgress.Alignment = ToolStripItemAlignment.Right;
             tsProgress.AutoSize = false;
             tsProgress.Name = "tsProgress";
-            tsProgress.Size = new Size(150, 16);
+            tsProgress.Size = new Size(150, 25);
             tsProgress.Style = ProgressBarStyle.Continuous;
             tsProgress.Visible = false;
             // 
@@ -152,7 +143,7 @@
             // 
             cmbContent.FormattingEnabled = true;
             cmbContent.Items.AddRange(new object[] { "All", "Assigned", "New" });
-            cmbContent.Location = new Point(148, 536);
+            cmbContent.Location = new Point(147, 548);
             cmbContent.Name = "cmbContent";
             cmbContent.Size = new Size(121, 23);
             cmbContent.TabIndex = 13;
@@ -161,7 +152,7 @@
             // chkIncludeUncategorised
             // 
             chkIncludeUncategorised.CheckAlign = ContentAlignment.MiddleRight;
-            chkIncludeUncategorised.Location = new Point(11, 567);
+            chkIncludeUncategorised.Location = new Point(10, 580);
             chkIncludeUncategorised.Name = "chkIncludeUncategorised";
             chkIncludeUncategorised.Size = new Size(151, 19);
             chkIncludeUncategorised.TabIndex = 14;
@@ -182,7 +173,7 @@
             // 
             LinkHelp.AutoSize = true;
             LinkHelp.Font = new Font("Segoe UI", 12F);
-            LinkHelp.Location = new Point(831, 586);
+            LinkHelp.Location = new Point(1159, 608);
             LinkHelp.Name = "LinkHelp";
             LinkHelp.Size = new Size(114, 21);
             LinkHelp.TabIndex = 16;
@@ -192,12 +183,14 @@
             // 
             // btnDefaultLocations
             // 
-            btnDefaultLocations.Location = new Point(147, 25);
+            btnDefaultLocations.BackColor = Color.LightSkyBlue;
+            btnDefaultLocations.Font = new Font("Segoe UI", 9F);
+            btnDefaultLocations.Location = new Point(146, 22);
             btnDefaultLocations.Name = "btnDefaultLocations";
-            btnDefaultLocations.Size = new Size(163, 23);
+            btnDefaultLocations.Size = new Size(163, 29);
             btnDefaultLocations.TabIndex = 18;
             btnDefaultLocations.Text = "Default Install Locations";
-            btnDefaultLocations.UseVisualStyleBackColor = true;
+            btnDefaultLocations.UseVisualStyleBackColor = false;
             btnDefaultLocations.Click += BtnDefaultLocations_Click;
             // 
             // label1
@@ -211,19 +204,22 @@
             // 
             // btnCustomLocations
             // 
-            btnCustomLocations.Location = new Point(342, 25);
+            btnCustomLocations.BackColor = Color.LightSkyBlue;
+            btnCustomLocations.Font = new Font("Segoe UI", 9F);
+            btnCustomLocations.Location = new Point(341, 22);
             btnCustomLocations.Name = "btnCustomLocations";
-            btnCustomLocations.Size = new Size(163, 23);
+            btnCustomLocations.Size = new Size(163, 29);
             btnCustomLocations.TabIndex = 20;
             btnCustomLocations.Text = "Custom Install Locations";
-            btnCustomLocations.UseVisualStyleBackColor = true;
+            btnCustomLocations.UseVisualStyleBackColor = false;
             btnCustomLocations.Click += BtnCustomLocations_Click;
             // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1137, 661);
+            BackColor = Color.Gainsboro;
+            ClientSize = new Size(1296, 691);
             Controls.Add(btnCustomLocations);
             Controls.Add(label1);
             Controls.Add(btnDefaultLocations);
@@ -238,11 +234,10 @@
             Controls.Add(btnGenerate);
             Controls.Add(clbMappings);
             Controls.Add(lblMappings);
-            Controls.Add(btnProcessFolders);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(2);
             Name = "MainForm";
-            Text = "FlightSim 2020 Controller Display";
+            Text = "Microsoft FlightSim 2020 & 2024 Controller Bindings Report";
             Shown += MainForm_Shown;
             statusStrip1.ResumeLayout(false);
             statusStrip1.PerformLayout();
@@ -255,7 +250,6 @@
         public CheckedListBox clbMappings;
         public FolderBrowserDialog fbdBasePath;
         private Button btnGenerate;
-        public Button btnProcessFolders;
         public TextBox txtOutputFile;
         private Label lblOutputFile;
         private Label lblContent;

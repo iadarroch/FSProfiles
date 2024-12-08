@@ -289,15 +289,19 @@
     <xsl:param name="controllers" />
     <table>
       <tr bgcolor="antiquewhite">
-        <th class="tableTitle" colspan="3">Selected Controller Profiles</th>
+        <th class="tableTitle" colspan="4">Selected Controller Profiles</th>
       </tr>
       <tr bgcolor="antiquewhite">
+        <th>Host Version</th>
         <th>Controller</th>
         <th>Profile</th>
         <th>Folder/File</th>
       </tr>
       <xsl:for-each select="$controllers/SelectedController">
         <tr bgcolor="floralwhite">
+          <td>
+            <xsl:value-of select="HostVersionName"/>
+          </td>
           <td>
             <xsl:value-of select="DeviceName"/>
           </td>
@@ -316,6 +320,8 @@
     <xsl:param name="controllers" />
     <xsl:for-each select="$controllers/SelectedController">
       <td>
+        <xsl:value-of select="HostVersionName"/>
+        <br />
         <xsl:value-of select="DeviceName"/>
         <br />
         <xsl:value-of select="ProfileName"/>

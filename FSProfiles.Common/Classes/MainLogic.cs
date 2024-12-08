@@ -16,7 +16,7 @@ namespace FSProfiles.Common.Classes
         private readonly ProgramArguments _programArguments;
         #pragma warning restore CA1859
 
-        private readonly Dictionary<HostVersionType, FolderProcessorInstance> _hostVersions;
+        public readonly Dictionary<HostVersionType, FolderProcessorInstance> HostVersions;
 
         public EventHandler<ProgressEvent>? OnStart;
         public EventHandler<ProgressEvent>? OnProgress;
@@ -35,7 +35,7 @@ namespace FSProfiles.Common.Classes
                 new(new FolderProcessorSteam2020()),
                 new(new FolderProcessorSteam2024())
             };
-            _hostVersions = ary.ToDictionary(k => k.HostVersion, v => v);
+            HostVersions = ary.ToDictionary(k => k.HostVersion, v => v);
         }
 
         public string GetDefaultOutputFile()
@@ -44,13 +44,24 @@ namespace FSProfiles.Common.Classes
             return $"{tempPath}controllers.html";
         }
 
+        public void SetDefaultLocations()
+        {
+            foreach (var hostVersion in HostVersions)
+            {
+                hostVersion.Value.SetDefaultPath();
+            }
+        }
+
         public List<DetectedProfile> ProcessHostVersions()
         {
             var allProfiles = new List<DetectedProfile>();
-            foreach (var hostVersion in _hostVersions)
+            foreach (var hostVersion in HostVersions)
             {
                 var processor = hostVersion.Value;
-                allProfiles.AddRange(processor.FolderProcessor.ProcessPath(processor.Path));
+                if (!string.IsNullOrEmpty(processor.Path))
+                {
+                    allProfiles.AddRange(processor.FolderProcessor.ProcessPath(processor.Path));
+                }
             }
 
             return allProfiles.OrderBy(dc => dc.Name).ToList();
@@ -243,6 +254,7 @@ namespace FSProfiles.Common.Classes
         {
             bindingReport.SelectedControllers.Add(new SelectedController
                 {
+                    HostVersionName = profile.HostVersionName,
                     DeviceName = profile.ControllerDefinition.Device.DeviceName,
                     ProfileName = profile.ControllerDefinition.FriendlyName.Text,
                     ProfilePath = profile.Path

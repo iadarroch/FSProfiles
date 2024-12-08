@@ -13,6 +13,7 @@ namespace FSProfiles.Common.Models
 
     public class SelectedController
     {
+        public string? HostVersionName { get; set; }
         public string? DeviceName { get; set; }
         public string? ProfileName { get; set; }
         public string? ProfilePath { get; set; }

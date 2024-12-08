@@ -29,6 +29,14 @@ namespace FSProfiles.Common.Models.Source
         public string Text { get; set; } = string.Empty;
     }
 
+    [XmlRoot(ElementName = "AircraftInfo")]
+    public class AircraftInfo
+    {
+
+        [XmlAttribute(AttributeName = "CategoryName")]
+        public string CategoryName { get; set; } = string.Empty;
+    }
+
     [XmlRoot(ElementName = "Axis")]
     public class Axis
     {
@@ -126,6 +134,8 @@ namespace FSProfiles.Common.Models.Source
     [XmlRoot(ElementName = "Device")]
     public class Device
     {
+        [XmlElement(ElementName = "AircraftInfo")]
+        public AircraftInfo AircraftInfo { get; set; } = new();
 
         [XmlElement(ElementName = "Axes")] 
         public Axes Axes { get; set; } = new();
