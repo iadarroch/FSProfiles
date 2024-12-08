@@ -3,17 +3,13 @@ using FSProfiles.Common.Models;
 
 namespace FSProfiles.Common.Classes;
 
-public abstract class FolderProcessorSteamBase : FolderProcessorBase, IFolderProcessor
+public abstract class FolderProcessorSteamBase : FolderProcessorBase
 {
     private const string SteamBasePathError = "Unable to automatically identify the Steam base path. Please use the \"Select Profiles Path\" button to manually locate.";
     private const string SteamUserPathError = "Unable to automatically identify the Steam user id with FS2020 installed. Please use the \"Select Profiles Path\" button to manually locate.";
 
     protected abstract string SteamAppPath { get; }
     private const string InputPrefix = "inputprofile_";
-
-    public InstallHost InstallHost => InstallHost.Native;
-    public abstract InstallVersion InstallVersion { get; }
-
 
     /// <summary>
     /// Attempts to determine the path to the Base install folder
@@ -23,7 +19,7 @@ public abstract class FolderProcessorSteamBase : FolderProcessorBase, IFolderPro
     /// <param name="path"></param>
     /// <param name="errorMessage"></param>
     /// <returns></returns>
-    public bool GetBasePath(out string path, out string? errorMessage)
+    public override bool GetBasePath(out string path, out string? errorMessage)
     {
         var basePath = Environment.GetFolderPath(Environment.SpecialFolder.ProgramFilesX86);
         Debug.WriteLine($"Local Application Data: {basePath}");
@@ -68,7 +64,7 @@ public abstract class FolderProcessorSteamBase : FolderProcessorBase, IFolderPro
     /// <param name="path"></param>
     /// <param name="errorMessage"></param>
     /// <returns></returns>
-    public bool GetProfilePath(string basePath, out string path, out string? errorMessage)
+    public override bool GetProfilePath(string basePath, out string path, out string? errorMessage)
     {
         var outPath = Path.Combine(basePath, SteamAppPath);
         if (Path.Exists(outPath))
@@ -77,12 +73,10 @@ public abstract class FolderProcessorSteamBase : FolderProcessorBase, IFolderPro
             errorMessage = null;
             return true;
         }
-        path = basePath;
-        errorMessage = SteamUserPathError;
         return IdentifyUserIdFolder(basePath, out path, out errorMessage);
     }
 
-    public List<DetectedProfile> ProcessPath(string folderPath)
+    public override List<DetectedProfile> ProcessPath(string folderPath)
     {
         return FindProfilesInFolder(folderPath);
     }
@@ -114,12 +108,13 @@ public abstract class FolderProcessorSteamBase : FolderProcessorBase, IFolderPro
 public class FolderProcessorSteam2020 : FolderProcessorSteamBase
 {
     protected override string SteamAppPath => "1250410\\remote";
-    public override InstallVersion InstallVersion => InstallVersion.FS2020;
+    public override HostVersionType HostVersion => HostVersionType.Steam2020;
+    public override string HostVersionName => "Steam 2020";
 }
 
 public class FolderProcessorSteam2024 : FolderProcessorSteamBase
 {
     protected override string SteamAppPath => "2537590\\remote";
-    public override InstallVersion InstallVersion => InstallVersion.FS2024;
+    public override HostVersionType HostVersion => HostVersionType.Steam2024;
+    public override string HostVersionName => "Steam 2024";
 }
-

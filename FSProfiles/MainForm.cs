@@ -52,16 +52,13 @@ namespace FSProfiles
 
         private void MainForm_Shown(object sender, EventArgs e)
         {
-        }
-
-        private void BtnBasePath_Click(object sender, EventArgs e)
-        {
-            SelectBasePath();
+            btnProcessFolders.PerformClick();  //automatically try to process default folder locations
+            txtOutputFile.Text = Logic.GetDefaultOutputFile();
         }
 
         private void BtnProcessFolders_Click(object sender, EventArgs e)
         {
-            _profileList = Logic.ProcessFolders(txtBasePath.Text);
+            _profileList = Logic.ProcessHostVersions();
             clbMappings.Items.Clear();
             foreach (var profile in _profileList)
             {
@@ -84,57 +81,11 @@ namespace FSProfiles
             Logic.GenerateBindingReport(txtOutputFile.Text, generateList, contentMode, chkIncludeUncategorised.Checked);
         }
 
-        public void SelectBasePath()
-        {
-            fbdBasePath.Description = "Choose path to base of MSFS 2020 files";
-            fbdBasePath.RootFolder = Environment.SpecialFolder.MyComputer;
-            fbdBasePath.InitialDirectory = txtBasePath.Text;
-            var dialogResult = fbdBasePath.ShowDialog();
-            if (dialogResult == DialogResult.OK)
-            {
-                txtBasePath.Text = fbdBasePath.SelectedPath;
-            }
-        }
-
         private void SetButtonHighlight(object sender)
         {
             var activeColor = Color.LimeGreen;
-            BtnNative20.BackColor = sender == BtnNative20 ? activeColor : SystemColors.Control;
-            BtnNative24.BackColor = sender == BtnNative24 ? activeColor : SystemColors.Control;
-            BtnSteam20.BackColor = sender == BtnSteam20 ? activeColor : SystemColors.Control;
-            BtnSteam24.BackColor = sender == BtnSteam24 ? activeColor : SystemColors.Control;
-        }
-
-        public void InstallTypeSelected(object sender, HostVersion hostVersion)
-        {
-            Logic.HostVersion = hostVersion;
-            SetButtonHighlight(sender);
-            var defaultFound = Logic.GetBasePath(out var basePath, out var errorMessage);
-            txtBasePath.Text = basePath;
-            var profileFound = false;
-            if (defaultFound)
-            {
-                profileFound = Logic.GetProfilePath(basePath, out var profilePath, out errorMessage);
-                txtBasePath.Text = profilePath;
-            }
-            if (profileFound)
-            {
-                //if able to determine the path, automatically process it and set focus to list
-                btnProcessFolders.PerformClick();
-                foreach (var profileNumber in _programArguments.ProfileSelection)
-                {
-                    clbMappings.SetItemChecked(profileNumber, true);
-                }
-                clbMappings.Focus();
-            }
-            else
-            {
-                MessageBox.Show(errorMessage, "Data Path Detection Failure", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                btnBasePath.Focus();
-            }
-
-            txtOutputFile.Text = Logic.GetDefaultOutputFile();
-
+            btnDefaultLocations.BackColor = sender == btnDefaultLocations ? activeColor : SystemColors.Control;
+            btnCustomLocations.BackColor = sender == btnCustomLocations ? activeColor : SystemColors.Control;
         }
 
         private void LinkHelp_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -148,24 +99,14 @@ namespace FSProfiles
             });
         }
 
-        private void BtnNative20_Click(object sender, EventArgs e)
+        private void BtnDefaultLocations_Click(object sender, EventArgs e)
         {
-            InstallTypeSelected(sender, new HostVersion{Host = InstallHost.Native, Version = InstallVersion.FS2020});
+            SetButtonHighlight(sender);
         }
 
-        private void BtnSteam20_Click(object sender, EventArgs e)
+        private void BtnCustomLocations_Click(object sender, EventArgs e)
         {
-            InstallTypeSelected(sender, new HostVersion { Host = InstallHost.Steam, Version = InstallVersion.FS2020 });
-        }
-
-        private void BtnNative24_Click(object sender, EventArgs e)
-        {
-            InstallTypeSelected(sender, new HostVersion { Host = InstallHost.Native, Version = InstallVersion.FS2024 });
-        }
-
-        private void BtnSteam24_Click(object sender, EventArgs e)
-        {
-            InstallTypeSelected(sender, new HostVersion { Host = InstallHost.Steam, Version = InstallVersion.FS2024 });
+            SetButtonHighlight(sender);
         }
     }
 }

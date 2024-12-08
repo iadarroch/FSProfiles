@@ -5,48 +5,18 @@ using FSProfiles.Common.Models.Source;
 
 namespace FSProfiles.Common.Classes
 {
-    public enum InstallHost { Unknown, Native, Steam }
-
-    public enum InstallVersion { Unknown, FS2020, FS2024 }
-
     public enum ContentMode {All, Assigned, New}
+    public enum HostVersionType { Native2020, Native2024, Steam2020, Steam2024 }
 
-    public class MainLogic(ProgramArguments programArguments)
+    public class MainLogic
     {
         private readonly ColorSequencer _colorSequencer = new();
         #pragma warning disable CA1859
         private readonly IOutputFormatter _htmlFormatter = new XsltFormatter();
+        private readonly ProgramArguments _programArguments;
         #pragma warning restore CA1859
-        
-        private IFolderProcessor? _folderProcessor;
 
-        private HostVersion _hostVersion = new HostVersion{Host = InstallHost.Unknown, Version = InstallVersion.Unknown};
-        public HostVersion HostVersion
-        {
-            get => _hostVersion;
-            set
-            {
-                _hostVersion = value;
-                if (_hostVersion.Host == InstallHost.Native)
-                {
-                    _folderProcessor = _hostVersion.Version switch
-                    {
-                        InstallVersion.FS2020 => new FolderProcessorNative2020(),
-                        InstallVersion.FS2024 => new FolderProcessorNative2024(),
-                        _ => null
-                    };
-                }
-                else
-                {
-                    _folderProcessor = _hostVersion.Version switch
-                    {
-                        InstallVersion.FS2020 => new FolderProcessorSteam2020(),
-                        InstallVersion.FS2024 => new FolderProcessorSteam2024(),
-                        _ => null
-                    };
-                }
-            }
-        }
+        private readonly Dictionary<HostVersionType, FolderProcessorInstance> _hostVersions;
 
         public EventHandler<ProgressEvent>? OnStart;
         public EventHandler<ProgressEvent>? OnProgress;
@@ -54,31 +24,36 @@ namespace FSProfiles.Common.Classes
 
         public bool IncludeUnrecognised;
 
-        public bool GetBasePath(out string basePath, out string? errorMessage)
+        public MainLogic(ProgramArguments programArguments)
         {
-            return _folderProcessor!.GetBasePath(out basePath, out errorMessage);
+            _programArguments = programArguments;
+
+            var ary = new FolderProcessorInstance[]
+            {
+                new(new FolderProcessorNative2020()),
+                new(new FolderProcessorNative2024()),
+                new(new FolderProcessorSteam2020()),
+                new(new FolderProcessorSteam2024())
+            };
+            _hostVersions = ary.ToDictionary(k => k.HostVersion, v => v);
         }
 
-        public bool GetProfilePath(string basePath, out string profilePath, out string? errorMessage)
-        {
-            var result = _folderProcessor!.GetProfilePath(basePath, out profilePath, out errorMessage);
-            return result;
-        }
-
-        #pragma warning disable CA1822
         public string GetDefaultOutputFile()
-        #pragma warning restore CA1822
         {
             var tempPath = Path.GetTempPath();
             return $"{tempPath}controllers.html";
         }
 
-        public List<DetectedProfile> ProcessFolders(string basePath)
+        public List<DetectedProfile> ProcessHostVersions()
         {
-            var detectedProfiles = _folderProcessor!.ProcessPath(basePath);
-            var profileList = detectedProfiles.OrderBy(dc => dc.Name).ToList();
+            var allProfiles = new List<DetectedProfile>();
+            foreach (var hostVersion in _hostVersions)
+            {
+                var processor = hostVersion.Value;
+                allProfiles.AddRange(processor.FolderProcessor.ProcessPath(processor.Path));
+            }
 
-            return profileList;
+            return allProfiles.OrderBy(dc => dc.Name).ToList();
         }
 
         public void GenerateBindingReport(string outputFile, List<DetectedProfile> profileList, ContentMode contentMode, bool includeUnrecognised)
@@ -91,7 +66,7 @@ namespace FSProfiles.Common.Classes
                 bindingReport.ContentMode = contentMode;
                 if (contentMode != ContentMode.All) FilterBindingList(bindingReport, contentMode);
                 //Populate test data with selected bindings
-                if (programArguments.Debug)
+                if (_programArguments.Debug)
                 {
                     var defaultPath = "C:\\Development\\FSProfiles\\FSProfiles.Tests\\Data\\Bindings.xml";
                     if (!File.Exists(defaultPath))

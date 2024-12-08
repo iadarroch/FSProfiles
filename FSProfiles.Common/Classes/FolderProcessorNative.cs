@@ -3,15 +3,12 @@ using FSProfiles.Common.Models;
 
 namespace FSProfiles.Common.Classes
 {
-    public abstract class FolderProcessorNativeBase : FolderProcessorBase, IFolderProcessor
+    public abstract class FolderProcessorNativeBase : FolderProcessorBase
     {
         private const string FlightSimPathNotFound = "Unable to automatically identify the main Flight Simulator folder. Please use the \"Select Profiles Path\" button to manually locate.";
         private const string ProfilesPathNotFound = "Unable to automatically identify parent folder of controller profiles. Please use the \"Select Profiles Path\" button to manually locate.";
 
         protected abstract string NativeAppPath { get; }
-
-        public InstallHost InstallHost => InstallHost.Native;
-        public abstract InstallVersion InstallVersion { get; }
 
         /// <summary>
         /// Attempts to determine the path to the Base install folder
@@ -21,7 +18,7 @@ namespace FSProfiles.Common.Classes
         /// <param name="path"></param>
         /// <param name="errorMessage"></param>
         /// <returns></returns>
-        public bool GetBasePath(out string path, out string? errorMessage)
+        public override bool GetBasePath(out string path, out string? errorMessage)
         {
             var basePath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
             Debug.WriteLine($"Local Application Data: {basePath}");
@@ -51,7 +48,7 @@ namespace FSProfiles.Common.Classes
         /// <param name="path"></param>
         /// <param name="errorMessage"></param>
         /// <returns></returns>
-        public bool GetProfilePath(string basePath, out string path, out string? errorMessage)
+        public override bool GetProfilePath(string basePath, out string path, out string? errorMessage)
         {
             //Add on the next path levels
             path = $"{basePath}\\SystemAppData\\wgs";
@@ -75,7 +72,7 @@ namespace FSProfiles.Common.Classes
             return true;
         }
 
-        public List<DetectedProfile> ProcessPath(string folderPath)
+        public override List<DetectedProfile> ProcessPath(string folderPath)
         {
             var result = new List<DetectedProfile>();
 
@@ -122,12 +119,14 @@ namespace FSProfiles.Common.Classes
     public class FolderProcessorNative2020 : FolderProcessorNativeBase
     {
         protected override string NativeAppPath => "Microsoft.FlightSimulator_8wekyb3d8bbwe";
-        public override InstallVersion InstallVersion => InstallVersion.FS2020;
+        public override HostVersionType HostVersion => HostVersionType.Native2020;
+        public override string HostVersionName => "Native 2020";
     }
 
     public class FolderProcessorNative2024 : FolderProcessorNativeBase
     {
         protected override string NativeAppPath => "Microsoft.Limitless_8wekyb3d8bbwe";
-        public override InstallVersion InstallVersion => InstallVersion.FS2024;
+        public override HostVersionType HostVersion => HostVersionType.Native2024;
+        public override string HostVersionName => "Native 2024";
     }
 }

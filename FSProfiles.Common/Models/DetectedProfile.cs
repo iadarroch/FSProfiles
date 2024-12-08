@@ -8,11 +8,11 @@ namespace FSProfiles.Common.Models
         public string Path { get; }
         public ControllerDefinition ControllerDefinition { get; }
 
-        public DetectedProfile(string path, ControllerDefinition controllerDefinition)
+        public DetectedProfile(string hostVersionName, string path, ControllerDefinition controllerDefinition)
         {
             Path = path;
             ControllerDefinition = controllerDefinition;
-            Name = $"{ControllerDefinition.Device.DeviceName} / {ControllerDefinition.FriendlyName.Text}";
+            Name = $"{hostVersionName} / {ControllerDefinition.Device.DeviceName} / {ControllerDefinition.FriendlyName.Text}";
         }
 
         public override string ToString()

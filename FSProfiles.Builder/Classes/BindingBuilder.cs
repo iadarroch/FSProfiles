@@ -31,18 +31,18 @@ namespace FSProfiles.Builder.Classes
                 return true;
             }
 
-            _mainLogic.InstallHost = InstallHost.Native;
-            var defaultFound = _mainLogic.GetBasePath(out var basePath, out var errorMessage);
             var profileFound = false;
-            if (defaultFound)
-            {
-                profileFound = _mainLogic.GetProfilePath(basePath, out var profilePath, out errorMessage);
-            }
+            //_mainLogic.InstallHost = InstallHost.Native;
+            //var defaultFound = _mainLogic.GetBasePath(out var basePath, out var errorMessage);
+            //if (defaultFound)
+            //{
+            //    profileFound = _mainLogic.GetProfilePath(basePath, out var profilePath, out errorMessage);
+            //}
             
-            if (!profileFound)
-            {
-                Console.WriteLine($"Unable to determine Profiles path: {errorMessage}");
-            }
+            //if (!profileFound)
+            //{
+            //    Console.WriteLine($"Unable to determine Profiles path: {errorMessage}");
+            //}
 
             return profileFound;
         }

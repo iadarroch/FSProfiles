@@ -31,9 +31,6 @@
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             fbdBasePath = new FolderBrowserDialog();
-            lblBasePath = new Label();
-            txtBasePath = new TextBox();
-            btnBasePath = new Button();
             btnProcessFolders = new Button();
             lblMappings = new Label();
             clbMappings = new CheckedListBox();
@@ -49,43 +46,11 @@
             toolTip1 = new ToolTip(components);
             LblInstallType = new Label();
             LinkHelp = new LinkLabel();
-            BtnNative20 = new Button();
-            BtnSteam20 = new Button();
-            LblOr1 = new Label();
-            LblOr2 = new Label();
-            BtnSteam24 = new Button();
-            BtnNative24 = new Button();
+            btnDefaultLocations = new Button();
+            label1 = new Label();
+            btnCustomLocations = new Button();
             statusStrip1.SuspendLayout();
             SuspendLayout();
-            // 
-            // lblBasePath
-            // 
-            lblBasePath.AutoSize = true;
-            lblBasePath.Location = new Point(11, 98);
-            lblBasePath.Margin = new Padding(2, 0, 2, 0);
-            lblBasePath.Name = "lblBasePath";
-            lblBasePath.Size = new Size(58, 15);
-            lblBasePath.TabIndex = 4;
-            lblBasePath.Text = "Base Path";
-            // 
-            // txtBasePath
-            // 
-            txtBasePath.Location = new Point(81, 95);
-            txtBasePath.Margin = new Padding(2);
-            txtBasePath.Name = "txtBasePath";
-            txtBasePath.Size = new Size(900, 23);
-            txtBasePath.TabIndex = 5;
-            // 
-            // btnBasePath
-            // 
-            btnBasePath.Location = new Point(992, 92);
-            btnBasePath.Margin = new Padding(2);
-            btnBasePath.Name = "btnBasePath";
-            btnBasePath.Size = new Size(130, 27);
-            btnBasePath.TabIndex = 6;
-            btnBasePath.Text = "Select &Profiles Path";
-            btnBasePath.UseVisualStyleBackColor = true;
-            btnBasePath.Click += BtnBasePath_Click;
             // 
             // btnProcessFolders
             // 
@@ -209,9 +174,9 @@
             LblInstallType.AutoSize = true;
             LblInstallType.Location = new Point(11, 29);
             LblInstallType.Name = "LblInstallType";
-            LblInstallType.Size = new Size(99, 15);
+            LblInstallType.Size = new Size(101, 15);
             LblInstallType.TabIndex = 0;
-            LblInstallType.Text = "Select Install Type";
+            LblInstallType.Text = "Search Directories";
             // 
             // LinkHelp
             // 
@@ -225,83 +190,43 @@
             LinkHelp.Text = "Web Help Page";
             LinkHelp.LinkClicked += LinkHelp_LinkClicked;
             // 
-            // BtnNative20
+            // btnDefaultLocations
             // 
-            BtnNative20.BackColor = SystemColors.Control;
-            BtnNative20.Location = new Point(147, 23);
-            BtnNative20.Margin = new Padding(2);
-            BtnNative20.Name = "BtnNative20";
-            BtnNative20.Size = new Size(169, 27);
-            BtnNative20.TabIndex = 1;
-            BtnNative20.Text = "Native Windows FS2020";
-            BtnNative20.UseVisualStyleBackColor = false;
-            BtnNative20.Click += BtnNative20_Click;
+            btnDefaultLocations.Location = new Point(147, 25);
+            btnDefaultLocations.Name = "btnDefaultLocations";
+            btnDefaultLocations.Size = new Size(163, 23);
+            btnDefaultLocations.TabIndex = 18;
+            btnDefaultLocations.Text = "Default Install Locations";
+            btnDefaultLocations.UseVisualStyleBackColor = true;
+            btnDefaultLocations.Click += BtnDefaultLocations_Click;
             // 
-            // BtnSteam20
+            // label1
             // 
-            BtnSteam20.BackColor = SystemColors.Control;
-            BtnSteam20.Location = new Point(342, 23);
-            BtnSteam20.Margin = new Padding(2);
-            BtnSteam20.Name = "BtnSteam20";
-            BtnSteam20.Size = new Size(169, 27);
-            BtnSteam20.TabIndex = 3;
-            BtnSteam20.Text = "Steam FS2020";
-            BtnSteam20.UseVisualStyleBackColor = false;
-            BtnSteam20.Click += BtnSteam20_Click;
+            label1.AutoSize = true;
+            label1.Location = new Point(317, 29);
+            label1.Name = "label1";
+            label1.Size = new Size(18, 15);
+            label1.TabIndex = 19;
+            label1.Text = "or";
             // 
-            // LblOr1
+            // btnCustomLocations
             // 
-            LblOr1.AutoSize = true;
-            LblOr1.Location = new Point(321, 29);
-            LblOr1.Name = "LblOr1";
-            LblOr1.Size = new Size(18, 15);
-            LblOr1.TabIndex = 2;
-            LblOr1.Text = "or";
-            // 
-            // LblOr2
-            // 
-            LblOr2.AutoSize = true;
-            LblOr2.Location = new Point(321, 60);
-            LblOr2.Name = "LblOr2";
-            LblOr2.Size = new Size(18, 15);
-            LblOr2.TabIndex = 19;
-            LblOr2.Text = "or";
-            // 
-            // BtnSteam24
-            // 
-            BtnSteam24.BackColor = SystemColors.Control;
-            BtnSteam24.Location = new Point(342, 54);
-            BtnSteam24.Margin = new Padding(2);
-            BtnSteam24.Name = "BtnSteam24";
-            BtnSteam24.Size = new Size(169, 27);
-            BtnSteam24.TabIndex = 20;
-            BtnSteam24.Text = "Steam FS2024";
-            BtnSteam24.UseVisualStyleBackColor = false;
-            BtnSteam24.Click += BtnSteam24_Click;
-            // 
-            // BtnNative24
-            // 
-            BtnNative24.BackColor = SystemColors.Control;
-            BtnNative24.Location = new Point(147, 54);
-            BtnNative24.Margin = new Padding(2);
-            BtnNative24.Name = "BtnNative24";
-            BtnNative24.Size = new Size(169, 27);
-            BtnNative24.TabIndex = 18;
-            BtnNative24.Text = "Native Windows FS2024";
-            BtnNative24.UseVisualStyleBackColor = false;
-            BtnNative24.Click += BtnNative24_Click;
+            btnCustomLocations.Location = new Point(342, 25);
+            btnCustomLocations.Name = "btnCustomLocations";
+            btnCustomLocations.Size = new Size(163, 23);
+            btnCustomLocations.TabIndex = 20;
+            btnCustomLocations.Text = "Custom Install Locations";
+            btnCustomLocations.UseVisualStyleBackColor = true;
+            btnCustomLocations.Click += BtnCustomLocations_Click;
             // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1137, 661);
-            Controls.Add(LblOr2);
-            Controls.Add(BtnSteam24);
-            Controls.Add(BtnNative24);
-            Controls.Add(LblOr1);
-            Controls.Add(BtnSteam20);
-            Controls.Add(BtnNative20);
+            Controls.Add(btnCustomLocations);
+            Controls.Add(label1);
+            Controls.Add(btnDefaultLocations);
             Controls.Add(LinkHelp);
             Controls.Add(LblInstallType);
             Controls.Add(chkIncludeUncategorised);
@@ -314,9 +239,6 @@
             Controls.Add(clbMappings);
             Controls.Add(lblMappings);
             Controls.Add(btnProcessFolders);
-            Controls.Add(btnBasePath);
-            Controls.Add(txtBasePath);
-            Controls.Add(lblBasePath);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(2);
             Name = "MainForm";
@@ -329,10 +251,7 @@
         }
 
         #endregion
-        private Label lblBasePath;
-        private Button btnBasePath;
         private Label lblMappings;
-        public TextBox txtBasePath;
         public CheckedListBox clbMappings;
         public FolderBrowserDialog fbdBasePath;
         private Button btnGenerate;
@@ -348,11 +267,8 @@
         private ToolTip toolTip1;
         private Label LblInstallType;
         public LinkLabel LinkHelp;
-        public Button BtnNative20;
-        public Button BtnSteam20;
-        private Label LblOr1;
-        private Label LblOr2;
-        public Button BtnSteam24;
-        public Button BtnNative24;
+        private Button btnDefaultLocations;
+        private Label label1;
+        private Button btnCustomLocations;
     }
 }
