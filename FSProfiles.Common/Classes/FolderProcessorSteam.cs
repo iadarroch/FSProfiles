@@ -85,19 +85,28 @@ public abstract class FolderProcessorSteamBase : FolderProcessorBase
     {
 
         var detectedProfiles = new List<DetectedProfile>();
-        var files = Directory.GetFiles(folderPath);
-        foreach (var file in files)
+        try
         {
-            if (!Path.GetFileName(file).StartsWith(InputPrefix)) continue;
-
-            var detectedProfile = ProcessFile(file);
-            if (detectedProfile != null)
+            var files = Directory.GetFiles(folderPath);
+            foreach (var file in files)
             {
-                detectedProfiles.Add(detectedProfile);
+                if (!Path.GetFileName(file).StartsWith(InputPrefix)) continue;
+
+                var detectedProfile = ProcessFile(file);
+                if (detectedProfile != null)
+                {
+                    detectedProfiles.Add(detectedProfile);
+                }
             }
         }
+        catch (DirectoryNotFoundException)
+        {
+            //swallow exception and return no found profiles
+        }
+
         return detectedProfiles;
     }
+
     public override string ProfilePath(string filePath)
     {
         var profilePath = Path.GetFileName(filePath);

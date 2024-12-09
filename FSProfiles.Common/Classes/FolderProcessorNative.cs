@@ -76,17 +76,26 @@ namespace FSProfiles.Common.Classes
         {
             var result = new List<DetectedProfile>();
 
-            var directories = Directory.GetDirectories(folderPath);
-            foreach (var directory in directories)
+            try
             {
-                if (directory.Length < 3) continue;
-
-                var foundProfiles = FindProfilesInFolder(directory);
-                if (foundProfiles.Count > 0)
+                var directories = Directory.GetDirectories(folderPath);
+                foreach (var directory in directories)
                 {
-                    result.AddRange(foundProfiles);
+                    if (directory.Length < 3) continue;
+
+                    var foundProfiles = FindProfilesInFolder(directory);
+                    if (foundProfiles.Count > 0)
+                    {
+                        result.AddRange(foundProfiles);
+                    }
                 }
+
             }
+            catch (DirectoryNotFoundException)
+            {
+                //swallow exception and return no found profiles
+            }
+
             return result;
         }
 

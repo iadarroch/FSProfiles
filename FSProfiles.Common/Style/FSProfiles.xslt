@@ -29,7 +29,7 @@
         </style>
       </head>
       <body>
-        <h1>Microsoft Flight Simulator 2020 Bindings Report - <xsl:value-of select="BindingReport/ContentMode" /></h1>
+        <h1>Microsoft Flight Simulator 2020 &amp; 2024 Bindings Report - <xsl:value-of select="BindingReport/ContentMode" /></h1>
         <xsl:variable name="controllers" select="BindingReport/SelectedControllers" />
         <xsl:copy>
           <xsl:call-template name="selected">

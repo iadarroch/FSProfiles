@@ -57,9 +57,9 @@
             lblMappings.Location = new Point(10, 80);
             lblMappings.Margin = new Padding(2, 0, 2, 0);
             lblMappings.Name = "lblMappings";
-            lblMappings.Size = new Size(110, 15);
+            lblMappings.Size = new Size(96, 15);
             lblMappings.TabIndex = 8;
-            lblMappings.Text = "Detected Mappings";
+            lblMappings.Text = "Detected Profiles";
             // 
             // clbMappings
             // 

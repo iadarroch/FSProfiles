@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InstallDirs));
             grpNative = new GroupBox();
             btnNative2024 = new Button();
             txtNative2024 = new TextBox();
@@ -242,6 +243,7 @@
             Controls.Add(btnSave);
             Controls.Add(grpSteam);
             Controls.Add(grpNative);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "InstallDirs";
             StartPosition = FormStartPosition.CenterParent;
             Text = "Set Custom Installation Directories";

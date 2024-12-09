@@ -75,7 +75,11 @@ namespace FSProfiles.Common.Classes
             {
                 var bindingReport = BuildBindingReport(profileList);
                 bindingReport.ContentMode = contentMode;
-                if (contentMode != ContentMode.All) FilterBindingList(bindingReport, contentMode);
+                if (contentMode != ContentMode.All)
+                {
+                    FilterBindingList(bindingReport, contentMode);
+                    FilterUnrecognisedList(bindingReport, contentMode);
+                }
                 //Populate test data with selected bindings
                 if (_programArguments.Debug)
                 {
@@ -100,6 +104,57 @@ namespace FSProfiles.Common.Classes
             }
         }
 
+        public static void FilterUnrecognisedList(BindingReport bindingReport, ContentMode contentMode)
+        {
+            var contextIndex = 0;
+            while (contextIndex < bindingReport.UnrecognisedContexts.Count)
+            {
+                var context = bindingReport.UnrecognisedContexts[contextIndex];
+
+                var actionIndex = 0;
+                while (actionIndex < context.Actions.Count)
+                {
+                    if (ShouldRemoveUnrecognisedAction(context.Actions[actionIndex], contentMode))
+                    {
+                        context.Actions.RemoveAt(actionIndex);
+                        continue;
+                    }
+
+                    actionIndex++;
+                }
+                if ((contentMode == ContentMode.Assigned && context.Actions.Count == 0) ||
+                    (contentMode == ContentMode.New && context.Actions.Count == 0))
+                {
+                    bindingReport.UnrecognisedContexts.RemoveAt(contextIndex);
+                    continue;
+                }
+
+                contextIndex++;  //if we have not removed a section, move to the next one
+            }
+        }
+
+        public static bool ShouldRemoveUnrecognisedAction(UnrecognisedAction action, ContentMode contentMode)
+        {
+            var inputIndex = 0;
+            while (inputIndex < action.Bindings.Count)
+            {
+                var bindings = action.Bindings[inputIndex].Keys;
+                if ((contentMode == ContentMode.Assigned && bindings.Count == 0) ||
+                    (contentMode == ContentMode.New && bindings.Count != 0))
+                {
+                    action.Bindings.RemoveAt(inputIndex);
+                    continue;
+                }
+
+                inputIndex++;
+            }
+
+            var bindingCount = action.Bindings.Count();
+
+            return ((contentMode == ContentMode.Assigned && bindingCount == 0) ||
+                    (contentMode == ContentMode.New && bindingCount != 0));
+        }
+
         public static void FilterBindingList(BindingReport bindingReport, ContentMode contentMode)
         {
             var sectionIndex = 0;
@@ -114,37 +169,37 @@ namespace FSProfiles.Common.Classes
                     switch (item)
                     {
                         case SubSection subSection:
-                        {
-                            var actionIndex = 0;
-                            while (actionIndex < subSection.Actions.Count)
                             {
-                                if (ShouldRemoveAction(subSection.Actions[actionIndex], contentMode))
+                                var actionIndex = 0;
+                                while (actionIndex < subSection.Actions.Count)
                                 {
-                                    subSection.Actions.RemoveAt(actionIndex);
+                                    if (ShouldRemoveAction(subSection.Actions[actionIndex], contentMode))
+                                    {
+                                        subSection.Actions.RemoveAt(actionIndex);
+                                        continue;
+                                    }
+
+                                    actionIndex++;
+                                }
+                                if ((contentMode == ContentMode.Assigned && subSection.Actions.Count == 0) ||
+                                    (contentMode == ContentMode.New && subSection.Actions.Count == 0))
+                                {
+                                    section.Items.RemoveAt(itemIndex);
                                     continue;
                                 }
 
-                                actionIndex++;
+                                break;
                             }
-                            if ((contentMode == ContentMode.Assigned && subSection.Actions.Count == 0) ||
-                                (contentMode == ContentMode.New && subSection.Actions.Count == 0))
-                            {
-                                section.Items.RemoveAt(itemIndex);
-                                continue;
-                            }
-
-                            break;
-                        }
 
                         case SectionAction sectionAction:
-                        {
-                            if (ShouldRemoveAction(sectionAction, contentMode))
                             {
-                                section.Items.RemoveAt(itemIndex);
-                                continue;
+                                if (ShouldRemoveAction(sectionAction, contentMode))
+                                {
+                                    section.Items.RemoveAt(itemIndex);
+                                    continue;
+                                }
+                                break;
                             }
-                            break;
-                        }
                     }
 
                     itemIndex++;
