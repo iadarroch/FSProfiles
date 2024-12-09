@@ -29,7 +29,7 @@
         </style>
       </head>
       <body>
-        <h1>Microsoft Flight Simulator 2020 Bindings Report - <xsl:value-of select="BindingReport/ContentMode" /></h1>
+        <h1>Microsoft Flight Simulator 2020 &amp; 2024 Bindings Report - <xsl:value-of select="BindingReport/ContentMode" /></h1>
         <xsl:variable name="controllers" select="BindingReport/SelectedControllers" />
         <xsl:copy>
           <xsl:call-template name="selected">
@@ -289,15 +289,19 @@
     <xsl:param name="controllers" />
     <table>
       <tr bgcolor="antiquewhite">
-        <th class="tableTitle" colspan="3">Selected Controller Profiles</th>
+        <th class="tableTitle" colspan="4">Selected Controller Profiles</th>
       </tr>
       <tr bgcolor="antiquewhite">
+        <th>Host Version</th>
         <th>Controller</th>
         <th>Profile</th>
         <th>Folder/File</th>
       </tr>
       <xsl:for-each select="$controllers/SelectedController">
         <tr bgcolor="floralwhite">
+          <td>
+            <xsl:value-of select="HostVersionName"/>
+          </td>
           <td>
             <xsl:value-of select="DeviceName"/>
           </td>
@@ -316,6 +320,8 @@
     <xsl:param name="controllers" />
     <xsl:for-each select="$controllers/SelectedController">
       <td>
+        <xsl:value-of select="HostVersionName"/>
+        <br />
         <xsl:value-of select="DeviceName"/>
         <br />
         <xsl:value-of select="ProfileName"/>

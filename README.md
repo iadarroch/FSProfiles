@@ -1,4 +1,4 @@
-# Microsoft Flight Simulator 2020 Controller Profiles Utility
+# Microsoft Flight Simulator 2020 & 2024 Controller Profiles Utility
 
 This utility was born out of frustration that Asobo have given users no easy way to
 export and compare what bindings have been set up in different controller profiles.
@@ -8,12 +8,13 @@ Flight Throttle and Rudder Pedals), and display an HTML formatted document showi
 each available control binding, and the controller & input bound to it.
 
 So far, the utility has only been tested with a native Windows desktop install of
-FS2020. Some work has also been done to support Steam-based installs, but it is
-untested by actual Steam users.
+FS2020 and FS2024. Some work has also been done to support Steam-based installs, 
+but the FS2024 version is untested by actual Steam users.
 
 **Example ways to use:**
+* Select profiles from FS2020 and FS2024 to compare/identify what needs setting up in FS2024.
 * Select a single profile to see all its bindings.
-* Select two different profiles for a controller to compare bindings.
+* Select two different profiles for the same controller to compare bindings.
 * Select a set of controller profiles to get a list of all current bindings.
 
 ## To Install
@@ -31,17 +32,20 @@ To run the program:
 * Launch the program using either the menu item or desktop shurtcut.
 * On first use, you may get a message to install the .NET 8 runtime. If you get the
   warning, you must install the runtime for the utility to work.
-* Click either the `Native Windows` or `Steam` buttons at the top to choose which
-type of install you have.
-*  If you did a standard install, the program should detect the correct path to the
-profile files. If it does so, it will automatically process the available profiles and
-display them in the list.
-* If the profiles are not automatically displayed, you will need to:
-  * Either enter or paste the actual path, or use the `Select Profile Path` button
-    to browse to it. This is different for `Native Windows` and `Steam` installs.
-  * Once the path has been chosen, click the `Process Folders` button to detect any
-    profiles. This will populate the list of detected profiles.
+* Once the main form has shown, it will automatically check all of the default
+directories for Native Windows and Steam installs, for both FS2020 and FS2024. The detected
+controller profiles will be displayed in the Detected Profiles list.
+*  If you did a custom install, click the `Custom Install Locations` button to enter the
+actual install path. The popup form will automatically show the standard install locations.
+When you have finished, Click the `Save & Exit` button. The program will then search the
+specified loations and display the results in the Detected Profiles list.
 * Now tick the profiles you wish to include in the report.
+* Choose which bindings to include:
+  * All - all known bindings
+  * Assigned - only those currently mapped to an input
+  * New - only those not currently mapped to an input.
+* Tick the `Include Uncategorised` if you want to include new bindings which have not been
+put into a structure yet (currently this is all of the new FS2024 bindings).
 * Click the `Generate Binding Report` button to generate the report.
 
 ### Program UI
@@ -55,7 +59,12 @@ If the `Include Uncategorised` checkbox is ticked, then an additional section wi
 included on the report showing controller bindings which could not be matched to an 
 entry in the control options list.
 
-![Sample report](images/main-form.png)
+#### Main Form
+![Main Form](images/main-form.png)
+
+#### Custom Locations Form
+![Custom Locations Form](images/custom-form.png)
+
 
 ### Command Line Arguments
 The program does support two command line options, both of which are aimed at development use and not needed for normal operation.

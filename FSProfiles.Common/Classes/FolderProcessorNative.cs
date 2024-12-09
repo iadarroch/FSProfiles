@@ -3,10 +3,12 @@ using FSProfiles.Common.Models;
 
 namespace FSProfiles.Common.Classes
 {
-    public class FolderProcessorNative : FolderProcessorBase, IFolderProcessor
+    public abstract class FolderProcessorNativeBase : FolderProcessorBase
     {
         private const string FlightSimPathNotFound = "Unable to automatically identify the main Flight Simulator folder. Please use the \"Select Profiles Path\" button to manually locate.";
         private const string ProfilesPathNotFound = "Unable to automatically identify parent folder of controller profiles. Please use the \"Select Profiles Path\" button to manually locate.";
+
+        protected abstract string NativeAppPath { get; }
 
         /// <summary>
         /// Attempts to determine the path to the Base install folder
@@ -16,7 +18,7 @@ namespace FSProfiles.Common.Classes
         /// <param name="path"></param>
         /// <param name="errorMessage"></param>
         /// <returns></returns>
-        public bool GetBasePath(out string path, out string? errorMessage)
+        public override bool GetBasePath(out string path, out string? errorMessage)
         {
             var basePath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
             Debug.WriteLine($"Local Application Data: {basePath}");
@@ -25,7 +27,7 @@ namespace FSProfiles.Common.Classes
             path = $"{basePath}\\Packages";
 
             //Now find Flight Sim in packages
-            var flightSimFolder = Directory.GetDirectories(path, "Microsoft.FlightSimulator_*")
+            var flightSimFolder = Directory.GetDirectories(path, NativeAppPath)
                 .FirstOrDefault();
             if (string.IsNullOrEmpty(flightSimFolder))
             {
@@ -46,7 +48,7 @@ namespace FSProfiles.Common.Classes
         /// <param name="path"></param>
         /// <param name="errorMessage"></param>
         /// <returns></returns>
-        public bool GetProfilePath(string basePath, out string path, out string? errorMessage)
+        public override bool GetProfilePath(string basePath, out string path, out string? errorMessage)
         {
             //Add on the next path levels
             path = $"{basePath}\\SystemAppData\\wgs";
@@ -70,21 +72,30 @@ namespace FSProfiles.Common.Classes
             return true;
         }
 
-        public List<DetectedProfile> ProcessPath(string folderPath)
+        public override List<DetectedProfile> ProcessPath(string folderPath)
         {
             var result = new List<DetectedProfile>();
 
-            var directories = Directory.GetDirectories(folderPath);
-            foreach (var directory in directories)
+            try
             {
-                if (directory.Length < 3) continue;
-
-                var foundProfiles = FindProfilesInFolder(directory);
-                if (foundProfiles.Count > 0)
+                var directories = Directory.GetDirectories(folderPath);
+                foreach (var directory in directories)
                 {
-                    result.AddRange(foundProfiles);
+                    if (directory.Length < 3) continue;
+
+                    var foundProfiles = FindProfilesInFolder(directory);
+                    if (foundProfiles.Count > 0)
+                    {
+                        result.AddRange(foundProfiles);
+                    }
                 }
+
             }
+            catch (DirectoryNotFoundException)
+            {
+                //swallow exception and return no found profiles
+            }
+
             return result;
         }
 
@@ -112,5 +123,19 @@ namespace FSProfiles.Common.Classes
             var profilePath = splitPath[parts - 1];
             return profilePath;
         }
+    }
+
+    public class FolderProcessorNative2020 : FolderProcessorNativeBase
+    {
+        protected override string NativeAppPath => "Microsoft.FlightSimulator_8wekyb3d8bbwe";
+        public override HostVersionType HostVersion => HostVersionType.Native2020;
+        public override string HostVersionName => "Native 2020";
+    }
+
+    public class FolderProcessorNative2024 : FolderProcessorNativeBase
+    {
+        protected override string NativeAppPath => "Microsoft.Limitless_8wekyb3d8bbwe";
+        public override HostVersionType HostVersion => HostVersionType.Native2024;
+        public override string HostVersionName => "Native 2024";
     }
 }

@@ -1,9 +1,6 @@
-using System.ComponentModel;
 using System.Diagnostics;
-using System.Drawing.Text;
 using FSProfiles.Common.Classes;
 using FSProfiles.Common.Models;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace FSProfiles
 {
@@ -55,21 +52,8 @@ namespace FSProfiles
 
         private void MainForm_Shown(object sender, EventArgs e)
         {
-        }
-
-        private void BtnBasePath_Click(object sender, EventArgs e)
-        {
-            SelectBasePath();
-        }
-
-        private void BtnProcessFolders_Click(object sender, EventArgs e)
-        {
-            _profileList = Logic.ProcessFolders(txtBasePath.Text);
-            clbMappings.Items.Clear();
-            foreach (var profile in _profileList)
-            {
-                clbMappings.Items.Add(profile);
-            }
+            btnDefaultLocations.PerformClick();  //automatically try to process default folder locations
+            txtOutputFile.Text = Logic.GetDefaultOutputFile();
         }
 
         private void BtnGenerate_Click(object sender, EventArgs e)
@@ -87,57 +71,6 @@ namespace FSProfiles
             Logic.GenerateBindingReport(txtOutputFile.Text, generateList, contentMode, chkIncludeUncategorised.Checked);
         }
 
-        public void SelectBasePath()
-        {
-            fbdBasePath.Description = "Choose path to base of MSFS 2020 files";
-            fbdBasePath.RootFolder = Environment.SpecialFolder.MyComputer;
-            fbdBasePath.InitialDirectory = txtBasePath.Text;
-            var dialogResult = fbdBasePath.ShowDialog();
-            if (dialogResult == DialogResult.OK)
-            {
-                txtBasePath.Text = fbdBasePath.SelectedPath;
-            }
-        }
-
-        private void SetButtonHighlight(InstallType installType)
-        {
-            var activeColor = Color.LimeGreen;
-            BtnNative.BackColor = installType == InstallType.Native ? activeColor : SystemColors.Control;
-            BtnSteam.BackColor = installType == InstallType.Steam ? activeColor : SystemColors.Control;
-        }
-
-        public void InstallTypeSelected(InstallType installType)
-        {
-            Logic.InstallType = installType;
-            SetButtonHighlight(installType);
-            var defaultFound = Logic.GetBasePath(out var basePath, out var errorMessage);
-            txtBasePath.Text = basePath;
-            var profileFound = false;
-            if (defaultFound)
-            {
-                profileFound = Logic.GetProfilePath(basePath, out var profilePath, out errorMessage);
-                txtBasePath.Text = profilePath;
-            }
-            if (profileFound)
-            {
-                //if able to determine the path, automatically process it and set focus to list
-                btnProcessFolders.PerformClick();
-                foreach (var profileNumber in _programArguments.ProfileSelection)
-                {
-                    clbMappings.SetItemChecked(profileNumber, true);
-                }
-                clbMappings.Focus();
-            }
-            else
-            {
-                MessageBox.Show(errorMessage, "Data Path Detection Failure", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                btnBasePath.Focus();
-            }
-
-            txtOutputFile.Text = Logic.GetDefaultOutputFile();
-
-        }
-
         private void LinkHelp_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             const string Link = "https://github.com/iadarroch/FSProfiles/wiki";
@@ -149,14 +82,40 @@ namespace FSProfiles
             });
         }
 
-        private void BtnNative_Click(object sender, EventArgs e)
+        private void BtnDefaultLocations_Click(object sender, EventArgs e)
         {
-            InstallTypeSelected(InstallType.Native);
+            SetButtonHighlight(sender);
+            Logic.SetDefaultLocations();
+            ScanFolders();
         }
 
-        private void BtnSteam_Click(object sender, EventArgs e)
+        private void BtnCustomLocations_Click(object sender, EventArgs e)
         {
-            InstallTypeSelected(InstallType.Steam);
+            SetButtonHighlight(sender);
+            var customSelect = new InstallDirs(Logic.HostVersions);
+            if (customSelect.ShowDialog(this) == DialogResult.OK)
+            {
+                ScanFolders();
+            }
+        }
+
+        private void SetButtonHighlight(object sender)
+        {
+            var activeColor = Color.LimeGreen;
+            var inactiveColor = Color.LightSkyBlue;
+            btnDefaultLocations.BackColor = sender == btnDefaultLocations ? activeColor : inactiveColor;
+            btnCustomLocations.BackColor = sender == btnCustomLocations ? activeColor : inactiveColor;
+        }
+
+        private void ScanFolders()
+        {
+            //Now scan folders
+            _profileList = Logic.ProcessHostVersions();
+            clbMappings.Items.Clear();
+            foreach (var profile in _profileList)
+            {
+                clbMappings.Items.Add(profile);
+            }
         }
     }
 }

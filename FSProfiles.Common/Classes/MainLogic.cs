@@ -5,34 +5,18 @@ using FSProfiles.Common.Models.Source;
 
 namespace FSProfiles.Common.Classes
 {
-    public enum InstallType { Unknown, Native, Steam }
-
     public enum ContentMode {All, Assigned, New}
+    public enum HostVersionType { Native2020, Native2024, Steam2020, Steam2024 }
 
-    public class MainLogic(ProgramArguments programArguments)
+    public class MainLogic
     {
         private readonly ColorSequencer _colorSequencer = new();
         #pragma warning disable CA1859
         private readonly IOutputFormatter _htmlFormatter = new XsltFormatter();
+        private readonly ProgramArguments _programArguments;
         #pragma warning restore CA1859
-        
-        private IFolderProcessor? _folderProcessor;
 
-        private InstallType _installType;
-        public InstallType InstallType
-        {
-            get => _installType;
-            set
-            {
-                _installType = value;
-                _folderProcessor = _installType switch
-                {
-                    InstallType.Native => new FolderProcessorNative(),
-                    InstallType.Steam => new FolderProcessorSteam(),
-                    _ => null
-                };
-            }
-        }
+        public readonly Dictionary<HostVersionType, FolderProcessorInstance> HostVersions;
 
         public EventHandler<ProgressEvent>? OnStart;
         public EventHandler<ProgressEvent>? OnProgress;
@@ -40,31 +24,47 @@ namespace FSProfiles.Common.Classes
 
         public bool IncludeUnrecognised;
 
-        public bool GetBasePath(out string basePath, out string? errorMessage)
+        public MainLogic(ProgramArguments programArguments)
         {
-            return _folderProcessor!.GetBasePath(out basePath, out errorMessage);
+            _programArguments = programArguments;
+
+            var ary = new FolderProcessorInstance[]
+            {
+                new(new FolderProcessorNative2020()),
+                new(new FolderProcessorNative2024()),
+                new(new FolderProcessorSteam2020()),
+                new(new FolderProcessorSteam2024())
+            };
+            HostVersions = ary.ToDictionary(k => k.HostVersion, v => v);
         }
 
-        public bool GetProfilePath(string basePath, out string profilePath, out string? errorMessage)
-        {
-            var result = _folderProcessor!.GetProfilePath(basePath, out profilePath, out errorMessage);
-            return result;
-        }
-
-        #pragma warning disable CA1822
         public string GetDefaultOutputFile()
-        #pragma warning restore CA1822
         {
             var tempPath = Path.GetTempPath();
             return $"{tempPath}controllers.html";
         }
 
-        public List<DetectedProfile> ProcessFolders(string basePath)
+        public void SetDefaultLocations()
         {
-            var detectedProfiles = _folderProcessor!.ProcessPath(basePath);
-            var profileList = detectedProfiles.OrderBy(dc => dc.Name).ToList();
+            foreach (var hostVersion in HostVersions)
+            {
+                hostVersion.Value.SetDefaultPath();
+            }
+        }
 
-            return profileList;
+        public List<DetectedProfile> ProcessHostVersions()
+        {
+            var allProfiles = new List<DetectedProfile>();
+            foreach (var hostVersion in HostVersions)
+            {
+                var processor = hostVersion.Value;
+                if (!string.IsNullOrEmpty(processor.Path))
+                {
+                    allProfiles.AddRange(processor.FolderProcessor.ProcessPath(processor.Path));
+                }
+            }
+
+            return allProfiles.OrderBy(dc => dc.Name).ToList();
         }
 
         public void GenerateBindingReport(string outputFile, List<DetectedProfile> profileList, ContentMode contentMode, bool includeUnrecognised)
@@ -75,9 +75,13 @@ namespace FSProfiles.Common.Classes
             {
                 var bindingReport = BuildBindingReport(profileList);
                 bindingReport.ContentMode = contentMode;
-                if (contentMode != ContentMode.All) FilterBindingList(bindingReport, contentMode);
+                if (contentMode != ContentMode.All)
+                {
+                    FilterBindingList(bindingReport, contentMode);
+                    FilterUnrecognisedList(bindingReport, contentMode);
+                }
                 //Populate test data with selected bindings
-                if (programArguments.Debug)
+                if (_programArguments.Debug)
                 {
                     var defaultPath = "C:\\Development\\FSProfiles\\FSProfiles.Tests\\Data\\Bindings.xml";
                     if (!File.Exists(defaultPath))
@@ -100,6 +104,57 @@ namespace FSProfiles.Common.Classes
             }
         }
 
+        public static void FilterUnrecognisedList(BindingReport bindingReport, ContentMode contentMode)
+        {
+            var contextIndex = 0;
+            while (contextIndex < bindingReport.UnrecognisedContexts.Count)
+            {
+                var context = bindingReport.UnrecognisedContexts[contextIndex];
+
+                var actionIndex = 0;
+                while (actionIndex < context.Actions.Count)
+                {
+                    if (ShouldRemoveUnrecognisedAction(context.Actions[actionIndex], contentMode))
+                    {
+                        context.Actions.RemoveAt(actionIndex);
+                        continue;
+                    }
+
+                    actionIndex++;
+                }
+                if ((contentMode == ContentMode.Assigned && context.Actions.Count == 0) ||
+                    (contentMode == ContentMode.New && context.Actions.Count == 0))
+                {
+                    bindingReport.UnrecognisedContexts.RemoveAt(contextIndex);
+                    continue;
+                }
+
+                contextIndex++;  //if we have not removed a section, move to the next one
+            }
+        }
+
+        public static bool ShouldRemoveUnrecognisedAction(UnrecognisedAction action, ContentMode contentMode)
+        {
+            var inputIndex = 0;
+            while (inputIndex < action.Bindings.Count)
+            {
+                var bindings = action.Bindings[inputIndex].Keys;
+                if ((contentMode == ContentMode.Assigned && bindings.Count == 0) ||
+                    (contentMode == ContentMode.New && bindings.Count != 0))
+                {
+                    action.Bindings.RemoveAt(inputIndex);
+                    continue;
+                }
+
+                inputIndex++;
+            }
+
+            var bindingCount = action.Bindings.Count();
+
+            return ((contentMode == ContentMode.Assigned && bindingCount == 0) ||
+                    (contentMode == ContentMode.New && bindingCount != 0));
+        }
+
         public static void FilterBindingList(BindingReport bindingReport, ContentMode contentMode)
         {
             var sectionIndex = 0;
@@ -114,37 +169,37 @@ namespace FSProfiles.Common.Classes
                     switch (item)
                     {
                         case SubSection subSection:
-                        {
-                            var actionIndex = 0;
-                            while (actionIndex < subSection.Actions.Count)
                             {
-                                if (ShouldRemoveAction(subSection.Actions[actionIndex], contentMode))
+                                var actionIndex = 0;
+                                while (actionIndex < subSection.Actions.Count)
                                 {
-                                    subSection.Actions.RemoveAt(actionIndex);
+                                    if (ShouldRemoveAction(subSection.Actions[actionIndex], contentMode))
+                                    {
+                                        subSection.Actions.RemoveAt(actionIndex);
+                                        continue;
+                                    }
+
+                                    actionIndex++;
+                                }
+                                if ((contentMode == ContentMode.Assigned && subSection.Actions.Count == 0) ||
+                                    (contentMode == ContentMode.New && subSection.Actions.Count == 0))
+                                {
+                                    section.Items.RemoveAt(itemIndex);
                                     continue;
                                 }
 
-                                actionIndex++;
+                                break;
                             }
-                            if ((contentMode == ContentMode.Assigned && subSection.Actions.Count == 0) ||
-                                (contentMode == ContentMode.New && subSection.Actions.Count == 0))
-                            {
-                                section.Items.RemoveAt(itemIndex);
-                                continue;
-                            }
-
-                            break;
-                        }
 
                         case SectionAction sectionAction:
-                        {
-                            if (ShouldRemoveAction(sectionAction, contentMode))
                             {
-                                section.Items.RemoveAt(itemIndex);
-                                continue;
+                                if (ShouldRemoveAction(sectionAction, contentMode))
+                                {
+                                    section.Items.RemoveAt(itemIndex);
+                                    continue;
+                                }
+                                break;
                             }
-                            break;
-                        }
                     }
 
                     itemIndex++;
@@ -254,6 +309,7 @@ namespace FSProfiles.Common.Classes
         {
             bindingReport.SelectedControllers.Add(new SelectedController
                 {
+                    HostVersionName = profile.HostVersionName,
                     DeviceName = profile.ControllerDefinition.Device.DeviceName,
                     ProfileName = profile.ControllerDefinition.FriendlyName.Text,
                     ProfilePath = profile.Path
