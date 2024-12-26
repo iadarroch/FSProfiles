@@ -11,6 +11,17 @@ So far, the utility has only been tested with a native Windows desktop install o
 FS2020 and FS2024. Some work has also been done to support Steam-based installs, 
 but the FS2024 version is untested by actual Steam users.
 
+**Special FS2024 Notes:**
+* The FS2024 version massively increased the number of control binding options
+  (from approx 1200 to somewhere in excess of 2400).
+* As a result, I have not yet managed to map all general and type-related (e.g.
+  fixed wing, helicopter) bindings to their in-game order in the controls binding
+  screen.
+* All unmapped binding options (including ***all*** aircraft-specific bindings) will be
+  included in the "uncategorised" section at the end of the report.
+* When the selected profiles includes a mix of both FS2020 and FS2024 profiles, the
+  FS2024 control binding UI order will be used.
+
 **Example ways to use:**
 * Select profiles from FS2020 and FS2024 to compare/identify what needs setting up in FS2024.
 * Select a single profile to see all its bindings.

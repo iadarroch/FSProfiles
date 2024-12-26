@@ -14,13 +14,54 @@ namespace FSProfiles.Builder.Classes
     {
         private readonly BuilderArguments _buildArgs;
         private readonly MainLogic _mainLogic;
+        private string _localePath;
+        private string _menuPath;
+        private string _outputPath;
+        private string _intermediateName;
 
         private string? _basePath;
 
         public BindingBuilder(BuilderArguments buildArgs)
         {
             _buildArgs = buildArgs;
-            _mainLogic = new MainLogic(_buildArgs);
+            IFolderProcessor processor;
+            switch (_buildArgs.HostVersionType)
+            {
+                case HostVersionType.Native2020:
+                    processor = new FolderProcessorNative2020();
+                    break;
+                case HostVersionType.Native2024:
+                    processor = new FolderProcessorNative2024();
+                    break;
+                case HostVersionType.Steam2020:
+                    processor = new FolderProcessorSteam2020();
+                    break;
+                case HostVersionType.Steam2024:
+                    processor = new FolderProcessorSteam2024();
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
+            switch (_buildArgs.HostVersionType)
+            {
+                case HostVersionType.Native2020:
+                case HostVersionType.Steam2020:
+                    _localePath = @"..\..\..\LocalCache\Packages\Official\OneStore\fs-base\en-US.locPak";
+                    _menuPath = @"..\..\..\..\FS2020 Options.csv";
+                    _outputPath = @"..\..\..\..\FSProfiles\KnownBindings2020.xml";
+                    _intermediateName = "MenuBindings2020.csv";
+                    break;
+                case HostVersionType.Native2024:
+                case HostVersionType.Steam2024:
+                    _localePath = @"C:\XboxGames\Microsoft Flight Simulator 2024\Content\Packages\fs-base\en-US.locPak";
+                    _menuPath = @"..\..\..\..\FS2024 Options.csv";
+                    _outputPath = @"..\..\..\..\FSProfiles\KnownBindings2024.xml";
+                    _intermediateName = "MenuBindings2024.csv";
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
+            _mainLogic = new MainLogic(_buildArgs, processor);
         }
 
         public bool PathFound()
@@ -31,36 +72,28 @@ namespace FSProfiles.Builder.Classes
                 return true;
             }
 
-            var profileFound = false;
-            //_mainLogic.InstallHost = InstallHost.Native;
-            //var defaultFound = _mainLogic.GetBasePath(out var basePath, out var errorMessage);
-            //if (defaultFound)
-            //{
-            //    profileFound = _mainLogic.GetProfilePath(basePath, out var profilePath, out errorMessage);
-            //}
-            
-            //if (!profileFound)
-            //{
-            //    Console.WriteLine($"Unable to determine Profiles path: {errorMessage}");
-            //}
-
-            return profileFound;
+            _mainLogic.SetDefaultLocations();
+            _basePath = _mainLogic.HostVersions.First().Value.BasePath;
+            return true;
         }
 
         public void Build()
         {
+            Console.WriteLine("Starting");
             var names = LoadDefinitions(_basePath!);
-            var menuItems = LoadMenuFile("..\\..\\..\\..\\FS2020 Options.csv");
+
+            var menuItems = LoadMenuFile(_menuPath);
 
             var menuCorrelations = ProcessMenuLines(names, menuItems);
 
             if (_buildArgs.Intermediate)
             {
-                WriteToCsv(Path.Join(_buildArgs.OutputPath, "MenuBindings.csv"), menuCorrelations);
+                WriteToCsv(Path.Join(_buildArgs.OutputPath, _intermediateName), menuCorrelations);
             }
 
             var menuBindings = CorrelationsToBindingList(menuCorrelations);
-            menuBindings.SerializeToFile("..\\..\\..\\..\\FSProfiles\\KnownBindings.xml");
+            menuBindings.SerializeToFile(_outputPath);
+            Console.WriteLine("Finished");
         }
 
         public static BindingList CorrelationsToBindingList(IEnumerable<Correlation> correlations)
@@ -130,7 +163,7 @@ namespace FSProfiles.Builder.Classes
             }
         }
 
-        public static List<Correlation> ProcessMenuLines(Dictionary<string, string> names, List<Correlation> menuItems)
+        public static List<Correlation> ProcessMenuLines(Dictionary<string, string>? names, List<Correlation> menuItems)
         {
             foreach (var item in menuItems)
             {
@@ -140,6 +173,7 @@ namespace FSProfiles.Builder.Classes
                     continue;
                 }
 
+                if (names == null) continue;
                 var inputs = names.Where(kvp => kvp.Value == item.Action).ToList();
 
                 if (inputs.Count == 0)
@@ -169,19 +203,17 @@ namespace FSProfiles.Builder.Classes
             return records.ToList();
         }
 
-        public static Dictionary<string, string> LoadDefinitions(string basePath)
+        public Dictionary<string, string> LoadDefinitions(string basePath)
         {
             var result = new Dictionary<string, string>();
             const string inputPrefix = "INPUT.";
             var inputPrefixLength = inputPrefix.Length;
 
-            var filePath = Path.Combine(basePath, "..\\..\\..\\LocalCache\\Packages\\Official\\OneStore\\fs-base\\en-US.locPak");
+            var filePath = Path.IsPathRooted(_localePath) ? _localePath : Path.Combine(basePath, _localePath);
             var jsonData = File.ReadAllText(filePath);
             var definitions = JsonSerializer.Deserialize<JsonObject>(jsonData)!;
-            Console.WriteLine($"{definitions["LocalisationPackage"]}");
             var package = definitions["LocalisationPackage"];
             var strings = package!["Strings"]!.AsObject();
-            //Console.WriteLine($"{strings[0]}");
 
             foreach (var kvp in strings.AsEnumerable()
                          .Where(kvp => kvp.Key.StartsWith(inputPrefix) 
@@ -196,6 +228,7 @@ namespace FSProfiles.Builder.Classes
                 Debug.WriteLine($"{inputId}\t{value}");
             }
             //var count = strings[0];
+            Console.WriteLine($"Input names loaded: {result.Count}");
             return result;
         }
     }

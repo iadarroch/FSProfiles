@@ -15,10 +15,10 @@ namespace FSProfiles
 
         public void InitialiseLocations()
         {
-            txtNative2020.Text = _hostVersions[HostVersionType.Native2020].Path;
-            txtNative2024.Text = _hostVersions[HostVersionType.Native2024].Path;
-            txtSteam2020.Text = _hostVersions[HostVersionType.Steam2020].Path;
-            txtSteam2024.Text = _hostVersions[HostVersionType.Steam2024].Path;
+            txtNative2020.Text = _hostVersions[HostVersionType.Native2020].ProfilePath;
+            txtNative2024.Text = _hostVersions[HostVersionType.Native2024].ProfilePath;
+            txtSteam2020.Text = _hostVersions[HostVersionType.Steam2020].ProfilePath;
+            txtSteam2024.Text = _hostVersions[HostVersionType.Steam2024].ProfilePath;
         }
 
         public void SelectBasePath(FolderProcessorInstance processorInstance, TextBox txtPath)
@@ -55,10 +55,10 @@ namespace FSProfiles
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            _hostVersions[HostVersionType.Native2020].Path = txtNative2020.Text;
-            _hostVersions[HostVersionType.Native2024].Path = txtNative2024.Text;
-            _hostVersions[HostVersionType.Steam2020].Path = txtSteam2020.Text;
-            _hostVersions[HostVersionType.Steam2024].Path = txtSteam2024.Text;
+            _hostVersions[HostVersionType.Native2020].ProfilePath = txtNative2020.Text;
+            _hostVersions[HostVersionType.Native2024].ProfilePath = txtNative2024.Text;
+            _hostVersions[HostVersionType.Steam2020].ProfilePath = txtSteam2020.Text;
+            _hostVersions[HostVersionType.Steam2024].ProfilePath = txtSteam2024.Text;
             DialogResult = DialogResult.OK;
         }
 

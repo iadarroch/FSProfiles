@@ -5,7 +5,7 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <Version>1.2.0</Version>
+    <Version>1.3.0</Version>
     <Copyright>Copyright $([System.DateTime]::Now.Year) Ian Darroch</Copyright>
   </PropertyGroup>
 
