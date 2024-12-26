@@ -24,17 +24,29 @@ namespace FSProfiles.Common.Classes
 
         public bool IncludeUnrecognised;
 
-        public MainLogic(ProgramArguments programArguments)
+        public MainLogic(ProgramArguments programArguments, IFolderProcessor? specifiedInstance = null)
         {
             _programArguments = programArguments;
 
-            var ary = new FolderProcessorInstance[]
+            FolderProcessorInstance[] ary;
+            if (specifiedInstance != null)
             {
-                new(new FolderProcessorNative2020()),
-                new(new FolderProcessorNative2024()),
-                new(new FolderProcessorSteam2020()),
-                new(new FolderProcessorSteam2024())
-            };
+                ary = new FolderProcessorInstance[]
+                {
+                    new(specifiedInstance)
+                };
+            }
+            else
+            {
+                ary = new FolderProcessorInstance[]
+                {
+                    new(new FolderProcessorNative2020()),
+                    new(new FolderProcessorNative2024()),
+                    new(new FolderProcessorSteam2020()),
+                    new(new FolderProcessorSteam2024())
+                };
+            }
+
             HostVersions = ary.ToDictionary(k => k.HostVersion, v => v);
         }
 
@@ -58,9 +70,9 @@ namespace FSProfiles.Common.Classes
             foreach (var hostVersion in HostVersions)
             {
                 var processor = hostVersion.Value;
-                if (!string.IsNullOrEmpty(processor.Path))
+                if (!string.IsNullOrEmpty(processor.ProfilePath))
                 {
-                    allProfiles.AddRange(processor.FolderProcessor.ProcessPath(processor.Path));
+                    allProfiles.AddRange(processor.FolderProcessor.ProcessPath(processor.ProfilePath));
                 }
             }
 
@@ -239,11 +251,12 @@ namespace FSProfiles.Common.Classes
 
         public BindingReport BuildBindingReport(List<DetectedProfile> profileList)
         {
+            var any2024Profiles = profileList.Any(p => p.Is2024Version);
             var bindingReport = new BindingReport
             {
-                BindingList = Serializer.DeserializeFromFile<BindingList>("KnownBindings.xml")
+                BindingList = Serializer.DeserializeFromFile<BindingList>(any2024Profiles ? "KnownBindings2024.xml" : "KnownBindings2020.xml")
             };
-            
+
             var inputDictionary = bindingReport.BindingList.ToInputDictionary();
             var progress = 0;
             foreach (var profile in profileList)

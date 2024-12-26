@@ -46,7 +46,7 @@ public abstract class FolderProcessorBase : IFolderProcessor
             var profile = Serializer.DeserializeObject<ControllerDefinition>(reader);
             if (profile == null) return null;
 
-            var detectedProfile = new DetectedProfile(HostVersionName, ProfilePath(fileName), profile);
+            var detectedProfile = new DetectedProfile(HostVersion, HostVersionName, ProfilePath(fileName), profile);
             return detectedProfile;
         }
     }

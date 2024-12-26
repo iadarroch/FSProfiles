@@ -4,13 +4,15 @@ public class FolderProcessorInstance
 {
     public IFolderProcessor FolderProcessor { get; }
     public string? ErrorMessage { get; private set; }
-    public string Path { get; set; }
+    public string BasePath { get; private set; }
+    public string ProfilePath { get; set; }
     public HostVersionType HostVersion => FolderProcessor.HostVersion;
 
     public FolderProcessorInstance(IFolderProcessor folderProcessor)
     {
         FolderProcessor = folderProcessor;
-        Path = "";
+        BasePath = "";
+        ProfilePath = "";
         SetDefaultPath();
     }
 
@@ -18,9 +20,10 @@ public class FolderProcessorInstance
     {
         if (FolderProcessor.GetBasePath(out var basePath, out var error))
         {
+            BasePath = basePath;
             if (FolderProcessor.GetProfilePath(basePath, out var profilePath, out error))
             {
-                Path = profilePath;
+                ProfilePath = profilePath;
                 return;
             }
         }

@@ -48,6 +48,7 @@
             btnDefaultLocations = new Button();
             label1 = new Label();
             btnCustomLocations = new Button();
+            lblIncludeAircraftSpecific = new Label();
             statusStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -152,6 +153,8 @@
             // chkIncludeUncategorised
             // 
             chkIncludeUncategorised.CheckAlign = ContentAlignment.MiddleRight;
+            chkIncludeUncategorised.Checked = true;
+            chkIncludeUncategorised.CheckState = CheckState.Checked;
             chkIncludeUncategorised.Location = new Point(10, 580);
             chkIncludeUncategorised.Name = "chkIncludeUncategorised";
             chkIncludeUncategorised.Size = new Size(151, 19);
@@ -214,12 +217,22 @@
             btnCustomLocations.UseVisualStyleBackColor = false;
             btnCustomLocations.Click += BtnCustomLocations_Click;
             // 
+            // lblIncludeAircraftSpecific
+            // 
+            lblIncludeAircraftSpecific.AutoSize = true;
+            lblIncludeAircraftSpecific.Location = new Point(185, 581);
+            lblIncludeAircraftSpecific.Name = "lblIncludeAircraftSpecific";
+            lblIncludeAircraftSpecific.Size = new Size(215, 15);
+            lblIncludeAircraftSpecific.TabIndex = 21;
+            lblIncludeAircraftSpecific.Text = "(this includes aircraft-specific bindings)";
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Gainsboro;
             ClientSize = new Size(1296, 691);
+            Controls.Add(lblIncludeAircraftSpecific);
             Controls.Add(btnCustomLocations);
             Controls.Add(label1);
             Controls.Add(btnDefaultLocations);
@@ -264,5 +277,6 @@
         private Button btnDefaultLocations;
         private Label label1;
         private Button btnCustomLocations;
+        private Label lblIncludeAircraftSpecific;
     }
 }
