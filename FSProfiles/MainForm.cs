@@ -110,12 +110,20 @@ namespace FSProfiles
         private void ScanFolders()
         {
             //Now scan folders
-            _profileList = Logic.ProcessHostVersions();
+            var scanResult = Logic.ProcessHostVersions();
+
+            _profileList = scanResult.Values;
             clbMappings.Items.Clear();
             foreach (var profile in _profileList)
             {
                 clbMappings.Items.Add(profile);
             }
+
+            if (!scanResult.HasErrors) return;
+
+            var errorMsg = scanResult.Errors.Aggregate("The following profiles had errors during scanning, so were skipped.\r\n", (current, error) => current + $"Profile File: {error.ProfileFile}\r\n\t{error.Error}");
+            MessageBox.Show(errorMsg, "Errors detected during Profile Scanning", MessageBoxButtons.OK,
+                MessageBoxIcon.Exclamation);
         }
     }
 }

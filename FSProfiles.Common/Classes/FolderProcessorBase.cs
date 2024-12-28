@@ -9,7 +9,7 @@ public interface IFolderProcessor
     string HostVersionName { get; }
     bool GetBasePath(out string path, out string? errorMessage);
     bool GetProfilePath(string basePath, out string path, out string? errorMessage);
-    List<DetectedProfile> ProcessPath(string folderPath);
+    AggregatedResult<DetectedProfile, ProfileError> ProcessPath(string folderPath);
 }
 
 public abstract class FolderProcessorBase : IFolderProcessor
@@ -31,23 +31,32 @@ public abstract class FolderProcessorBase : IFolderProcessor
       }
     }
 
-    public DetectedProfile? ProcessFile(string fileName)
+    public Result<DetectedProfile?, ProfileError> ProcessFile(string fileName)
     {
         if (!IsXmlFile(fileName))
-            return null; //not a processable file
+            return (DetectedProfile?)null; //not a processable file
 
         var fileContent = File.ReadAllLines(fileName).ToList();
         //Add new root object so contents are processable as a normal XML
         fileContent.Insert(1, @"<ControllerDefinition>");
         fileContent.Add(@"</ControllerDefinition>");
 
-        using (StringReader reader = new(string.Join("", fileContent)))
+        using StringReader reader = new(string.Join("", fileContent));
+        try
         {
             var profile = Serializer.DeserializeObject<ControllerDefinition>(reader);
-            if (profile == null) return null;
-
             var detectedProfile = new DetectedProfile(HostVersion, HostVersionName, ProfilePath(fileName), profile);
             return detectedProfile;
+        }
+        catch (Exception e)
+        {
+            var msg = e.Message;
+            if (e.InnerException != null)
+            {
+                msg += $"\r\n\t{e.InnerException.Message}";
+            }
+
+            return new ProfileError(fileName, msg);
         }
     }
 
@@ -61,5 +70,5 @@ public abstract class FolderProcessorBase : IFolderProcessor
 
     public abstract bool GetProfilePath(string basePath, out string path, out string? errorMessage);
 
-    public abstract List<DetectedProfile> ProcessPath(string folderPath);
+    public abstract AggregatedResult<DetectedProfile, ProfileError> ProcessPath(string folderPath);
 }

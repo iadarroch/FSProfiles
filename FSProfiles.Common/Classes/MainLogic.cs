@@ -31,20 +31,20 @@ namespace FSProfiles.Common.Classes
             FolderProcessorInstance[] ary;
             if (specifiedInstance != null)
             {
-                ary = new FolderProcessorInstance[]
-                {
-                    new(specifiedInstance)
-                };
+                ary =
+                [
+                    new (specifiedInstance)
+                ];
             }
             else
             {
-                ary = new FolderProcessorInstance[]
-                {
+                ary =
+                [
                     new(new FolderProcessorNative2020()),
                     new(new FolderProcessorNative2024()),
                     new(new FolderProcessorSteam2020()),
                     new(new FolderProcessorSteam2024())
-                };
+                ];
             }
 
             HostVersions = ary.ToDictionary(k => k.HostVersion, v => v);
@@ -64,19 +64,27 @@ namespace FSProfiles.Common.Classes
             }
         }
 
-        public List<DetectedProfile> ProcessHostVersions()
+        public AggregatedResult<DetectedProfile, ProfileError> ProcessHostVersions()
         {
             var allProfiles = new List<DetectedProfile>();
+            var allErrors = new List<ProfileError>();
+
             foreach (var hostVersion in HostVersions)
             {
                 var processor = hostVersion.Value;
                 if (!string.IsNullOrEmpty(processor.ProfilePath))
                 {
-                    allProfiles.AddRange(processor.FolderProcessor.ProcessPath(processor.ProfilePath));
+                    var pathResult = processor.FolderProcessor.ProcessPath(processor.ProfilePath);
+                    allProfiles.AddRange(pathResult.Values);
+                    allErrors.AddRange(pathResult.Errors);
                 }
             }
 
-            return allProfiles.OrderBy(dc => dc.Name).ToList();
+            var list = allProfiles.OrderBy(dc => dc.Name).ToList();
+
+            return new AggregatedResult<DetectedProfile, ProfileError>(
+                list,
+                allErrors);
         }
 
         public void GenerateBindingReport(string outputFile, List<DetectedProfile> profileList, ContentMode contentMode, bool includeUnrecognised)
@@ -161,7 +169,7 @@ namespace FSProfiles.Common.Classes
                 inputIndex++;
             }
 
-            var bindingCount = action.Bindings.Count();
+            var bindingCount = action.Bindings.Count;
 
             return ((contentMode == ContentMode.Assigned && bindingCount == 0) ||
                     (contentMode == ContentMode.New && bindingCount != 0));
