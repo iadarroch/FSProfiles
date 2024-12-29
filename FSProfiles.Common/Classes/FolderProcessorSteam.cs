@@ -76,15 +76,15 @@ public abstract class FolderProcessorSteamBase : FolderProcessorBase
         return IdentifyUserIdFolder(basePath, out path, out errorMessage);
     }
 
-    public override List<DetectedProfile> ProcessPath(string folderPath)
+    public override AggregatedResult<DetectedProfile, ProfileError> ProcessPath(string folderPath)
     {
         return FindProfilesInFolder(folderPath);
     }
 
-    public List<DetectedProfile> FindProfilesInFolder(string folderPath)
+    public AggregatedResult<DetectedProfile, ProfileError> FindProfilesInFolder(string folderPath)
     {
-
         var detectedProfiles = new List<DetectedProfile>();
+        var profileErrors = new List<ProfileError>();
         try
         {
             var files = Directory.GetFiles(folderPath);
@@ -93,9 +93,14 @@ public abstract class FolderProcessorSteamBase : FolderProcessorBase
                 if (!Path.GetFileName(file).StartsWith(InputPrefix)) continue;
 
                 var detectedProfile = ProcessFile(file);
-                if (detectedProfile != null)
+                switch (detectedProfile.Success)
                 {
-                    detectedProfiles.Add(detectedProfile);
+                    case false:
+                        profileErrors.Add(detectedProfile.Error);
+                        break;
+                    case true when detectedProfile.Value != null:
+                        detectedProfiles.Add(detectedProfile.Value);
+                        break;
                 }
             }
         }
@@ -104,7 +109,7 @@ public abstract class FolderProcessorSteamBase : FolderProcessorBase
             //swallow exception and return no found profiles
         }
 
-        return detectedProfiles;
+        return new AggregatedResult<DetectedProfile, ProfileError>(detectedProfiles, profileErrors);
     }
 
     public override string ProfilePath(string filePath)

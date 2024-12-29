@@ -35,6 +35,9 @@ namespace FSProfiles.Common.Models.Source
 
         [XmlAttribute(AttributeName = "CategoryName")]
         public string CategoryName { get; set; } = string.Empty;
+
+        [XmlAttribute(AttributeName = "AircraftPackageName")]
+        public string AircraftPackageName { get; set; } = string.Empty;
     }
 
     [XmlRoot(ElementName = "Axis")]

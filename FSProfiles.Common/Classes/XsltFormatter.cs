@@ -6,13 +6,13 @@ namespace FSProfiles.Common.Classes
     public class XsltFormatter : IOutputFormatter
     {
         private const string TransformFile = "./Style/FSProfiles.xslt";
-        private Lazy<XslCompiledTransform> _transform;
+        private readonly Lazy<XslCompiledTransform> _transform;
 
         public XsltFormatter()
         {
             _transform = new Lazy<XslCompiledTransform>(() =>
             {
-                XslCompiledTransform transform = new XslCompiledTransform();
+                XslCompiledTransform transform = new();
 
                 //load the Xsl 
                 transform.Load(TransformFile);
@@ -24,10 +24,8 @@ namespace FSProfiles.Common.Classes
         {
             var document = bindingReport.SerializeToXmlDoc();
 
-            using (var writer = new StreamWriter(fileName))
-            {
-                _transform.Value.Transform(document, null, writer);
-            }
+            using var writer = new StreamWriter(fileName);
+            _transform.Value.Transform(document, null, writer);
         }
     }
 }

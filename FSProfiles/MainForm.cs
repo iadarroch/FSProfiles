@@ -110,12 +110,20 @@ namespace FSProfiles
         private void ScanFolders()
         {
             //Now scan folders
-            _profileList = Logic.ProcessHostVersions();
+            var scanResult = Logic.ProcessHostVersions();
+
+            _profileList = scanResult.Values;
             clbMappings.Items.Clear();
             foreach (var profile in _profileList)
             {
                 clbMappings.Items.Add(profile);
             }
+
+            if (!scanResult.HasErrors) return;
+
+            var errorForm = new ErrorsForm();
+            errorForm.SetErrors(scanResult.Errors);
+            errorForm.ShowDialog(this);
         }
     }
 }

@@ -72,10 +72,10 @@ namespace FSProfiles.Common.Classes
             return true;
         }
 
-        public override List<DetectedProfile> ProcessPath(string folderPath)
+        public override AggregatedResult<DetectedProfile, ProfileError> ProcessPath(string folderPath)
         {
             var result = new List<DetectedProfile>();
-
+            var errors = new List<ProfileError>();
             try
             {
                 var directories = Directory.GetDirectories(folderPath);
@@ -83,11 +83,9 @@ namespace FSProfiles.Common.Classes
                 {
                     if (directory.Length < 3) continue;
 
-                    var foundProfiles = FindProfilesInFolder(directory);
-                    if (foundProfiles.Count > 0)
-                    {
-                        result.AddRange(foundProfiles);
-                    }
+                    var profileResult = FindProfilesInFolder(directory);
+                    result.AddRange(profileResult.Values);
+                    errors.AddRange(profileResult.Errors);
                 }
 
             }
@@ -96,24 +94,30 @@ namespace FSProfiles.Common.Classes
                 //swallow exception and return no found profiles
             }
 
-            return result;
+            return new AggregatedResult<DetectedProfile, ProfileError>(result, errors);
         }
 
-        public List<DetectedProfile> FindProfilesInFolder(string folderPath)
+        public AggregatedResult<DetectedProfile, ProfileError> FindProfilesInFolder(string folderPath)
         {
             var detectedProfiles = new List<DetectedProfile>();
+            var profileErrors = new List<ProfileError>();
             var files = Directory.GetFiles(folderPath);
             foreach (var file in files)
             {
                 if (Path.GetFileName(file).StartsWith("container")) continue;
 
                 var detectedProfile = ProcessFile(file);
-                if (detectedProfile != null)
+                switch (detectedProfile.Success)
                 {
-                    detectedProfiles.Add(detectedProfile);
+                    case false:
+                        profileErrors.Add(detectedProfile.Error);
+                        break;
+                    case true when detectedProfile.Value != null:
+                        detectedProfiles.Add(detectedProfile.Value);
+                        break;
                 }
             }
-            return detectedProfiles;
+            return new AggregatedResult<DetectedProfile, ProfileError>(detectedProfiles, profileErrors);
         }
 
         public override string ProfilePath(string filePath)
