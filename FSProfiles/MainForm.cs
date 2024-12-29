@@ -121,9 +121,9 @@ namespace FSProfiles
 
             if (!scanResult.HasErrors) return;
 
-            var errorMsg = scanResult.Errors.Aggregate("The following profiles had errors during scanning, so were skipped.\r\n", (current, error) => current + $"Profile File: {error.ProfileFile}\r\n\t{error.Error}");
-            MessageBox.Show(errorMsg, "Errors detected during Profile Scanning", MessageBoxButtons.OK,
-                MessageBoxIcon.Exclamation);
+            var errorForm = new ErrorsForm();
+            errorForm.SetErrors(scanResult.Errors);
+            errorForm.ShowDialog(this);
         }
     }
 }

@@ -204,7 +204,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:FSProfiles"
         "ProductCode" = "8:{F0525FDB-A059-4A77-9DFE-E9ADB61FC021}"
-        "PackageCode" = "8:{6578B6EA-39A0-4725-83C2-1197F9E53CC6}"
+        "PackageCode" = "8:{0C5B13BB-73F3-47A9-AA6D-DCEDC298BB95}"
         "UpgradeCode" = "8:{7724ACF5-5B28-4BFA-A8FF-EE5A37F48847}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
