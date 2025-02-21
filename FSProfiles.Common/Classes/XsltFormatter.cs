@@ -20,7 +20,11 @@ namespace FSProfiles.Common.Classes
             });
         }
 
-        public void ConvertToHtml(BindingReport bindingReport, string fileName)
+        public string OutputDescription => "HTML file";
+
+        public string OutputExtension => "html";
+
+        public void OutputToFile(BindingReport bindingReport, string fileName)
         {
             var document = bindingReport.SerializeToXmlDoc();
 
