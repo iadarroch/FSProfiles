@@ -145,7 +145,7 @@
             // cmbContent
             // 
             cmbContent.FormattingEnabled = true;
-            cmbContent.Items.AddRange(new object[] { "All", "Assigned", "New" });
+            cmbContent.Items.AddRange(new object[] { "All", "Assigned", "New", "Difference" });
             cmbContent.Location = new Point(147, 479);
             cmbContent.Name = "cmbContent";
             cmbContent.Size = new Size(121, 23);

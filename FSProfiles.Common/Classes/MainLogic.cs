@@ -5,7 +5,7 @@ using FSProfiles.Common.Models.Source;
 
 namespace FSProfiles.Common.Classes
 {
-    public enum ContentMode {All, Assigned, New}
+    public enum ContentMode {All, Assigned, New, Difference}
     public enum HostVersionType { Native2020, Native2024, Steam2020, Steam2024 }
 
     public class MainLogic
@@ -155,7 +155,7 @@ namespace FSProfiles.Common.Classes
 
                     actionIndex++;
                 }
-                if ((contentMode == ContentMode.Assigned && context.Actions.Count == 0) ||
+                if ((contentMode is ContentMode.Assigned or ContentMode.Difference && context.Actions.Count == 0) ||
                     (contentMode == ContentMode.New && context.Actions.Count == 0))
                 {
                     bindingReport.UnrecognisedContexts.RemoveAt(contextIndex);
@@ -173,7 +173,8 @@ namespace FSProfiles.Common.Classes
             {
                 var bindings = action.Bindings[inputIndex].Keys;
                 if ((contentMode == ContentMode.Assigned && bindings.Count == 0) ||
-                    (contentMode == ContentMode.New && bindings.Count != 0))
+                    (contentMode == ContentMode.New && bindings.Count != 0) ||
+                    (contentMode == ContentMode.Difference && UnrecognisedBindingsSame(action)))
                 {
                     action.Bindings.RemoveAt(inputIndex);
                     continue;
@@ -184,8 +185,16 @@ namespace FSProfiles.Common.Classes
 
             var bindingCount = action.Bindings.Count;
 
-            return ((contentMode == ContentMode.Assigned && bindingCount == 0) ||
-                    (contentMode == ContentMode.New && bindingCount != 0));
+            return (contentMode is ContentMode.Assigned or ContentMode.Difference && bindingCount == 0) ||
+                    (contentMode == ContentMode.New && bindingCount != 0);
+        }
+
+        public static bool UnrecognisedBindingsSame(UnrecognisedAction action)
+        {
+            var difference = action.Bindings
+                .Any(o => o.KeyCombo != action.Bindings[0].KeyCombo
+                          || o.Priority != action.Bindings[0].Priority);
+            return !difference;
         }
 
         public static void FilterBindingList(BindingReport bindingReport, ContentMode contentMode)
@@ -214,7 +223,7 @@ namespace FSProfiles.Common.Classes
 
                                     actionIndex++;
                                 }
-                                if ((contentMode == ContentMode.Assigned && subSection.Actions.Count == 0) ||
+                                if ((contentMode is ContentMode.Assigned or ContentMode.Difference && subSection.Actions.Count == 0) ||
                                     (contentMode == ContentMode.New && subSection.Actions.Count == 0))
                                 {
                                     section.Items.RemoveAt(itemIndex);
@@ -238,7 +247,7 @@ namespace FSProfiles.Common.Classes
                     itemIndex++;
                 }
 
-                if ((contentMode == ContentMode.Assigned && section.Items.Count == 0) ||
+                if ((contentMode is ContentMode.Assigned or ContentMode.Difference && section.Items.Count == 0) ||
                     (contentMode == ContentMode.New && section.Items.Count == 0))
                 {
                     bindingReport.BindingList.Sections.RemoveAt(sectionIndex);
@@ -254,8 +263,9 @@ namespace FSProfiles.Common.Classes
             while (inputIndex < action.Inputs.Count)
             {
                 var bindings = action.Inputs[inputIndex].Bindings;
-                if ((contentMode == ContentMode.Assigned && bindings.Count == 0) ||
-                    (contentMode == ContentMode.New && bindings.Count != 0))
+                if ((contentMode is ContentMode.Assigned or ContentMode.Difference && bindings.Count == 0) ||
+                    (contentMode == ContentMode.New && bindings.Count != 0) ||
+                    (contentMode == ContentMode.Difference && BindingsSame(action.Inputs[inputIndex])))
                 {
                     action.Inputs.RemoveAt(inputIndex);
                     continue;
@@ -266,9 +276,19 @@ namespace FSProfiles.Common.Classes
 
             var bindingCount = action.Inputs.SelectMany(i => i.Bindings).Count();
 
-            return ((contentMode == ContentMode.Assigned && bindingCount == 0) ||
-                    (contentMode == ContentMode.New && bindingCount != 0));
+            return (contentMode is ContentMode.Assigned or ContentMode.Difference && bindingCount == 0) ||
+                    (contentMode == ContentMode.New && bindingCount != 0);
         }
+
+        public static bool BindingsSame(ActionInput actionInput)
+        {
+            var difference = actionInput.Bindings
+                .Any(o => o.KeyCombo != actionInput.Bindings[0].KeyCombo 
+                          || o.Priority != actionInput.Bindings[0].Priority);
+            return !difference;
+        }
+
+
 
         public BindingReport BuildBindingReport(List<DetectedProfile> profileList)
         {
