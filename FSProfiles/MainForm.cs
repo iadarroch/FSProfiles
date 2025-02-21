@@ -19,6 +19,7 @@ namespace FSProfiles
             Logic.OnProgress += OnProgress;
             Logic.OnStop += OnStop;
             _profileList = [];
+            cmbOutputFormat.SelectedIndex = 0;
         }
 
         private void OnStart(object? sender, ProgressEvent e)
@@ -124,6 +125,12 @@ namespace FSProfiles
             var errorForm = new ErrorsForm();
             errorForm.SetErrors(scanResult.Errors);
             errorForm.ShowDialog(this);
+        }
+
+        private void cmdOutputFormat_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Logic.SelectOutputFormat(cmbOutputFormat.SelectedIndex);
+            txtOutputFile.Text = Path.ChangeExtension(txtOutputFile.Text, Logic.GetOutputExtension());
         }
     }
 }

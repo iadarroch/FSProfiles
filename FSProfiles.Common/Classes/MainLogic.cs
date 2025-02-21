@@ -12,9 +12,11 @@ namespace FSProfiles.Common.Classes
     {
         private readonly ColorSequencer _colorSequencer = new();
         #pragma warning disable CA1859
-        private readonly IOutputFormatter _htmlFormatter = new XsltFormatter();
+        private readonly List<IOutputFormatter> _outputFormatters = [new XsltFormatter(), new CsvFormatter()];
         private readonly ProgramArguments _programArguments;
         #pragma warning restore CA1859
+        
+        private int _selectedFormat;
 
         public readonly Dictionary<HostVersionType, FolderProcessorInstance> HostVersions;
 
@@ -48,12 +50,23 @@ namespace FSProfiles.Common.Classes
             }
 
             HostVersions = ary.ToDictionary(k => k.HostVersion, v => v);
+
+        }
+
+        public void SelectOutputFormat(int index)
+        {
+            _selectedFormat = index;
         }
 
         public string GetDefaultOutputFile()
         {
             var tempPath = Path.GetTempPath();
-            return $"{tempPath}controllers.html";
+            return $"{tempPath}controllers.{_outputFormatters[_selectedFormat].OutputExtension}";
+        }
+
+        public string GetOutputExtension()
+        {
+            return _outputFormatters[_selectedFormat].OutputExtension;
         }
 
         public void SetDefaultLocations()
@@ -110,7 +123,7 @@ namespace FSProfiles.Common.Classes
                     }
                     bindingReport.SerializeToFile(defaultPath);
                 }
-                _htmlFormatter.ConvertToHtml(bindingReport, outputFile);
+                _outputFormatters[_selectedFormat].OutputToFile(bindingReport, outputFile);
 
                 Process.Start(new ProcessStartInfo
                 {

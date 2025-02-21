@@ -35,7 +35,7 @@
             clbMappings = new CheckedListBox();
             btnGenerate = new Button();
             txtOutputFile = new TextBox();
-            lblOutputFile = new Label();
+            LblOutputFile = new Label();
             lblContent = new Label();
             statusStrip1 = new StatusStrip();
             tsStatus = new ToolStripStatusLabel();
@@ -46,16 +46,18 @@
             LblInstallType = new Label();
             LinkHelp = new LinkLabel();
             btnDefaultLocations = new Button();
-            label1 = new Label();
+            LblOr = new Label();
             btnCustomLocations = new Button();
             lblIncludeAircraftSpecific = new Label();
+            cmbOutputFormat = new ComboBox();
+            LblOutputFormat = new Label();
             statusStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // lblMappings
             // 
             lblMappings.AutoSize = true;
-            lblMappings.Location = new Point(10, 80);
+            lblMappings.Location = new Point(10, 60);
             lblMappings.Margin = new Padding(2, 0, 2, 0);
             lblMappings.Name = "lblMappings";
             lblMappings.Size = new Size(96, 15);
@@ -66,7 +68,7 @@
             // 
             clbMappings.CheckOnClick = true;
             clbMappings.FormattingEnabled = true;
-            clbMappings.Location = new Point(147, 80);
+            clbMappings.Location = new Point(147, 60);
             clbMappings.Name = "clbMappings";
             clbMappings.Size = new Size(1126, 400);
             clbMappings.TabIndex = 9;
@@ -85,26 +87,26 @@
             // 
             // txtOutputFile
             // 
-            txtOutputFile.Location = new Point(146, 514);
+            txtOutputFile.Location = new Point(146, 570);
             txtOutputFile.Margin = new Padding(2);
             txtOutputFile.Name = "txtOutputFile";
             txtOutputFile.Size = new Size(1127, 23);
             txtOutputFile.TabIndex = 11;
             // 
-            // lblOutputFile
+            // LblOutputFile
             // 
-            lblOutputFile.AutoSize = true;
-            lblOutputFile.Location = new Point(10, 517);
-            lblOutputFile.Margin = new Padding(2, 0, 2, 0);
-            lblOutputFile.Name = "lblOutputFile";
-            lblOutputFile.Size = new Size(66, 15);
-            lblOutputFile.TabIndex = 10;
-            lblOutputFile.Text = "Output File";
+            LblOutputFile.AutoSize = true;
+            LblOutputFile.Location = new Point(10, 573);
+            LblOutputFile.Margin = new Padding(2, 0, 2, 0);
+            LblOutputFile.Name = "LblOutputFile";
+            LblOutputFile.Size = new Size(66, 15);
+            LblOutputFile.TabIndex = 10;
+            LblOutputFile.Text = "Output File";
             // 
             // lblContent
             // 
             lblContent.AutoSize = true;
-            lblContent.Location = new Point(10, 551);
+            lblContent.Location = new Point(10, 482);
             lblContent.Margin = new Padding(2, 0, 2, 0);
             lblContent.Name = "lblContent";
             lblContent.Size = new Size(71, 15);
@@ -144,7 +146,7 @@
             // 
             cmbContent.FormattingEnabled = true;
             cmbContent.Items.AddRange(new object[] { "All", "Assigned", "New" });
-            cmbContent.Location = new Point(147, 548);
+            cmbContent.Location = new Point(147, 479);
             cmbContent.Name = "cmbContent";
             cmbContent.Size = new Size(121, 23);
             cmbContent.TabIndex = 13;
@@ -155,7 +157,7 @@
             chkIncludeUncategorised.CheckAlign = ContentAlignment.MiddleRight;
             chkIncludeUncategorised.Checked = true;
             chkIncludeUncategorised.CheckState = CheckState.Checked;
-            chkIncludeUncategorised.Location = new Point(10, 580);
+            chkIncludeUncategorised.Location = new Point(10, 511);
             chkIncludeUncategorised.Name = "chkIncludeUncategorised";
             chkIncludeUncategorised.Size = new Size(151, 19);
             chkIncludeUncategorised.TabIndex = 14;
@@ -196,14 +198,14 @@
             btnDefaultLocations.UseVisualStyleBackColor = false;
             btnDefaultLocations.Click += BtnDefaultLocations_Click;
             // 
-            // label1
+            // LblOr
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(317, 29);
-            label1.Name = "label1";
-            label1.Size = new Size(18, 15);
-            label1.TabIndex = 19;
-            label1.Text = "or";
+            LblOr.AutoSize = true;
+            LblOr.Location = new Point(317, 29);
+            LblOr.Name = "LblOr";
+            LblOr.Size = new Size(18, 15);
+            LblOr.TabIndex = 19;
+            LblOr.Text = "or";
             // 
             // btnCustomLocations
             // 
@@ -220,11 +222,31 @@
             // lblIncludeAircraftSpecific
             // 
             lblIncludeAircraftSpecific.AutoSize = true;
-            lblIncludeAircraftSpecific.Location = new Point(185, 581);
+            lblIncludeAircraftSpecific.Location = new Point(185, 512);
             lblIncludeAircraftSpecific.Name = "lblIncludeAircraftSpecific";
             lblIncludeAircraftSpecific.Size = new Size(215, 15);
             lblIncludeAircraftSpecific.TabIndex = 21;
             lblIncludeAircraftSpecific.Text = "(this includes aircraft-specific bindings)";
+            // 
+            // cmbOutputFormat
+            // 
+            cmbOutputFormat.FormattingEnabled = true;
+            cmbOutputFormat.Items.AddRange(new object[] { "HTML - Web Page", "CSV - Comma Separated Values" });
+            cmbOutputFormat.Location = new Point(146, 538);
+            cmbOutputFormat.Name = "cmbOutputFormat";
+            cmbOutputFormat.Size = new Size(203, 23);
+            cmbOutputFormat.TabIndex = 23;
+            cmbOutputFormat.SelectedIndexChanged += cmdOutputFormat_SelectedIndexChanged;
+            // 
+            // LblOutputFormat
+            // 
+            LblOutputFormat.AutoSize = true;
+            LblOutputFormat.Location = new Point(9, 541);
+            LblOutputFormat.Margin = new Padding(2, 0, 2, 0);
+            LblOutputFormat.Name = "LblOutputFormat";
+            LblOutputFormat.Size = new Size(86, 15);
+            LblOutputFormat.TabIndex = 22;
+            LblOutputFormat.Text = "Output Format";
             // 
             // MainForm
             // 
@@ -232,9 +254,11 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Gainsboro;
             ClientSize = new Size(1296, 691);
+            Controls.Add(cmbOutputFormat);
+            Controls.Add(LblOutputFormat);
             Controls.Add(lblIncludeAircraftSpecific);
             Controls.Add(btnCustomLocations);
-            Controls.Add(label1);
+            Controls.Add(LblOr);
             Controls.Add(btnDefaultLocations);
             Controls.Add(LinkHelp);
             Controls.Add(LblInstallType);
@@ -243,7 +267,7 @@
             Controls.Add(statusStrip1);
             Controls.Add(lblContent);
             Controls.Add(txtOutputFile);
-            Controls.Add(lblOutputFile);
+            Controls.Add(LblOutputFile);
             Controls.Add(btnGenerate);
             Controls.Add(clbMappings);
             Controls.Add(lblMappings);
@@ -264,7 +288,7 @@
         public FolderBrowserDialog fbdBasePath;
         private Button btnGenerate;
         public TextBox txtOutputFile;
-        private Label lblOutputFile;
+        private Label LblOutputFile;
         private Label lblContent;
         private StatusStrip statusStrip1;
         private ToolStripStatusLabel tsStatus;
@@ -275,8 +299,10 @@
         private Label LblInstallType;
         public LinkLabel LinkHelp;
         private Button btnDefaultLocations;
-        private Label label1;
+        private Label LblOr;
         private Button btnCustomLocations;
         private Label lblIncludeAircraftSpecific;
+        private ComboBox cmbOutputFormat;
+        private Label LblOutputFormat;
     }
 }
