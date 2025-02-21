@@ -61,7 +61,7 @@
             lblMappings.Margin = new Padding(2, 0, 2, 0);
             lblMappings.Name = "lblMappings";
             lblMappings.Size = new Size(96, 15);
-            lblMappings.TabIndex = 8;
+            lblMappings.TabIndex = 4;
             lblMappings.Text = "Detected Profiles";
             // 
             // clbMappings
@@ -71,7 +71,7 @@
             clbMappings.Location = new Point(147, 60);
             clbMappings.Name = "clbMappings";
             clbMappings.Size = new Size(1126, 400);
-            clbMappings.TabIndex = 9;
+            clbMappings.TabIndex = 5;
             // 
             // btnGenerate
             // 
@@ -80,7 +80,7 @@
             btnGenerate.Margin = new Padding(2);
             btnGenerate.Name = "btnGenerate";
             btnGenerate.Size = new Size(163, 29);
-            btnGenerate.TabIndex = 15;
+            btnGenerate.TabIndex = 14;
             btnGenerate.Text = "&Generate Binding Report";
             btnGenerate.UseVisualStyleBackColor = false;
             btnGenerate.Click += BtnGenerate_Click;
@@ -91,7 +91,7 @@
             txtOutputFile.Margin = new Padding(2);
             txtOutputFile.Name = "txtOutputFile";
             txtOutputFile.Size = new Size(1127, 23);
-            txtOutputFile.TabIndex = 11;
+            txtOutputFile.TabIndex = 13;
             // 
             // LblOutputFile
             // 
@@ -100,7 +100,7 @@
             LblOutputFile.Margin = new Padding(2, 0, 2, 0);
             LblOutputFile.Name = "LblOutputFile";
             LblOutputFile.Size = new Size(66, 15);
-            LblOutputFile.TabIndex = 10;
+            LblOutputFile.TabIndex = 12;
             LblOutputFile.Text = "Output File";
             // 
             // lblContent
@@ -110,7 +110,7 @@
             lblContent.Margin = new Padding(2, 0, 2, 0);
             lblContent.Name = "lblContent";
             lblContent.Size = new Size(71, 15);
-            lblContent.TabIndex = 12;
+            lblContent.TabIndex = 6;
             lblContent.Text = "List Content";
             // 
             // statusStrip1
@@ -121,7 +121,7 @@
             statusStrip1.Location = new Point(0, 660);
             statusStrip1.Name = "statusStrip1";
             statusStrip1.Size = new Size(1296, 31);
-            statusStrip1.TabIndex = 17;
+            statusStrip1.TabIndex = 16;
             statusStrip1.Text = "statusStrip1";
             // 
             // tsStatus
@@ -149,7 +149,7 @@
             cmbContent.Location = new Point(147, 479);
             cmbContent.Name = "cmbContent";
             cmbContent.Size = new Size(121, 23);
-            cmbContent.TabIndex = 13;
+            cmbContent.TabIndex = 7;
             cmbContent.Text = "All";
             // 
             // chkIncludeUncategorised
@@ -160,7 +160,7 @@
             chkIncludeUncategorised.Location = new Point(10, 511);
             chkIncludeUncategorised.Name = "chkIncludeUncategorised";
             chkIncludeUncategorised.Size = new Size(151, 19);
-            chkIncludeUncategorised.TabIndex = 14;
+            chkIncludeUncategorised.TabIndex = 8;
             chkIncludeUncategorised.Text = "Include Unrecognised";
             toolTip1.SetToolTip(chkIncludeUncategorised, "Checking this box includes an additional section on the report that lists control bindings that could not be matched to a Controls Options item");
             chkIncludeUncategorised.UseVisualStyleBackColor = true;
@@ -181,7 +181,7 @@
             LinkHelp.Location = new Point(1159, 608);
             LinkHelp.Name = "LinkHelp";
             LinkHelp.Size = new Size(114, 21);
-            LinkHelp.TabIndex = 16;
+            LinkHelp.TabIndex = 15;
             LinkHelp.TabStop = true;
             LinkHelp.Text = "Web Help Page";
             LinkHelp.LinkClicked += LinkHelp_LinkClicked;
@@ -193,7 +193,7 @@
             btnDefaultLocations.Location = new Point(146, 22);
             btnDefaultLocations.Name = "btnDefaultLocations";
             btnDefaultLocations.Size = new Size(163, 29);
-            btnDefaultLocations.TabIndex = 18;
+            btnDefaultLocations.TabIndex = 1;
             btnDefaultLocations.Text = "Default Install Locations";
             btnDefaultLocations.UseVisualStyleBackColor = false;
             btnDefaultLocations.Click += BtnDefaultLocations_Click;
@@ -204,7 +204,7 @@
             LblOr.Location = new Point(317, 29);
             LblOr.Name = "LblOr";
             LblOr.Size = new Size(18, 15);
-            LblOr.TabIndex = 19;
+            LblOr.TabIndex = 2;
             LblOr.Text = "or";
             // 
             // btnCustomLocations
@@ -214,7 +214,7 @@
             btnCustomLocations.Location = new Point(341, 22);
             btnCustomLocations.Name = "btnCustomLocations";
             btnCustomLocations.Size = new Size(163, 29);
-            btnCustomLocations.TabIndex = 20;
+            btnCustomLocations.TabIndex = 3;
             btnCustomLocations.Text = "Custom Install Locations";
             btnCustomLocations.UseVisualStyleBackColor = false;
             btnCustomLocations.Click += BtnCustomLocations_Click;
@@ -225,7 +225,7 @@
             lblIncludeAircraftSpecific.Location = new Point(185, 512);
             lblIncludeAircraftSpecific.Name = "lblIncludeAircraftSpecific";
             lblIncludeAircraftSpecific.Size = new Size(215, 15);
-            lblIncludeAircraftSpecific.TabIndex = 21;
+            lblIncludeAircraftSpecific.TabIndex = 9;
             lblIncludeAircraftSpecific.Text = "(this includes aircraft-specific bindings)";
             // 
             // cmbOutputFormat
@@ -235,7 +235,7 @@
             cmbOutputFormat.Location = new Point(146, 538);
             cmbOutputFormat.Name = "cmbOutputFormat";
             cmbOutputFormat.Size = new Size(203, 23);
-            cmbOutputFormat.TabIndex = 23;
+            cmbOutputFormat.TabIndex = 11;
             cmbOutputFormat.SelectedIndexChanged += cmdOutputFormat_SelectedIndexChanged;
             // 
             // LblOutputFormat
@@ -245,7 +245,7 @@
             LblOutputFormat.Margin = new Padding(2, 0, 2, 0);
             LblOutputFormat.Name = "LblOutputFormat";
             LblOutputFormat.Size = new Size(86, 15);
-            LblOutputFormat.TabIndex = 22;
+            LblOutputFormat.TabIndex = 10;
             LblOutputFormat.Text = "Output Format";
             // 
             // MainForm

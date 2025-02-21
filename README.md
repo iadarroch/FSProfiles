@@ -55,8 +55,11 @@ specified loations and display the results in the Detected Profiles list.
   * All - all known bindings
   * Assigned - only those currently mapped to an input
   * New - only those not currently mapped to an input.
+  * Difference - only those where there is a difference.
 * Tick the `Include Uncategorised` if you want to include new bindings which have not been
-put into a structure yet (currently this is all of the new FS2024 bindings).
+  put into a structure yet (currently this is all of the new FS2024 bindings).
+* Choose the output format - either html for a coloured web page, or CSV for a file you can
+  open in Excel.
 * Click the `Generate Binding Report` button to generate the report.
 
 ### Program UI
