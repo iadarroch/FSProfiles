@@ -17,6 +17,7 @@ namespace FSProfiles.Common.Models
         public string? DeviceName { get; set; }
         public string? ProfileName { get; set; }
         public string? ProfilePath { get; set; }
+        public string? ProfileType { get; set; }
     }
 
     [XmlRoot(ElementName = "Section")]

@@ -101,6 +101,7 @@
             <xsl:copy>
               <xsl:for-each select="$controllers/SelectedController">
                 <xsl:variable name="curControl" select="./DeviceName" />
+                <xsl:variable name="curType" select="./ProfileType" />
                 <xsl:variable name="curProfile" select="./ProfileName" />
                 <xsl:variable name="binding" select="$action/Binding[@Controller = $curControl and @Profile = $curProfile]" />
                 <xsl:choose>
@@ -227,6 +228,7 @@
         <xsl:copy>
           <xsl:for-each select="$controllers/SelectedController">
             <xsl:variable name="curControl" select="./DeviceName" />
+            <xsl:variable name="curType" select="./ProfileType" />
             <xsl:variable name="curProfile" select="./ProfileName" />
             <xsl:variable name="binding" select="$actionInput/Binding[@Controller = $curControl and @Profile = $curProfile]" />
             <xsl:choose>
@@ -289,11 +291,12 @@
     <xsl:param name="controllers" />
     <table>
       <tr bgcolor="antiquewhite">
-        <th class="tableTitle" colspan="4">Selected Controller Profiles</th>
+        <th class="tableTitle" colspan="5">Selected Controller Profiles</th>
       </tr>
       <tr bgcolor="antiquewhite">
         <th>Host Version</th>
         <th>Controller</th>
+        <th>Profile Type</th>
         <th>Profile</th>
         <th>Folder/File</th>
       </tr>
@@ -304,6 +307,9 @@
           </td>
           <td>
             <xsl:value-of select="DeviceName"/>
+          </td>
+          <td>
+            <xsl:value-of select="ProfileType"/>
           </td>
           <td>
             <xsl:value-of select="ProfileName"/>
@@ -323,6 +329,8 @@
         <xsl:value-of select="HostVersionName"/>
         <br />
         <xsl:value-of select="DeviceName"/>
+        <br />
+        <xsl:value-of select="ProfileType"/>
         <br />
         <xsl:value-of select="ProfileName"/>
       </td>

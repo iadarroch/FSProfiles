@@ -1,6 +1,4 @@
-﻿using System.Formats.Asn1;
-using System.Globalization;
-using System.Xml.Xsl;
+﻿using System.Globalization;
 using CsvHelper;
 using FSProfiles.Common.Models;
 
@@ -22,22 +20,16 @@ namespace FSProfiles.Common.Classes
             using var csv = new CsvWriter(writer, CultureInfo.InvariantCulture);
             WriteHeaders(csv, bindingReport);
             WriteBindings(csv, bindingReport);
+            if (bindingReport.UnrecognisedContexts.Count > 0)
+                WriteUnrecognisedBindings(csv, bindingReport);
         }
 
         public void WriteHeaders(CsvWriter csv, BindingReport bindingReport)
         {
-            // Write header line 1
-            csv.WriteField("");
-            csv.WriteField("");
-            csv.WriteField("");
-            csv.WriteField("");
-
-            foreach (var controller in bindingReport.SelectedControllers)
-            {
-                csv.WriteField(controller.ProfileName);
-                csv.WriteField("");
-            }
-            csv.NextRecord();
+            WriteHeaderLine(csv, bindingReport, c => c.HostVersionName);
+            WriteHeaderLine(csv, bindingReport, c => c.DeviceName);
+            WriteHeaderLine(csv, bindingReport, c => c.ProfileType);
+            WriteHeaderLine(csv, bindingReport, c => c.ProfileName);
 
             // Write header line 2
             csv.WriteField("Section");
@@ -49,6 +41,22 @@ namespace FSProfiles.Common.Classes
             {
                 csv.WriteField("Priority");
                 csv.WriteField("Key Combo");
+            }
+            csv.NextRecord();
+        }
+
+        public void WriteHeaderLine(CsvWriter csv, BindingReport bindingReport, Func<SelectedController, string> controllerData)
+        {
+            // Write header line
+            csv.WriteField("");
+            csv.WriteField("");
+            csv.WriteField("");
+            csv.WriteField("");
+
+            foreach (var controller in bindingReport.SelectedControllers)
+            {
+                csv.WriteField(controllerData(controller));
+                csv.WriteField("");
             }
             csv.NextRecord();
         }
@@ -102,6 +110,43 @@ namespace FSProfiles.Common.Classes
                     }
                     csv.NextRecord();
                 }
+            }
+        }
+
+        public void WriteUnrecognisedBindings(CsvWriter csv, BindingReport bindingReport)
+        {
+            // Write rows
+            foreach (var context in bindingReport.UnrecognisedContexts)
+            {
+                foreach (var action in context.Actions)
+                { 
+                    WriteUnrecognisedAction(csv, bindingReport, context.ContextName, action);
+                }
+            }
+        }
+
+        public void WriteUnrecognisedAction(CsvWriter csv, BindingReport bindingReport, string contextName, UnrecognisedAction action)
+        {
+            foreach (var binding in action.Bindings)
+            {
+                csv.WriteField("UNRECOGNISED");
+                csv.WriteField(contextName);
+                csv.WriteField("");
+                csv.WriteField(action.ActionName);
+                foreach (var controller in bindingReport.SelectedControllers)
+                {
+                    if (controller.DeviceName == binding.Controller && controller.ProfileName == binding.Profile)
+                    {
+                        csv.WriteField(binding.Priority);
+                        csv.WriteField(binding.KeyCombo);
+                    }
+                    else
+                    {
+                        csv.WriteField("");
+                        csv.WriteField("");
+                    }
+                }
+                csv.NextRecord();
             }
         }
     }
