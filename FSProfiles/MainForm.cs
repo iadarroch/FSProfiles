@@ -69,6 +69,13 @@ namespace FSProfiles
                 }
             }
 
+            if (generateList.Count == 0)
+            {
+                MessageBox.Show("No profiles selected for report. Nothing to generate.\r\n\r\nPlease select some profiles and try again.", "Controller Bindings Report",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             Logic.GenerateBindingReport(txtOutputFile.Text, generateList, contentMode, chkIncludeUncategorised.Checked);
         }
 

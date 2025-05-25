@@ -366,7 +366,8 @@ namespace FSProfiles.Common.Classes
                     HostVersionName = profile.HostVersionName,
                     DeviceName = profile.ControllerDefinition.Device.DeviceName,
                     ProfileName = profile.ControllerDefinition.FriendlyName.Text,
-                    ProfilePath = profile.Path
+                    ProfilePath = profile.Path,
+                    ProfileType = profile.Type
                 });
 
             foreach (var context in profile.ControllerDefinition.Device.Context)
