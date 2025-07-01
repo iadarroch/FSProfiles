@@ -14,7 +14,8 @@ namespace FSProfiles.Common.Classes
         #pragma warning disable CA1859
         private readonly List<IOutputFormatter> _outputFormatters = [new XsltFormatter(), new CsvFormatter()];
         private readonly ProgramArguments _programArguments;
-        #pragma warning restore CA1859
+        private readonly IUserSettingsRepo _userSettingsRepo;
+#pragma warning restore CA1859
         
         private int _selectedFormat;
 
@@ -26,26 +27,27 @@ namespace FSProfiles.Common.Classes
 
         public bool IncludeUnrecognised;
 
-        public MainLogic(ProgramArguments programArguments, IFolderProcessor? specifiedInstance = null)
+        public MainLogic(ProgramArguments programArguments, IUserSettingsRepo userSettingsRepo, IFolderProcessor? specifiedInstance = null)
         {
             _programArguments = programArguments;
+            _userSettingsRepo = userSettingsRepo;
 
             FolderProcessorInstance[] ary;
             if (specifiedInstance != null)
             {
                 ary =
                 [
-                    new (specifiedInstance)
+                    new (specifiedInstance, _userSettingsRepo)
                 ];
             }
             else
             {
                 ary =
                 [
-                    new(new FolderProcessorNative2020()),
-                    new(new FolderProcessorNative2024()),
-                    new(new FolderProcessorSteam2020()),
-                    new(new FolderProcessorSteam2024())
+                    new(new FolderProcessorNative2020(), _userSettingsRepo),
+                    new(new FolderProcessorNative2024(), _userSettingsRepo),
+                    new(new FolderProcessorSteam2020(), _userSettingsRepo),
+                    new(new FolderProcessorSteam2024(), _userSettingsRepo)
                 ];
             }
 

@@ -61,7 +61,9 @@ namespace FSProfiles.Builder.Classes
                 default:
                     throw new ArgumentOutOfRangeException();
             }
-            _mainLogic = new MainLogic(_buildArgs, processor);
+            var userSettingsRepo = new FileSystemUserSettingsRepo("FSProfiles");
+
+            _mainLogic = new MainLogic(_buildArgs, userSettingsRepo, processor);
         }
 
         public bool PathFound()

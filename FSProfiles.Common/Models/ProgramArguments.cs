@@ -1,6 +1,6 @@
 ﻿using CommandLine;
 
-namespace FSProfiles
+namespace FSProfiles.Common.Models
 {
     public class ProgramArguments
     {
