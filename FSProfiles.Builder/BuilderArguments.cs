@@ -1,5 +1,6 @@
 ﻿using CommandLine;
 using FSProfiles.Common.Classes;
+using FSProfiles.Common.Models;
 
 namespace FSProfiles.Builder
 {

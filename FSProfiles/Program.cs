@@ -1,4 +1,7 @@
+using System.Reflection;
 using CommandLine;
+using FSProfiles.Common.Classes;
+using FSProfiles.Common.Models;
 
 namespace FSProfiles
 {
@@ -17,7 +20,9 @@ namespace FSProfiles
             Parser.Default.ParseArguments<ProgramArguments>(args)
                 .WithParsed(programArguments =>
                 {
-                    var mainForm = new MainForm(programArguments);
+                    var appName = Assembly.GetEntryAssembly().GetName().Name;
+                    var userSettingsRepo = new FileSystemUserSettingsRepo(appName);
+                    var mainForm = new MainForm(programArguments, userSettingsRepo);
                     Application.Run(mainForm);
                 })
                 .WithNotParsed(errors =>

@@ -7,14 +7,16 @@ namespace FSProfiles
     public partial class MainForm : Form
     {
         private readonly ProgramArguments _programArguments;
+        private readonly IUserSettingsRepo _userSettingsRepo;
         public MainLogic Logic { get; }
         public List<DetectedProfile> _profileList;
 
-        public MainForm(ProgramArguments programArguments)
+        public MainForm(ProgramArguments programArguments, IUserSettingsRepo userSettingsRepo)
         {
             _programArguments = programArguments;
+            _userSettingsRepo = userSettingsRepo;
             InitializeComponent();
-            Logic = new MainLogic(_programArguments);
+            Logic = new MainLogic(_programArguments, _userSettingsRepo);
             Logic.OnStart += OnStart;
             Logic.OnProgress += OnProgress;
             Logic.OnStop += OnStop;
@@ -53,7 +55,13 @@ namespace FSProfiles
 
         private void MainForm_Shown(object sender, EventArgs e)
         {
-            btnDefaultLocations.PerformClick();  //automatically try to process default folder locations
+            if (_userSettingsRepo.GetSettings().HostVersionPath.UserPath.Values.Any(v => !string.IsNullOrEmpty(v)))
+            {
+                SetButtonHighlight(btnCustomLocations);
+                ScanFolders();
+            }
+            else
+                btnDefaultLocations.PerformClick();  //automatically try to process default folder locations
             txtOutputFile.Text = Logic.GetDefaultOutputFile();
         }
 
@@ -100,7 +108,7 @@ namespace FSProfiles
         private void BtnCustomLocations_Click(object sender, EventArgs e)
         {
             SetButtonHighlight(sender);
-            var customSelect = new InstallDirs(Logic.HostVersions);
+            var customSelect = new InstallDirs(Logic.HostVersions, _userSettingsRepo);
             if (customSelect.ShowDialog(this) == DialogResult.OK)
             {
                 ScanFolders();
